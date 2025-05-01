@@ -1,0 +1,168 @@
+{
+    "Game": {
+        "AllowIndependentFaction": true
+    },
+
+    "World": {
+        "AllowRain": true,
+        "AllowFog": true,
+        "AllowNight": true,
+        "NightChance": 0.1,
+        "TimeScale": 1
+    },
+
+    "Carriers": {
+        "MaxHP": 100,
+        "ReactorHP": 100,
+        "AllowAutomatedDefenses": true
+    },
+
+    "Silos": {
+        "MissileLaunchCooldown": 120,
+        "MissileDamage": 5,
+        "PlayerSpawnDistanceRadius": 200,
+        "CaptureRadius": 100,
+        "ShowMissile3DTracking": true
+    },
+
+    "RallyPoints": {
+        "DestroyRadius": 5,
+        "PlacementCooldown": 90,
+        "GroupSizeRequirement": 3,
+        "MinDistanceFromSilo": 100,
+        "CaptureTime": 30
+    },
+
+    "AmmoBoxes": {
+        "Duration": 120,
+        "Cooldown": 30,
+        "ResupplyDistance": 5
+    },
+
+    "Vehicles": {
+        "WEST": {
+            "AntiAir": {
+                "type": "B_APC_Tracked_01_AA_F",
+                "respawnTime": 120,
+                "textureOverride": ""
+            },
+            "APC": {
+                "type": "B_APC_Wheeled_01_cannon_F",
+                "respawnTime": 120,
+                "textureOverride": ""
+            },
+            "AttackHeli": {
+                "type": "B_Heli_Attack_01_dynamicLoadout_F",
+                "respawnTime": 300,
+                "textureOverride": ""
+            },
+            "ScoutHeli": {
+                "type": "B_Heli_Light_01_dynamicLoadout_F",
+                "respawnTime": 180,
+                "textureOverride": ""
+            },
+            "TransportHeli": {
+                "type": "B_Heli_Transport_01_F",
+                "respawnTime": 60,
+                "textureOverride": ""
+            },
+            "UnarmedScoutHeli": {
+                "type": "B_Heli_Light_01_F",
+                "respawnTime": 60,
+                "textureOverride": ""
+            },
+            "MRAP": {
+                "type": "B_MRAP_01_F",
+                "respawnTime": 30,
+                "textureOverride": ""
+            },
+            "MRAP_HMG": {
+                "type": "B_MRAP_01_hmg_F",
+                "respawnTime": 60,
+                "textureOverride": ""
+            },
+            "MRAP_GMG": {
+                "type": "B_MRAP_01_gmg_F",
+                "respawnTime": 90
+            },
+            "Tank": {
+                "type": "B_MBT_01_cannon_F",
+                "respawnTime": 300,
+                "textureOverride": ""
+            },
+            "Transport": {
+                "type": "B_Truck_01_transport_F",
+                "respawnTime": 30,
+                "textureOverride": ""
+            },
+            "QuadBike": {
+                "type": "B_Quadbike_01_F",
+                "respawnTime": 10,
+                "textureOverride": ""
+            }
+        },
+
+        "EAST": {
+            "AntiAir": {
+                "type": "O_APC_Tracked_02_AA_F",
+                "respawnTime": 120,
+                "textureOverride": ""
+            },
+            "APC": {
+                "type": "I_APC_tracked_03_cannon_F",
+                "respawnTime": 120,
+                "textureOverride": ""
+            },
+            "AttackHeli": {
+                "type": "O_Heli_Attack_02_dynamicLoadout_F",
+                "respawnTime": 300,
+                "textureOverride": ""
+            },
+            "ScoutHeli": {
+                "type": "B_Heli_Light_01_dynamicLoadout_F",
+                "respawnTime": 180,
+                "textureOverride": ""
+            },
+            "TransportHeli": {
+                "type": "I_Heli_light_03_unarmed_F",
+                "respawnTime": 60,
+                "textureOverride": ""
+            },
+            "UnarmedScoutHeli": {
+                "type": "B_Heli_Light_01_F",
+                "respawnTime": 60,
+                "textureOverride": ""
+            },
+            "MRAP": {
+                "type": "I_MRAP_03_F",
+                "respawnTime": 30,
+                "textureOverride": ""
+            },
+            "MRAP_HMG": {
+                "type": "I_MRAP_03_hmg_F",
+                "respawnTime": 60,
+                "textureOverride": ""
+            },
+            "MRAP_GMG": {
+                "type": "I_MRAP_03_gmg_F",
+                "respawnTime": 90,
+                "textureOverride": ""
+            },
+            "Tank": {
+                "type": "I_MBT_03_cannon_F",
+                "respawnTime": 300,
+                "textureOverride": ""
+            },
+            "Transport": {
+                "type": "I_Truck_02_transport_F",
+                "respawnTime": 30,
+                "textureOverride": ""
+            },
+            "QuadBike": {
+                "type": "I_Quadbike_01_F",
+                "respawnTime": 10,
+                "textureOverride": ""
+            }
+        }
+    }
+}

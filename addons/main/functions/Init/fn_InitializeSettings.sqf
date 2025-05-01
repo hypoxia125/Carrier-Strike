@@ -1,0 +1,1 @@
+CarrierStrike_GameSettings = fromJSON loadFile "CarrierStrike\addons\main\config\GameSettings.json";

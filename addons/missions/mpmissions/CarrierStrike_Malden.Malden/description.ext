@@ -1,0 +1,42 @@
+author = "Hypoxic";
+onLoadName = "Carrier Strike - Malden";
+onLoadMission = "A Battlefield 2142 Titan Mode Recreation";
+loadScreen = "data\img\loadingscreen.jpg";
+
+class Header {
+    gameType = "SC";
+    minPlayers = 1;
+    maxPlayers = 64;
+};
+
+respawn = "BASE";
+respawnDelay = 0;
+respawnDialog = 0;
+respawnTemplates[] = {};
+respawnOnStart = 0;
+
+aiKills = 0;
+briefing = 0;
+debriefing = 0;
+disabledAI = 1;
+enableDebugConsole = 0;
+joinUnassigned = 0;
+saving = 0;
+skipLobby = 0;
+
+class CfgDebriefing {
+	class Win {
+        title = "Victory!";
+        description = "This is just a placeholder until I get the end game menus created...";
+        picture = "";
+    };
+	class Win_West: Win {
+		title = "Blufor Victory!";
+		picture = "Flag_NATO";
+	};
+
+    class Win_East: Win {
+        title = "Opfor Victory!";
+        picture = "Flag_CSAT";
+    };
+};
