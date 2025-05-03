@@ -1,10 +1,11 @@
-CarrierStrike_Struct_CarrierData = [
+CarrierStrike_Struct_CarrierData = createHashMapFromArray [
     ["side", sideUnknown],
     ["max_hp", CarrierStrike_GameSettings get "Carriers" get "MaxHP"],
     ["reactor_hp", CarrierStrike_GameSettings get "Carriers" get "ReactorHP"],
     ["allow_automated_defenses", CarrierStrike_GameSettings get "Carriers" get "AllowAutomatedDefenses"],
+    ["reactors", []],
 
-    ["composition", createHashmapFromArray [
+    ["composition", createHashMapFromArray [
         ["missile_target", [24.9297,66.3911,0]],
         ["turret_class", "B_AAA_System_01_F"],
         ["turret_0", [[47.6841,-0.00439453,18.0834],90.747]],
@@ -50,4 +51,4 @@ CarrierStrike_Struct_CarrierData = [
         ]],
         ["camera", [75.4604,282.184,111.056]]
     ]]
-]
+];

@@ -1,5 +1,0 @@
-call CarrierStrike_fnc_InitializeSettings;
-call CarrierStrike_fnc_InitializeStructs;
-call CarrierStrike_fnc_InitializeGameInstance;
-call CarrierStrike_fnc_InitializeSiloControlSystem;
-call CarrierStrike_fnc_InitializeChatNotificationChannels;

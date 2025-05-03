@@ -1,12 +1,3 @@
-/*
-// DO NOT REFERENCE!
-// MAKE A COPY!
-// IF CHANGES TO THIS HAPPEN, IT WILL FUCK UP THE GAME INSTANCE
-
-// WRONG private _myWrongCopy = CarrierStrike_Structs_SiloData;
-// CORRECT: private _myCopy = +CarrierStrike_Structs_SiloData;
-*/
-
 CarrierStrike_Struct_SiloData = createHashMapFromArray [
     ["side", sideUnknown],
     ["lights", []],
