@@ -1,11 +1,16 @@
 params [
     ["_turret", objNull, [objNull]],
-    ["_side", sideUnknown, [sideUnknown]]
+    ["_side", sideUnknown, [sideUnknown]],
+    ["_turretLimits", [], [[]], 4]
 ];
 
 if (isNil "CarrierStrike_TurretInitQueue") then { CarrierStrike_TurretInitQueue = [] };
 
-// TODO: check if class is a UAV class
+// check if class is a UAV class
+private _isUAV = getNumber (configFile >> "CfgVehicles" >> typeOf _turret >> "isUAV") == 1;
+if (!_isUAV || !(_turret isKindOf "StaticMGWeapon")) exitWith {
+    diag_log format["CarrierStrike::AddToTurretInitQueue | Turret is not a UAV controlled turret! %1", _turret];
+};
 
 // check for valid side
 if (_side in [sideUnknown, civilian]) exitWith {
@@ -13,4 +18,4 @@ if (_side in [sideUnknown, civilian]) exitWith {
 };
 
 // add turret to the queue
-CarrierStrike_TurretInitQueue pushBack [_turret, _side];
+CarrierStrike_TurretInitQueue pushBack [_turret, _side, _turretLimits];

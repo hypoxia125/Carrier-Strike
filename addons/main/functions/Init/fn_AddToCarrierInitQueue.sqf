@@ -5,7 +5,10 @@ params [
 
 if (isNil "CarrierStrike_CarrierInitQueue") then { CarrierStrike_CarrierInitQueue = [] };
 
-// TODO: check class for carrier class
+// check class for carrier class
+if (!(_carrier isKindOf "Land_Carrier_01_base_F")) exitWith {
+    diag_log format["CarrierStrike::AddToCarrierInitQueue | Provided carrier is not a valid carrier type! [%1, %2]", typeOf _carrier, "Land_Carrier_01_base_F"];
+};
 
 // check for valid side
 if (_side in [sideUnknown, civilian]) exitWith {

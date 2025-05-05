@@ -16,5 +16,5 @@ if (_error) exitWith {};
 
 { _x call CarrierStrike_fnc_InitSilo } forEach CarrierStrike_SiloInitQueue;
 { _x call CarrierStrike_fnc_InitCarrier } forEach CarrierStrike_CarrierInitQueue;
-{ _x call CarrierStrike_fnc_InitReactor } forEach CarrierStrike_ReactorInitQueue;
+// { _x call CarrierStrike_fnc_InitReactor } forEach CarrierStrike_ReactorInitQueue;
 { _x call CarrierStrike_fnc_InitTurret } forEach CarrierStrike_TurretInitQueue;

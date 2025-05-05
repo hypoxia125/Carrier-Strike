@@ -5,7 +5,10 @@ params [
 
 if (isNil "CarrierStrike_SiloInitQueue") then { CarrierStrike_SiloInitQueue = [] };
 
-// TODO: check class for silo class
+// check class for silo class
+if (!(_silo isKindOf "B_Ship_MRLS_01_F")) exitWith {
+    diag_log format["CarrierStrike::AddToSiloInitQueue | Silo is not a valid silo type! [%1, %2]", typeOf _silo, "B_Ship_MRLS_01_F"];
+};
 
 // validate number
 if (_siloNumber <= 0 || _siloNumber > 5) exitWith {

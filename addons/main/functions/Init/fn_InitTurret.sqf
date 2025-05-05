@@ -1,4 +1,12 @@
-params ["_turret", "_carrier", ["_turretLimits", [], [[]], 4]];
+params ["_turret", "_side", ["_turretLimits", [], [[]], 4]];
+
+private _gameData = call CarrierStrike_fnc_GetData;
+private _carriers = _gameData getVariable "carriers";
+private _carrier = _carriers get _side;
+
+if (isNull _carrier) exitWith {
+    diag_log format["CarrierStrike::InitTurret | No carrier found!"];
+};
 
 private _carrierData = _carrier call CarrierStrike_fnc_GetData;
 _turret allowDamage false;

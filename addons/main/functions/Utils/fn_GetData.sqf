@@ -6,7 +6,7 @@ if (isNil "_object") exitWith {
 };
 
 // return silo control system
-if (_object == "SiloControlSystem") exitWith {
+if (_object isEqualType "" && {_object == "SiloControlSystem"}) exitWith {
     CarrierStrike_SiloControlSystem;
 };
 

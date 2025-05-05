@@ -17,7 +17,7 @@ _silo setVariable ["CarrierStrike_SiloData", _siloData, true];
 
 // add to control system
 if (isNil "CarrierStrike_SiloControlSystem") then {
-    diag_log format["CarrierStrike::InitSilo | No control system found!", _siloNumber];
+    diag_log format["CarrierStrike::InitSilo | No control system found!"];
 };
 private _siloControlSystem = ["SiloControlSystem"] call CarrierStrike_fnc_GetData;
 private _silos = _siloControlSystem getVariable "silos";

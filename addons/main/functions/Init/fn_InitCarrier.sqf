@@ -7,5 +7,7 @@ _carrierData = call CarrierStrike_fnc_CreateNamespace;
 _carrier setVariable ["CarrierStrike_CarrierData", _carrierData, true];
 [_carrier, ["side", _side], true] call CarrierStrike_fnc_SetData;
 
-[_carrier] call CarrierStrike_fnc_InitializeTurrets;
-[_carrier] call CarrierStrike_fnc_InitializeReactors;
+private _gameData = call CarrierStrike_fnc_GetData;
+private _carriers = _gameData getVariable "carriers";
+_carriers set [_side, _carrier];
+[nil, ["carriers", _carriers]] call CarrierStrike_fnc_SetData;
