@@ -1,5 +1,0 @@
-#include "\carrierstrike\addons\main\structs\GameDataStruct.sqf"
-#include "\carrierstrike\addons\main\structs\ProjectileDataStruct.sqf"
-#include "\carrierstrike\addons\main\structs\SiloControlSystemStruct.sqf"
-#include "\carrierstrike\addons\main\structs\SiloDataStruct.sqf"
-#include "\carrierstrike\addons\main\structs\UIDataStruct.sqf"

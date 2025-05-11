@@ -1,5 +1,5 @@
 class CfgPatches {
-    class CarrierStrike_Main {
+    class ADDON {
         name = "Carrier Strike - Main";
         authors[] = {
             "Hypoxic"
@@ -7,7 +7,7 @@ class CfgPatches {
         url = "https://github.com/hypoxia125/Carrier-Strike";
         is3DENMod = 0;
 
-        requiredVersion = 2.16;
+        requiredVersion = 2.18;
         requiredAddons[] = {
             "A3_Functions_F",
             "cba_main"
@@ -15,6 +15,6 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
 
-        skipWhenMissingDependencies = 1;
+        skipWhenMissingDependencies = 0;
     };
 };

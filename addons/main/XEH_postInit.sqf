@@ -1,3 +1,2 @@
 #include "script_component.hpp"
-
-#include "CfgPatches.hpp"
+// #include "XEH_PREP.hpp"

@@ -1,1 +1,0 @@
-createVehicle ["CarrierStrike_Namespace", [-1000, -1000, 0]];

@@ -7,13 +7,9 @@ class CfgPatches {
         url = "https://github.com/hypoxia125/Carrier-Strike";
         is3DENMod = 0;
 
-        requiredVersion = 2.16;
+        requiredVersion = 2.18;
         requiredAddons[] = {
-            "A3_Functions_F",
-            "cba_main",
-            "carrierstrike_main",
-            "carrierstrike_common",
-            "carrierstrike_game"
+            "carrierstrike_main"
         };
         units[] = {};
         weapons[] = {};
