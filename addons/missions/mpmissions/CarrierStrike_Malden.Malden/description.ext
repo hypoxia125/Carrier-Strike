@@ -1,7 +1,7 @@
 author = "Hypoxic";
 onLoadName = "Carrier Strike - Malden";
 onLoadMission = "A Battlefield 2142 Titan Mode Recreation";
-loadScreen = "data\img\loadingscreen.jpg";
+loadScreen = "";
 
 class Header {
     gameType = "SC";

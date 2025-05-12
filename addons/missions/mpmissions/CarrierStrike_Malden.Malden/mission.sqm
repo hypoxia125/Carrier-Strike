@@ -17,7 +17,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3136;
+		nextID=3139;
 	};
 	class MarkerIDProvider
 	{
@@ -25,14 +25,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1310;
+		nextID=1409;
 	};
 	class Camera
 	{
-		pos[]={7936.4614,57.269772,4047.8479};
-		dir[]={0.50857449,-0.73775423,-0.4439266};
-		up[]={0.55579907,0.67506933,-0.48514819};
-		aside[]={-0.65760136,0,-0.75336617};
+		pos[]={7806.2856,124.88109,4114.4624};
+		dir[]={0.42979503,-0.24734597,-0.8683908};
+		up[]={0.10971756,0.96892709,-0.22168155};
+		aside[]={-0.8962391,-2.0483276e-07,-0.44357798};
 	};
 };
 binarizationWanted=0;
@@ -76,13 +76,14 @@ addons[]=
 	"A3_Structures_F_Exp_Walls_Tin",
 	"A3_Structures_F_Heli_Civ_Constructions",
 	"A3_Air_F_Jets_Plane_Fighter_04",
-	"A3_Structures_F_EPC_Items_Electronics"
+	"A3_Structures_F_EPC_Items_Electronics",
+	"A3_Static_F_Jets_AAA_System_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=27;
 		class Item0
 		{
 			className="A3_Boat_F_Jets";
@@ -265,6 +266,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item26
+		{
+			className="A3_Static_F_Jets";
+			name="Arma 3 Jets - Turrets";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -295,7 +303,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="1.7.3";
+					value="1.9.0";
 				};
 			};
 		};
@@ -357,7 +365,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=405;
+		items=406;
 		class Item0
 		{
 			dataType="Object";
@@ -369,7 +377,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				name="CarrierStrike_Mission_CarrierEast";
+				init="[this, east] call carrierstrike_main_fnc_addtocarrierinitqueue";
 			};
 			id=1;
 			type="Land_Carrier_01_base_F";
@@ -386,7 +394,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				name="CarrierStrike_Mission_CarrierWest";
+				init="[this, west] call carrierstrike_main_fnc_addtocarrierinitqueue";
 			};
 			id=2;
 			type="Land_Carrier_01_base_F";
@@ -404,7 +412,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="[this, 5] call CarrierStrike_fnc_InitializeSilo;";
+				init="[this, 5] call carrierstrike_main_fnc_addtosiloinitqueue";
 				receiveRemoteTargets=1;
 			};
 			id=5;
@@ -423,7 +431,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="[this, 3] call CarrierStrike_fnc_InitializeSilo;";
+				init="[this, 3] call carrierstrike_main_fnc_addtosiloinitqueue";
 				receiveRemoteTargets=1;
 			};
 			id=19;
@@ -441,7 +449,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="[this, 2] call CarrierStrike_fnc_InitializeSilo;";
+				init="[this, 2] call carrierstrike_main_fnc_addtosiloinitqueue";
 				receiveRemoteTargets=1;
 			};
 			id=24;
@@ -460,7 +468,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="[this, 4] call CarrierStrike_fnc_InitializeSilo;";
+				init="[this, 4] call carrierstrike_main_fnc_addtosiloinitqueue";
 				receiveRemoteTargets=1;
 			};
 			id=29;
@@ -479,7 +487,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="[this, 1] call CarrierStrike_fnc_InitializeSilo;";
+				init="[this, 1] call carrierstrike_main_fnc_addtosiloinitqueue";
 				receiveRemoteTargets=1;
 			};
 			id=34;
@@ -8333,7 +8341,6 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				name="carrierstrike_mission_base_east";
 			};
 			id=1302;
 			type="Flag_Red_F";
@@ -9688,7 +9695,6 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				name="carrierstrike_mission_base_west";
 			};
 			id=2011;
 			type="Flag_Blue_F";
@@ -28017,7 +28023,6 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				name="carrierstrike_mission_carriereast_reactor_1";
 			};
 			id=3118;
 			type="Land_Device_disassembled_F";
@@ -28034,7 +28039,6 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				name="carrierstrike_mission_carriereast_reactor_2";
 			};
 			id=3119;
 			type="Land_Device_disassembled_F";
@@ -28051,7 +28055,6 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				name="carrierstrike_mission_carriereast_reactor_3";
 			};
 			id=3120;
 			type="Land_Device_disassembled_F";
@@ -28068,7 +28071,6 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				name="carrierstrike_mission_carriereast_reactor_4";
 			};
 			id=3121;
 			type="Land_Device_disassembled_F";
@@ -28085,7 +28087,6 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				name="carrierstrike_mission_carrierwest_reactor_1";
 			};
 			id=3122;
 			type="Land_Device_disassembled_F";
@@ -28102,7 +28103,6 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				name="carrierstrike_mission_carrierwest_reactor_2";
 			};
 			id=3123;
 			type="Land_Device_disassembled_F";
@@ -28119,7 +28119,6 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				name="carrierstrike_mission_carrierwest_reactor_3";
 			};
 			id=3124;
 			type="Land_Device_disassembled_F";
@@ -28136,11 +28135,32 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				name="carrierstrike_mission_carrierwest_reactor_4";
 			};
 			id=3125;
 			type="Land_Device_disassembled_F";
 			atlOffset=0.27946091;
+		};
+		class Item405
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8834.2617,19.241568,4833.9131};
+				angles[]={0,3.7524579,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, west, [-90, 90, -30, 90]] call carrierstrike_main_fnc_addtoturretinitqueue;";
+				reportRemoteTargets=1;
+				receiveRemoteTargets=1;
+				reportOwnPosition=1;
+				aiRadarUsage=1;
+			};
+			id=3136;
+			type="B_AAA_System_01_F";
+			atlOffset=0.00017738342;
 		};
 	};
 };
