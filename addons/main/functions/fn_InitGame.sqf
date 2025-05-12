@@ -5,7 +5,8 @@ if (!isServer) exitWith {};
 GVAR(Game) = true call CBA_fnc_CreateNamespace;
 
 private _data = createHashMapFromArray [
-    ["allSilos", []],
+    ["silos", []],
+    ["missiles", []],
     ["gameState", ""],
 
     ["chatNotificationChannels", createHashMapFromArray [

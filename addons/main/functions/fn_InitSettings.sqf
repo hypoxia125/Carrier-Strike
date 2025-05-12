@@ -194,6 +194,39 @@ if (!isServer) exitWith {};
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(Settings_SiloMissileTrackingColorWest),
+    "COLOR",
+    "Missile Tracking Color - BLUFOR",
+    ["Carrier Strike - Game Settings", "Silos"],
+    [0,0,1],
+    0,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_SiloMissileTrackingColorEast),
+    "COLOR",
+    "Missile Tracking Color - OPFOR",
+    ["Carrier Strike - Game Settings", "Silos"],
+    [0.9,0,0],
+    0,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_SiloMissileTrackingColorIndependent),
+    "COLOR",
+    "Missile Tracking Color - Resistance",
+    ["Carrier Strike - Game Settings", "Silos"],
+    [0,0.8,0],
+    0,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 // Rally point settings
 [
     QGVAR(Settings_RallyDestroyRadius),

@@ -10,9 +10,9 @@ GVAR(Game) setVariable [QGVAR(carriers), _carriers, true];
 
 private _data = createHashMapFromArray [
     ["side", sideUnknown],
-    ["max_hp", [QGVAR(Settings_CarrierMaxHP), "server"] call CBA_settings_fnc_get],
-    ["current_hp", [QGVAR(Settings_CarrierMaxHP), "server"] call CBA_settings_fnc_get],
-    ["allow_automated_defences", [QGVAR(Settings_AllowAutomatedDefences), "server"] call CBA_settings_fnc_get],
+    ["max_hp", [QGVAR(Settings_CarrierMaxHP)] call CBA_settings_fnc_get],
+    ["current_hp", [QGVAR(Settings_CarrierMaxHP)] call CBA_settings_fnc_get],
+    ["allow_automated_defences", [QGVAR(Settings_AllowAutomatedDefences)] call CBA_settings_fnc_get],
     ["reactors", []],
 
     ["composition", createHashMapFromArray [
@@ -69,6 +69,7 @@ _base setPosASL _pos;
 private _target = createVehicle ["laserTargetC", _pos, [], 0, "CAN_COLLIDE"];
 _target setPosASL _pos;
 _target attachTo [_base];
+_target setVariable [QGVAR(side), ([west, east] - [_side])#0, true];
 
 private _missileTargetData = GVAR(Game) getVariable QGVAR(missile_targets);
 _missileTargetData set [_side, _target];

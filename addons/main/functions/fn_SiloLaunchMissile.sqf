@@ -5,10 +5,8 @@ if !(isServer) exitWith {};
 params ["_silo"];
 
 private _side = _silo getVariable [QGVAR(side), sideUnknown];
-
-// TODO: Grab target for silo
-
-/*
+private _targetSide = ([west, east] - [_side])#0;
+private _target = (GVAR(Game) getVariable QGVAR(missile_targets)) get _targetSide;
 
 if (isNull _target) exitWith {};
 
@@ -21,8 +19,4 @@ if (_currentAmmo <= 0) then {
 
 _silo setWeaponReloadingTime [gunner _silo, _muzzle, 0];
 
-// TODO: Build fired event handler
-[_silo] call FUNC(SiloFiredEventHandler);
 _silo fireAtTarget [_target, _muzzle];
-
-*/

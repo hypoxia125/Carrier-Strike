@@ -3,18 +3,23 @@
 if (!isNil QGVAR(SiloControlSystem)) exitWith {};
 
 GVAR(SiloControlSystem) = createHashMapObject [[
-    ["#base", GVAR(GameSystem)],
     ["#type", "SiloControlSystem"],
     ["#create", {
         _self call ["SystemStart", []];
     }],
 
-    ["m_siloCountdownTime", [QGVAR(Settings_SiloLaunchCooldown), "server"] call CBA_settings_fnc_get],
+    ["m_updateRate", 1],
+    ["m_frameSystemHandle", -1],
+    ["m_entities", []],
+
+    ["m_countdownTime", [QGVAR(Settings_SiloLaunchCooldown)] call CBA_settings_fnc_get],
+    ["m_captureTime", [QGVAR(Settings_SiloCaptureTime)] call CBA_settings_fnc_get],
+    ["m_captureRadius", [QGVAR(Settings_SiloCaptureRadius)] call CBA_settings_fnc_get],
 
     //------------------------------------------------------------------------------------------------
     ["Update", {
-        LOG_1("%1::Update | Updating entities.",(_self get "#type")#0);
-        LOG_2("%1::Update | %2",(_self get "#type")#0,(_self get "m_entities"));
+        // LOG_1("%1::Update | Updating entities.",(_self get "#type")#0);
+        // LOG_2("%1::Update | %2",(_self get "#type")#0,(_self get "m_entities"));
         private _silos = _self get "m_entities";
         {
             private _silo = _x;
@@ -24,7 +29,64 @@ GVAR(SiloControlSystem) = createHashMapObject [[
             };
 
             _self call ["UpdateSilo", [_silo]];
+            _self call ["UpdateCapture", [_silo]];
         } forEach _silos;
+    }],
+
+    //------------------------------------------------------------------------------------------------
+    ["Register", {
+        params ["_entity"];
+        if (isNil "_entity") exitWith {};
+
+        private _entities = _self get "m_entities";
+        private _idx = _entities find _entity;
+        if (_idx != -1) exitWith {
+            LOG_1("%1::Register | Entity already registered.",(_self get "#type")#0);
+        };
+
+        _entities insert [-1, [_entity], true];
+        _self set ["m_entities", _entities];
+
+        // Broadcast
+        GVAR(Game) setVariable [QGVAR(silos), _entities, true];
+
+        LOG_2("%1::Register | Entity registered: %2",(_self get "#type")#0,_entity);
+    }],
+
+    //------------------------------------------------------------------------------------------------
+    ["Unregister", {
+        params ["_entity"];
+        if (isNil "_entity") exitWith {};
+
+        private _entities = _self get "m_entities";
+        private _idx = _entities find _entity;
+        if (_idx == -1) exitWith {
+            LOG_1("%1::Unregister | Entity not managed by system.",(_self get "#type")#0);
+        };
+
+        _entities deleteAt _idx;
+        _self set ["m_entities", _entities];
+
+        // Broadcast
+        GVAR(Game) setVariable [QGVAR(silos), _self get "m_entities", true];
+
+        LOG_2("%1::Unregister | Entity unregistered: %2",(_self get "#type")#0,_entity);
+    }],
+
+    //------------------------------------------------------------------------------------------------
+    ["SystemStart", {
+        private _handle = [{
+            params ["_args", "_handle"];
+            _args params ["_self"];
+
+            if (!isMultiplayer && isGamePaused) exitWith {};
+
+            _self call ["Update", []];
+        }, _self get "m_updateRate", [_self]] call CBA_fnc_addPerFrameHandler;
+
+        LOG_1("%1::SystemStart | System started.",(_self get "#type")#0);
+
+        _self set ["m_frameSystemHandle", _handle];
     }],
 
     //------------------------------------------------------------------------------------------------
@@ -32,26 +94,26 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         params ["_silo"];
 
         private _countdown = _silo getVariable QGVAR(countdown);
-        private _isFiring = _silo getVariable QGVAR(isFiring);
+        private _isFiring = _silo getVariable QGVAR(is_firing);
         private _side = _silo getVariable QGVAR(side);
 
         // Launch missile sequence start
         if (_countdown <= 0 && _side isEqualTo sideUnknown) exitWith {};
-        if (_countdown <= 0) then {
+        if (_countdown <= 0) exitWith {
 
-            if (!isFiring) then {
-                _silo setVariable [QGVAR(isFiring), true];
+            if (!_isFiring) then {
+                _silo setVariable [QGVAR(is_firing), true];
                 [_silo] call FUNC(SiloLaunchMissile);
 
                 // Wait some time and reset silo
                 [{
-                    params ["_silo"];
+                    params ["_silo", "_self"];
                     private _countdown = _silo getVariable QGVAR(countdown);
-                    private _countdownTime = _self get "siloCountdownTime";
+                    private _countdownTime = _self get "m_countdownTime";
 
                     _silo setVariable [QGVAR(countdown), _countdownTime];
-                    _silo setVariable [QGVAR(isFiring), false];
-                }, [_silo], 3] call CBA_fnc_waitAndExecute;
+                    _silo setVariable [QGVAR(is_firing), false];
+                }, [_silo, _self], 3] call CBA_fnc_waitAndExecute;
             };
         };
 
@@ -61,6 +123,93 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         _countdown = _countdown - 1;
         _silo setVariable [QGVAR(countdown), _countdown];
 
-        LOG_2("SiloControlSystem::Update | Silo [%1] countdown: %2",_silo,_countdown);
+        // LOG_2("SiloControlSystem::Update | Silo [%1] countdown: %2",_silo,_countdown);
+    }],
+
+    //------------------------------------------------------------------------------------------------
+    ["UpdateCapture", {
+        params ["_silo"];
+
+        // Get all units within capture radius
+        private _captureRadius = _self get "m_captureRadius";
+        private _nearUnits = allUnits inAreaArray [getPosATL _silo, _captureRadius, _captureRadius, 0, false];
+
+        // Count units for each side
+        private _westUnits = {side group _x == west} count _nearUnits;
+        private _eastUnits = {side group _x == east} count _nearUnits;
+
+        // Get current silo state
+        private _currentSide = _silo getVariable [QGVAR(side), sideUnknown];
+        private _currentProgress = _silo getVariable [QGVAR(captureProgress), 0];
+
+        // Determine capturing team and advantage
+        private _capturingSide = sideUnknown;
+        private _unitAdvantage = 0;
+
+        if (_westUnits > _eastUnits) then {
+            _capturingSide = west;
+            _unitAdvantage = _westUnits - _eastUnits;
+            if (_eastUnits == 0) then { _unitAdvantage = 0 };
+        } else {
+            if (_eastUnits > _westUnits) then {
+                _capturingSide = east;
+                _unitAdvantage = _eastUnits - _westUnits;
+                if (_westUnits == 0) then { _unitAdvantage = 0 };
+            };
+        };
+
+        // Calculate progress per tick
+        private _updateRate = _self get "m_updateRate";
+        private _captureTime = _self get "m_captureTime";
+        private _progressPerTick = 0;
+
+        private _baseProgress = _updateRate / _captureTime * 2;
+        private _speedMultiplier = 1 + (_unitAdvantage * 0.1);
+        _progressPerTick = _baseProgress * _speedMultiplier;
+
+        // Apply direction
+        switch _capturingSide do {
+            case west: { _progressPerTick = _progressPerTick * -1 };
+            case east: { _progressPerTick = _progressPerTick * 1 };
+            // Maintain current owner if no capturing
+            case sideUnknown: {
+                switch _currentSide do {
+                    case west: { _progressPerTick = _progressPerTick * -1 };
+                    case east: { _progressPerTick = _progressPerTick * 1 };
+                };
+            };
+        };
+
+        // Update progress
+        _currentProgress = (_currentProgress + _progressPerTick) max -1 min 1;
+        if (_capturingSide == sideUnknown && _currentSide == sideUnknown) then {
+            _currentProgress = 0;
+        };
+
+        // Handle state transitions
+        // Switch side to west
+        if (_currentProgress <= -1) then {
+            _currentSide = west;
+            _currentProgress = -1;
+        };
+        // Switch side to east
+        if (_currentProgress >= 1) then {
+            _currentSide = east;
+            _currentProgress = 1;
+        };
+        // Switch side to neutral
+        if (_currentSide == west && _currentProgress >= 0) then {
+            _currentSide = sideUnknown;
+        };
+        if (_currentSide == east && _currentProgress <= 0) then {
+            _currentSide = sideUnknown;
+        };
+
+        // LOG_3("%1::UpdateCapture | Silo: %2 | Current progress: %3",(_self get "#type")#0,(_silo getVariable QGVAR(silo_number)),_currentProgress);
+        // LOG_3("%1::UpdateCapture | Silo: %2 | Current side: %3",(_self get "#type")#0,(_silo getVariable QGVAR(silo_number)),_currentSide);
+
+        // Update variables
+        [_silo, _currentSide] call FUNC(SiloUpdateOwnership);
+        _silo setVariable [QGVAR(captureProgress), _currentProgress, true];
     }]
 ]];

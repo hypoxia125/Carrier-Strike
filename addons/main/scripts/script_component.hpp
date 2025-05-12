@@ -1,0 +1,1 @@
+#include "\z\carrierstrike\addons\main\script_component.hpp"
