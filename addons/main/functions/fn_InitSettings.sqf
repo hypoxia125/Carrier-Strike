@@ -116,6 +116,17 @@ if (!isServer) exitWith {};
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(Settings_ReactorDestroyedDamage),
+    "SLIDER",
+    "Reactor Destroyed Damage",
+    ["Carrier Strike - Game Settings", "Carrier"],
+    [0, 100, 12.5, 1],
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 // Silo settings
 [
     QGVAR(Settings_SiloLaunchCooldown),

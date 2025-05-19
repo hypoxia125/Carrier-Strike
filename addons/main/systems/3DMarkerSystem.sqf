@@ -1,5 +1,13 @@
+/*
+    3D Marker System
+    Locality: Client
+
+    Manages Draw3D code for things like silo icons, missiles flying through air, etc
+*/
+
 #include "script_component.hpp"
 
+if (!hasInterface) exitWith {};
 if (!isNil QGVAR(3DMarkerSystem)) exitWith {};
 
 GVAR(3DMarkerSystem) = createHashMapObject [[

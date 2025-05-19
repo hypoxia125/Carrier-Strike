@@ -1,3 +1,10 @@
+/*
+    fn_AddToTurretInitQueue
+    Locality: Server
+
+    Builds all the information needed for post init for automated turrets
+*/
+
 #include "script_component.hpp"
 
 if (!isServer) exitWith {};

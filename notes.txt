@@ -1,0 +1,61 @@
+Loadouts
+
+Roles: Spec Ops, Assault, Support, Engineer
+
+Stage 1
+    Spec Ops
+        Scout
+
+    Assault
+        Rifleman
+        Medic
+
+    Support
+        Autorifleman
+
+    Engineer
+        Light AT
+
+Stage 2
+    Spec Ops
+        Scout
+        Marksman
+
+    Assault
+        Rifleman
+        Medic
+        Grenadier
+
+    Support
+        Autorifleman
+        Machine Gunner
+
+    Engineer
+        Light AT
+        Light AA
+        Mine Specialist
+
+
+Stage 3
+    Spec Ops
+        Scout
+        Marksman
+        Sniper
+        Diver
+
+    Assault
+        Rifleman
+        Medic
+        Grenadier
+        Pointman
+
+    Support
+        Autorifleman
+        Machine Gunner
+        Heavy Machine Gunner
+
+    Engineer
+        Light AT
+        Light AA
+        Mine Specialist
+        Heavy AT

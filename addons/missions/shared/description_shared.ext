@@ -1,0 +1,23 @@
+author = "Hypoxic";
+onLoadMission = "Battlefield 2142 Titan Mode - Reimagined";
+
+class Header {
+    gameType = "SC";
+    minPlayers = 1;
+    maxPlayers = 64;
+};
+
+respawn = "BASE";
+respawnDelay = 15;
+respawnDialog = 0;
+respawnTemplates[] = {"MenuPosition", "MenuInventory"};
+respawnOnStart = 0;
+
+aiKills = 0;
+briefing = 0;
+debriefing = 0;
+disabledAI = 1;
+enableDebugConsole = 0;
+joinUnassigned = 0;
+saving = 0;
+skipLobby = 0;

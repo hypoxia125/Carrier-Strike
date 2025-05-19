@@ -1,5 +1,13 @@
+/*
+    Silo Control System
+    Locality: Server
+
+    Manages every silo's countdowns as well as capture progress and ownership for each team
+*/
+
 #include "script_component.hpp"
 
+if (!isServer) exitWith {};
 if (!isNil QGVAR(SiloControlSystem)) exitWith {};
 
 GVAR(SiloControlSystem) = createHashMapObject [[
@@ -18,8 +26,6 @@ GVAR(SiloControlSystem) = createHashMapObject [[
 
     //------------------------------------------------------------------------------------------------
     ["Update", {
-        // LOG_1("%1::Update | Updating entities.",(_self get "#type")#0);
-        // LOG_2("%1::Update | %2",(_self get "#type")#0,(_self get "m_entities"));
         private _silos = _self get "m_entities";
         {
             private _silo = _x;
@@ -98,12 +104,17 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         private _side = _silo getVariable QGVAR(side);
 
         // Launch missile sequence start
-        if (_countdown <= 0 && _side isEqualTo sideUnknown) exitWith {};
+        if (_countdown <= 0 && _side isEqualTo sideUnknown) exitWith {
+            _countdown = 0;
+            _silo setVariable [QGVAR(countdown), 0];
+            [_silo, "Ready"] call FUNC(HUDUpdateSiloCountdown);
+        };
         if (_countdown <= 0) exitWith {
-
             if (!_isFiring) then {
                 _silo setVariable [QGVAR(is_firing), true];
+                _silo setVariable [QGVAR(countdown), 0];
                 [_silo] call FUNC(SiloLaunchMissile);
+                [_silo, "Launch"] call FUNC(HUDUpdateSiloCountdown);
 
                 // Wait some time and reset silo
                 [{
@@ -117,13 +128,12 @@ GVAR(SiloControlSystem) = createHashMapObject [[
             };
         };
 
+        [_silo, _countdown] call FUNC(HUDUpdateSiloCountdown);
         [_silo] call FUNC(SiloCountdownWarning);
 
         // Increment countdown
         _countdown = _countdown - 1;
         _silo setVariable [QGVAR(countdown), _countdown];
-
-        // LOG_2("SiloControlSystem::Update | Silo [%1] countdown: %2",_silo,_countdown);
     }],
 
     //------------------------------------------------------------------------------------------------
@@ -150,13 +160,13 @@ GVAR(SiloControlSystem) = createHashMapObject [[
             _capturingSide = west;
             _unitAdvantage = _westUnits - _eastUnits;
             if (_eastUnits == 0) then { _unitAdvantage = 0 };
-        } else {
-            if (_eastUnits > _westUnits) then {
-                _capturingSide = east;
-                _unitAdvantage = _eastUnits - _westUnits;
-                if (_westUnits == 0) then { _unitAdvantage = 0 };
-            };
         };
+        if (_eastUnits > _westUnits) then {
+            _capturingSide = east;
+            _unitAdvantage = _eastUnits - _westUnits;
+            if (_westUnits == 0) then { _unitAdvantage = 0 };
+        };
+        private _isContested = (_eastUnits > 0 && _westUnits > 0) && (_eastUnits == _westUnits);
 
         // Calculate progress per tick
         private _updateRate = _self get "m_updateRate";
@@ -181,9 +191,16 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         };
 
         // Update progress
-        _currentProgress = (_currentProgress + _progressPerTick) max -1 min 1;
-        if (_capturingSide == sideUnknown && _currentSide == sideUnknown) then {
-            _currentProgress = 0;
+        if (!_isContested) then {
+            _currentProgress = (_currentProgress + _progressPerTick) max -1 min 1;
+        };
+
+        if (_capturingSide == sideUnknown && _currentSide == sideUnknown && !_isContested) then {
+            if (_currentProgress != 0) then {
+                _currentProgress = 0;
+                [_silo, west, 0, _updateRate / 2] call FUNC(HUDUpdateSiloStatus);
+                [_silo, east, 0, _updateRate / 2] call FUNC(HUDUpdateSiloStatus);
+            }
         };
 
         // Handle state transitions
@@ -205,8 +222,19 @@ GVAR(SiloControlSystem) = createHashMapObject [[
             _currentSide = sideUnknown;
         };
 
-        // LOG_3("%1::UpdateCapture | Silo: %2 | Current progress: %3",(_self get "#type")#0,(_silo getVariable QGVAR(silo_number)),_currentProgress);
-        // LOG_3("%1::UpdateCapture | Silo: %2 | Current side: %3",(_self get "#type")#0,(_silo getVariable QGVAR(silo_number)),_currentSide);
+        // Update HUD
+        if (!_isContested) then {
+            if (_currentProgress < 0) then {
+                [_silo, west, abs _currentProgress, 1] call FUNC(HUDUpdateSiloStatus);
+                [_silo, east, 0, _updateRate / 2] call FUNC(HUDUpdateSiloStatus);
+            };
+            if (_currentProgress > 0) then {
+                [_silo, east, abs _currentProgress, 1] call FUNC(HUDUpdateSiloStatus);
+                [_silo, west, 0, _updateRate / 2] call FUNC(HUDUpdateSiloStatus);
+            };
+        };
+
+        _silo setVariable [QGVAR(captureProgress), _currentProgress];
 
         // Update variables
         [_silo, _currentSide] call FUNC(SiloUpdateOwnership);

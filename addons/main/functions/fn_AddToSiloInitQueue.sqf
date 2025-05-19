@@ -1,3 +1,10 @@
+/*
+    fn_AddToSiloInitQueue
+    Locality: Server
+
+    Builds all the information needed for post init for silos
+*/
+
 #include "script_component.hpp"
 
 if (!isServer) exitWith {};

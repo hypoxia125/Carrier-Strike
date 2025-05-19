@@ -1,3 +1,10 @@
+/*
+    Missile Tracking System
+    Locality: Server
+
+    Manages all missiles fired from silos and detects when they hit their target
+*/
+
 #include "script_component.hpp"
 
 if (!isNil QGVAR(MissileTrackingSystem)) exitWith {};

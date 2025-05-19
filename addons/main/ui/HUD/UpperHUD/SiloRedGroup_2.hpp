@@ -1,0 +1,24 @@
+class SiloRed_2_Group: RscControlsGroupNoScrollbars {
+    idc = IDC_SILO_RED_2_GROUP;
+
+    x = QUOTE((SILO_CENTER - SILO_SPACE_X) * GRID_W);
+    y = QUOTE(SILO_Y * GRID_H - SILO_H * GRID_H * -1);
+    w = QUOTE(SILO_W * GRID_W);
+    h = QUOTE(SILO_H * GRID_H);
+
+    onLoad = "uiNamespace setVariable ['carrierstrike_main_silored_2_group', _this select 0]";
+
+    class controls {
+        class SiloRed_2: RscPictureKeepAspect {
+            idc = IDC_SILO_RED_2;
+
+            x = QUOTE(0 * GRID_W);
+            y = QUOTE(SILO_H * GRID_H * -1);
+            w = QUOTE(SILO_W * GRID_W);
+            h = QUOTE(SILO_H * GRID_H);
+
+            onLoad = "uiNamespace setVariable ['carrierstrike_main_silored_2', _this select 0]";
+            text = QPATHTOF(data\HUD\silos\SiloRed_2.paa);
+        };
+    };
+};

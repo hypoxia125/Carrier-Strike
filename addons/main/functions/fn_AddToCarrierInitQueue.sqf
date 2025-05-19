@@ -1,3 +1,10 @@
+/*
+    fn_AddToCarrierInitQueue
+    Locality: Server
+
+    Builds all the information needed for post init for carriers
+*/
+
 #include "script_component.hpp"
 
 if (!isServer) exitWith {};

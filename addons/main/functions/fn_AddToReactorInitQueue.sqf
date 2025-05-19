@@ -1,3 +1,10 @@
+/*
+    fn_AddToReactorInitQueue
+    Locality: Server
+
+    Builds all the information needed for post init for carrier reactors
+*/
+
 #include "script_component.hpp"
 
 if (!isServer) exitWith {};
