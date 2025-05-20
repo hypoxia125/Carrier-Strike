@@ -11,8 +11,10 @@ if (!isServer) exitWith {};
 
 params ["_side", "_type"];
 
-private _carrier = (GVAR(Game) getVariable QGVAR(carriers)) get _side;
+if (GVAR(Game) getVariable QGVAR(game_state) == "ENDING") exitWith {};
 
+private _carrier = (GVAR(Game) getVariable QGVAR(carriers)) get _side;
+private _maxHP = _carrier getVariable QGVAR(max_hp);
 private _currentHp = _carrier getVariable QGVAR(current_hp);
 
 private _damage = switch _type do {
@@ -23,8 +25,9 @@ private _damage = switch _type do {
 private _newHp = _currentHp - _damage;
 _carrier setVariable [QGVAR(current_hp), _newHP, true];
 
-// TODO: Update UI
+[QGVAR(HUDUpdateCarrierStatus), [_side, _newHp / _maxHP, 1]] call CBA_fnc_globalEvent;
 
 if (_newHP <= 0) exitWith {
-    // TODO: End Game Sequence
+    GVAR(Game) setVariable [QGVAR(game_state), "ENDING", true];
+    [QGVAR(ExplosionSequence), [_carrier]] call CBA_fnc_globalEvent;
 };

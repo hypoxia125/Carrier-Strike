@@ -18,6 +18,11 @@
 #define SILO_CENTER                         (UPPERHUD_W / 2 - SILO_W / 2)
 #define SILO_CD_Y                           (SILO_H)
 
+#define RESPAWNMENU_MAINPANEL_W              180
+#define RESPAWNMENU_MAINPANEL_H             100
+#define RESPAWNMENU_MAINPANEL_X              -(RESPAWNMENU_MAINPANEL_W / 2)
+#define RESPAWNMENU_MAINPANEL_Y              -(RESPAWNMENU_MAINPANEL_H / 2)
+
 #define IDD_CARRIERHUD                      8000
 #define IDC_UPPERHUD                        8001
 

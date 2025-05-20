@@ -38,14 +38,6 @@ private _data = createHashMapFromArray [
     ["countdown", [QGVAR(Settings_SiloLaunchCooldown)] call CBA_settings_fnc_get],
     ["is_firing", false],
 
-    // Alerts
-    ["alerts", createHashMapFromArray [
-        ["120s", "\z\carrierstrike\addons\main\data\sound\VO\betty\missilelaunchcountdown_120s.ogg"],
-        ["60s", "\z\carrierstrike\addons\main\data\sound\VO\betty\missilelaunchcountdown_60s.ogg"],
-        ["30s", "\z\carrierstrike\addons\main\data\sound\VO\betty\missilelaunchcountdown_30s.ogg"],
-        ["5s", "\z\carrierstrike\addons\main\data\sound\VO\betty\missilelaunchcountdown_5s.ogg"]
-    ]],
-
     // Icons
     ["icons", createHashMapFromArray [
         [west, createHashMapFromArray [

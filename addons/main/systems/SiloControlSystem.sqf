@@ -128,8 +128,13 @@ GVAR(SiloControlSystem) = createHashMapObject [[
             };
         };
 
-        [_silo, _countdown] call FUNC(HUDUpdateSiloCountdown);
-        [_silo] call FUNC(SiloCountdownWarning);
+        [QGVAR(HUDUpdateSiloCountdown), [_silo, _countdown]] call CBA_fnc_globalEvent;
+        
+        private _silotimeremainingalerts = (GVAR(Game) getVariable QGVAR(alerts)) get "silotimeremaining";
+        private _alert = _silotimeremainingalerts get _countdown;
+        if (!isNil "_alert") then {
+            [QGVAR(PlaySiloSound3DLocal), [_silo, _alert]] call CBA_fnc_globalEvent;
+        };
 
         // Increment countdown
         _countdown = _countdown - 1;
@@ -139,6 +144,8 @@ GVAR(SiloControlSystem) = createHashMapObject [[
     //------------------------------------------------------------------------------------------------
     ["UpdateCapture", {
         params ["_silo"];
+
+        private _siloNumber = _silo getVariable QGVAR(silo_number);
 
         // Get all units within capture radius
         private _captureRadius = _self get "m_captureRadius";
@@ -198,39 +205,67 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         if (_capturingSide == sideUnknown && _currentSide == sideUnknown && !_isContested) then {
             if (_currentProgress != 0) then {
                 _currentProgress = 0;
-                [_silo, west, 0, _updateRate / 2] call FUNC(HUDUpdateSiloStatus);
-                [_silo, east, 0, _updateRate / 2] call FUNC(HUDUpdateSiloStatus);
-            }
+                [QGVAR(HUDUpdateSiloStatus), [_silo, west, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
+                [QGVAR(HUDUpdateSiloStatus), [_silo, east, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
+            };
         };
 
         // Handle state transitions
+        private _alerts = GVAR(Game) getVariable QGVAR(alerts);
+        private _respawn = _silo getVariable [QGVAR(respawn), []];
         // Switch side to west
-        if (_currentProgress <= -1) then {
+        if (_currentProgress <= -1 && _currentSide != west) then {
             _currentSide = west;
             _currentProgress = -1;
+            [QGVAR(AlertAddToSystem), [(_alerts get "silocapture") get _siloNumber], allPlayers select { side group _x == west }] call CBA_fnc_targetEvent;
+            // Change respawn position
+            if (count _respawn == 2) then {
+                _respawn call BIS_fnc_removeRespawnPosition;
+            };
+            _respawn = [west, getPosATL _silo, format["Silo %1", _siloNumber]] call BIS_fnc_addRespawnPosition;
+            _silo setVariable [QGVAR(respawn), _respawn];
         };
         // Switch side to east
-        if (_currentProgress >= 1) then {
+        if (_currentProgress >= 1 && _currentSide != east) then {
             _currentSide = east;
             _currentProgress = 1;
+            [QGVAR(AlertAddToSystem), [(_alerts get "silocapture") get _siloNumber], allPlayers select { side group _x == east }] call CBA_fnc_targetEvent;
+            // Change respawn position
+            if (count _respawn == 2) then {
+                _respawn call BIS_fnc_removeRespawnPosition;
+            };
+            _respawn = [east, getPosATL _silo, format["Silo %1", _siloNumber]] call BIS_fnc_addRespawnPosition;
+            _silo setVariable [QGVAR(respawn), _respawn];
         };
         // Switch side to neutral
         if (_currentSide == west && _currentProgress >= 0) then {
             _currentSide = sideUnknown;
+            [QGVAR(AlertAddToSystem), [(_alerts get "silolost") get _siloNumber], allPlayers select { side group _x == west }] call CBA_fnc_targetEvent;
+            // Change respawn position
+            if (count _respawn == 2) then {
+                _respawn call BIS_fnc_removeRespawnPosition;
+            };
+            _silo setVariable [QGVAR(respawn), nil];
         };
         if (_currentSide == east && _currentProgress <= 0) then {
             _currentSide = sideUnknown;
+            [QGVAR(AlertAddToSystem), [(_alerts get "silolost") get _siloNumber], allPlayers select { side group _x == east }] call CBA_fnc_targetEvent;
+            // Change respawn position
+            if (count _respawn == 2) then {
+                _respawn call BIS_fnc_removeRespawnPosition;
+            };
+            _silo setVariable [QGVAR(respawn), nil];
         };
 
         // Update HUD
         if (!_isContested) then {
             if (_currentProgress < 0) then {
-                [_silo, west, abs _currentProgress, 1] call FUNC(HUDUpdateSiloStatus);
-                [_silo, east, 0, _updateRate / 2] call FUNC(HUDUpdateSiloStatus);
+                [QGVAR(HUDUpdateSiloStatus), [_silo, west, abs _currentProgress, _updateRate / 2]] call CBA_fnc_globalEvent;
+                [QGVAR(HUDUpdateSiloStatus), [_silo, east, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
             };
             if (_currentProgress > 0) then {
-                [_silo, east, abs _currentProgress, 1] call FUNC(HUDUpdateSiloStatus);
-                [_silo, west, 0, _updateRate / 2] call FUNC(HUDUpdateSiloStatus);
+                [QGVAR(HUDUpdateSiloStatus), [_silo, east, abs _currentProgress, _updateRate / 2]] call CBA_fnc_globalEvent;
+                [QGVAR(HUDUpdateSiloStatus), [_silo, west, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
             };
         };
 

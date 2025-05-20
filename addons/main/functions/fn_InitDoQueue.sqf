@@ -16,14 +16,15 @@ if (isNil QGVAR(CarrierInitQueue) || {count GVAR(CarrierInitQueue) == 0}) then {
 //     diag_log format["CarrierStrike::InitQueue | No data in the reactor init queue!"];
 //     _error = true;
 // };
-if (isNil QGVAR(VehicleInitQueue)) then {
-    diag_log format["CarrierStrike::InitQueue | No data in the vehicle init queue!"];
-    _error = true;
-};
 if (_error) exitWith {};
 
 { _x call FUNC(InitSilo) } forEach GVAR(SiloInitQueue);
 { _x call FUNC(InitCarrier) } forEach GVAR(CarrierInitQueue);
 // { _x call FUNC(InitReactor) } forEach GVAR(ReactorInitQueue);
 { _x call FUNC(InitTurret) } forEach GVAR(TurretInitQueue);
-{ _x call FUNC(InitVehiclePre) } forEach GVAR(VehicleInitQueue);
+
+// Wait for mission start for vehicle inits from modules
+[] spawn {
+    waitUntil { time > 0 };
+    { _x call FUNC(InitVehiclePre) } forEach GVAR(VehicleInitQueue);
+};

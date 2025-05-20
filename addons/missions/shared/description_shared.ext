@@ -1,4 +1,5 @@
 author = "Hypoxic";
+OnLoadName = "Carrier Strike";
 onLoadMission = "Battlefield 2142 Titan Mode - Reimagined";
 
 class Header {
@@ -21,3 +22,20 @@ enableDebugConsole = 0;
 joinUnassigned = 0;
 saving = 0;
 skipLobby = 0;
+
+class CfgDebriefing {
+	class Win {
+        title = "Victory!";
+        description = "This is just a placeholder until I get the end game menus created...";
+        picture = "";
+    };
+	class Win_West: Win {
+		title = "Blufor Victory!";
+		picture = "Flag_NATO";
+	};
+
+    class Win_East: Win {
+        title = "Opfor Victory!";
+        picture = "Flag_CSAT";
+    };
+};

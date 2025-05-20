@@ -19,6 +19,7 @@ GVAR(VehicleRespawnSystem) = createHashMapObject [[
         {
             private _entityMap = _x;
             private _owner = _entityMap get "owner";
+            if (isNil "_owner") then { continue };
             private _side = sideUnknown;
             if (_owner isEqualType sideUnknown) then {
                 _side = _owner;
@@ -71,7 +72,7 @@ GVAR(VehicleRespawnSystem) = createHashMapObject [[
                 };
 
                 // clear map of nearby dead things
-                private _nearDead = allDead select { _x distance _position <= 5 };
+                private _nearDead = allDead select { _x distance _position <= 10 };
                 { deleteVehicle _x } forEach _nearDead;
 
                 // finally spawn vehicle - next frame
@@ -82,7 +83,7 @@ GVAR(VehicleRespawnSystem) = createHashMapObject [[
                     private _dir = _entityMap get "direction";
                     private _vehicle = createVehicle [_class, [0,0,0], [], 0, "NONE"];
                     _vehicle setDir _dir;
-                    _vehicle setPosATL _position;
+                    _vehicle setPosASL AGLToASL _position;
 
                     [_vehicle, _side] call FUNC(InitVehiclePost);
 

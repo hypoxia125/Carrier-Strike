@@ -1,13 +1,11 @@
 #include "script_component.hpp"
 
-if (!isServer) exitWith {};
-
 GVAR(Game) = true call CBA_fnc_CreateNamespace;
 
 private _data = createHashMapFromArray [
     ["silos", []],
     ["missiles", []],
-    ["gameState", ""],
+    ["game_state", ""],
 
     ["chatNotificationChannels", createHashMapFromArray [
         [west, -1],
@@ -27,7 +25,33 @@ private _data = createHashMapFromArray [
     ]],
     
     ["eventHandles", createHashMapFromArray [
-    ]]
+    ]],
+
+    // Alerts
+    ["alerts", createHashMapFromArray [
+        ["silotimeremaining", createHashMapFromArray [
+            [120, QPATHTOF(data\sound\VO\betty\missilelaunchcountdown_120s.ogg)],
+            [60, QPATHTOF(data\sound\VO\betty\missilelaunchcountdown_60s.ogg)],
+            [30, QPATHTOF(data\sound\VO\betty\missilelaunchcountdown_30s.ogg)],
+            [6, QPATHTOF(data\sound\VO\betty\missilelaunchcountdown_5s.ogg)]
+        ]],
+        ["silocapture", createHashMapFromArray [
+            [1, QPATHTOF(data\sound\VO\commander\capturedsilo1.ogg)],
+            [2, QPATHTOF(data\sound\VO\commander\capturedsilo2.ogg)],
+            [3, QPATHTOF(data\sound\VO\commander\capturedsilo3.ogg)],
+            [4, QPATHTOF(data\sound\VO\commander\capturedsilo4.ogg)],
+            [5, QPATHTOF(data\sound\VO\commander\capturedsilo5.ogg)]
+        ]],
+        ["silolost", createHashMapFromArray [
+            [1, QPATHTOF(data\sound\VO\commander\lostsilo1.ogg)],
+            [2, QPATHTOF(data\sound\VO\commander\lostsilo2.ogg)],
+            [3, QPATHTOF(data\sound\VO\commander\lostsilo3.ogg)],
+            [4, QPATHTOF(data\sound\VO\commander\lostsilo4.ogg)],
+            [5, QPATHTOF(data\sound\VO\commander\lostsilo5.ogg)]
+        ]]
+    ]],
+
+    ["respawn_positions", []]
 ];
 
 {

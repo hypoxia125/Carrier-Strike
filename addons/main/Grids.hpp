@@ -5,5 +5,5 @@
 #define GRID_Y              safezoneY
 #define GRID_W              (pixelW * pixelGridNoUIScale * pixelScale)
 #define GRID_H              (pixelH * pixelGridNoUIScale * pixelScale)
-#define CENTER_X	        ((getResolution select 2) * 0.5 * pixelW)
-#define CENTER_Y	        ((getResolution select 3) * 0.5 * pixelH)
+#define CENTER_X	        ((getResolution select 2) * pixelScale * pixelW)
+#define CENTER_Y	        ((getResolution select 3) * pixelScale * pixelH)

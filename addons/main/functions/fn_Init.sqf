@@ -14,6 +14,10 @@ GVAR(3DMarkerSystem) call ["Register", compileScript ["\z\carrierstrike\addons\m
 
 // Initialize HUD
 call FUNC(InitHUD);
+call FUNC(UIDrawSiloIcons);
 
 // Initialize Diary
 call FUNC(InitDiary);
+
+// Player stuff
+call FUNC(PlayerInitEvents);

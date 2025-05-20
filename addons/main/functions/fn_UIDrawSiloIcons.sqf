@@ -37,4 +37,4 @@ waitUntil {
             0
         ];
     } forEach (GVAR(Game) getVariable [QGVAR(silos), []]);
-}]
+}];

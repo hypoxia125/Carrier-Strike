@@ -17,7 +17,7 @@ private _siloNumber = _silo getVariable QGVAR(silo_number);
 
 private _ctrl = uiNamespace getVariable format[QGVAR(Silo_CD_%1), _siloNumber];
 if (isNil "_ctrl") exitWith {
-    ERROR_1("HUDUpdateSiloTimer | No control found for silo cd %1", _siloNumber);
+    ERROR_1("HUDUpdateSiloTimer | No control found for silo cd %1",_siloNumber);
 };
 
 private _color = [1,0,0,1];
