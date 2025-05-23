@@ -43,7 +43,7 @@ params ["_player"];
         private _candidate = (getPosASL _silo) getPos [random _maxDistance max 10, random 360];
         _candidate = AGLToASL _candidate;
 
-        private _valid = [_candidate, 7, 7] call FUNC(UtilsIsSafePos);
+        private _valid = [_candidate, 7, 7] call FUNC(IsSafePos);
         if (_valid) exitWith {
             _pos = ASLToATL _candidate;
         };

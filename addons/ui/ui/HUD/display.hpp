@@ -1,4 +1,4 @@
-class CarrierHUD {
+class GVAR(CarrierHUD) {
     idd = IDD_CARRIERHUD;
 
     duration = 1e11;

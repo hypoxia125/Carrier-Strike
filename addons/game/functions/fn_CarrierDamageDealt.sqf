@@ -25,7 +25,7 @@ private _damage = switch _type do {
 private _newHp = _currentHp - _damage;
 _carrier setVariable [QGVAR(current_hp), _newHP, true];
 
-[QGVAR(HUDUpdateCarrierStatus), [_side, _newHp / _maxHP, 1]] call CBA_fnc_globalEvent;
+[QEGVAR(ui,HUDUpdateCarrierStatus), [_side, _newHp / _maxHP, 1]] call CBA_fnc_globalEvent;
 
 if (_newHP <= 0) exitWith {
     GVAR(Game) setVariable [QGVAR(game_state), "ENDING", true];

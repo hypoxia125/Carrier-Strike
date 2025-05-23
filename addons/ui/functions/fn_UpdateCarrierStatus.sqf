@@ -6,7 +6,7 @@
 */
 
 #include "script_component.hpp"
-#include "\z\carrierstrike\addons\main\defines.hpp"
+#include QPATHTOF(defines.hpp)
 
 disableSerialization;
 
@@ -14,13 +14,15 @@ if (!hasInterface) exitWith {};
 
 params ["_side", "_percent", "_tickrate"];
 
-private _color = switch _side do {
-    case west: {"Blue"};
-    case east: {"Red"};
+private _group = switch _side do {
+    case west: { (findDisplay IDD_CARRIERHUD) displayCtrl IDC_CARRIER_BLUE_LIGHT_GROUP };
+    case east: { (findDisplay IDD_CARRIERHUD) displayCtrl IDC_CARRIER_RED_LIGHT_GROUP };
 };
 
-private _group = uiNamespace getVariable format[QGVAR(Carrier_%1_Light_Group), _color];
-private _picture = uiNamespace getVariable format[QGVAR(Carrier_%1_Light), _color];
+private _picture = switch _side do {
+    case west: { IDC_CARRIER_BLUE_LIGHT };
+    case east: { IDC_CARRIER_RED_LIGHT };
+};
 
 switch _side do {
     case west: {

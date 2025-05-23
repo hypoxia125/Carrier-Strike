@@ -16,15 +16,15 @@ params ["_silo", "_side", "_percent", "_tickrate"];
 
 if (_side isEqualTo sideUnknown) exitWith {};
 
-private _siloNumber = _silo getVariable QGVAR(silo_number);
+private _siloNumber = _silo getVariable QEGVAR(game,silo_number);
 
 private _color = switch _side do {
     case west: {"Blue"};
     case east: {"Red"};
 };
 
-private _group = uiNamespace getVariable format[QGVAR(Silo%1_%2_Group), _color, _siloNumber];
-private _picture = uiNamespace getVariable format[QGVAR(Silo%1_%2), _color, _siloNumber];
+private _group = uiNamespace getVariable format[QEGVAR(common,Silo%1_%2_Group), _color, _siloNumber];
+private _picture = uiNamespace getVariable format[QEGVAR(common,Silo%1_%2), _color, _siloNumber];
 
 if (isNil "_group") exitWith {
     ERROR("Something went wrong with Update Silo Status - No Group");

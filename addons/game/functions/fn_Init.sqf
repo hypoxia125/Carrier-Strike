@@ -13,8 +13,8 @@ GVAR(3DMarkerSystem) call ["Register", compileScript ["\z\carrierstrike\addons\m
 GVAR(3DMarkerSystem) call ["Register", compileScript ["\z\carrierstrike\addons\main\scripts\Silo3DMarkers.sqf"]];
 
 // Initialize HUD
-call FUNC(InitHUD);
-call FUNC(UIDrawSiloIcons);
+call EFUNC(ui,InitHUD);
+call EFUNC(ui,UIDrawSiloIcons);
 
 // Initialize Diary
 call FUNC(InitDiary);

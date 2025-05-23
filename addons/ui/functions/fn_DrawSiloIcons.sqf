@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 if (!hasInterface) exitWith {};
-if (!canSuspend) exitWith { _this spawn FUNC(UIDrawSiloIcons) };
+if (!canSuspend) exitWith { _this spawn FUNC(DrawSiloIcons) };
 
 waitUntil {
     !isNull findDisplay 46 &&
@@ -12,12 +12,12 @@ waitUntil {
     params ["_ctrl"];
 
     {
-        private _countdownTime = _x getVariable QGVAR(countdown_time);
-        private _currentCountdown = _x getVariable QGVAR(countdown);
-        private _side = _x getVariable QGVAR(side);
-        private _siloNumber = _x getVariable QGVAR(silo_number);
+        private _countdownTime = _x getVariable QEGVAR(game,countdown_time);
+        private _currentCountdown = _x getVariable QEGVAR(game,countdown);
+        private _side = _x getVariable QEGVAR(game,side);
+        private _siloNumber = _x getVariable QEGVAR(game,silo_number);
 
-        private _iconData = _x getVariable QGVAR(icons);
+        private _iconData = _x getVariable QEGVAR(game,icons);
 
         // Get the proper icon
         private _frameIndex = 0;
@@ -36,5 +36,5 @@ waitUntil {
             32,
             0
         ];
-    } forEach (GVAR(Game) getVariable [QGVAR(silos), []]);
+    } forEach (GEVAR(game,Game) getVariable [QEGVAR(game,silos), []]);
 }];
