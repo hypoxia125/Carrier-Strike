@@ -59,7 +59,7 @@ GVAR(VehicleRespawnSystem) = createHashMapObject [[
             // Spawn New Vehicle
             //////////////////////
             if (_entityMap get "countdown" <= 0) then {
-                LOG_1("%1::Update | Starting spawn sequence.",(_self get "#type")#0);
+                // LOG_1("%1::Update | Starting spawn sequence.",(_self get "#type")#0);
                 private _position = _entityMap get "position";
 
                 // area check for colliding vehicles and delete them
@@ -82,9 +82,11 @@ GVAR(VehicleRespawnSystem) = createHashMapObject [[
                     private _position = _entityMap get "position";
                     private _dir = _entityMap get "direction";
                     private _vehicle = createVehicle [_class, [0,0,0], [], 0, "NONE"];
+                    private _code = _entityMap get "expression";
                     _vehicle setDir _dir;
                     _vehicle setPosASL AGLToASL _position;
 
+                    [_vehicle, _side] call _code;
                     [_vehicle, _side] call FUNC(InitVehiclePost);
 
                     _entityMap set ["active_vehicle", _vehicle];

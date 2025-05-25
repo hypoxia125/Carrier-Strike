@@ -33,4 +33,4 @@ if (_siloNumber in _siloNumbers) exitWith {
 };
 
 // add silo to the queue
-GVAR(SiloInitQueue) pushBack [_silo, _siloNumber];
+GVAR(SiloInitQueue) pushBackUnique [_silo, _siloNumber];

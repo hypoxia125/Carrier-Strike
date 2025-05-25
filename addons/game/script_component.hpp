@@ -1,4 +1,4 @@
-#define COMPONENT mission
+#define COMPONENT game
 
 #define DEBUG_MODE_FULL
 

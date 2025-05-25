@@ -1,6 +1,9 @@
+#include "script_component.hpp"
+
 author = "Hypoxic";
-OnLoadName = "Carrier Strike";
+onLoadName = "Carrier Strike";
 onLoadMission = "Battlefield 2142 Titan Mode - Reimagined";
+loadScreen = "\z\carrierstrike\addons\common\data\img\loadingscreen.jpg";
 
 class Header {
     gameType = "SC";
@@ -12,16 +15,16 @@ respawn = "BASE";
 respawnDelay = 15;
 respawnDialog = 0;
 respawnTemplates[] = {"MenuPosition", "MenuInventory"};
-respawnOnStart = 0;
+respawnOnStart = 1;
 
 aiKills = 0;
 briefing = 0;
 debriefing = 0;
 disabledAI = 1;
-enableDebugConsole = 0;
+enableDebugConsole = 2;
 joinUnassigned = 0;
 saving = 0;
-skipLobby = 0;
+skipLobby = 1;
 
 class CfgDebriefing {
 	class Win {
@@ -37,5 +40,23 @@ class CfgDebriefing {
     class Win_East: Win {
         title = "Opfor Victory!";
         picture = "Flag_CSAT";
+    };
+};
+
+class CfgRoles {
+    class GVAR(Tier1)
+    {
+        displayName = "Tier I";
+        icon = "";
+    };
+    class GVAR(Tier2)
+    {
+        displayName = "Tier II";
+        icon = "";
+    };
+    class GVAR(Tier3)
+    {
+        displayName = "Tier III";
+        icon = "";
     };
 };

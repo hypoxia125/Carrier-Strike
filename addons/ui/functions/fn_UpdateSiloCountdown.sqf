@@ -6,6 +6,7 @@
 */
 
 #include "script_component.hpp"
+#include "\z\carrierstrike\addons\ui\defines.hpp"
 
 disableSerialization;
 
@@ -15,10 +16,17 @@ params ["_silo", "_countdown"];
 
 private _siloNumber = _silo getVariable QEGVAR(game,silo_number);
 
-private _ctrl = uiNamespace getVariable format[QEGVAR(common,Silo_CD_%1), _siloNumber];
-if (isNil "_ctrl") exitWith {
-    ERROR_1("HUDUpdateSiloTimer | No control found for silo cd %1",_siloNumber);
+private _display = localNamespace getVariable [QGVAR(carrierHUD), displayNull];
+if (isNull _display) exitWith {};
+
+private _ctrl = switch _siloNumber do {
+    case 1: { IDC_SILO_CD_1 };
+    case 2: { IDC_SILO_CD_2 };
+    case 3: { IDC_SILO_CD_3 };
+    case 4: { IDC_SILO_CD_4 };
+    case 5: { IDC_SILO_CD_5 };
 };
+_ctrl = _display displayCtrl _ctrl;
 
 private _color = [1,0,0,1];
 if (_countdown isEqualType -1) then {

@@ -1,7 +1,5 @@
 #include "script_component.hpp"
 
-if (!isServer) exitWith {};
-
 // Game settings
 [
     QGVAR(Settings_AllowIndependentFaction),

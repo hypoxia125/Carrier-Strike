@@ -39,17 +39,17 @@ private _formattedName = _nameSide + " " + _type;
 // Code Start
 //------------------------------------------------------------------------------------------------
 waitUntil {
-    !isNil QEGVAR(main,Game);
+    !isNil QEGVAR(game,Game);
 };
 
 LOG(QGVAR(ModuleRespawnPosition) + ":: adding respawn position...");
-private _respawnData = EGVAR(main,Game) getVariable QEGVAR(main,respawn_positions);
+private _respawnData = EGVAR(game,Game) getVariable QEGVAR(game,respawn_positions);
 private _area = _module getVariable "ObjectArea";
 _area = [getPosATL _module] + _area;
 
 private _respawn = [_side, _area#0, _formattedName] call BIS_fnc_addRespawnPosition;
 
 _respawnData insert [-1, [[_respawn, _type, _area]]];
-EGVAR(main,Game) setVariable [QEGVAR(main,respawn_positions), _respawnData];
+EGVAR(game,Game) setVariable [QEGVAR(game,respawn_positions), _respawnData];
 
 LOG_1(QGVAR(ModuleRespawnPosition) + ":: respawn position added: %1",_respawn);

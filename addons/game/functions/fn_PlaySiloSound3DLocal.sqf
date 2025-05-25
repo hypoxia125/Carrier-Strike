@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-params ["_sound", "_soundPath"];
+params ["_silo", "_soundPath"];
 
 private _pos = getPosATL _silo vectorAdd [0,0,2];
 

@@ -102,7 +102,7 @@ private _data = createHashMapFromArray [
     ]]
 ];
 {
-    _carrier setVariable [format[QGVAR(%1),_x], _y];
+    _carrier setVariable [format[QGVAR(%1),_x], _y, true];
 } forEach _data;
 
 _carrier setVariable [QGVAR(side), _side, true];
@@ -133,6 +133,6 @@ _target setVariable [QGVAR(side), ([west, east] - [_side])#0, true];
 
 private _missileTargetData = GVAR(Game) getVariable QGVAR(missile_targets);
 _missileTargetData set [_side, _target];
-GVAR(Game) setVariable [QGVAR(missile_targets), _missileTargetData];
+GVAR(Game) setVariable [QGVAR(missile_targets), _missileTargetData, true];
 
 civilian reportRemoteTarget [_target, 1e12];

@@ -7,7 +7,8 @@ params [
     ["_position", [0,0,0]],
     ["_direction", 0],
     ["_classData", [], [[]]],
-    ["_respawnTime", 30]
+    ["_respawnTime", 30],
+    ["_code", {}, [{}]]
 ];
 
 _classData params [["_classWest", "", [""]], ["_classEast", "", [""]], ["_classIndependent", "", [""]]];
@@ -45,7 +46,8 @@ private _dataHash = createHashMapFromArray [
     ["respawn_time", _respawnTime],
     ["owner", _owner],
     ["countdown", _respawnTime],
-    ["initial_spawn", true]
+    ["initial_spawn", true],
+    ["expression", _code]
 ];
 
 // Register to the system

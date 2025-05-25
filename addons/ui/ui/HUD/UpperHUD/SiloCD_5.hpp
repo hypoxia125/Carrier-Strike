@@ -6,8 +6,6 @@ class SiloCD_5: RscText {
     w = QUOTE(SILO_W * GRID_W);
     h = QUOTE(SILO_H * GRID_H);
 
-    onLoad = "uiNamespace setVariable ['carrierstrike_main_silo_cd_5', _this select 0]";
-
     style = ST_CENTER;
     text = "";
     sizeEx = QUOTE(GRID_W * 3.2);

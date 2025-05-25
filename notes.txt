@@ -1,61 +1,30 @@
-Loadouts
+Scout
+    Tier I
+        1x Chemlight
+        2x Smoke
+        4x Demo Charge
+        Carbine w/ 4 mags + red dot
+        Pistol w/ 2 mags + suppress
+        Tac Vest
+        Assault Backpack
+        Boonie
+    
+    Tier II
+        1x Chemlight
+        2x Smoke
+        4x Demo Charge
+        Carbine w/ 4 mags + suppress + rco
+        Pistol w/ 2 mags = suppress
+        Carrier Light
+        Assault Backpack
+        Boonie
 
-Roles: Spec Ops, Assault, Support, Engineer
-
-Stage 1
-    Spec Ops
-        Scout
-
-    Assault
-        Rifleman
-        Medic
-
-    Support
-        Autorifleman
-
-    Engineer
-        Light AT
-
-Stage 2
-    Spec Ops
-        Scout
-        Marksman
-
-    Assault
-        Rifleman
-        Medic
-        Grenadier
-
-    Support
-        Autorifleman
-        Machine Gunner
-
-    Engineer
-        Light AT
-        Light AA
-        Mine Specialist
-
-
-Stage 3
-    Spec Ops
-        Scout
-        Marksman
-        Sniper
-        Diver
-
-    Assault
-        Rifleman
-        Medic
-        Grenadier
-        Pointman
-
-    Support
-        Autorifleman
-        Machine Gunner
-        Heavy Machine Gunner
-
-    Engineer
-        Light AT
-        Light AA
-        Mine Specialist
-        Heavy AT
+    Tier III
+        1x Chemlight
+        2x Smoke
+        4x Demo Charge
+        Carbine w/ 4 mags + suppress + arco
+        Pistol w/ 2 mags = suppress
+        Carrier Light
+        Assault Backpack
+        Enhanced Helmet

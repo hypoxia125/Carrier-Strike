@@ -6,7 +6,8 @@
 */
 
 #include "script_component.hpp"
-#include QPATHTOF(defines.hpp)
+#include "\z\carrierstrike\addons\ui\defines.hpp"
+#include "\z\carrierstrike\addons\ui\Grids.hpp"
 
 disableSerialization;
 
@@ -14,14 +15,17 @@ if (!hasInterface) exitWith {};
 
 params ["_side", "_percent", "_tickrate"];
 
+private _display = localNamespace getVariable [QGVAR(carrierHUD), displayNull];
+if (isNull _display) exitWith {};
+
 private _group = switch _side do {
-    case west: { (findDisplay IDD_CARRIERHUD) displayCtrl IDC_CARRIER_BLUE_LIGHT_GROUP };
-    case east: { (findDisplay IDD_CARRIERHUD) displayCtrl IDC_CARRIER_RED_LIGHT_GROUP };
+    case west: { _display displayCtrl IDC_CARRIER_BLUE_LIGHT_GROUP };
+    case east: { _display displayCtrl IDC_CARRIER_RED_LIGHT_GROUP };
 };
 
 private _picture = switch _side do {
-    case west: { IDC_CARRIER_BLUE_LIGHT };
-    case east: { IDC_CARRIER_RED_LIGHT };
+    case west: { _display displayCtrl IDC_CARRIER_BLUE_LIGHT };
+    case east: { _display displayCtrl IDC_CARRIER_RED_LIGHT };
 };
 
 switch _side do {

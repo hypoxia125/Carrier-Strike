@@ -22,8 +22,8 @@ if (!(_carrier isKindOf "Land_Carrier_01_base_F")) exitWith {
 };
 
 // check for valid side
-if (_side in [sideUnknown, civilian]) exitWith {
-    diag_log format["CarrierStrike::AddToCarrierInitQueue | Side needs to be either [west, east, independent]: %1", _side];
+if !(_side in [west, east]) exitWith {
+    diag_log format["CarrierStrike::AddToCarrierInitQueue | Side needs to be either [west, east]: %1", _side];
 };
 
 // check exisiting sides for duplicates
@@ -33,4 +33,4 @@ if (_side in _sides) exitWith {
 };
 
 // add carrier to the queue
-GVAR(CarrierInitQueue) pushBack [_carrier, _side];
+GVAR(CarrierInitQueue) pushBackUnique [_carrier, _side];

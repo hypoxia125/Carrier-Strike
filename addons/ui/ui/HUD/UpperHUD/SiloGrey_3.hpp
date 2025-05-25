@@ -6,6 +6,5 @@ class SiloGrey_3: RscPictureKeepAspect {
     w = QUOTE(SILO_W * GRID_W);
     h = QUOTE(SILO_H * GRID_H);
 
-    onLoad = "uiNamespace setVariable ['carrierstrike_main_silogrey_3', _this select 0]";
     text = QPATHTOF(data\HUD\silos\SiloGrey_3.paa);
 };

@@ -9,7 +9,7 @@ class CfgPatches {
 
         requiredVersion = 2.18;
         requiredAddons[] = {
-            "carrierstrike_main"
+            "carrierstrike_common"
         };
         units[] = {};
         weapons[] = {};

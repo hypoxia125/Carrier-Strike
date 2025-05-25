@@ -106,15 +106,15 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         // Launch missile sequence start
         if (_countdown <= 0 && _side isEqualTo sideUnknown) exitWith {
             _countdown = 0;
-            _silo setVariable [QGVAR(countdown), 0];
-            [_silo, "Ready"] call FUNC(HUDUpdateSiloCountdown);
+            _silo setVariable [QGVAR(countdown), 0, true];
+            [QEGVAR(ui,UpdateSiloCountdown), [_silo, "Ready"]] call CBA_fnc_globalEvent;
         };
         if (_countdown <= 0) exitWith {
             if (!_isFiring) then {
                 _silo setVariable [QGVAR(is_firing), true];
-                _silo setVariable [QGVAR(countdown), 0];
+                _silo setVariable [QGVAR(countdown), 0, true];
                 [_silo] call FUNC(SiloLaunchMissile);
-                [_silo, "Launch"] call FUNC(HUDUpdateSiloCountdown);
+                [QEGVAR(ui,UpdateSiloCountdown), [_silo, "Launch"]] call CBA_fnc_globalEvent;
 
                 // Wait some time and reset silo
                 [{
@@ -122,13 +122,13 @@ GVAR(SiloControlSystem) = createHashMapObject [[
                     private _countdown = _silo getVariable QGVAR(countdown);
                     private _countdownTime = _self get "m_countdownTime";
 
-                    _silo setVariable [QGVAR(countdown), _countdownTime];
+                    _silo setVariable [QGVAR(countdown), _countdownTime, true];
                     _silo setVariable [QGVAR(is_firing), false];
                 }, [_silo, _self], 3] call CBA_fnc_waitAndExecute;
             };
         };
 
-        [QGVAR(HUDUpdateSiloCountdown), [_silo, _countdown]] call CBA_fnc_globalEvent;
+        [QEGVAR(ui,UpdateSiloCountdown), [_silo, _countdown]] call CBA_fnc_globalEvent;
         
         private _silotimeremainingalerts = (GVAR(Game) getVariable QGVAR(alerts)) get "silotimeremaining";
         private _alert = _silotimeremainingalerts get _countdown;
@@ -138,7 +138,7 @@ GVAR(SiloControlSystem) = createHashMapObject [[
 
         // Increment countdown
         _countdown = _countdown - 1;
-        _silo setVariable [QGVAR(countdown), _countdown];
+        _silo setVariable [QGVAR(countdown), _countdown, true];
     }],
 
     //------------------------------------------------------------------------------------------------
@@ -201,12 +201,11 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         if (!_isContested) then {
             _currentProgress = (_currentProgress + _progressPerTick) max -1 min 1;
         };
-
         if (_capturingSide == sideUnknown && _currentSide == sideUnknown && !_isContested) then {
             if (_currentProgress != 0) then {
                 _currentProgress = 0;
-                [QGVAR(HUDUpdateSiloStatus), [_silo, west, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
-                [QGVAR(HUDUpdateSiloStatus), [_silo, east, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
+                [QEGVAR(ui,UpdateSiloStatus), [_silo, west, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
+                [QEGVAR(ui,UpdateSiloStatus), [_silo, east, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
             };
         };
 
@@ -260,12 +259,12 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         // Update HUD
         if (!_isContested) then {
             if (_currentProgress < 0) then {
-                [QGVAR(HUDUpdateSiloStatus), [_silo, west, abs _currentProgress, _updateRate / 2]] call CBA_fnc_globalEvent;
-                [QGVAR(HUDUpdateSiloStatus), [_silo, east, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
+                [QEGVAR(ui,UpdateSiloStatus), [_silo, west, abs _currentProgress, _updateRate / 2]] call CBA_fnc_globalEvent;
+                [QEGVAR(ui,UpdateSiloStatus), [_silo, east, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
             };
             if (_currentProgress > 0) then {
-                [QGVAR(HUDUpdateSiloStatus), [_silo, east, abs _currentProgress, _updateRate / 2]] call CBA_fnc_globalEvent;
-                [QGVAR(HUDUpdateSiloStatus), [_silo, west, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
+                [QEGVAR(ui,UpdateSiloStatus), [_silo, east, abs _currentProgress, _updateRate / 2]] call CBA_fnc_globalEvent;
+                [QEGVAR(ui,UpdateSiloStatus), [_silo, west, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
             };
         };
 

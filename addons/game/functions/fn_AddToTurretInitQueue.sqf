@@ -29,4 +29,4 @@ if (_side in [sideUnknown, civilian]) exitWith {
 };
 
 // add turret to the queue
-GVAR(TurretInitQueue) pushBack [_turret, _side, _turretLimits];
+GVAR(TurretInitQueue) pushBackUnique [_turret, _side, _turretLimits];

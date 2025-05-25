@@ -4,6 +4,6 @@ disableSerialization;
 
 if (!hasInterface) exitWith {};
 
-"HUD" cutRsc ["carrierHUD", "PLAIN", 1e-6];
+"HUD" cutRsc [QGVAR(CarrierHUD), "PLAIN", 1e-6];
 
-GVAR(Game) setVariable [QGVAR(hud_initialized), true];
+EGVAR(game,Game) setVariable [QEGVAR(game,hud_initialized), true];

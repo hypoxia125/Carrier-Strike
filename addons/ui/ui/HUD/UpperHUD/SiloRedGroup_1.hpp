@@ -6,8 +6,6 @@ class SiloRed_1_Group: RscControlsGroupNoScrollbars {
     w = QUOTE(SILO_W * GRID_W);
     h = QUOTE(SILO_H * GRID_H);
 
-    onLoad = "uiNamespace setVariable ['carrierstrike_main_silored_1_group', _this select 0]";
-
     class controls {
         class SiloRed_1: RscPictureKeepAspect {
             idc = IDC_SILO_RED_1;
@@ -17,7 +15,6 @@ class SiloRed_1_Group: RscControlsGroupNoScrollbars {
             w = QUOTE(SILO_W * GRID_W);
             h = QUOTE(SILO_H * GRID_H);
 
-            onLoad = "uiNamespace setVariable ['carrierstrike_main_silored_1', _this select 0]";
             text = QPATHTOF(data\HUD\silos\SiloRed_1.paa);
         };
     };

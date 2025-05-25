@@ -24,6 +24,7 @@ private _eastType = _module getVariable ["easttype", ""];
 private _independentType = _module getVariable ["independenttype", ""];
 private _dir = _module getVariable ["dir", 0];
 private _respawnTime = _module getVariable ["respawntime", 30];
+private _code = compile (_module getVariable ["expression", "true"]);
 
 private _type = switch _typeVal do {
     case 0: { "base" };
@@ -44,32 +45,36 @@ private _siloNumber = switch _ownerVal do {
     case 7: { 5 };
 };
 
-LOG_1("ModuleAddVehicle:: SiloNumber: %1", _siloNumber);
-LOG_1("ModuleAddVehicle:: Type: %1",_type);
+private _posASL = getPosASL _module; _posASL vectorAdd [0,0,0.5];
+private _posAGL = ASLToAGL _posASL;
+
 if (_type == "silo") then {
     [
         ["silo", _siloNumber],
-        ASLToAGL getPosASL _module,
+        _posAGL,
         _dir,
         [_westType, _eastType, _independentType],
-        _respawnTime
-    ] call EFUNC(main,AddToVehicleInitQueue);
+        _respawnTime,
+        _code
+    ] call EFUNC(game,AddToVehicleInitQueue);
 };
 if (_type == "base") then {
     [
         ["base", _side],
-        ASLToAGL getPosASL _module,
+        _posAGL,
         _dir,
         [_westType, _eastType, _independentType],
-        _respawnTime
-    ] call EFUNC(main,AddToVehicleInitQueue);
+        _respawnTime,
+        _code
+    ] call EFUNC(game,AddToVehicleInitQueue);
 };
 if (_type == "carrier") then {
     [
         ["carrier", _side],
-        ASLToAGL getPosASL _module,
+        _posAGL,
         _dir,
         [_westType, _eastType, _independentType],
-        _respawnTime
-    ] call EFUNC(main,AddToVehicleInitQueue);
+        _respawnTime,
+        _code
+    ] call EFUNC(game,AddToVehicleInitQueue);
 };

@@ -35,13 +35,13 @@ if (isServer) then {
             private _modelPositions = _carrier getVariable QGVAR(composition) get "explosion_posAGL";
             private _positions = _modelPositions apply { _carrier modelToWorld _x };
             private _pos = selectRandom _positions;
-            _pos = AGLtoASL _pos;
+            _pos = AGLToASL _pos;
 
             private _bomb = createVehicle ["Bo_GBU12_LGB", _pos, [], 0, "CAN_COLLIDE"];
             _bomb hideObjectGlobal true;
             triggerAmmo _bomb;
 
-            sleep (random 2 max 0.5);
+            sleep (random 1 max 0.25);
         };
     };
 };

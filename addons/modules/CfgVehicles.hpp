@@ -33,6 +33,9 @@ class CfgVehicles {
         };
     };
 
+    #include "\z\carrierstrike\addons\modules\modules\ModuleAddCarrier.hpp"
+    #include "\z\carrierstrike\addons\modules\modules\ModuleAddReactor.hpp"
+    #include "\z\carrierstrike\addons\modules\modules\ModuleAddSilo.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleAddVehicle.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleRespawnPosition.hpp"
 };

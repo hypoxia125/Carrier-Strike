@@ -109,5 +109,25 @@ class GVAR(ModuleAddVehicle): GVAR(ModuleBase) {
             defaultValue = 30;
             typeName = "NUMBER";
         };
+
+        class Expression: Edit {
+            control = QUOTE(EditCodeMulti5);
+            property = QGVAR(ModuleAddVehicle_Expression);
+            displayName = "Post Init Expression";
+            tooltip = "Code to execute after spawning the vehicle. Passed arguments: [<newVehicle>, <side>]";
+            defaultValue = """true""";
+            typeName = "STRING";
+            validate = "EXPRESSION";
+        };
+
+        class ModuleDescription: ModuleDescription {};
+    };
+
+    class ModuleDescription: ModuleDescription {
+        description[] = {
+            "Adds a vehicle to the vehicle respawn system. Do not sync anything to this module in its current state. It can be easier to place an editor object for space checking, just be sure to delete it on game init."
+        };
+        position = 0;
+        direction = 0;
     };
 };
