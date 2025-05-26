@@ -4,6 +4,7 @@ if (isServer) then {
     call compileScript [QPATHTOF(systems\SiloControlSystem.sqf)];
     call compileScript [QPATHTOF(systems\MissileTrackingSystem.sqf)];
     call compileScript [QPATHTOF(systems\VehicleRespawnSystem.sqf)];
+    call compileScript [QPATHTOF(systems\TurretControlSystem.sqf)];
 };
 
 if (hasInterface) then {

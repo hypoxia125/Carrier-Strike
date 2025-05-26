@@ -1,1 +1,0 @@
-call carrierstrike_main_fnc_init;

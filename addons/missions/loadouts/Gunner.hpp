@@ -14,8 +14,8 @@ class Tier1_West_Gunner
     };
     magazines[] = {
         "Chemlight_blue",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellBlue",
+        "SmokeShellBlue",
         "100Rnd_65x39_caseless_mag_Tracer",
         "100Rnd_65x39_caseless_mag_Tracer",
         "100Rnd_65x39_caseless_mag_Tracer",
@@ -59,8 +59,8 @@ class Tier2_West_Gunner
     };
     magazines[] = {
         "Chemlight_blue",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellBlue",
+        "SmokeShellBlue",
         "200Rnd_65x39_cased_Box_Tracer",
         "200Rnd_65x39_cased_Box_Tracer",
         "16Rnd_9x21_Mag",
@@ -102,8 +102,8 @@ class Tier3_West_Gunner
     };
     magazines[] = {
         "Chemlight_blue",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellBlue",
+        "SmokeShellBlue",
         "130Rnd_338_Mag",
         "130Rnd_338_Mag",
         "16Rnd_9x21_Mag",
@@ -147,8 +147,8 @@ class Tier1_East_Gunner
     };
     magazines[] = {
         "Chemlight_red",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellRed",
+        "SmokeShellRed",
         "150Rnd_762x54_Box",
         "150Rnd_762x54_Box",
         "150Rnd_762x54_Box",
@@ -191,8 +191,8 @@ class Tier2_East_Gunner
     };
     magazines[] = {
         "Chemlight_red",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellRed",
+        "SmokeShellRed",
         "200Rnd_65x39_cased_Box_Tracer",
         "200Rnd_65x39_cased_Box_Tracer",
         "16Rnd_9x21_Mag",
@@ -234,8 +234,8 @@ class Tier3_East_Gunner
     };
     magazines[] = {
         "Chemlight_red",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellRed",
+        "SmokeShellRed",
         "150Rnd_93x64_Mag",
         "150Rnd_93x64_Mag",
         "16Rnd_9x21_Mag",

@@ -91,6 +91,21 @@ if (_percentHP <= 0.0) then {
     };
 };
 
+// Loadout Unlocking
+private _unlockHash = GVAR(Game) getVariable QGVAR(unlocked_loadouts);
+if (_percentHP <= 1/3) then {
+    if !(_unlockHash get 2) then {
+        [2] call FUNC(UnlockLoadouts);
+        _unlockHash set [2, true];
+    };
+};
+if (_percentHP <= 2/3) then {
+    if !(_unlockHash get 3) then {
+        [3] call FUNC(UnlockLoadouts);
+        _unlockHash set [3, true];
+    };
+};
+
 if (_percentHP <= 0) exitWith {
     GVAR(Game) setVariable [QGVAR(game_state), "ENDING", true];
     [QGVAR(ExplosionSequence), [_carrier]] call CBA_fnc_globalEvent;

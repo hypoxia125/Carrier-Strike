@@ -1,1 +1,0 @@
-#include "\z\carrierstrike\addons\mission\script_component.hpp"

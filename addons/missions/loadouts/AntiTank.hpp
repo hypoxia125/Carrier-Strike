@@ -15,10 +15,8 @@ class Tier1_West_AntiTank
     };
     magazines[] = {
         "Chemlight_blue",
-        "SmokeShell",
-        "SmokeShell",
-        "HandGrenade",
-        "HandGrenade",
+        "SmokeShellBlue",
+        "SmokeShellBlue",
         "30Rnd_45ACP_Mag_SMG_01",
         "30Rnd_45ACP_Mag_SMG_01",
         "30Rnd_45ACP_Mag_SMG_01",
@@ -68,10 +66,8 @@ class Tier2_West_AntiTank
     };
     magazines[] = {
         "Chemlight_blue",
-        "SmokeShell",
-        "SmokeShell",
-        "HandGrenade",
-        "HandGrenade",
+        "SmokeShellBlue",
+        "SmokeShellBlue",
         "30Rnd_45ACP_Mag_SMG_01",
         "30Rnd_45ACP_Mag_SMG_01",
         "30Rnd_45ACP_Mag_SMG_01",
@@ -119,10 +115,8 @@ class Tier3_West_AntiTank
     };
     magazines[] = {
         "Chemlight_blue",
-        "SmokeShell",
-        "SmokeShell",
-        "HandGrenade",
-        "HandGrenade",
+        "SmokeShellBlue",
+        "SmokeShellBlue",
         "30Rnd_45ACP_Mag_SMG_01",
         "30Rnd_45ACP_Mag_SMG_01",
         "30Rnd_45ACP_Mag_SMG_01",
@@ -173,10 +167,8 @@ class Tier1_East_AntiTank
     };
     magazines[] = {
         "Chemlight_red",
-        "SmokeShell",
-        "SmokeShell",
-        "HandGrenade",
-        "HandGrenade",
+        "SmokeShellRed",
+        "SmokeShellRed",
         "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
         "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
         "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
@@ -226,10 +218,8 @@ class Tier2_East_AntiTank
     };
     magazines[] = {
         "Chemlight_red",
-        "SmokeShell",
-        "SmokeShell",
-        "HandGrenade",
-        "HandGrenade",
+        "SmokeShellRed",
+        "SmokeShellRed",
         "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
         "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
         "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
@@ -277,10 +267,8 @@ class Tier3_East_AntiTank
     };
     magazines[] = {
         "Chemlight_red",
-        "SmokeShell",
-        "SmokeShell",
-        "HandGrenade",
-        "HandGrenade",
+        "SmokeShellRed",
+        "SmokeShellRed",
         "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
         "30Rnd_9x21_Mag_SMG_02_Tracer_Red",
         "30Rnd_9x21_Mag_SMG_02_Tracer_Red",

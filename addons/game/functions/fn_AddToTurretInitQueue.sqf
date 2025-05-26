@@ -12,7 +12,10 @@ if (!isServer) exitWith {};
 params [
     ["_turret", objNull, [objNull]],
     ["_side", sideUnknown, [sideUnknown]],
-    ["_turretLimits", [], [[]], 4]
+    ["_turretLimits", [], [[]], 4],
+    ["_ailogic", "", [""]],
+    ["_maxRange", 1000, [-1]],
+    ["_destroyPercent", 0.5, [-1]]
 ];
 
 if (isNil QGVAR(TurretInitQueue)) then { GVAR(TurretInitQueue) = [] };
@@ -29,4 +32,4 @@ if (_side in [sideUnknown, civilian]) exitWith {
 };
 
 // add turret to the queue
-GVAR(TurretInitQueue) pushBackUnique [_turret, _side, _turretLimits];
+GVAR(TurretInitQueue) pushBackUnique [_turret, _side, _turretLimits, _ailogic , _maxRange, _destroyPercent];

@@ -15,6 +15,11 @@ private _data = createHashMapFromArray [
         [east, false]
     ]],
 
+    ["chatHeadquarterLogic", createHashMapFromArray [
+        [west, objNull],
+        [east, objNull],
+        [independent, objNull]
+    ]],
     ["chatNotificationChannels", createHashMapFromArray [
         [west, -1],
         [east, -1],
@@ -95,7 +100,13 @@ private _data = createHashMapFromArray [
         ]]
     ]],
 
-    ["respawn_positions", []]
+    ["respawn_positions", []],
+    
+    ["unlocked_loadouts", createHashMapFromArray [
+        [1, false],
+        [2, false],
+        [3, false]
+    ]]
 ];
 
 {

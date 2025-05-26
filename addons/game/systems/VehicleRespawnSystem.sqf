@@ -87,7 +87,6 @@ GVAR(VehicleRespawnSystem) = createHashMapObject [[
                     _vehicle setPosASL AGLToASL _position;
 
                     [_vehicle, _side] call _code;
-                    [_vehicle, _side] call FUNC(InitVehiclePost);
 
                     _entityMap set ["active_vehicle", _vehicle];
                 }, [_entityMap, _side]] call CBA_fnc_execNextFrame;

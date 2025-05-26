@@ -45,7 +45,7 @@ private _siloNumber = switch _ownerVal do {
     case 7: { 5 };
 };
 
-private _posASL = getPosASL _module; _posASL vectorAdd [0,0,0.5];
+private _posASL = getPosASL _module;
 private _posAGL = ASLToAGL _posASL;
 
 if (_type == "silo") then {

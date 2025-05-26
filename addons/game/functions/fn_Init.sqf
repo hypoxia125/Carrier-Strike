@@ -1,9 +1,5 @@
 #include "script_component.hpp"
 
-setViewDistance 1200;
-setObjectViewDistance 1200;
-setShadowDistance 100;
-
 call FUNC(InitGame);
 call FUNC(InitSystems);
 call FUNC(InitDoQueue);

@@ -1,84 +1,39 @@
-class Tier1_West_Engineer
+class Tier1_West_Assault
 {
-    displayName = "Field Mechanic";
+    displayName = "Rifleman";
     icon = "";
     role = QGVAR(Tier1);
     show = "true";
-    uniformClass = "U_B_CombatUniform_mcam_tshirt";
-    backpack = "B_Kitbag_rgr";
+    uniformClass = "U_B_CombatUniform_mcam";
+    backpack = "";
     weapons[] = {
-        "arifle_MXC_F",
+        "arifle_MX_F",
         "hgun_P07_F",
         "Throw",
         "Put"
     };
     magazines[] = {
         "Chemlight_blue",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellBlue",
+        "SmokeShellBlue",
+        "HandGrenade",
+        "HandGrenade",
+        "30Rnd_65x39_caseless_mag",
+        "30Rnd_65x39_caseless_mag",
         "30Rnd_65x39_caseless_mag",
         "30Rnd_65x39_caseless_mag",
         "30Rnd_65x39_caseless_mag",
         "30Rnd_65x39_caseless_mag",
         "16Rnd_9x21_Mag",
-        "16Rnd_9x21_Mag",
-        "ATMine_Range_Mag",
-        "ATMine_Range_Mag"
+        "16Rnd_9x21_Mag"
     };
-    items[] = {"ToolKit", "MineDetector", "FirstAidKit"};
+    items[] = {"FirstAidKit"};
     linkedItems[] = {
         // vest
-        "V_TacVest_oli",
+        "V_PlateCarrier2_rgr",
 
         // hat
-        "H_Watchcap_camo",
-
-        // equipment
-        "ItemMap",
-        "ItemCompass",
-        "ItemWatch",
-        "ItemRadio"
-
-        // optics
-
-        // suppress
-    };
-};
-
-class Tier2_West_Engineer
-{
-    displayName = "Engineer";
-    icon = "";
-    role = QGVAR(Tier2);
-    show = "true";
-    uniformClass = "U_B_CombatUniform_mcam_tshirt";
-    backpack = "B_Kitbag_rgr";
-    weapons[] = {
-        "arifle_MXC_F",
-        "hgun_P07_F",
-        "Throw",
-        "Put"
-    };
-    magazines[] = {
-        "Chemlight_blue",
-        "SmokeShell",
-        "SmokeShell",
-        "30Rnd_65x39_caseless_mag",
-        "30Rnd_65x39_caseless_mag",
-        "30Rnd_65x39_caseless_mag",
-        "30Rnd_65x39_caseless_mag",
-        "16Rnd_9x21_Mag",
-        "16Rnd_9x21_Mag",
-        "ATMine_Range_Mag",
-        "ATMine_Range_Mag"
-    };
-    items[] = {"ToolKit", "MineDetector", "FirstAidKit"};
-    linkedItems[] = {
-        // vest
-        "V_PlateCarrier1_rgr",
-
-        // hat
-        "H_Watchcap_camo",
+        "H_HelmetB",
 
         // equipment
         "ItemMap",
@@ -93,37 +48,101 @@ class Tier2_West_Engineer
     };
 };
 
-class Tier3_West_Engineer
+class Tier2_West_Assault
 {
-    displayName = "Combat Engineer";
+    displayName = "Grenadier";
     icon = "";
-    role = QGVAR(Tier3);
+    role = QGVAR(Tier2);
     show = "true";
-    uniformClass = "U_B_CombatUniform_mcam_tshirt";
-    backpack = "B_Kitbag_rgr";
+    uniformClass = "U_B_CombatUniform_mcam";
+    backpack = "B_AssaultPack_rgr";
     weapons[] = {
-        "arifle_MX_F",
+        "arifle_MX_GL_F",
         "hgun_P07_F",
         "Throw",
         "Put"
     };
     magazines[] = {
         "Chemlight_blue",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellBlue",
+        "SmokeShellBlue",
+        "HandGrenade",
+        "HandGrenade",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "30Rnd_65x39_caseless_mag",
+        "30Rnd_65x39_caseless_mag",
         "30Rnd_65x39_caseless_mag",
         "30Rnd_65x39_caseless_mag",
         "30Rnd_65x39_caseless_mag",
         "30Rnd_65x39_caseless_mag",
         "16Rnd_9x21_Mag",
-        "16Rnd_9x21_Mag",
-        "ATMine_Range_Mag",
-        "ATMine_Range_Mag"
+        "16Rnd_9x21_Mag"
     };
-    items[] = {"ToolKit", "MineDetector", "FirstAidKit"};
+    items[] = {"FirstAidKit"};
     linkedItems[] = {
         // vest
-        "V_PlateCarrier1_rgr",
+        "V_PlateCarrierGL_rgr",
+
+        // hat
+        "H_HelmetB",
+
+        // equipment
+        "ItemMap",
+        "ItemCompass",
+        "ItemWatch",
+        "ItemRadio",
+
+        // optics
+        "optic_Hamr"
+
+        // suppress
+    };
+};
+
+class Tier3_West_Assault
+{
+    displayName = "Assault";
+    icon = "";
+    role = QGVAR(Tier3);
+    show = "true";
+    uniformClass = "U_B_CombatUniform_mcam";
+    backpack = "B_AssaultPack_rgr";
+    weapons[] = {
+        "arifle_MX_GL_F",
+        "hgun_P07_F",
+        "Throw",
+        "Put"
+    };
+    magazines[] = {
+        "Chemlight_blue",
+        "SmokeShellBlue",
+        "SmokeShellBlue",
+        "HandGrenade",
+        "HandGrenade",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "30Rnd_65x39_caseless_mag",
+        "30Rnd_65x39_caseless_mag",
+        "30Rnd_65x39_caseless_mag",
+        "30Rnd_65x39_caseless_mag",
+        "30Rnd_65x39_caseless_mag",
+        "30Rnd_65x39_caseless_mag",
+        "16Rnd_9x21_Mag",
+        "16Rnd_9x21_Mag"
+    };
+    items[] = {"FirstAidKit"};
+    linkedItems[] = {
+        // vest
+        "V_PlateCarrierSpec_rgr",
 
         // hat
         "H_HelmetSpecB",
@@ -135,94 +154,49 @@ class Tier3_West_Engineer
         "ItemRadio",
 
         // optics
-        "optic_Aco"
+        "optic_Arco_blk_F"
 
         // suppress
     };
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-class Tier1_East_Engineer
+class Tier1_East_Assault
 {
-    displayName = "Field Mechanic";
+    displayName = "Rifleman";
     icon = "";
     role = QGVAR(Tier1);
     show = "true";
     uniformClass = "U_O_CombatUniform_ocamo";
-    backpack = "B_Kitbag_cbr";
+    backpack = "";
     weapons[] = {
-        "arifle_Katiba_C_F",
+        "arifle_Katiba_F",
         "hgun_Rook40_F",
         "Throw",
         "Put"
     };
     magazines[] = {
         "Chemlight_red",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellRed",
+        "SmokeShellRed",
+        "HandGrenade",
+        "HandGrenade",
         "30Rnd_65x39_caseless_green",
         "30Rnd_65x39_caseless_green",
-        "30Rnd_65x39_caseless_green",
-        "30Rnd_65x39_caseless_green",
-        "16Rnd_9x21_Mag",
-        "16Rnd_9x21_Mag",
-        "ATMine_Range_Mag",
-        "ATMine_Range_Mag"
-    };
-    items[] = {"ToolKit", "MineDetector", "FirstAidKit"};
-    linkedItems[] = {
-        // vest
-        "V_HarnessO_brn",
-
-        // hat
-        "H_Watchcap_cbr",
-
-        // equipment
-        "ItemMap",
-        "ItemCompass",
-        "ItemWatch",
-        "ItemRadio"
-
-        // optics
-
-        // suppress
-    };
-};
-
-class Tier2_East_Engineer
-{
-    displayName = "Engineer";
-    icon = "";
-    role = QGVAR(Tier2);
-    show = "true";
-    uniformClass = "U_O_CombatUniform_ocamo";
-    backpack = "B_Kitbag_cbr";
-    weapons[] = {
-        "arifle_Katiba_C_F",
-        "hgun_Rook40_F",
-        "Throw",
-        "Put"
-    };
-    magazines[] = {
-        "Chemlight_red",
-        "SmokeShell",
-        "SmokeShell",
         "30Rnd_65x39_caseless_green",
         "30Rnd_65x39_caseless_green",
         "30Rnd_65x39_caseless_green",
         "30Rnd_65x39_caseless_green",
         "16Rnd_9x21_Mag",
-        "16Rnd_9x21_Mag",
-        "ATMine_Range_Mag",
-        "ATMine_Range_Mag"
+        "16Rnd_9x21_Mag"
     };
-    items[] = {"ToolKit", "MineDetector", "FirstAidKit"};
+    items[] = {"FirstAidKit"};
     linkedItems[] = {
         // vest
         "V_TacVest_brn",
 
         // hat
-        "H_Watchcap_cbr",
+        "H_HelmetO_ocamo",
 
         // equipment
         "ItemMap",
@@ -237,40 +211,104 @@ class Tier2_East_Engineer
     };
 };
 
-class Tier3_East_Engineer
+class Tier2_East_Assault
 {
-    displayName = "Combat Engineer";
+    displayName = "Grenadier";
     icon = "";
-    role = QGVAR(Tier3);
+    role = QGVAR(Tier2);
     show = "true";
-    uniformClass = "U_O_CombatUniform_ocamo";
-    backpack = "B_Kitbag_cbr";
+    uniformClass = "U_O_CombatUniform_oucamo";
+    backpack = "";
     weapons[] = {
-        "arifle_Katiba_F",
+        "arifle_Katiba_GL_F",
         "hgun_Rook40_F",
         "Throw",
         "Put"
     };
     magazines[] = {
         "Chemlight_red",
-        "SmokeShell",
-        "SmokeShell",
+        "SmokeShellRed",
+        "SmokeShellRed",
+        "HandGrenade",
+        "HandGrenade",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "30Rnd_65x39_caseless_green",
+        "30Rnd_65x39_caseless_green",
         "30Rnd_65x39_caseless_green",
         "30Rnd_65x39_caseless_green",
         "30Rnd_65x39_caseless_green",
         "30Rnd_65x39_caseless_green",
         "16Rnd_9x21_Mag",
-        "16Rnd_9x21_Mag",
-        "ATMine_Range_Mag",
-        "ATMine_Range_Mag"
+        "16Rnd_9x21_Mag"
     };
-    items[] = {"ToolKit", "MineDetector", "FirstAidKit"};
+    items[] = {"FirstAidKit"};
     linkedItems[] = {
         // vest
-        "V_TacVest_brn",
+        "V_PlateCarrier1_blk",
 
         // hat
-        "H_HelmetLeaderO_ocamo",
+        "H_HelmetO_oucamo",
+
+        // equipment
+        "ItemMap",
+        "ItemCompass",
+        "ItemWatch",
+        "ItemRadio",
+
+        // optics
+        "optic_Aco"
+
+        // suppress
+    };
+};
+
+class Tier3_East_Assault
+{
+    displayName = "Assault";
+    icon = "";
+    role = QGVAR(Tier3);
+    show = "true";
+    uniformClass = "U_O_CombatUniform_oucamo";
+    backpack = "";
+    weapons[] = {
+        "arifle_Katiba_GL_F",
+        "hgun_Rook40_F",
+        "Throw",
+        "Put"
+    };
+    magazines[] = {
+        "Chemlight_red",
+        "SmokeShellRed",
+        "SmokeShellRed",
+        "HandGrenade",
+        "HandGrenade",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "1Rnd_HE_Grenade_shell",
+        "30Rnd_65x39_caseless_green",
+        "30Rnd_65x39_caseless_green",
+        "30Rnd_65x39_caseless_green",
+        "30Rnd_65x39_caseless_green",
+        "30Rnd_65x39_caseless_green",
+        "30Rnd_65x39_caseless_green",
+        "16Rnd_9x21_Mag",
+        "16Rnd_9x21_Mag"
+    };
+    items[] = {"FirstAidKit"};
+    linkedItems[] = {
+        // vest
+        "V_PlateCarrier2_blk",
+
+        // hat
+        "H_HelmetLeaderO_oucamo",
 
         // equipment
         "ItemMap",
