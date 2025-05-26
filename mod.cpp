@@ -1,0 +1,12 @@
+name = "Carrier Strike";
+action = "https://github.com/hypoxia125/Carrier-Strike";
+actionName = "Github";
+author = "Hypoxic";
+hideName = 0;
+hidePicture = 0;
+logo = "";
+logoOver = "";
+logoSmall = "";
+overview = "Battlefield 2142 Titan Mode Reimagined In Arma 3";
+picture = "";
+tooltipOwned = "";

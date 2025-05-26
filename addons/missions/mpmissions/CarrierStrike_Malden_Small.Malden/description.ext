@@ -1,0 +1,12 @@
+#define MISSION_NAME    "Carrier Strike - Malden (S)"
+
+#include "\z\carrierstrike\addons\missions\shared\description_shared.ext"
+
+class CfgRespawnInventory {
+    #include "\z\carrierstrike\addons\missions\loadouts\Assault.hpp"
+    #include "\z\carrierstrike\addons\missions\loadouts\Engineer.hpp"
+    #include "\z\carrierstrike\addons\missions\loadouts\Gunner.hpp"
+    #include "\z\carrierstrike\addons\missions\loadouts\Sniper.hpp"
+    #include "\z\carrierstrike\addons\missions\loadouts\SpecialForces.hpp"
+    #include "\z\carrierstrike\addons\missions\loadouts\Independent.hpp"
+};
