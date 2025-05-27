@@ -12,6 +12,9 @@ Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Di
 
 Carrier Strike is the reimagined Battlefield 2142 Titan Gamemode within the Arma 3 Universe!
 
+[MapList]
+Carrier Strike - Malden (Small)
+
 [h1]How To Play[/h1]
 
 [b]Phase 1: Ground War - Control the Missile Silos[/b]
@@ -36,7 +39,9 @@ Carrier Strike is the reimagined Battlefield 2142 Titan Gamemode within the Arma
 [url=https://youtu.be/wcBSGR1rx5w]Video Tutorial[/url]
 
 [h1]Official Server List[/h1]
-- Going to host my own server this week. If anyone wants to host, shoot me a discord pm.
+[Official] Carrier Strike - Malden [Alpha]
+71.211.231.197
+Port: 2302
 
 [h1]Current Alpha Progress[/h1]
 
@@ -54,6 +59,7 @@ Carrier Strike is the reimagined Battlefield 2142 Titan Gamemode within the Arma
 - Commander Abilities
 - Ammo Kits (like battlefield's support class specialty)
 - Out of bounds system
+- Randomized Weather System
 
 [Delayed]
 - Custom Ending Menus

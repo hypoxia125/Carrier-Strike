@@ -10,7 +10,7 @@ switch _mode do {
 
         private _simulation = toLowerANSI (getText (configFile >> "CfgAmmo" >> typeOf _projectile >> "simulation"));
 
-        LOG_2("ReactorShotSimInit::Client | Processing projectile: [%1, %2]",_projectile,_simulation);
+        // LOG_2("ReactorShotSimInit::Client | Processing projectile: [%1, %2]",_projectile,_simulation);
 
         // Explosion event handler on projectile
         private _explosionEH = _projectile addEventHandler ["HitExplosion", {

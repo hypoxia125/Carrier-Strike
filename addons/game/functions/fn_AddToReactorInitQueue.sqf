@@ -18,7 +18,7 @@ if (isNil QGVAR(ReactorInitQueue)) then { GVAR(ReactorInitQueue) = [] };
 
 // check for valid side
 if !(_side in [west, east]) exitWith {
-    diag_log format["CarrierStrike::AddToReactorInitQueue | Side needs to be either [west, east]: %1", _side];
+    WARNING_1("AddToReactorInitQueue | Side needs to be either [west, east]: %1",_side);
 };
 
 // add reactor to the queue
