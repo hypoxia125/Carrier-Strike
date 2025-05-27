@@ -29,7 +29,7 @@ if !(_side in [west, east]) exitWith {
 // check exisiting sides for duplicates
 private _sides = GVAR(CarrierInitQueue) apply {_x#1};
 if (_side in _sides) exitWith {
-    WARNING_1("AddToCarrierInitQueue | There already exists a carrier with the side: %1", _side);
+    WARNING_1("AddToCarrierInitQueue | There already exists a carrier with the side: %1",_side);
 };
 
 // add carrier to the queue

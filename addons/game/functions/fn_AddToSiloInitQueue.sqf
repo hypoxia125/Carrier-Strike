@@ -18,7 +18,7 @@ if (isNil QGVAR(SiloInitQueue)) then { GVAR(SiloInitQueue) = [] };
 
 // check class for silo class
 if (!(_silo isKindOf "B_Ship_MRLS_01_F")) exitWith {
-    WARNING_2("CarrierStrike::AddToSiloInitQueue | Silo is not a valid silo type! [%1, %2]", typeOf _silo, "B_Ship_MRLS_01_F");
+    WARNING_2("CarrierStrike::AddToSiloInitQueue | Silo is not a valid silo type! [%1, %2]",typeOf _silo,"B_Ship_MRLS_01_F");
 };
 
 // validate number
