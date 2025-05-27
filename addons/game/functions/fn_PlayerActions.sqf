@@ -23,3 +23,19 @@ _player addAction [
         }
     }, -1, false, "", ""
 ];
+
+// Eject action
+_player addAction [
+    "Eject",
+    {
+        params ["_target", "_caller", "_actionID", "_arguments"];
+
+        _target moveOut vehicle _target;
+    },
+    nil, 0, false, true, "",
+    toString {
+        !isNull objectParent _this && {
+            (getPos _this) # 2 >= 10
+        }
+    }, -1, false, "", ""
+];
