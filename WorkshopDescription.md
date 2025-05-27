@@ -1,7 +1,7 @@
 [img]https://i.imgur.com/NrstAKw.gif[/img]
 
 [h1]Disclaimer - This is an ALPHA - There will be bugs![/h1]
-I wanted to get this out since the main gameplay loop is finished to start collecting feedback.
+I wanted to get this out since the main gameplay loop is finished to start collecting feedback. This has not had a balance pass yet, so be warned.
 Development is slow on weekdays, fast on weekends. Expect frequent updates.
 
 [h1]Current Version - v0.1.0[/h1]
