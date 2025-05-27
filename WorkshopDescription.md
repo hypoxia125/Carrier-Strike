@@ -49,6 +49,7 @@ Carrier Strike is the reimagined Battlefield 2142 Titan Gamemode within the Arma
 - Modules - so that you can create your own missions as well! (I need to write up documentation though)
 
 [In Progress]
+- More Map Layouts
 - Rally Point System
 - Commander Abilities
 - Ammo Kits (like battlefield's support class specialty)
