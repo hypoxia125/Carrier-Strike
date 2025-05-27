@@ -19,6 +19,8 @@ PREP(InitSystems);
 PREP(InitTurret);
 PREP(InitVehicle);
 PREP(IsSafePos);
+PREP(PlayerActions);
+PREP(PlayerEvents);
 PREP(PlayerInitEvents);
 PREP(PlaySiloSound3DLocal);
 PREP(ReactorShotSimInit);
