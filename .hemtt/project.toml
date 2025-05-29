@@ -1,0 +1,17 @@
+name = "Carrier Strike"
+author = "Hypoxic"
+prefix = "carrierstrike"
+mainprefix = "z"
+
+[files]
+include = [
+    "LICENSE.md",
+    "Changelog.md"
+]
+
+[version]
+git_hash = 0
+
+[lint.sqf]
+enabled = true
+exclude = []
