@@ -120,19 +120,3 @@ _ramps apply {
     _newRamp setVectorDirAndUp _vectorDirAndUp;
     _newRamp setObjectScale 3;
 };
-
-// Missile target
-private _class = "laserTarget";
-private _pos = _carrier modelToWorldWorld (_data get "composition" get "missile_target_pos");
-private _base = createVehicle ["Land_HelipadEmpty_F", _pos, [], 0, "CAN_COLLIDE"];
-_base setPosASL _pos;
-private _target = createVehicle ["laserTargetC", _pos, [], 0, "CAN_COLLIDE"];
-_target setPosASL _pos;
-_target attachTo [_base];
-_target setVariable [QGVAR(side), ([west, east] - [_side])#0, true];
-
-private _missileTargetData = GVAR(Game) getVariable QGVAR(missile_targets);
-_missileTargetData set [_side, _target];
-GVAR(Game) setVariable [QGVAR(missile_targets), _missileTargetData, true];
-
-civilian reportRemoteTarget [_target, 1e12];

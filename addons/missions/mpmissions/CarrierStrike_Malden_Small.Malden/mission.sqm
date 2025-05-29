@@ -14,7 +14,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4093;
+		nextID=4097;
 	};
 	class MarkerIDProvider
 	{
@@ -22,14 +22,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2411;
+		nextID=2441;
 	};
 	class Camera
 	{
-		pos[]={8313.2148,197.36586,3170.8877};
-		dir[]={0.069931291,-0.92287582,-0.37869495};
-		up[]={0.16758837,0.38509768,-0.9075318};
-		aside[]={-0.9833737,0,-0.18159363};
+		pos[]={8901.0996,45.875515,4621.311};
+		dir[]={0.55425149,-0.1761345,0.81352055};
+		up[]={0.099172741,0.98436689,0.14556403};
+		aside[]={0.82643932,4.9796654e-07,-0.56305385};
 	};
 };
 binarizationWanted=0;
@@ -331,7 +331,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=488;
+		items=490;
 		class Item0
 		{
 			dataType="Object";
@@ -35404,6 +35404,62 @@ class Mission
 			};
 			id=3562;
 			type="B_SAM_System_01_F";
+		};
+		class Item488
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7287.0342,10.409653,2158.8601};
+			};
+			id=4095;
+			type="carrierstrike_modules_ModuleAddMissileTarget";
+			atlOffset=45.334995;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddMissileTarget_OwnerSide";
+					expression="_this setVariable ['OwnerSide',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item489
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8980.7324,10.410255,4726.5049};
+			};
+			id=4096;
+			type="carrierstrike_modules_ModuleAddMissileTarget";
+			atlOffset=41.945705;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddMissileTarget_OwnerSide";
+					expression="_this setVariable ['OwnerSide',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections

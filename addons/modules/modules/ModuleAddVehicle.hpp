@@ -2,7 +2,7 @@ class GVAR(ModuleAddVehicle): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Add Vehicle";
     // icon = "";
-    category = QGVAR(CarrierStrike);
+    category = QGVAR(carrierstrike_optional);
 
     function = QFUNC(ModuleAddVehicle);
     functionPriority = 1;

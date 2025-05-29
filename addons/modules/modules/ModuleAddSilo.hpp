@@ -2,7 +2,7 @@ class GVAR(ModuleAddSilo): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Add Silo";
     // icon = "";
-    category = QGVAR(CarrierStrike);
+    category = QGVAR(carrierstrike_required);
 
     function = QFUNC(ModuleAddSilo);
     functionPriority = 1;
