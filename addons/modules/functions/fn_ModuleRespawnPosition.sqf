@@ -17,6 +17,9 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
+waitUntil { !isNil QEGVAR(game,Game) };
+waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
+
 private _sideVal = _module getVariable "side";
 private _typeVal = _module getVariable "type";
 
@@ -38,10 +41,6 @@ private _formattedName = _nameSide + " " + _type;
 
 // Code Start
 //------------------------------------------------------------------------------------------------
-waitUntil {
-    !isNil QEGVAR(game,Game);
-};
-
 LOG(QGVAR(ModuleRespawnPosition) + ":: adding respawn position...");
 private _respawnData = EGVAR(game,Game) getVariable QEGVAR(game,respawn_positions);
 private _area = _module getVariable "ObjectArea";
@@ -52,4 +51,4 @@ private _respawn = [_side, _area#0, _formattedName] call BIS_fnc_addRespawnPosit
 _respawnData insert [-1, [[_respawn, _type, _area]]];
 EGVAR(game,Game) setVariable [QEGVAR(game,respawn_positions), _respawnData];
 
-LOG_1(QGVAR(ModuleRespawnPosition) + ":: respawn position added: %1",_respawn);
+INFO_1("ModuleRespawnPosition: Adding respawn position for side: %1",_side);

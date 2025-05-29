@@ -8,7 +8,7 @@ publicVariable QGVAR(Game);
 private _data = createHashMapFromArray [
     ["silos", []],
     ["missiles", []],
-    ["game_state", ""],
+    ["game_state", -1],
     ["reactors", []],
     ["reactor_vulnerabilities", createHashMapFromArray [
         [west, false],

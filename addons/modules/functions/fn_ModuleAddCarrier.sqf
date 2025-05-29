@@ -17,6 +17,9 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
+waitUntil { !isNil QEGVAR(game,Game) };
+waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_INIT };
+
 private _sideVal = _module getVariable "side";
 
 private _side = switch _sideVal do {
@@ -26,11 +29,16 @@ private _side = switch _sideVal do {
     default { sideUnknown };
 };
 
-private _syncedCarrier = synchronizedObjects _module select { _x isKindOf "Land_Carrier_01_base_F" };
+// User input checks
+private _syncedCarrier = synchronizedObjects _module;;
 if (count _syncedCarrier > 1) exitWith {
-    ERROR(QGVAR(ModuleAddCarrier) + " too many carriers are synced too this module. Not going to add any of them!");
+    ERROR_WITH_TITLE("ModuleAddCarrier","Too many carriers/objects/triggers are synced too this module!");
 };
-private _carrier = _syncedCarrier#0;
-if (isNil "_carrier") exitWith {};
+if (count _syncedCarrier <= 0) exitWith {
+    ERROR_WITH_TITLE("ModuleAddCarrier","Nothing is synced to this module!");
+};
 
-[_carrier, _side] call EFUNC(game,AddToCarrierInitQueue);
+// Execute
+private _carrier = _syncedCarrier#0;
+INFO_1("ModuleAddCarrier: Adding carrier for side: %1",_side);
+[_carrier, _side] call EFUNC(game,InitCarrier);

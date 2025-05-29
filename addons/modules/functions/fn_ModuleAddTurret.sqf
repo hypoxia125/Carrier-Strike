@@ -17,6 +17,9 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
+waitUntil { !isNil QEGVAR(game,Game) };
+waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_INIT };
+
 private _sideVal = _module getVariable "side";
 private _minTurn = _module getVariable ["minTurn", -180];
 private _maxTurn = _module getVariable ["maxTurn", 180];
@@ -40,10 +43,24 @@ private _ailogic = switch _AILogicVal do {
     default { "" };
 };
 
-private _syncedTurrets = synchronizedObjects _module select {
+private _syncedTurrets = synchronizedObjects _module;
+
+// User input checks
+private _wrongTypes = [];
+if (count _syncedTurrets <= 0) exitWith {
+    ERROR_WITH_TITLE("ModuleAddTurret","Expected turrets: >= 1 | Passed: 0");
+};
+{
     private _isUAV = getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUAV") == 1;
-    
-    _isUAV || (_x isKindOf "StaticMGWeapon")
+    if (!_isUAV || !(_x isKindOf "StaticMGWeapon")) then {
+        _wrongTypes pushBack _x;
+    }
+} forEach _syncedTurrets;
+
+if (_wrongTypes isNotEqualTo []) exitWith {
+    ERROR_WITH_TITLE_1("ModuleAddTurret","Wrong kinds of objects synced to module: %1",_wrongTypes apply {typeOf _x});
 };
 
-{ [_x, _side, _turretLimits, _AILogic, _maxRange, _destroyPercent] call EFUNC(game,AddToTurretInitQueue) } forEach _syncedTurrets;
+// Execute
+INFO_2("ModuleAddReactor: Adding %1 turrets for side: %2",count _syncedTurrets,_side);
+{ [_x, _side, _turretLimits, _AILogic, _maxRange, _destroyPercent] call EFUNC(game,InitTurret) } forEach _syncedTurrets;

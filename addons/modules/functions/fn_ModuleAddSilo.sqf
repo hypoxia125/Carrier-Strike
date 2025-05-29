@@ -17,13 +17,21 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
+waitUntil { !isNil QEGVAR(game,Game) };
+waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_INIT };
+
 private _siloNum = _module getVariable "silonumber";
 
+// User input checks
 private _syncedSilos = synchronizedObjects _module select { _x isKindOf "B_Ship_MRLS_01_F" };
 if (count _syncedSilos > 1) exitWith {
-    ERROR(QGVAR(ModuleAddSilo) + " too many silos are synced too this module. Not going to add any of them!");
+    ERROR_WITH_TITLE_1("ModuleAddSilo","Expected silos: 1 | Synced: %1",count _syncedSilos);
 };
-private _silo = _syncedSilos#0;
-if (isNil "_silo") exitWith {};
+if (count _syncedSilos <= 0) exitWith {
+    ERROR_WITH_TITLE("ModuleAddSilo","Expected silos: 1 | Synced: 0");
+};
 
-[_silo, _siloNum] call EFUNC(game,AddToSiloInitQueue);
+// Execute
+private _silo = _syncedSilos#0;
+INFO_1("ModuleAddSilo: Adding silo: %1",_siloNum);
+[_silo, _siloNum] call EFUNC(game,InitSilo);

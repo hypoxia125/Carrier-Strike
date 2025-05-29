@@ -11,7 +11,7 @@ if (!isServer) exitWith {};
 
 params ["_side", "_type"];
 
-if (GVAR(Game) getVariable QGVAR(game_state) in ["ENDING", "ENDED"]) exitWith {};
+if (GVAR(Game) getVariable QGVAR(game_state) in [GAME_STATE_ENDING, GAME_STATE_ENDED]) exitWith {};
 
 private _carrier = (GVAR(Game) getVariable QGVAR(carriers)) get _side;
 private _maxHP = _carrier getVariable QGVAR(max_hp);
@@ -107,6 +107,6 @@ if (_percentHP <= 2/3) then {
 };
 
 if (_percentHP <= 0) exitWith {
-    GVAR(Game) setVariable [QGVAR(game_state), "ENDING", true];
+    GVAR(Game) setVariable [QGVAR(game_state), GAME_STATE_ENDING, true];
     [QGVAR(ExplosionSequence), [_carrier]] call CBA_fnc_globalEvent;
 };

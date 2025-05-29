@@ -4,7 +4,7 @@
 I wanted to get this out since the main gameplay loop is finished to start collecting feedback. This has not had a balance pass yet, so be warned.
 Development is slow on weekdays, fast on weekends. Expect frequent updates.
 
-[h1]Current Version - v0.4.0[/h1]
+[h1]Current Version - v0.4.1[/h1]
 
 Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Discord[/url]
 
@@ -39,9 +39,7 @@ Carrier Strike - Malden (Small)
 [url=https://youtu.be/wcBSGR1rx5w]Video Tutorial[/url]
 
 [h1]Official Server List[/h1]
-[Official] Carrier Strike - Malden [Alpha]
-71.211.231.197
-Port: 2302
+Let me know if you want to be an official server!
 
 [h1]Current Alpha Progress[/h1]
 

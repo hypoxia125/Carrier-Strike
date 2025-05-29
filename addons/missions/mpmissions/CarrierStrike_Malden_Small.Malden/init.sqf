@@ -1,1 +1,0 @@
-call carrierstrike_game_fnc_init;

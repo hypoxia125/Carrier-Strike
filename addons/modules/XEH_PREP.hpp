@@ -6,5 +6,6 @@ PREP(ModuleAddTurret);
 PREP(ModuleAddVehicle);
 PREP(ModuleCarrierSpeaker);
 PREP(ModuleEndGameCamera);
+PREP(ModuleInitGame);
 PREP(ModuleRespawnPosition);
 PREP(ModuleSiloSpeaker);
