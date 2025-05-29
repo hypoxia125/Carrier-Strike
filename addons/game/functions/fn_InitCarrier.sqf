@@ -16,7 +16,6 @@ private _data = createHashMapFromArray [
     ["reactors", []],
 
     ["composition", createHashMapFromArray [
-        ["missile_target_pos", [24.9297,66.3911,0]],
         ["explosion_posAGL", [
             [17.4858,174.711,8.99108],
             [17.8994,165.726,4.66877],
@@ -97,8 +96,7 @@ private _data = createHashMapFromArray [
             [-22.627,111.096,28.4444],
             [45.0649,40.417,24.8704],
             [-34.6914,-81.4736,35.4021]
-        ]],
-        ["camera_pos", [75.4604,282.184,111.056]]
+        ]]
     ]]
 ];
 {
