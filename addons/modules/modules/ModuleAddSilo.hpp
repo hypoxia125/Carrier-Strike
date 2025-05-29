@@ -1,7 +1,7 @@
 class GVAR(ModuleAddSilo): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Add Silo";
-    // icon = "";
+    icon = "a3\ui_f_jets\data\gui\cfg\hints\weaponsmissiles_ca.paa";
     category = QGVAR(carrierstrike_required);
 
     function = QFUNC(ModuleAddSilo);

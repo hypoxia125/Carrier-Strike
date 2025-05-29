@@ -1,7 +1,7 @@
 class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Add Carrier";
-    // icon = "";
+    icon = "a3\ui_f\data\igui\cfg\simpletasks\types\boat_ca.paa";
     category = QGVAR(carrierstrike_required);
 
     function = QFUNC(ModuleAddCarrier);

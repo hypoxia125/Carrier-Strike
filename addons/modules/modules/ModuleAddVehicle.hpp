@@ -1,7 +1,7 @@
 class GVAR(ModuleAddVehicle): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Add Vehicle";
-    // icon = "";
+    icon = "a3\data_f_tank\logos\arma3_tank_icon_ca.paa";
     category = QGVAR(carrierstrike_optional);
 
     function = QFUNC(ModuleAddVehicle);

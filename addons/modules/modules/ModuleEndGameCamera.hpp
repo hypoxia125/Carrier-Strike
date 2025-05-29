@@ -1,7 +1,7 @@
 class GVAR(ModuleEndGameCamera): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - End Game Camera";
-    // icon = "";
+    icon = "a3\ui_f\data\gui\cfg\keyframeanimation\iconcamera_ca.paa";
     category = QGVAR(carrierstrike_optional);
 
     function = QFUNC(ModuleEndGameCamera);

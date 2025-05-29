@@ -1,7 +1,7 @@
 class GVAR(ModuleAddMissileTarget): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Add Missile Target";
-    // icon = "";
+    icon = "a3\ui_f\data\gui\cfg\hints\missile_seeking_ca.paa";
     category = QGVAR(carrierstrike_required);
 
     function = QFUNC(ModuleAddMissileTarget);

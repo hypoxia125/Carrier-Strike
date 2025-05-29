@@ -1,7 +1,7 @@
 class GVAR(ModuleAddTurret): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Add Turret(s)";
-    // icon = "";
+    icon = "a3\3den\data\cfg3den\object\iconturret_ca.paa";
     category = QGVAR(carrierstrike_optional);
 
     function = QFUNC(ModuleAddTurret);
