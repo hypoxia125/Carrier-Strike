@@ -1,10 +1,10 @@
-class GVAR(ModuleCarrierSpeakerPosition): GVAR(ModuleBase) {
+class GVAR(ModuleCarrierSpeaker): GVAR(ModuleBase) {
     scope = 2;
-    displayName = "Carrier Strike - Carrier Speaker Position";
+    displayName = "Carrier Strike - Carrier Speaker";
     icon = "a3\modules_f_curator\data\portraitsound_ca.paa";
     category = QGVAR(carrierstrike_optional);
 
-    function = QFUNC(ModuleCarrierSpeakerPosition);
+    function = QFUNC(ModuleCarrierSpeaker);
     functionPriority = 1;
     isGlobal = 0;
     isTriggerActivated = 0;
@@ -13,7 +13,7 @@ class GVAR(ModuleCarrierSpeakerPosition): GVAR(ModuleBase) {
 
     class Attributes: AttributesBase {
         class Side: Combo {
-            property = QGVAR(ModuleCarrierSpeakerPosition_OwnerSide);
+            property = QGVAR(ModuleCarrierSpeaker_OwnerSide);
             displayName = "Owner Side";
             tooltip = "Side that owns this speaker position.";
             defaultValue = 1;

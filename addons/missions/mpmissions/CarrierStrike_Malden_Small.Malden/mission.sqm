@@ -14,7 +14,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4129;
+		nextID=4159;
 	};
 	class MarkerIDProvider
 	{
@@ -22,14 +22,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2491;
+		nextID=2501;
 	};
 	class Camera
 	{
-		pos[]={7582.752,86.182114,3873.7808};
-		dir[]={0.10324404,-0.25787416,-0.96069133};
-		up[]={0.02756267,0.96614861,-0.25647801};
-		aside[]={-0.99431223,-4.6256901e-07,-0.10685616};
+		pos[]={7923.0801,269.06375,3489.9309};
+		dir[]={-0.50003415,-0.70907885,0.49718159};
+		up[]={-0.50282985,0.70512724,0.49996141};
+		aside[]={0.70508689,-1.1350494e-08,0.70913303};
 	};
 };
 binarizationWanted=0;
@@ -331,7 +331,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=522;
+		items=521;
 		class Item0
 		{
 			dataType="Object";
@@ -35522,17 +35522,17 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8950.7646,33.212021,4726.3848};
+				position[]={7805.4932,44.978558,4034.8889};
 			};
-			id=4099;
-			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
-			atlOffset=9.6441517;
+			id=4129;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
-					expression="_this setVariable ['Side',_value,true];";
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
 					class Value
 					{
 						class data
@@ -35550,17 +35550,17 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8897.0439,33.535397,4861.9849};
+				position[]={7885.5962,46.103329,4057.9363};
 			};
-			id=4100;
-			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
-			atlOffset=10.005466;
+			id=4130;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
-					expression="_this setVariable ['Side',_value,true];";
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
 					class Value
 					{
 						class data
@@ -35578,17 +35578,17 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9070.6328,32.541496,4742.9668};
+				position[]={7986.1772,48.97942,4082.2632};
 			};
-			id=4101;
-			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
-			atlOffset=9.0127029;
+			id=4131;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
-					expression="_this setVariable ['Side',_value,true];";
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
 					class Value
 					{
 						class data
@@ -35606,23 +35606,23 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7197.7349,32.598907,2142.3469};
+				position[]={8064.0107,49.824726,4045.8035};
 			};
-			id=4102;
-			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
-			atlOffset=9.070385;
+			id=4132;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
-					expression="_this setVariable ['Side',_value,true];";
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
 					class Value
 					{
 						class data
 						{
 							singleType="SCALAR";
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -35634,23 +35634,23 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7316.23,33.552364,2158.4431};
+				position[]={8017.4858,50.20932,3981.4175};
 			};
-			id=4103;
-			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
-			atlOffset=9.9847641;
+			id=4133;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
-					expression="_this setVariable ['Side',_value,true];";
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
 					class Value
 					{
 						class data
 						{
 							singleType="SCALAR";
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -35662,16 +35662,604 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7370.459,32.794266,2024.0341};
+				position[]={8429.2148,14.59,3929.6069};
 			};
-			id=4104;
-			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
-			atlOffset=9.2646217;
+			id=4134;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item498
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8440.9922,14.59,3878.3047};
+			};
+			id=4135;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item499
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8417.4912,14.440001,3842.8643};
+			};
+			id=4136;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item500
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8374.1133,14.655829,3795.6282};
+			};
+			id=4137;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item501
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8447.3057,14.440001,3751.4399};
+			};
+			id=4138;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item502
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8303.998,30.945992,3031.4009};
+			};
+			id=4139;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item503
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8385.752,29.34,3125.4329};
+			};
+			id=4140;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item504
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8299.8213,30.770903,3151.8472};
+			};
+			id=4141;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item505
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8231.1348,31.10972,3094.2986};
+			};
+			id=4142;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item506
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7809.6572,16.27,3122.3401};
+			};
+			id=4143;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item507
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7856.5806,16.27,3116.7454};
+			};
+			id=4144;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item508
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7824.9404,16.27,3075.1584};
+			};
+			id=4145;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item509
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7776.0947,16.290001,3216.0571};
+			};
+			id=4146;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10.000001;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item510
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7782.6826,20.574781,3333.217};
+			};
+			id=4147;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item511
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7752.5942,16.290001,3257.8237};
+			};
+			id=4148;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10.000001;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item512
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7665.625,35.690002,3632.03};
+			};
+			id=4149;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10.000002;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item513
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7699.249,35.730003,3697.0562};
+			};
+			id=4150;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10.000004;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item514
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7657.8857,35.735413,3726.5742};
+			};
+			id=4151;
+			type="carrierstrike_modules_ModuleSiloSpeaker";
+			atlOffset=10.000004;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleSiloSpeaker_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item515
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9070.8535,33.519341,4742.0742};
+			};
+			id=4152;
+			type="carrierstrike_modules_ModuleCarrierSpeaker";
+			atlOffset=9.9905472;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeaker_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item516
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8951.7559,33.198132,4726.481};
+			};
+			id=4153;
+			type="carrierstrike_modules_ModuleCarrierSpeaker";
+			atlOffset=9.6302624;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeaker_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item517
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8897.041,33.52179,4861.709};
+			};
+			id=4154;
+			type="carrierstrike_modules_ModuleCarrierSpeaker";
+			atlOffset=9.9918671;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeaker_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item518
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7197.6709,32.606945,2144.342};
+			};
+			id=4156;
+			type="carrierstrike_modules_ModuleCarrierSpeaker";
+			atlOffset=9.0784225;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeaker_OwnerSide";
 					expression="_this setVariable ['Side',_value,true];";
 					class Value
 					{
@@ -35685,616 +36273,28 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item498
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7885.6328,46.05991,4058.9231};
-			};
-			id=4105;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item499
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8011.7466,48.959999,4095.0835};
-			};
-			id=4106;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item500
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8064.0791,49.822769,4045.9189};
-			};
-			id=4107;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item501
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7803.4268,44.961773,4036.7991};
-			};
-			id=4108;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item502
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8380.1377,14.568556,3843.928};
-			};
-			id=4109;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item503
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8440.7432,14.59,3878.3103};
-			};
-			id=4110;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item504
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8471.5391,14.421146,3714.9468};
-			};
-			id=4111;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item505
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8407.3926,14.440001,3772.7112};
-			};
-			id=4112;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item506
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8285.2832,30.848177,3121.4939};
-			};
-			id=4113;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10.000002;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=3;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item507
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8385.4541,29.34,3125.1545};
-			};
-			id=4114;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=3;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item508
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8252.6768,30.93,3070.196};
-			};
-			id=4115;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=3;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item509
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8239.3682,31.764824,3166.8115};
-			};
-			id=4116;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=3;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item510
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8350.8027,29.103062,3173.7549};
-			};
-			id=4117;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=3;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item511
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8303.4922,30.943968,3031.98};
-			};
-			id=4118;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=3;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item512
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7821.1782,16.289516,3211.897};
-			};
-			id=4119;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=9.999999;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=4;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item513
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7749.4932,16.303747,3237.8455};
-			};
-			id=4120;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=9.999999;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=4;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item514
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7767.8848,16.269999,3146.604};
-			};
-			id=4121;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=9.9999981;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=4;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item515
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7795.498,16.269999,3111.9636};
-			};
-			id=4122;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=9.9999981;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=4;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item516
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7881.4805,16.653214,3098.5635};
-			};
-			id=4123;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=9.9999981;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=4;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item517
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7721.543,15.219883,3299.2788};
-			};
-			id=4124;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=9.999999;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=4;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item518
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7783.0391,20.581078,3333.533};
-			};
-			id=4125;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=9.999999;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=4;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
 		class Item519
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7665.4639,35.690002,3632.8169};
+				position[]={7315.7041,33.485577,2159.3601};
 			};
-			id=4126;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10.000002;
+			id=4157;
+			type="carrierstrike_modules_ModuleCarrierSpeaker";
+			atlOffset=9.9179783;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
+					property="carrierstrike_modules_ModuleCarrierSpeaker_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
 					class Value
 					{
 						class data
 						{
 							singleType="SCALAR";
-							value=5;
+							value=0;
 						};
 					};
 				};
@@ -36306,51 +36306,23 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7698.9282,35.730003,3696.6108};
+				position[]={7371.0542,32.777084,2024.71};
 			};
-			id=4127;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10.000004;
+			id=4158;
+			type="carrierstrike_modules_ModuleCarrierSpeaker";
+			atlOffset=9.2474651;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
+					property="carrierstrike_modules_ModuleCarrierSpeaker_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
 					class Value
 					{
 						class data
 						{
 							singleType="SCALAR";
-							value=5;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item521
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={7596.2251,37.577065,3857.0601};
-			};
-			id=4128;
-			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
-			atlOffset=10;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
-					expression="_this setVariable ['SiloNumber',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=5;
+							value=0;
 						};
 					};
 				};

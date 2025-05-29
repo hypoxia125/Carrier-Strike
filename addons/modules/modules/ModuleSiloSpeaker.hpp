@@ -1,10 +1,10 @@
-class GVAR(ModuleSiloSpeakerPosition): GVAR(ModuleBase) {
+class GVAR(ModuleSiloSpeaker): GVAR(ModuleBase) {
     scope = 2;
-    displayName = "Carrier Strike - Silo Speaker Position";
+    displayName = "Carrier Strike - Silo Speaker";
     icon = "a3\modules_f_curator\data\portraitsound_ca.paa";
     category = QGVAR(carrierstrike_optional);
 
-    function = QFUNC(ModuleSiloSpeakerPosition);
+    function = QFUNC(ModuleSiloSpeaker);
     functionPriority = 1;
     isGlobal = 0;
     isTriggerActivated = 0;
@@ -13,7 +13,7 @@ class GVAR(ModuleSiloSpeakerPosition): GVAR(ModuleBase) {
 
     class Attributes: AttributesBase {
         class SiloNumber: Combo {
-            property = QGVAR(ModuleAddReactor_SiloNumber);
+            property = QGVAR(ModuleSiloSpeaker_SiloNumber);
             displayName = "Silo Number";
             tooltip = "Determines the number of the silo.";
             defaultValue = 1;

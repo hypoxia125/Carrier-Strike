@@ -24,6 +24,7 @@ waitUntil {
     private _silos = EGVAR(game,Game) getVariable [QEGVAR(game,silos), []];
     _silos isNotEqualTo [];
 };
+sleep 0.5;
 
 private _silos = EGVAR(game,Game) getVariable [QEGVAR(game,silos), []];
 private _silo = _silos select { _x getVariable QEGVAR(game,silo_number) == _siloNum };
