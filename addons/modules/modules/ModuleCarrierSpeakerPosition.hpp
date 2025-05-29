@@ -1,7 +1,7 @@
 class GVAR(ModuleCarrierSpeakerPosition): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Carrier Speaker Position";
-    // icon = "";
+    icon = "a3\modules_f_curator\data\portraitsound_ca.paa";
     category = QGVAR(carrierstrike_optional);
 
     function = QFUNC(ModuleCarrierSpeakerPosition);

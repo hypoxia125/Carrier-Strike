@@ -17,6 +17,7 @@ private _data = createHashMapFromArray [
     ["lights", []],
     ["silo_number", _siloNumber],
     ["crew_group", grpNull],
+    ["speaker_positions", []],
 
     ["composition", createHashMapFromArray [
         ["light_unknown", "PortableHelipadLight_01_yellow_F"],

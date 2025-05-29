@@ -132,8 +132,10 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         
         private _silotimeremainingalerts = (GVAR(Game) getVariable QGVAR(alerts)) get "silotimeremaining";
         private _alert = _silotimeremainingalerts get _countdown;
+        private _siloSpeakers = _silo getVariable [QGVAR(speaker_positions), []];
         if (!isNil "_alert") then {
-            [QGVAR(PlaySiloSound3DLocal), [_silo, _alert]] call CBA_fnc_globalEvent;
+            [_silo, _alert] call FUNC(SiloNotification);
+            { [_silo, _alert, _x] call FUNC(SiloNotification) } forEach _siloSpeakers;
         };
 
         // Increment countdown

@@ -7,3 +7,4 @@ PREP(ModuleAddVehicle);
 PREP(ModuleCarrierSpeakerPosition);
 PREP(ModuleEndGameCamera);
 PREP(ModuleRespawnPosition);
+PREP(ModuleSiloSpeakerPosition);

@@ -14,7 +14,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4105;
+		nextID=4129;
 	};
 	class MarkerIDProvider
 	{
@@ -22,14 +22,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2461;
+		nextID=2491;
 	};
 	class Camera
 	{
-		pos[]={7230.3701,57.033154,2210.6057};
-		dir[]={-0.60156089,-0.40895411,-0.68635905};
-		up[]={-0.26957962,0.91251987,-0.30757815};
-		aside[]={-0.75210106,-1.0967196e-06,0.65919113};
+		pos[]={7582.752,86.182114,3873.7808};
+		dir[]={0.10324404,-0.25787416,-0.96069133};
+		up[]={0.02756267,0.96614861,-0.25647801};
+		aside[]={-0.99431223,-4.6256901e-07,-0.10685616};
 	};
 };
 binarizationWanted=0;
@@ -331,7 +331,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=498;
+		items=522;
 		class Item0
 		{
 			dataType="Object";
@@ -35679,6 +35679,678 @@ class Mission
 						{
 							singleType="SCALAR";
 							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item498
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7885.6328,46.05991,4058.9231};
+			};
+			id=4105;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item499
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8011.7466,48.959999,4095.0835};
+			};
+			id=4106;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item500
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8064.0791,49.822769,4045.9189};
+			};
+			id=4107;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item501
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7803.4268,44.961773,4036.7991};
+			};
+			id=4108;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item502
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8380.1377,14.568556,3843.928};
+			};
+			id=4109;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item503
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8440.7432,14.59,3878.3103};
+			};
+			id=4110;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item504
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8471.5391,14.421146,3714.9468};
+			};
+			id=4111;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item505
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8407.3926,14.440001,3772.7112};
+			};
+			id=4112;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item506
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8285.2832,30.848177,3121.4939};
+			};
+			id=4113;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10.000002;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item507
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8385.4541,29.34,3125.1545};
+			};
+			id=4114;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item508
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8252.6768,30.93,3070.196};
+			};
+			id=4115;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item509
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8239.3682,31.764824,3166.8115};
+			};
+			id=4116;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item510
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8350.8027,29.103062,3173.7549};
+			};
+			id=4117;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item511
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8303.4922,30.943968,3031.98};
+			};
+			id=4118;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item512
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7821.1782,16.289516,3211.897};
+			};
+			id=4119;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=9.999999;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item513
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7749.4932,16.303747,3237.8455};
+			};
+			id=4120;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=9.999999;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item514
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7767.8848,16.269999,3146.604};
+			};
+			id=4121;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=9.9999981;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item515
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7795.498,16.269999,3111.9636};
+			};
+			id=4122;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=9.9999981;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item516
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7881.4805,16.653214,3098.5635};
+			};
+			id=4123;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=9.9999981;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item517
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7721.543,15.219883,3299.2788};
+			};
+			id=4124;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=9.999999;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item518
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7783.0391,20.581078,3333.533};
+			};
+			id=4125;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=9.999999;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=4;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item519
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7665.4639,35.690002,3632.8169};
+			};
+			id=4126;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10.000002;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item520
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7698.9282,35.730003,3696.6108};
+			};
+			id=4127;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10.000004;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item521
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7596.2251,37.577065,3857.0601};
+			};
+			id=4128;
+			type="carrierstrike_modules_ModuleSiloSpeakerPosition";
+			atlOffset=10;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleAddReactor_SiloNumber";
+					expression="_this setVariable ['SiloNumber',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
 						};
 					};
 				};

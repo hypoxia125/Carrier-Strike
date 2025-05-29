@@ -42,4 +42,5 @@ class CfgVehicles {
     #include "\z\carrierstrike\addons\modules\modules\ModuleCarrierSpeakerPosition.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleEndGameCamera.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleRespawnPosition.hpp"
+    #include "\z\carrierstrike\addons\modules\modules\ModuleSiloSpeakerPosition.hpp"
 };
