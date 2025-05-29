@@ -4,7 +4,7 @@
 I wanted to get this out since the main gameplay loop is finished to start collecting feedback. This has not had a balance pass yet, so be warned.
 Development is slow on weekdays, fast on weekends. Expect frequent updates.
 
-[h1]Current Version - v0.1.0[/h1]
+[h1]Current Version - v0.3.0[/h1]
 
 Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Discord[/url]
 
@@ -51,9 +51,9 @@ Port: 2302
 - Temporary Loadouts w/ Tier Unlock System (As game progresses, higher gear loadouts are unlocked)
 - Custom turret defense AI
 - CBA Settings For Mission Customization
-- Modules - so that you can create your own missions as well! (I need to write up documentation though)
 
 [In Progress]
+- Modules (Some Completed)- so that you can create your own missions as well! (I need to write up documentation though)
 - More Map Layouts
 - Rally Point System
 - Commander Abilities
