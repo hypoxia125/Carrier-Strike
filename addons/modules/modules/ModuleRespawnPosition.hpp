@@ -2,7 +2,7 @@ class GVAR(ModuleRespawnPosition): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Respawn Position";
     icon = "a3\modules_f\data\portraitrespawn_ca.paa";
-    category = QGVAR(CarrierStrike);
+    category = QGVAR(carrierstrike_required);
 
     function = QFUNC(ModuleRespawnPosition);
     functionPriority = 1;
