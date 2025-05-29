@@ -13,6 +13,9 @@ private _data = createHashMapFromArray [
     ["max_hp", [QGVAR(Settings_CarrierMaxHP)] call CBA_settings_fnc_get],
     ["current_hp", [QGVAR(Settings_CarrierMaxHP)] call CBA_settings_fnc_get],
 
+    ["speaker_positions", []],
+    ["endGameCameraPosition", []],
+
     ["composition", createHashMapFromArray [
         ["explosion_posAGL", [
             [17.4858,174.711,8.99108],
@@ -89,11 +92,6 @@ private _data = createHashMapFromArray [
             [12.0664,184.326,15.7622],
             [27.3965,181.391,16.4451],
             [-8.33691,178.055,12.4695]
-        ]],
-        ["alarm_sound_pos", [
-            [-22.627,111.096,28.4444],
-            [45.0649,40.417,24.8704],
-            [-34.6914,-81.4736,35.4021]
         ]]
     ]]
 ];

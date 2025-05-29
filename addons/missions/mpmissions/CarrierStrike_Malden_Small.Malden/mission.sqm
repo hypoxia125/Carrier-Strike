@@ -14,7 +14,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4099;
+		nextID=4105;
 	};
 	class MarkerIDProvider
 	{
@@ -22,14 +22,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2451;
+		nextID=2461;
 	};
 	class Camera
 	{
-		pos[]={7699.5356,116.49977,2167.4216};
-		dir[]={-0.91519952,-0.34509268,-0.20839272};
-		up[]={-0.33649442,0.93856353,-0.076620825};
-		aside[]={-0.22203036,3.0195224e-07,0.97509456};
+		pos[]={7230.3701,57.033154,2210.6057};
+		dir[]={-0.60156089,-0.40895411,-0.68635905};
+		up[]={-0.26957962,0.91251987,-0.30757815};
+		aside[]={-0.75210106,-1.0967196e-06,0.65919113};
 	};
 };
 binarizationWanted=0;
@@ -331,7 +331,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=492;
+		items=498;
 		class Item0
 		{
 			dataType="Object";
@@ -35504,6 +35504,174 @@ class Mission
 				class Attribute0
 				{
 					property="carrierstrike_modules_ModuleEndGameCamera_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item492
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8950.7646,33.212021,4726.3848};
+			};
+			id=4099;
+			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
+			atlOffset=9.6441517;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item493
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8897.0439,33.535397,4861.9849};
+			};
+			id=4100;
+			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
+			atlOffset=10.005466;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item494
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9070.6328,32.541496,4742.9668};
+			};
+			id=4101;
+			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
+			atlOffset=9.0127029;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item495
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7197.7349,32.598907,2142.3469};
+			};
+			id=4102;
+			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
+			atlOffset=9.070385;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item496
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7316.23,33.552364,2158.4431};
+			};
+			id=4103;
+			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
+			atlOffset=9.9847641;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item497
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7370.459,32.794266,2024.0341};
+			};
+			id=4104;
+			type="carrierstrike_modules_ModuleCarrierSpeakerPosition";
+			atlOffset=9.2646217;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleCarrierSpeakerPosition_OwnerSide";
 					expression="_this setVariable ['Side',_value,true];";
 					class Value
 					{

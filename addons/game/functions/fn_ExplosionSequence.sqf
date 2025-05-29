@@ -18,7 +18,7 @@ if (isServer) then {
         };
         if (!isMultiplayer && isGamePaused) exitWith {};
 
-        private _positions = _carrier getVariable QGVAR(alarm_sound_pos);
+        private _positions = _carrier getVariable QGVAR(speaker_positions);
         {
             playSound3D ["\A3\Sounds_F\sfx\alarm.wss", _carrier, false, _x, 5, 1, 500];
         } forEach _positions;
