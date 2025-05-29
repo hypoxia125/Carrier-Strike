@@ -6,7 +6,8 @@ mainprefix = "z"
 [files]
 include = [
     "LICENSE.md",
-    "Changelog.md"
+    "Changelog.md",
+    "docs"
 ]
 
 [version]
