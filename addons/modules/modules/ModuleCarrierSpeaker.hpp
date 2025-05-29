@@ -1,10 +1,10 @@
-class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
+class GVAR(ModuleCarrierSpeaker): GVAR(ModuleBase) {
     scope = 2;
-    displayName = "Carrier Strike - Add Carrier";
-    icon = "a3\ui_f\data\igui\cfg\simpletasks\types\boat_ca.paa";
-    category = QGVAR(carrierstrike_required);
+    displayName = "Carrier Strike - Carrier Speaker";
+    icon = "a3\modules_f_curator\data\portraitsound_ca.paa";
+    category = QGVAR(carrierstrike_optional);
 
-    function = QFUNC(ModuleAddCarrier);
+    function = QFUNC(ModuleCarrierSpeaker);
     functionPriority = 1;
     isGlobal = 0;
     isTriggerActivated = 0;
@@ -13,9 +13,9 @@ class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
 
     class Attributes: AttributesBase {
         class Side: Combo {
-            property = QGVAR(ModuleAddCarrier_Side);
-            displayName = "Side";
-            tooltip = "Determines which side owns this carrier. Can only have one carrier per game.";
+            property = QGVAR(ModuleCarrierSpeaker_OwnerSide);
+            displayName = "Owner Side";
+            tooltip = "Side that owns this speaker position.";
             defaultValue = 1;
             typeName = "NUMBER";
             class Values {
@@ -35,9 +35,9 @@ class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
 
     class ModuleDescription: ModuleDescription {
         description[] = {
-            "Adds the synchronized carrier to the carrier init system. Only BLUFOR and OPFOR can have a carrier and they can have only one!"
+            "Creates a position that carrier alarms/notifications will be sent from. Use as many of these positions as you like. If you use a very large object, maybe one with rooms, you might want to place lots of these for an authentic experience for players."
         };
-        position = 0;
+        position = 1;
         direction = 0;
     };
 };

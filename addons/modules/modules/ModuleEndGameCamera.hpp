@@ -1,10 +1,10 @@
-class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
+class GVAR(ModuleEndGameCamera): GVAR(ModuleBase) {
     scope = 2;
-    displayName = "Carrier Strike - Add Carrier";
-    icon = "a3\ui_f\data\igui\cfg\simpletasks\types\boat_ca.paa";
-    category = QGVAR(carrierstrike_required);
+    displayName = "Carrier Strike - End Game Camera";
+    icon = "a3\ui_f\data\gui\cfg\keyframeanimation\iconcamera_ca.paa";
+    category = QGVAR(carrierstrike_optional);
 
-    function = QFUNC(ModuleAddCarrier);
+    function = QFUNC(ModuleEndGameCamera);
     functionPriority = 1;
     isGlobal = 0;
     isTriggerActivated = 0;
@@ -13,9 +13,9 @@ class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
 
     class Attributes: AttributesBase {
         class Side: Combo {
-            property = QGVAR(ModuleAddCarrier_Side);
+            property = QGVAR(ModuleEndGameCamera_Side);
             displayName = "Side";
-            tooltip = "Determines which side owns this carrier. Can only have one carrier per game.";
+            tooltip = "Camera if the side selected loses.";
             defaultValue = 1;
             typeName = "NUMBER";
             class Values {
@@ -35,9 +35,9 @@ class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
 
     class ModuleDescription: ModuleDescription {
         description[] = {
-            "Adds the synchronized carrier to the carrier init system. Only BLUFOR and OPFOR can have a carrier and they can have only one!"
+            "This camera is the camera that is shown during the carrier explosion sequence. The camera target will be the carrier itself. For example, if set to BLUFOR and BLUFOR loses, all players will be shown this camera during the carrier explosion sequence. Get a nice view of your carrier as it explodes."
         };
-        position = 0;
+        position = 1;
         direction = 0;
     };
 };

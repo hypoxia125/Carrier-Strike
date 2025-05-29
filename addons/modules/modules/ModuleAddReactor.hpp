@@ -1,7 +1,7 @@
 class GVAR(ModuleAddReactor): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Add Reactor(s)";
-    // icon = "";
+    icon = "a3\modules_f_curator\data\portraitlightning_ca.paa";
     category = QGVAR(carrierstrike_optional);
 
     function = QFUNC(ModuleAddReactor);

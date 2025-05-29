@@ -1,10 +1,10 @@
-class GVAR(ModuleAddSilo): GVAR(ModuleBase) {
+class GVAR(ModuleSiloSpeaker): GVAR(ModuleBase) {
     scope = 2;
-    displayName = "Carrier Strike - Add Silo";
-    icon = "a3\ui_f_jets\data\gui\cfg\hints\weaponsmissiles_ca.paa";
-    category = QGVAR(carrierstrike_required);
+    displayName = "Carrier Strike - Silo Speaker";
+    icon = "a3\modules_f_curator\data\portraitsound_ca.paa";
+    category = QGVAR(carrierstrike_optional);
 
-    function = QFUNC(ModuleAddSilo);
+    function = QFUNC(ModuleSiloSpeaker);
     functionPriority = 1;
     isGlobal = 0;
     isTriggerActivated = 0;
@@ -13,7 +13,7 @@ class GVAR(ModuleAddSilo): GVAR(ModuleBase) {
 
     class Attributes: AttributesBase {
         class SiloNumber: Combo {
-            property = QGVAR(ModuleAddReactor_SiloNumber);
+            property = QGVAR(ModuleSiloSpeaker_SiloNumber);
             displayName = "Silo Number";
             tooltip = "Determines the number of the silo.";
             defaultValue = 1;
@@ -47,9 +47,9 @@ class GVAR(ModuleAddSilo): GVAR(ModuleBase) {
 
     class ModuleDescription: ModuleDescription {
         description[] = {
-            "Adds the synchronized silo to the silo init system. You can only have 5 silos total."
+            "Creates a position that silo alarms/notifications will be sent from. The silo itself is automatically included as a position, so these are extra. Use as many of these positions as you like."
         };
-        position = 0;
+        position = 1;
         direction = 0;
     };
 };
