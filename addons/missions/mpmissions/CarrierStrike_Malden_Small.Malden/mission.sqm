@@ -14,7 +14,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4097;
+		nextID=4099;
 	};
 	class MarkerIDProvider
 	{
@@ -22,14 +22,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2441;
+		nextID=2451;
 	};
 	class Camera
 	{
-		pos[]={8901.0996,45.875515,4621.311};
-		dir[]={0.55425149,-0.1761345,0.81352055};
-		up[]={0.099172741,0.98436689,0.14556403};
-		aside[]={0.82643932,4.9796654e-07,-0.56305385};
+		pos[]={7699.5356,116.49977,2167.4216};
+		dir[]={-0.91519952,-0.34509268,-0.20839272};
+		up[]={-0.33649442,0.93856353,-0.076620825};
+		aside[]={-0.22203036,3.0195224e-07,0.97509456};
 	};
 };
 binarizationWanted=0;
@@ -331,7 +331,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=490;
+		items=492;
 		class Item0
 		{
 			dataType="Object";
@@ -35455,6 +35455,62 @@ class Mission
 						{
 							singleType="SCALAR";
 							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item490
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8680.6504,81.925095,4734.8599};
+			};
+			id=4097;
+			type="carrierstrike_modules_ModuleEndGameCamera";
+			atlOffset=113.312;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleEndGameCamera_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item491
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7629.8101,86.704666,2151.55};
+			};
+			id=4098;
+			type="carrierstrike_modules_ModuleEndGameCamera";
+			atlOffset=116.5;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="carrierstrike_modules_ModuleEndGameCamera_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
 						};
 					};
 				};

@@ -64,9 +64,10 @@ if (hasInterface) then {
         private _time = time;
         waitUntil { time >= _time + 12 };
 
-        private _cameraPos = _carrier getVariable QGVAR(composition) get "camera_pos";
-        _cameraPos = _carrier modelToWorld _cameraPos;
-        private _camera = "camera" camCreate _cameraPos;
+        private _position = _carrier getVariable [QGVAR(endGameCameraPosition), []];
+        if (_position isEqualTo []) exitWith {};
+
+        private _camera = "camera" camCreate _position;
 
         showCinemaBorder false;
         _camera cameraEffect ["External", "BACK"];

@@ -39,5 +39,6 @@ class CfgVehicles {
     #include "\z\carrierstrike\addons\modules\modules\ModuleAddSilo.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleAddTurret.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleAddVehicle.hpp"
+    #include "\z\carrierstrike\addons\modules\modules\ModuleEndGameCamera.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleRespawnPosition.hpp"
 };
