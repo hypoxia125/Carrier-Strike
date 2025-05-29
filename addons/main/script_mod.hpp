@@ -14,3 +14,11 @@
     #undef PREP
     #define PREP(fncName) [QPATHTOF(functions\DOUBLES(fn,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #endif
+
+// Enums
+#define GAME_STATE_PREINIT      0
+#define GAME_STATE_INIT         1
+#define GAME_STATE_POSTINIT     2
+#define GAME_STATE_PLAYING      3
+#define GAME_STATE_ENDING       4
+#define GAME_STATE_ENDED        5

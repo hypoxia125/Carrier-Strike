@@ -17,6 +17,9 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
+waitUntil { !isNil QEGVAR(game,Game) };
+waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
+
 private _ownerVal = _module getVariable "owner";
 private _typeVal = _module getVariable "type";
 private _westType = _module getVariable ["westtype", ""];
@@ -48,6 +51,13 @@ private _siloNumber = switch _ownerVal do {
 private _posASL = getPosASL _module;
 private _posAGL = ASLToAGL _posASL;
 
+// User input checks
+if (count synchronizedObjects _module > 0) exitWith {
+    ERROR_WITH_TITLE("ModuleAddVehicle","Nothing should be synchronized with this module.");
+};
+
+// Execute
+INFO_1("ModuleAddVehicle: Adding vehicle for side: %1",_side);
 if (_type == "silo") then {
     [
         ["silo", _siloNumber],
@@ -56,7 +66,7 @@ if (_type == "silo") then {
         [_westType, _eastType, _independentType],
         _respawnTime,
         _code
-    ] call EFUNC(game,AddToVehicleInitQueue);
+    ] call EFUNC(game,InitVehicle);
 };
 if (_type == "base") then {
     [
@@ -66,7 +76,7 @@ if (_type == "base") then {
         [_westType, _eastType, _independentType],
         _respawnTime,
         _code
-    ] call EFUNC(game,AddToVehicleInitQueue);
+    ] call EFUNC(game,InitVehicle);
 };
 if (_type == "carrier") then {
     [
@@ -76,5 +86,5 @@ if (_type == "carrier") then {
         [_westType, _eastType, _independentType],
         _respawnTime,
         _code
-    ] call EFUNC(game,AddToVehicleInitQueue);
+    ] call EFUNC(game,InitVehicle);
 };

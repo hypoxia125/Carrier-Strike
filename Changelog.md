@@ -1,3 +1,8 @@
+# Alpha Version v0.4.1
+
+- Changed: Initialization process
+- Added: Init Game Module
+
 # Alpha Version v0.4.0
 
 - Added: End Game Camera Module

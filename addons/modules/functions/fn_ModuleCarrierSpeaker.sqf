@@ -17,6 +17,9 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
+waitUntil { !isNil QEGVAR(game,Game) };
+waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
+
 private _sideVal = _module getVariable "side";
 
 private _side = switch _sideVal do {
@@ -25,18 +28,14 @@ private _side = switch _sideVal do {
     case 2: { independent };
     default { sideUnknown };
 };
-
-waitUntil { !isNil QEGVAR(game,Game) };
-waitUntil {
-    private _carriers = EGVAR(game,Game) getVariable [QEGVAR(game,carriers), createHashMap];
-    private _carrier = _carriers getOrDefault [_side, objNull];
-    !isNull _carrier;
-};
+if (_side == sideUnknown) exitWith {};
 
 private _carriers = EGVAR(game,Game) getVariable [QEGVAR(game,carriers), createHashMap];
 private _carrier = _carriers getOrDefault [_side, objNull];
+if (isNull _carrier) exitWith {};
 
 private _positionASL = getPosASL _module;
 private _data = _carrier getVariable [QEGVAR(game,speaker_positions), []];
 _data pushBackUnique _positionASL;
+
 _carrier setVariable [QEGVAR(game,speaker_positions), _data, true];

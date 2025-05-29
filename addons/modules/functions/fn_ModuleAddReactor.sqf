@@ -17,6 +17,9 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
+waitUntil { !isNil QEGVAR(game,Game) };
+waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_INIT };
+
 private _sideVal = _module getVariable "side";
 
 private _side = switch _sideVal do {
@@ -26,6 +29,16 @@ private _side = switch _sideVal do {
     default { sideUnknown };
 };
 
-private _syncedReactors = synchronizedObjects _module select { _x isKindOf "Land_Device_disassembled_F" };
+// User input checks
+private _syncedReactors = synchronizedObjects _module select {
+    !(_x isKindOf "EmptyDetector") &&
+    !(_x isKindOf "Module_F")
+};
 
-{ [_x, _side] call EFUNC(game,AddToReactorInitQueue) } forEach _syncedReactors;
+if (count _syncedReactors <= 0) exitWith {
+    ERROR_WITH_TITLE("ModuleAddReactor","Expected synced objects: > 1 | Passed: 0");
+};
+
+// Execute
+INFO_2("ModuleAddReactor: Adding %1 reactors for side: %2",count _syncedReactors,_side);
+{ [_x, _side] call EFUNC(game,InitReactor) } forEach _syncedReactors;

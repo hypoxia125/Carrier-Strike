@@ -2,7 +2,8 @@
 
 call FUNC(InitGame);
 call FUNC(InitSystems);
-call FUNC(InitDoQueue);
+
+GVAR(Game) setVariable [QGVAR(game_state), GAME_STATE_INIT, true];
 
 // Register 3d marker code
 GVAR(3DMarkerSystem) call ["Register", compileScript [QPATHTOF(scripts\MissileTrack3D.sqf)]];
@@ -31,3 +32,6 @@ if (hasInterface) then {
 
 // Loadouts
 [1] call FUNC(UnlockLoadouts);
+
+GVAR(Game) setVariable [QGVAR(game_state), GAME_STATE_POSTINIT, true];
+GVAR(Game) setVariable [QGVAR(game_state), GAME_STATE_PLAYING, true];
