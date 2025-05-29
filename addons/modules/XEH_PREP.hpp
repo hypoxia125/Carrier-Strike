@@ -4,5 +4,6 @@ PREP(ModuleAddReactor);
 PREP(ModuleAddSilo);
 PREP(ModuleAddTurret);
 PREP(ModuleAddVehicle);
+PREP(ModuleCarrierSpeakerPosition);
 PREP(ModuleEndGameCamera);
 PREP(ModuleRespawnPosition);
