@@ -12,8 +12,6 @@ private _data = createHashMapFromArray [
     ["side", sideUnknown],
     ["max_hp", [QGVAR(Settings_CarrierMaxHP)] call CBA_settings_fnc_get],
     ["current_hp", [QGVAR(Settings_CarrierMaxHP)] call CBA_settings_fnc_get],
-    ["allow_automated_defences", [QGVAR(Settings_AllowAutomatedDefences)] call CBA_settings_fnc_get],
-    ["reactors", []],
 
     ["composition", createHashMapFromArray [
         ["explosion_posAGL", [
