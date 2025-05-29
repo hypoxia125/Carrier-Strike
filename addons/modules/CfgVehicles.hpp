@@ -34,6 +34,7 @@ class CfgVehicles {
     };
 
     #include "\z\carrierstrike\addons\modules\modules\ModuleAddCarrier.hpp"
+    #include "\z\carrierstrike\addons\modules\modules\ModuleAddMissileTarget.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleAddReactor.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleAddSilo.hpp"
     #include "\z\carrierstrike\addons\modules\modules\ModuleAddTurret.hpp"

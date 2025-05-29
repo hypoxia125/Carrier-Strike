@@ -1,10 +1,10 @@
-class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
+class GVAR(ModuleAddMissileTarget): GVAR(ModuleBase) {
     scope = 2;
-    displayName = "Carrier Strike - Add Carrier";
+    displayName = "Carrier Strike - Add Missile Target";
     // icon = "";
     category = QGVAR(carrierstrike_required);
 
-    function = QFUNC(ModuleAddCarrier);
+    function = QFUNC(ModuleAddMissileTarget);
     functionPriority = 1;
     isGlobal = 0;
     isTriggerActivated = 0;
@@ -12,10 +12,10 @@ class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
     is3DEN = 1;
 
     class Attributes: AttributesBase {
-        class Side: Combo {
-            property = QGVAR(ModuleAddCarrier_Side);
-            displayName = "Side";
-            tooltip = "Determines which side owns this carrier. Can only have one carrier per game.";
+        class OwnerSide: Combo {
+            property = QGVAR(ModuleAddMissileTarget_OwnerSide);
+            displayName = "Owner Side";
+            tooltip = "This target will be where the opposing teams missile lock and strike.";
             defaultValue = 1;
             typeName = "NUMBER";
             class Values {
@@ -35,9 +35,9 @@ class GVAR(ModuleAddCarrier): GVAR(ModuleBase) {
 
     class ModuleDescription: ModuleDescription {
         description[] = {
-            "Adds the synchronized carrier to the carrier init system. Only BLUFOR and OPFOR can have a carrier and they can have only one!"
+            "Creates the target for the opposing team's missiles. This should be placed at the location of the carrier that you want missiles to hit. It needs to be somewhere the missile can collide with something and explode. You can only have 1 of these per side."
         };
-        position = 0;
+        position = 1;
         direction = 0;
     };
 };

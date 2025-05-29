@@ -1,4 +1,5 @@
 PREP(ModuleAddCarrier);
+PREP(ModuleAddMissileTarget);
 PREP(ModuleAddReactor);
 PREP(ModuleAddSilo);
 PREP(ModuleAddTurret);

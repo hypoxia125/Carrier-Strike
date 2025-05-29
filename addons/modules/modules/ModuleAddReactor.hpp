@@ -2,7 +2,7 @@ class GVAR(ModuleAddReactor): GVAR(ModuleBase) {
     scope = 2;
     displayName = "Carrier Strike - Add Reactor(s)";
     // icon = "";
-    category = QGVAR(CarrierStrike);
+    category = QGVAR(carrierstrike_optional);
 
     function = QFUNC(ModuleAddReactor);
     functionPriority = 1;
