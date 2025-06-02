@@ -11,9 +11,12 @@ if (!isServer) exitWith {};
 
 params ["_side", "_type"];
 
-if (GVAR(Game) getVariable QGVAR(game_state) in [GAME_STATE_ENDING, GAME_STATE_ENDED]) exitWith {};
+if (missionNamespace getVariable QGVAR(game_state) in [GAME_STATE_ENDING, GAME_STATE_ENDED]) exitWith {};
 
-private _carrier = (GVAR(Game) getVariable QGVAR(carriers)) get _side;
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Modify Carrier HP
+////////////////////////////////////////////////////////////////////////////////////////////////
+private _carrier = (missionNamespace getVariable QGVAR(carriers)) get _side;
 private _maxHP = _carrier getVariable QGVAR(max_hp);
 private _currentHp = _carrier getVariable QGVAR(current_hp);
 
@@ -26,73 +29,56 @@ private _newHp = _currentHp - _damage;
 _carrier setVariable [QGVAR(current_hp), _newHP, true];
 
 private _percentHP = _newHP / _maxHP;
-private _alerts = GVAR(Game) getVariable QGVAR(alerts);
-private _enemy = ([west, east] - [_side]) select 0;
-private _alertVars = GVAR(Game) getVariable QGVAR(alert_vars);
 
 // Update UI
 [QEGVAR(ui,UpdateCarrierStatus), [_side, _percentHP, 1]] call CBA_fnc_globalEvent;
 
-// initial damage alert
-if (_percentHP < 1) then {
-    if !((_alertVars get _side) get "initial") then {
-        [QGVAR(AlertAddToSystem), [(_alerts get "friendlyhull") get "initial"], units _side select { isPlayer _x }] call CBA_fnc_targetEvent;
-        (_alertVars get _side) set ["initial", true];
-    };
-};
-// 75% damage alert
-if (_percentHP <= 0.75) then {
-    if !((_alertVars get _side) get 0.75) then {
-        [QGVAR(AlertAddToSystem), [(_alerts get "friendlyhull") get 0.75], units _side select { isPlayer _x }] call CBA_fnc_targetEvent;
-        [QGVAR(AlertAddToSystem), [(_alerts get "enemyhull") get 0.75], units _enemy select { isPlayer _x }] call CBA_fnc_targetEvent;
-        (_alertVars get _side) set [0.75, true];
-    };
-};
-// 50% damage alert
-if (_percentHP <= 0.50) then {
-    if !((_alertVars get _side) get 0.50) then {
-        [QGVAR(AlertAddToSystem), [(_alerts get "friendlyhull") get 0.50], units _side select { isPlayer _x }] call CBA_fnc_targetEvent;
-        [QGVAR(AlertAddToSystem), [(_alerts get "enemyhull") get 0.50], units _enemy select { isPlayer _x }] call CBA_fnc_targetEvent;
-        (_alertVars get _side) set [0.50, true];
-    };
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Alerts
+////////////////////////////////////////////////////////////////////////////////////////////////
+private _alerts = missionNamespace getVariable QGVAR(alerts);
+private _hullstatus = _alerts get "hullstatus";
+private _enemy = ([west, east] - [_side]) select 0;
+private _friendlyUnits = units _side select { isPlayer _x };
+private _enemyUnits = units _enemy select { isPlayer _x };
 
-    // alert reactors exposed
-    if !((_alertVars get _side) get "reactor") then {
-        private _reactorVulnerabilities = GVAR(Game) getVariable QGVAR(reactor_vulnerabilities);
-        _reactorVulnerabilities set [_side, true];
-        GVAR(Game) setVariable [QGVAR(reactor_vulnerabilities), _reactorVulnerabilities, true];
-        [QGVAR(AlertAddToSystem), [(_alerts get "friendlyhull") get "reactor"], units _side select { isPlayer _x }] call CBA_fnc_targetEvent;
-        [QGVAR(AlertAddToSystem), [(_alerts get "enemyhull") get "reactor"], units _enemy select { isPlayer _x }] call CBA_fnc_targetEvent;
-        (_alertVars get _side) set ["reactor", true];
-    }
-};
-// 25% damage alert
-if (_percentHP <= 0.25) then {
-    if !((_alertVars get _side) get 0.25) then {
-        [QGVAR(AlertAddToSystem), [(_alerts get "friendlyhull") get 0.25], units _side select { isPlayer _x }] call CBA_fnc_targetEvent;
-        [QGVAR(AlertAddToSystem), [(_alerts get "enemyhull") get 0.25], units _enemy select { isPlayer _x }] call CBA_fnc_targetEvent;
-        (_alertVars get _side) set [0.25, true];
-    };
-};
-// 15% damage alert
-if (_percentHP <= 0.15) then {
-    if !((_alertVars get _side) get 0.15) then {
-        [QGVAR(AlertAddToSystem), [(_alerts get "friendlyhull") get 0.15], units _side select { isPlayer _x }] call CBA_fnc_targetEvent;
-        [QGVAR(AlertAddToSystem), [(_alerts get "enemyhull") get 0.15], units _enemy select { isPlayer _x }] call CBA_fnc_targetEvent;
-        (_alertVars get _side) set [0.15, true];
-    };
-};
-// 0% damage alert
-if (_percentHP <= 0.0) then {
-    if !((_alertVars get _side) get 0.0) then {
-        [QGVAR(AlertAddToSystem), [(_alerts get "friendlyhull") get 0.0], units _side select { isPlayer _x }] call CBA_fnc_targetEvent;
-        [QGVAR(AlertAddToSystem), [(_alerts get "enemyhull") get 0.0], units _enemy select { isPlayer _x }] call CBA_fnc_targetEvent;
-        (_alertVars get _side) set [0.0, true];
+private _fnc_triggerAlert = {
+    params ["_key", "_percent"];
+
+    private _played = _hullstatus get _key get "played" get _side;
+    if (_percentHP <= _percent && !_played) then {
+        private _alertPathFriendly = _hullstatus get _key get "path_friendly";
+        private _alertPathEnemy = _hullstatus get _key get "path_enemy";
+
+        [QGVAR(AlertAddToSystem), [_alertPathFriendly], _friendlyUnits] call CBA_fnc_targetEvent;
+        [QGVAR(AlertAddToSystem), [_alertPathEnemy], _enemyUnits] call CBA_fnc_targetEvent;
     };
 };
 
+// Check thresholds
+["initial", 1] call _fnc_triggerAlert;
+[0.75, 0.75] call _fnc_triggerAlert;
+[0.50, 0.50] call _fnc_triggerAlert;
+[0.25, 0.25] call _fnc_triggerAlert;
+[0, 0] call _fnc_triggerAlert;
+
+// Handle reactor
+if (_percentHP <= 0.50 && (_hullstatus get "reactor" get "played" get _side)) then {
+    private _vunerabilites = missionNamespace getVariable QGVAR(reactor_vulnerabilites);
+    _vunerabilites set [_side, true];
+    missionNamespace setVariable [QGVAR(reactor_vulnerabilites), true];
+
+    private _alertPathFriendly = _hullstatus get "reactor" get "path_friendly";
+    private _alertPathEnemy = _hullstatus get "reactor" get "path_enemy";
+
+    [QGVAR(AlertAddToSystem), [_alertPathFriendly], _friendlyUnits] call CBA_fnc_targetEvent;
+    [QGVAR(AlertAddToSystem), [_alertPathEnemy], _enemyUnits] call CBA_fnc_targetEvent;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 // Loadout Unlocking
-private _unlockHash = GVAR(Game) getVariable QGVAR(unlocked_loadouts);
+////////////////////////////////////////////////////////////////////////////////////////////////
+private _unlockHash = missionNamespace getVariable QGVAR(unlocked_loadouts);
 if (_percentHP <= 1/3) then {
     if !(_unlockHash get 2) then {
         [2] call FUNC(UnlockLoadouts);
@@ -106,7 +92,10 @@ if (_percentHP <= 2/3) then {
     };
 };
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Game Ending
+////////////////////////////////////////////////////////////////////////////////////////////////
 if (_percentHP <= 0) exitWith {
-    GVAR(Game) setVariable [QGVAR(game_state), GAME_STATE_ENDING, true];
+    missionNamespace setVariable [QGVAR(game_state), GAME_STATE_ENDING, true];
     [QGVAR(ExplosionSequence), [_carrier]] call CBA_fnc_globalEvent;
 };

@@ -20,9 +20,9 @@ switch _mode do {
 
             if !(alive _hitEntity) exitWith {};
 
-            private _isReactor = _hitEntity in (GVAR(Game) getVariable QGVAR(reactors));
+            private _isReactor = _hitEntity in (missionNamespace getVariable QGVAR(reactors));
             private _side = _hitEntity getVariable [QGVAR(side), sideUnknown];
-            private _isVulnerable = (GVAR(Game) getVariable QGVAR(reactor_vulnerabilities)) get _side;
+            private _isVulnerable = (missionNamespace getVariable QGVAR(reactor_vulnerabilities)) get _side;
             private _isFF = (_side isEqualTo side group _projectileOwner);
             private _isUnique = (_projectile getVariable QGVAR(Reactor_Shot_ReactorsHit) pushBackUnique _hitEntity != -1);
 
@@ -43,9 +43,9 @@ switch _mode do {
 
             if !(alive _hitEntity) exitWith {};
 
-            private _isReactor = _hitEntity in (GVAR(Game) getVariable QGVAR(reactors));
+            private _isReactor = _hitEntity in (missionNamespace getVariable QGVAR(reactors));
             private _side = _hitEntity getVariable [QGVAR(side), sideUnknown];
-            private _isVulnerable = (GVAR(Game) getVariable QGVAR(reactor_vulnerabilities)) get _side;
+            private _isVulnerable = (missionNamespace getVariable QGVAR(reactor_vulnerabilities)) get _side;
             private _isFF = (_side isEqualTo side group _projectileOwner);
             private _isUnique = (_projectile getVariable QGVAR(Reactor_Shot_ReactorsHit) pushBackUnique _hitEntity != -1);
 
@@ -73,7 +73,7 @@ switch _mode do {
                 private _simulation = toLowerANSI (getText (configFile >> "CfgAmmo" >> typeOf _projectile >> "simulation"));
 
                 private _explosiveDistance = getNumber (configFile >> "CfgAmmo" >> typeOf _projectile >> "indirectHitRange");
-                private _inRangeReactors = (GVAR(Game) getVariable QGVAR(reactors)) select {_x distance _projectile <= _explosiveDistance};
+                private _inRangeReactors = (missionNamespace getVariable QGVAR(reactors)) select {_x distance _projectile <= _explosiveDistance};
 
                 if (_inRangeReactors isEqualTo []) exitWith {};
 

@@ -6,4 +6,4 @@ if (!hasInterface) exitWith {};
 
 "HUD" cutRsc [QGVAR(CarrierHUD), "PLAIN", 1e-6];
 
-EGVAR(game,Game) setVariable [QEGVAR(game,hud_initialized), true];
+missionNamespace setVariable [QEGVAR(game,hud_initialized), true];

@@ -36,5 +36,5 @@ waitUntil {
             32,
             0
         ];
-    } forEach (EGVAR(game,Game) getVariable [QEGVAR(game,silos), []]);
+    } forEach (missionNamespace getVariable [QEGVAR(game,silos), []]);
 }];

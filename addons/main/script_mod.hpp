@@ -15,6 +15,10 @@
     #define PREP(fncName) [QPATHTOF(functions\DOUBLES(fn,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #endif
 
+// Remote String Send for Localization
+#define RSTRING(var1)           TRIPLES(STR,ADDON,var1)
+#define ERSTRING(var1,var2)     TRIPLES(STR,DOUBLES(PREFIX,var1),var2)
+
 // Enums
 #define GAME_STATE_PREINIT      0
 #define GAME_STATE_INIT         1

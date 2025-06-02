@@ -32,7 +32,7 @@ GVAR(TurretControlSystem) = createHashMapObject [[
             };
 
             // determine if it is time to destroy
-            private _carrier = ((GVAR(Game) getVariable QGVAR(carriers)) get _side);
+            private _carrier = ((missionNamespace getVariable QGVAR(carriers)) get _side);
             if (isNull _carrier) then {
                 continue;
             };
@@ -107,7 +107,7 @@ GVAR(TurretControlSystem) = createHashMapObject [[
         _self set ["m_entities", _entities];
 
         // Broadcast
-        GVAR(Game) setVariable [QGVAR(turrets), _entities, true];
+        missionNamespace setVariable [QGVAR(turrets), _entities, true];
 
         LOG_2("%1::Register | Entity registered: %2",(_self get "#type")#0,_entity);
     }],
@@ -127,7 +127,7 @@ GVAR(TurretControlSystem) = createHashMapObject [[
         _self set ["m_entities", _entities];
 
         // Broadcast
-        GVAR(Game) setVariable [QGVAR(turrets), _self get "m_entities", true];
+        missionNamespace setVariable [QGVAR(turrets), _self get "m_entities", true];
 
         LOG_2("%1::Unregister | Entity unregistered: %2",(_self get "#type")#0,_entity);
     }],

@@ -47,4 +47,4 @@
     if (_elapsedTime > 1) then {
         _x setVariable [QGVAR(MissileTrackStartTime), time];
     };
-} forEach (GVAR(Game) getVariable [QGVAR(missiles), []]);
+} forEach (missionNamespace getVariable [QGVAR(missiles), []]);

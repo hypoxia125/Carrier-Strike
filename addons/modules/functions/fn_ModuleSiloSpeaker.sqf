@@ -17,12 +17,11 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
-waitUntil { !isNil QEGVAR(game,Game) };
-waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
+waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
 
 private _siloNum = _module getVariable "silonumber";
 
-private _silos = EGVAR(game,Game) getVariable [QEGVAR(game,silos), []];
+private _silos = missionNamespace getVariable [QEGVAR(game,silos), []];
 private _silo = _silos select { _x getVariable QEGVAR(game,silo_number) == _siloNum };
 _silo = _silo#0;
 

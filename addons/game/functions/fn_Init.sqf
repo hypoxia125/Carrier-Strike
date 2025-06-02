@@ -3,7 +3,7 @@
 call FUNC(InitGame);
 call FUNC(InitSystems);
 
-GVAR(Game) setVariable [QGVAR(game_state), GAME_STATE_INIT, true];
+missionNamespace setVariable [QGVAR(game_state), GAME_STATE_INIT, true];
 
 // Register 3d marker code
 GVAR(3DMarkerSystem) call ["Register", compileScript [QPATHTOF(scripts\MissileTrack3D.sqf)]];
@@ -14,11 +14,14 @@ GVAR(3DMarkerSystem) call ["Register", compileScript [QPATHTOF(scripts\Reactor3D
 call EFUNC(ui,InitHUD);
 call EFUNC(ui,DrawSiloIcons);
 
+// Chat channels
+call FUNC(InitChatChannels);
+
 // Initialize Diary
 call FUNC(InitDiary);
 
 // Player stuff
-call FUNC(PlayerInitEvents);
+call FUNC(PlayerInit);
 
 // Dynamic groups
 if (isServer) then {
@@ -33,5 +36,5 @@ if (hasInterface) then {
 // Loadouts
 [1] call FUNC(UnlockLoadouts);
 
-GVAR(Game) setVariable [QGVAR(game_state), GAME_STATE_POSTINIT, true];
-GVAR(Game) setVariable [QGVAR(game_state), GAME_STATE_PLAYING, true];
+missionNamespace setVariable [QGVAR(game_state), GAME_STATE_POSTINIT, true];
+missionNamespace setVariable [QGVAR(game_state), GAME_STATE_PLAYING, true];

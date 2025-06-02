@@ -54,7 +54,7 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         _self set ["m_entities", _entities];
 
         // Broadcast
-        GVAR(Game) setVariable [QGVAR(silos), _entities, true];
+        missionNamespace setVariable [QGVAR(silos), _entities, true];
 
         LOG_2("%1::Register | Entity registered: %2",(_self get "#type")#0,_entity);
     }],
@@ -74,7 +74,7 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         _self set ["m_entities", _entities];
 
         // Broadcast
-        GVAR(Game) setVariable [QGVAR(silos), _self get "m_entities", true];
+        missionNamespace setVariable [QGVAR(silos), _self get "m_entities", true];
 
         LOG_2("%1::Unregister | Entity unregistered: %2",(_self get "#type")#0,_entity);
     }],
@@ -130,7 +130,8 @@ GVAR(SiloControlSystem) = createHashMapObject [[
 
         [QEGVAR(ui,UpdateSiloCountdown), [_silo, _countdown]] call CBA_fnc_globalEvent;
         
-        private _silotimeremainingalerts = (GVAR(Game) getVariable QGVAR(alerts)) get "silotimeremaining";
+        private _alerts = missionNamespace getVariable QGVAR(alerts);
+        private _silotimeremainingalerts = _alerts get "silotimeremaining";
         private _alert = _silotimeremainingalerts get _countdown;
         private _siloSpeakers = _silo getVariable [QGVAR(speaker_positions), []];
         if (!isNil "_alert") then {
@@ -212,13 +213,17 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         };
 
         // Handle state transitions
-        private _alerts = GVAR(Game) getVariable QGVAR(alerts);
+        private _fnc_getSidePlayers = {
+            params ["_side"];
+            allPlayers select { side group _x == _side };
+        };
+        private _alerts = missionNamespace getVariable QGVAR(alerts);
         private _respawn = _silo getVariable [QGVAR(respawn), []];
         // Switch side to west
         if (_currentProgress <= -1 && _currentSide != west) then {
             _currentSide = west;
             _currentProgress = -1;
-            [QGVAR(AlertAddToSystem), [(_alerts get "silocapture") get _siloNumber], allPlayers select { side group _x == west }] call CBA_fnc_targetEvent;
+            [QGVAR(AlertAddToSystem), [(_alerts get "silocapture") get _siloNumber], west call _fnc_getSidePlayers] call CBA_fnc_targetEvent;
             // Change respawn position
             if (count _respawn == 2) then {
                 _respawn call BIS_fnc_removeRespawnPosition;

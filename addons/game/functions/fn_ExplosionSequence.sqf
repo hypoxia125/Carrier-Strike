@@ -13,7 +13,7 @@ if (isServer) then {
         params ["_args", "_handle"];
         _args params ["_carrier"];
 
-        if (GVAR(Game) getVariable QGVAR(game_state) == GAME_STATE_ENDED) exitWith {
+        if (missionNamespace getVariable QGVAR(game_state) == GAME_STATE_ENDED) exitWith {
             _handle call CBA_fnc_removePerFrameHandler;
         };
         if (!isMultiplayer && isGamePaused) exitWith {};
@@ -28,7 +28,7 @@ if (isServer) then {
 // Explosions
 if (isServer) then {
     [_carrier] spawn {
-        while { GVAR(Game) getVariable QGVAR(game_state) != GAME_STATE_ENDED } do {
+        while { missionNamespace getVariable QGVAR(game_state) != GAME_STATE_ENDED } do {
             params ["_carrier"];
 
             // spawn explosion
@@ -52,7 +52,7 @@ if (isServer) then {
         params ["_side"];
         private _time = time;
         waitUntil { time >= _time + 20};
-        GVAR(Game) setVariable [QGVAR(game_state), GAME_STATE_ENDED, true];
+        missionNamespace setVariable [QGVAR(game_state), GAME_STATE_ENDED, true];
         [_side] call FUNC(EndGame);
     };
 };

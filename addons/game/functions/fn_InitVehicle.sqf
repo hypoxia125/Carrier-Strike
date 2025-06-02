@@ -18,14 +18,14 @@ private _ownerType = _typeData param [0, "", [""]];
 switch toLowerANSI _ownerType do {
     case "silo": {
         private _siloNumber = _typeData param [1, -1, [-1]];
-        private _silos = GVAR(Game) getVariable QGVAR(silos);
+        private _silos = missionNamespace getVariable QGVAR(silos);
         private _silo = _silos select { _x getVariable QGVAR(silo_number) == _siloNumber };
         _owner = _silo#0;
     };
 
     case "carrier": {
         private _side = _typeData param [1, sideUnknown, [sideUnknown]];
-        private _carriers = GVAR(Game) getVariable QGVAR(carriers);
+        private _carriers = missionNamespace getVariable QGVAR(carriers);
         private _carrier = _carriers get _side;
         _owner = _carrier;
     };

@@ -2,63 +2,65 @@
 
 if (!isServer) exitWith {};
 
-GVAR(Game) = true call CBA_fnc_CreateNamespace;
-publicVariable QGVAR(Game);
-
 private _data = createHashMapFromArray [
-    ["silos", []],
-    ["missiles", []],
+    //! All silos registered in the game
+    ["silos", [/* silo object */]],
+
+    //! All missiles registered in the game
+    ["missiles", [/* missile projectile */]],
+
+    //! Current enum state of the game
+    //! States can be found in addons\main\script_mod.hpp
     ["game_state", -1],
-    ["reactors", []],
-    ["reactor_vulnerabilities", createHashMapFromArray [
+
+    //! All reactors registered in the game
+    ["reactors", [/* reactor object */]],
+
+    //! Lists which team's reactors are allowed to take damage
+    ["reactor_vulnerabilites", createHashMapFromArray [
         [west, false],
         [east, false]
     ]],
 
-    ["chatHeadquarterLogic", createHashMapFromArray [
-        [west, objNull],
-        [east, objNull],
-        [independent, objNull]
-    ]],
-    ["chatNotificationChannels", createHashMapFromArray [
-        [west, -1],
-        [east, -1],
-        [independent, -1]
+    //! All chat channels and related information
+    ["chat_channels", createHashMapFromArray [
+        //! Global chat channel, used for status updates
+        ["notification", createHashMapFromArray [
+            ["channel_ids", createHashMapFromArray [
+                [west, -1],
+                [east, -1],
+                [independent, -1]
+            ]],
+            ["channel_units", createHashMapFromArray [
+                [west, objNull],
+                [east, objNull],
+                [independent, objNull]
+            ]]
+        ]]
     ]],
 
+    //! Missile targets for each side
     ["missile_targets", createHashMapFromArray [
         [west, objNull],
-        [east, objNull],
-        [independent, objNull]
+        [east, objNull]
     ]],
 
+    //! Carriers registered to each side
     ["carriers", createHashMapFromArray [
         [west, objNull],
         [east, objNull]
     ]],
-    
-    ["eventHandles", createHashMapFromArray [
+
+    //! All respawn position info
+    ["respawn_positions", [/* [<respawnID, <respawnType>, <respawnArea>] */]],
+
+    //! Contains which tiers of equipment are currently allowed
+    ["unlocked_loadouts", createHashMapFromArray [
+        [1, false],
+        [2, false],
+        [3, false]
     ]],
 
-    // Alerts
-    ["alert_vars", createHashMapFromArray [
-        [west, createHashMapFromArray [
-            ["initial", false],
-            ["reactor", false],
-            [0.75, false],
-            [0.50, false],
-            [0.25, false],
-            [0.15, false]
-        ]],
-        [east, createHashMapFromArray [
-            ["initial", false],
-            ["reactor", false],
-            [0.75, false],
-            [0.50, false],
-            [0.25, false],
-            [0.15, false]
-        ]]
-    ]],
     ["alerts", createHashMapFromArray [
         ["silotimeremaining", createHashMapFromArray [
             [120, QPATHTOEF(sound,data\sound\VO\betty\missilelaunchcountdown_120s.ogg)],
@@ -80,35 +82,59 @@ private _data = createHashMapFromArray [
             [4, QPATHTOEF(sound,data\sound\VO\commander\lostsilo4.ogg)],
             [5, QPATHTOEF(sound,data\sound\VO\commander\lostsilo5.ogg)]
         ]],
-        ["friendlyhull", createHashMapFromArray [
-            ["initial", QPATHTOEF(sound,data\sound\VO\commander\friendlycarrierinitialdamage.ogg)],
-            ["reactor", QPATHTOEF(sound,data\sound\VO\commander\friendlyreactorexposed.ogg)],
-            [0.75, QPATHTOEF(sound,data\sound\VO\commander\friendlyhull75.ogg)],
-            [0.50, QPATHTOEF(sound,data\sound\VO\commander\friendlyhull50.ogg)],
-            [0.25, QPATHTOEF(sound,data\sound\VO\commander\friendlyhull25.ogg)],
-            [0.15, QPATHTOEF(sound,data\sound\VO\commander\friendlyhull15.ogg)],
-            [0.0, QPATHTOEF(sound,data\sound\VO\commander\friendlyhull0.ogg)]
-        ]],
-        ["enemyhull", createHashMapFromArray [
-            //["initial", QPATHTOEF(sound,data\sound\VO\commander\enemycarrierinitialdamage.ogg)],
-            ["reactor", QPATHTOEF(sound,data\sound\VO\commander\enemyreactorexposed.ogg)],
-            [0.75, QPATHTOEF(sound,data\sound\VO\commander\enemyhull75.ogg)],
-            [0.50, QPATHTOEF(sound,data\sound\VO\commander\enemyhull50.ogg)],
-            [0.25, QPATHTOEF(sound,data\sound\VO\commander\enemyhull25.ogg)],
-            [0.15, QPATHTOEF(sound,data\sound\VO\commander\enemyhull15.ogg)],
-            [0.0, QPATHTOEF(sound,data\sound\VO\commander\enemyhull0.ogg)]
+        ["hullstatus", createHashMapFromArray [
+            ["initial", createHashMapFromArray [
+                ["path_friendly", QPATHTOEF(sound,data\sound\VO\commander\friendlycarrierinitialdamage.ogg)],
+                ["path_enemy", QPATHTOEF(sound,data\sound\VO\commander\enemycarrierinitialdamage.ogg)],
+                ["played", createHashMapFromArray [
+                    [west, false],
+                    [east, false]
+                ]]
+            ]],
+            ["reactor", createHashMapFromArray [
+                ["path_friendly", QPATHTOEF(sound,data\sound\VO\commander\friendlyreactorexposed.ogg)],
+                ["path_enemy", QPATHTOEF(sound,data\sound\VO\commander\enemyreactorexposed.ogg)],
+                ["played", createHashMapFromArray [
+                    [west, false],
+                    [east, false]
+                ]]
+            ]],
+            [0.75, createHashMapFromArray [
+                ["path_friendly", QPATHTOEF(sound,data\sound\VO\commander\friendlyhull75.ogg)],
+                ["path_enemy", QPATHTOEF(sound,data\sound\VO\commander\enemyhull75.ogg)],
+                ["played", createHashMapFromArray [
+                    [west, false],
+                    [east, false]
+                ]]
+            ]],
+            [0.50, createHashMapFromArray [
+                ["path_friendly", QPATHTOEF(sound,data\sound\VO\commander\friendlyhull50.ogg)],
+                ["path_enemy", QPATHTOEF(sound,data\sound\VO\commander\enemyhull50.ogg)],
+                ["played", createHashMapFromArray [
+                    [west, false],
+                    [east, false]
+                ]]
+            ]],
+            [0.25, createHashMapFromArray [
+                ["path_friendly", QPATHTOEF(sound,data\sound\VO\commander\friendlyhull25.ogg)],
+                ["path_enemy", QPATHTOEF(sound,data\sound\VO\commander\enemyhull25.ogg)],
+                ["played", createHashMapFromArray [
+                    [west, false],
+                    [east, false]
+                ]]
+            ]],
+            [0, createHashMapFromArray [
+                ["path_friendly", QPATHTOEF(sound,data\sound\VO\commander\friendlyhull0.ogg)],
+                ["path_enemy", QPATHTOEF(sound,data\sound\VO\commander\enemyhull0.ogg)],
+                ["played", createHashMapFromArray [
+                    [west, false],
+                    [east, false]
+                ]]
+            ]]
         ]]
-    ]],
-
-    ["respawn_positions", []],
-    
-    ["unlocked_loadouts", createHashMapFromArray [
-        [1, false],
-        [2, false],
-        [3, false]
     ]]
 ];
 
 {
-    GVAR(Game) setVariable [format[QGVAR(%1),_x], _y, true]
+    missionNamespace setVariable [format[QGVAR(%1),_x], _y, true]
 } forEach _data;

@@ -17,8 +17,7 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
-waitUntil { !isNil QEGVAR(game,Game) };
-waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_INIT };
+waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_INIT };
 
 private _sideVal = _module getVariable "ownerSide";
 
@@ -30,7 +29,7 @@ private _side = switch _sideVal do {
 };
 
 // User input checks
-private _targetHash = EGVAR(game,Game) getVariable QEGVAR(game,missile_targets);
+private _targetHash = missionNamespace getVariable QEGVAR(game,missile_targets);
 if !(isNull (_targetHash getOrDefault [_side, objNull])) exitWith {
     ERROR_WITH_TITLE_1("ModuleAddMissile","Missile target already registered for side: %1",_side);
 };
@@ -46,4 +45,4 @@ civilian reportRemoteTarget [_target, 1e12];
 
 _targetHash set [_side, _target];
 INFO_1("ModuleAddMissileTarget: Adding missile target for side: %1",_side);
-EGVAR(game,Game) setVariable [QEGVAR(game,missile_targets), _targetHash, true];
+missionNamespace setVariable [QEGVAR(game,missile_targets), _targetHash, true];
