@@ -21,4 +21,4 @@ private _channels = missionNamespace getVariable QGVAR(chat_channels);
     _channels get "notification" get "channel_units" set [_x, _logic];
 } forEach [west, east, independent];
 
-missionNamespace setVariable [QGVAR(chat_channels), _channelHash, true];
+missionNamespace setVariable [QGVAR(chat_channels), _channels, true];
