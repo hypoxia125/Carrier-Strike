@@ -1,3 +1,7 @@
+# Alpha Version v0.4.3
+
+- Fixed initialization order of modules on dedicated server
+
 # Alpha Version v0.4.2
 
 - Added notification channels for future
