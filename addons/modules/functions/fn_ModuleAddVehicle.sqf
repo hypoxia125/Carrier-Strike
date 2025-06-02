@@ -17,8 +17,7 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
-waitUntil { !isNil QEGVAR(game,Game) };
-waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
+waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
 
 private _ownerVal = _module getVariable "owner";
 private _typeVal = _module getVariable "type";

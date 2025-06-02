@@ -1,3 +1,10 @@
+# Alpha Version v0.4.2
+
+- Added notification channels for future
+- Removed the game namespace, replaced with missionNamespace
+- Added player counts and cba help back into diary
+- Fixed issues with helis spawning on carrier
+
 # Alpha Version v0.4.1
 
 - Changed: Initialization process

@@ -6,7 +6,7 @@ params ["_silo"];
 
 private _side = _silo getVariable [QGVAR(side), sideUnknown];
 private _targetSide = ([west, east] - [_side])#0;
-private _target = (GVAR(Game) getVariable QGVAR(missile_targets)) get _targetSide;
+private _target = (missionNamespace getVariable QGVAR(missile_targets)) get _targetSide;
 
 if (isNull _target) exitWith {};
 

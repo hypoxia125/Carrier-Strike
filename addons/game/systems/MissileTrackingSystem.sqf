@@ -28,7 +28,7 @@ GVAR(MissileTrackingSystem) = createHashMapObject [[
 
             if (!alive _missile) then {
                 private _side = (_self get "m_sides") # _forEachIndex;
-                private _targets = GVAR(Game) getVariable QGVAR(missile_targets);
+                private _targets = missionNamespace getVariable QGVAR(missile_targets);
                 private _target = _targets get _side;
                 if (isNil "_target") exitWith {
                     LOG_1("%1::Update | No target found for missile",(_self get "#type")#0);
@@ -59,7 +59,7 @@ GVAR(MissileTrackingSystem) = createHashMapObject [[
         _self set ["m_sides", _entitySides];
 
         // Broadcast
-        GVAR(Game) setVariable [QGVAR(missiles), _self get "m_entities", true];
+        missionNamespace setVariable [QGVAR(missiles), _self get "m_entities", true];
 
         LOG_2("%1::Register | Entity registered: %2",(_self get "#type")#0,_entity);
     }],
@@ -81,7 +81,7 @@ GVAR(MissileTrackingSystem) = createHashMapObject [[
         _self set ["m_sides", _entitySides];
 
         //Broadcast
-        GVAR(Game) setVariable [QGVAR(missiles), _self get "m_entities", true];
+        missionNamespace setVariable [QGVAR(missiles), _self get "m_entities", true];
 
         LOG_2("%1::Unregister | Entity unregistered: %2",(_self get "#type")#0,_entity);
     }],

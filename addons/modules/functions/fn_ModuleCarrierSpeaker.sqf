@@ -17,8 +17,7 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
-waitUntil { !isNil QEGVAR(game,Game) };
-waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
+waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
 
 private _sideVal = _module getVariable "side";
 
@@ -30,7 +29,7 @@ private _side = switch _sideVal do {
 };
 if (_side == sideUnknown) exitWith {};
 
-private _carriers = EGVAR(game,Game) getVariable [QEGVAR(game,carriers), createHashMap];
+private _carriers = missionNamespace getVariable [QEGVAR(game,carriers), createHashMap];
 private _carrier = _carriers getOrDefault [_side, objNull];
 if (isNull _carrier) exitWith {};
 

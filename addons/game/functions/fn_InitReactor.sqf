@@ -22,6 +22,6 @@ private _data = createHashMapFromArray [
 } forEach _data;
 
 // add to game data
-private _reactorData = GVAR(Game) getVariable QGVAR(reactors);
+private _reactorData = missionNamespace getVariable QGVAR(reactors);
 _reactorData insert [-1, [_reactor]];
-GVAR(Game) setVariable [QGVAR(reactors), _reactorData, true];
+missionNamespace setVariable [QGVAR(reactors), _reactorData, true];

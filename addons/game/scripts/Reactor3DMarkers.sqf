@@ -32,4 +32,4 @@ if (cameraView == "Gunner") exitWith {};
         2,
         _textSize
     ];
-} forEach (GVAR(Game) getVariable [QGVAR(reactors), []]);
+} forEach (missionNamespace getVariable [QGVAR(reactors), []]);

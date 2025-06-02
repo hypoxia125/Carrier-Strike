@@ -29,12 +29,12 @@ _player call FUNC(PlayerEvents);
 [{
     params ["_player"];
 
-    private _silos = GVAR(Game) getVariable QGVAR(silos);
+    private _silos = missionNamespace getVariable QGVAR(silos);
     _silos findIf {_x distance2D _player <= 10} != -1;
 }, {
     params ["_player"];
 
-    private _silos = GVAR(Game) getVariable QGVAR(silos);
+    private _silos = missionNamespace getVariable QGVAR(silos);
     private _index = _silos findIf {_x distance2D _player <= 10};
     if (_index == -1) exitWith {};
 
@@ -55,3 +55,8 @@ _player call FUNC(PlayerEvents);
     _player setPosATL _pos;
     _player setDir (getDir _player + (_player getRelDir _silo));
 }, [_player], 1, {}] call CBA_fnc_waitUntilAndExecute;
+
+// Chat channels
+private _channels = missionNamespace getVariable QGVAR(chat_channels);
+private _channel = _channels get "notification" get "channel_ids" get (side group player);
+[QGVAR(AddToChatChannel), [[_player], _channel]] call CBA_fnc_serverEvent;

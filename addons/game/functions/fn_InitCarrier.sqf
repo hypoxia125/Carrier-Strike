@@ -4,9 +4,9 @@ if (!isServer) exitWith {};
 
 params ["_carrier", "_side"];
 
-private _carriers = GVAR(Game) getVariable QGVAR(carriers);
+private _carriers = missionNamespace getVariable QGVAR(carriers);
 _carriers set [_side, _carrier];
-GVAR(Game) setVariable [QGVAR(carriers), _carriers, true];
+missionNamespace setVariable [QGVAR(carriers), _carriers, true];
 
 private _data = createHashMapFromArray [
     ["side", sideUnknown],

@@ -11,3 +11,7 @@
 [QGVAR(ReactorShotSimInit), {
     call FUNC(ReactorShotSimInit);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(AddToChatChannel), {
+    call FUNC(AddToChatChannel);
+}] call CBA_fnc_addEventHandler;

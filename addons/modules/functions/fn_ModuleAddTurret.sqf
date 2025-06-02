@@ -17,8 +17,7 @@ _input params [
 if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
-waitUntil { !isNil QEGVAR(game,Game) };
-waitUntil { (EGVAR(game,Game) getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_INIT };
+waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_INIT };
 
 private _sideVal = _module getVariable "side";
 private _minTurn = _module getVariable ["minTurn", -180];

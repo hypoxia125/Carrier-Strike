@@ -39,4 +39,4 @@ if (cameraView == "Gunner") exitWith {};
         0,
         _textSize
     ];
-} forEach (GVAR(Game) getVariable [QGVAR(silos), []]);
+} forEach (missionNamespace getVariable [QGVAR(silos), []]);
