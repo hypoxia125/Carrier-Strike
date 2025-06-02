@@ -2,9 +2,7 @@
 
 player removeDiarySubject "Diary";
 player removeDiarySubject "Units";
-player removeDiarySubject "Players";
 player removeDiarySubject "Statistics";
-player removeDiarySubject "cba_help_docs";
 
 private _indent = "  ";
 private _bullet = "-  ";
