@@ -22,14 +22,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2561;
+		nextID=2601;
 	};
 	class Camera
 	{
-		pos[]={6899.0469,221.14923,3593.1548};
-		dir[]={0.30084911,-0.51110578,-0.80519581};
-		up[]={0.17889224,0.85950172,-0.47878766};
-		aside[]={-0.93677741,3.434252e-08,-0.35001186};
+		pos[]={9095.7891,40.672733,4664.6338};
+		dir[]={-0.31373987,-0.39631519,0.8629455};
+		up[]={-0.13542752,0.91808665,0.37249276};
+		aside[]={0.93988365,4.2597821e-07,0.3417086};
 	};
 };
 binarizationWanted=0;
@@ -281,7 +281,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="SCALAR";
-					value=0;
+					value=1;
 				};
 			};
 		};
@@ -7412,7 +7412,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7186.23,25.331238,2204.5042};
+						position[]={7185.9897,25.331722,2204.7146};
 						angles[]={0,2.0441122,0};
 					};
 					side="Empty";
@@ -7423,7 +7423,7 @@ class Mission
 					};
 					id=3166;
 					type="B_Heli_Light_01_F";
-					atlOffset=0.017507553;
+					atlOffset=0.017997742;
 				};
 				class Item24
 				{
@@ -28478,11 +28478,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7186.373,23.541355,2204.5769};
+				position[]={7186.1328,23.54184,2204.7874};
 			};
 			id=3328;
 			type="carrierstrike_modules_ModuleAddVehicle";
-			atlOffset=57.352005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28597,11 +28596,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7181.0781,23.542316,2194.6421};
+				position[]={7181.0781,23.542185,2194.6421};
 			};
 			id=3329;
 			type="carrierstrike_modules_ModuleAddVehicle";
-			atlOffset=0.00013160706;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28716,11 +28714,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7245.228,23.52846,2199.519};
+				position[]={7245.228,23.528522,2199.519};
 			};
 			id=3331;
 			type="carrierstrike_modules_ModuleAddVehicle";
-			atlOffset=55.34;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -33228,11 +33225,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9084.9209,23.500042,4690.521};
+				position[]={9084.9209,23.542456,4690.521};
 			};
 			id=3388;
 			type="carrierstrike_modules_ModuleAddVehicle";
-			atlOffset=53.975922;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -33347,11 +33343,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9021.9697,23.631039,4685.9551};
+				position[]={9021.9697,23.528793,4685.9551};
 			};
 			id=3389;
 			type="carrierstrike_modules_ModuleAddVehicle";
-			atlOffset=0.10224533;
 			class CustomAttributes
 			{
 				class Attribute0

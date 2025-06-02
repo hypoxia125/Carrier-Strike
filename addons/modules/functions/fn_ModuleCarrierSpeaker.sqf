@@ -18,6 +18,7 @@ if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
 waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
+waitUntil { time > 0 };
 
 private _sideVal = _module getVariable "side";
 

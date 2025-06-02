@@ -50,5 +50,7 @@ private _dataHash = createHashMapFromArray [
     ["expression", _code]
 ];
 
+LOG_3("Adding Vehicle To System: [%1,%2,%3]",_dataHash get _side,_owner,_position);
+
 // Register to the system
 GVAR(VehicleRespawnSystem) call ["Register", [_dataHash]];

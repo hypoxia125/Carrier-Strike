@@ -5,14 +5,16 @@ call FUNC(InitSystems);
 
 missionNamespace setVariable [QGVAR(game_state), GAME_STATE_INIT, true];
 
-// Register 3d marker code
-GVAR(3DMarkerSystem) call ["Register", compileScript [QPATHTOF(scripts\MissileTrack3D.sqf)]];
-GVAR(3DMarkerSystem) call ["Register", compileScript [QPATHTOF(scripts\Silo3DMarkers.sqf)]];
-GVAR(3DMarkerSystem) call ["Register", compileScript [QPATHTOF(scripts\Reactor3DMarkers.sqf)]];
+if (hasInterface) then {
+    // Register 3d marker code
+    GVAR(3DMarkerSystem) call ["Register", compileScript [QPATHTOF(scripts\MissileTrack3D.sqf)]];
+    GVAR(3DMarkerSystem) call ["Register", compileScript [QPATHTOF(scripts\Silo3DMarkers.sqf)]];
+    GVAR(3DMarkerSystem) call ["Register", compileScript [QPATHTOF(scripts\Reactor3DMarkers.sqf)]];
 
-// Initialize HUD
-call EFUNC(ui,InitHUD);
-call EFUNC(ui,DrawSiloIcons);
+    // Initialize HUD
+    call EFUNC(ui,InitHUD);
+    call EFUNC(ui,DrawSiloIcons);
+};
 
 // Chat channels
 call FUNC(InitChatChannels);
@@ -36,5 +38,11 @@ if (hasInterface) then {
 // Loadouts
 [1] call FUNC(UnlockLoadouts);
 
-missionNamespace setVariable [QGVAR(game_state), GAME_STATE_POSTINIT, true];
-missionNamespace setVariable [QGVAR(game_state), GAME_STATE_PLAYING, true];
+[{
+    missionNamespace setVariable [QGVAR(game_state), GAME_STATE_POSTINIT, true];
+}] call CBA_fnc_execNextFrame;
+
+[] spawn {
+    waitUntil { time > 0 };
+    missionNamespace setVariable [QGVAR(game_state), GAME_STATE_PLAYING, true];
+};
