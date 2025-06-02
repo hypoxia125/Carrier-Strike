@@ -56,7 +56,6 @@ if (count synchronizedObjects _module > 0) exitWith {
 };
 
 // Execute
-INFO_1("ModuleAddVehicle: Adding vehicle for side: %1",_side);
 if (_type == "silo") then {
     [
         ["silo", _siloNumber],
