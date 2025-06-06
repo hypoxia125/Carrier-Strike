@@ -13,7 +13,7 @@ class GVAR(ModuleRespawnPosition): GVAR(ModuleBase) {
 
     canSetArea = 1;
     canSetAreaShape = 0;
-    // canSetAreaHeight = 1;
+    canSetAreaHeight = 1;
     class AttributeValues {
         size3[] = {10, 10, 10};
         isRectangle = 0;

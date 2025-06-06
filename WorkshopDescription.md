@@ -4,7 +4,7 @@
 I wanted to get this out since the main gameplay loop is finished to start collecting feedback. This has not had a balance pass yet, so be warned.
 Development is slow on weekdays, fast on weekends. Expect frequent updates.
 
-[h1]Current Version - v0.4.3[/h1]
+[h1]Current Version - v0.4.4[/h1]
 
 Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Discord[/url]
 

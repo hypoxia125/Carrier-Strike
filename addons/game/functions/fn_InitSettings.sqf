@@ -131,7 +131,7 @@
     "SLIDER",
     "Silo Missile Damage",
     ["Carrier Strike - Game Settings", "Game Settings"],
-    [0, 100, 5, 0],
+    [0, 100, 2, 0],
     2,
     {},
     true
