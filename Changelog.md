@@ -3,6 +3,7 @@
 - Due to major bug with "Roadway" LOD Bounding Boxes, there are large areas of the carrier that you can fall through. Until there is an engine fix, I have added fallthrough panels on the carrier to prevent falling through (they are ugly)
 - Added a tank to each main base
 - Fixed "Incoming Missile" on missile tracker
+- Changed default missile damage from 5 to 2 which will extend the length of the game
 
 # Alpha Version v0.4.3
 
