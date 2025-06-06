@@ -25,7 +25,11 @@
     ];
 
     // draw alert text
-    private _startTime = _x getVariable [QGVAR(MissileTrackStartTime), time];
+    private _startTime = _x getVariable QGVAR(MissileTrackStartTime);
+    if (isNil "_startTime") then {
+        _x setVariable [QGVAR(MissileTrackStartTime), time];
+    };
+    
     private _elapsedTime = time - _startTime;
 
     if (_side isEqualTo side group player) then { continue };
@@ -33,7 +37,7 @@
     if (_elapsedTime >= 0.5 && _elapsedTime <= 1) then {
         drawIcon3D [
             [1,1,1,0] call BIS_fnc_colorRGBAtoTexture,
-            _color,
+            _color + [1],
             _pos vectorAdd [0, 0, -(1 * (1000 / _distance))],
             1,
             0.25,
