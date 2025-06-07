@@ -2,11 +2,10 @@
 
 if (!isServer) exitWith {};
 
-private _maxHumidity = GVAR(Settings_MaxHumidity);
-private _allowRain = GVAR(Settings_AllowRain);
-private _allowFog = GVAR(Settings_AllowFog);
-private _nightChance = GVAR(Settings_NightChance);
-private _timeScale = GVAR(Settings_TimeScale);
+private _allowRain = [QGVAR(Settings_AllowRain)] call CBA_settings_fnc_get;
+private _allowFog = [QGVAR(Settings_AllowFog)] call CBA_settings_fnc_get;
+private _nightChance = [QGVAR(Settings_NightChance)] call CBA_settings_fnc_get;
+private _timeScale = [QGVAR(Settings_TimeScale)] call CBA_settings_fnc_get;
 
 // Figure out the date
 private _allHours = [];
@@ -80,7 +79,15 @@ private _fnc_lightning = {
     };
 };
 
-private _humidity = random [0, _maxHumidity / 2, _maxHumidity];
+private _humidity = 0;
+private _maxHumidity = [QGVAR(Settings_MaxHumidity)] call CBA_settings_fnc_get;
+
+if ([QGVAR(Settings_HumidityOverride)] call CBA_settings_fnc_get) then {
+    _humidity = [QGVAR(Settings_HumidityOverrideAmount)] call CBA_settings_fnc_get
+} else {
+    _humidity = random [0, _maxHumidity / 2, _maxHumidity];
+};
+missionNamespace setVariable [QGVAR(Humidity), _humidity, true];
 
 0 setOvercast (_humidity call _fnc_overcast);
 if (_allowRain) then { 0 setRain (_humidity call _fnc_rainIntensity) };

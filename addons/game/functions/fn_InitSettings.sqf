@@ -16,9 +16,31 @@
 [
     QGVAR(Settings_MaxHumidity),
     "SLIDER",
-    "Max Humitidy",
+    "Max Humidity",
     ["Carrier Strike - Game Settings", "Weather"],
     [0, 1, 1, 0, true],
+    2,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_HumidityOverride),
+    "CHECKBOX",
+    "Humidity Override",
+    ["Carrier Strike - Game Settings", "Weather"],
+    false,
+    2,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_HumidityOverrideAmount),
+    "SLIDER",
+    "Humidity Override Amount",
+    ["Carrier Strike - Game Settings", "Weather"],
+    [0, 1, 0, 0, true],
     2,
     {},
     true
