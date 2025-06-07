@@ -16,6 +16,9 @@ if (hasInterface) then {
     call EFUNC(ui,DrawSiloIcons);
 };
 
+// Weather
+call FUNC(SetWeather);
+
 // Chat channels
 call FUNC(InitChatChannels);
 

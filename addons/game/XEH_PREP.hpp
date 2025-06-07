@@ -21,6 +21,7 @@ PREP(PlayerEvents);
 PREP(PlayerInit);
 PREP(ReactorShotSimInit);
 PREP(RespawnPost);
+PREP(SetWeather);
 PREP(SiloLaunchMissile);
 PREP(SiloNotification);
 PREP(SiloUpdateOwnership);

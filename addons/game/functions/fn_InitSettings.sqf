@@ -14,10 +14,21 @@
 
 // World settings
 [
+    QGVAR(Settings_MaxHumidity),
+    "SLIDER",
+    "Max Humitidy",
+    ["Carrier Strike - Game Settings", "Weather"],
+    [0, 1, 1, 0, true],
+    2,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(Settings_AllowRain),
     "CHECKBOX",
     "Allow Rain",
-    ["Carrier Strike - Game Settings", "zz In Development zz"],
+    ["Carrier Strike - Game Settings", "Weather"],
     true,
     2,
     {},
@@ -28,30 +39,8 @@
     QGVAR(Settings_AllowFog),
     "CHECKBOX",
     "Allow Fog",
-    ["Carrier Strike - Game Settings", "zz In Development zz"],
+    ["Carrier Strike - Game Settings", "Weather"],
     true,
-    2,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(Settings_AllowNight),
-    "CHECKBOX",
-    "Allow Night",
-    ["Carrier Strike - Game Settings", "zz In Development zz"],
-    true,
-    2,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(Settings_RainChance),
-    "SLIDER",
-    "Rain Chance",
-    ["Carrier Strike - Game Settings", "zz In Development zz"],
-    [0, 1, 0.3, 0],
     2,
     {},
     true
@@ -61,7 +50,7 @@
     QGVAR(Settings_NightChance),
     "SLIDER",
     "Night Chance",
-    ["Carrier Strike - Game Settings", "zz In Development zz"],
+    ["Carrier Strike - Game Settings", "Weather"],
     [0, 1, 0.3, 0, true],
     2,
     {},
@@ -72,8 +61,8 @@
     QGVAR(Settings_TimeScale),
     "SLIDER",
     "Time Scale",
-    ["Carrier Strike - Game Settings", "zz In Development zz"],
-    [0, 24, 1],
+    ["Carrier Strike - Game Settings", "Weather"],
+    [1, 120, 1, 0, false],
     2,
     {},
     true
