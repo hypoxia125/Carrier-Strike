@@ -1,3 +1,11 @@
+# Alpha Version v0.5.0
+
+- Adds weather randomization system
+    - Max Humidity + Humidity Overrides allow for realistic levels of overcast, rain, lightning combinations
+    - Night chance allows for night games
+    - Toggle system to allow rain or fog
+    - Ability to change the timescale of the game
+
 # Alpha Version v0.4.4
 
 - Due to major bug with "Roadway" LOD Bounding Boxes, there are large areas of the carrier that you can fall through. Until there is an engine fix, I have added fallthrough panels on the carrier to prevent falling through (they are ugly)
