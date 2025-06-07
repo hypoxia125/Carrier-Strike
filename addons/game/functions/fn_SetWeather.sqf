@@ -2,6 +2,8 @@
 
 if (!isServer) exitWith {};
 
+if !([QGVAR(Settings_RandomizeWeather)] call CBA_settings_fnc_get) exitWith {};
+
 private _allowRain = [QGVAR(Settings_AllowRain)] call CBA_settings_fnc_get;
 private _allowFog = [QGVAR(Settings_AllowFog)] call CBA_settings_fnc_get;
 private _nightChance = [QGVAR(Settings_NightChance)] call CBA_settings_fnc_get;

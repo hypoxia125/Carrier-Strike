@@ -14,6 +14,17 @@
 
 // World settings
 [
+    QGVAR(Settings_RandomizeWeather),
+    "CHECKBOX",
+    "Randomize Weather",
+    ["Carrier Strike - Game Settings", "Weather"],
+    true,
+    2,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(Settings_MaxHumidity),
     "SLIDER",
     "Max Humidity",
