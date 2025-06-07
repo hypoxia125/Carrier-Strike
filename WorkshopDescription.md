@@ -49,6 +49,7 @@ Let me know if you want to be an official server!
 - Temporary Loadouts w/ Tier Unlock System (As game progresses, higher gear loadouts are unlocked)
 - Custom turret defense AI
 - CBA Settings For Mission Customization
+- Randomized Weather System
 
 [In Progress]
 - Modules (Some Completed)- so that you can create your own missions as well! (I need to write up documentation though)
@@ -57,7 +58,6 @@ Let me know if you want to be an official server!
 - Commander Abilities
 - Ammo Kits (like battlefield's support class specialty)
 - Out of bounds system
-- Randomized Weather System
 
 [Delayed]
 - Custom Ending Menus
