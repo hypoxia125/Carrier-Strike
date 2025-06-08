@@ -43,7 +43,10 @@ class Tier1_West_AntiTank
         "ItemRadio",
 
         // optics
-        "optic_Yorris"
+        "optic_Yorris",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -92,7 +95,10 @@ class Tier2_West_AntiTank
         "ItemRadio",
 
         // optics
-        "optic_Yorris"
+        "optic_Yorris",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -130,6 +136,9 @@ class Tier3_West_AntiTank
     };
     items[] = {"FirstAidKit"};
     linkedItems[] = {
+        // NVG
+        "NVGoggles",
+
         // vest
         "V_PlateCarrier2_rgr",
 
@@ -143,7 +152,10 @@ class Tier3_West_AntiTank
         "ItemRadio",
 
         // optics
-        "optic_Yorris"
+        "optic_Yorris",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -195,7 +207,10 @@ class Tier1_East_AntiTank
         "ItemRadio",
 
         // optics
-        "optic_Yorris"
+        "optic_Yorris",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -244,7 +259,10 @@ class Tier2_East_AntiTank
         "ItemRadio",
 
         // optics
-        "optic_Yorris"
+        "optic_Yorris",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -282,6 +300,9 @@ class Tier3_East_AntiTank
     };
     items[] = {"FirstAidKit"};
     linkedItems[] = {
+        // NVG
+        "NVGoggles_OPFOR",
+
         // vest
         "V_TacVest_brn",
 
@@ -295,7 +316,10 @@ class Tier3_East_AntiTank
         "ItemRadio",
 
         // optics
-        "optic_Yorris"
+        "optic_Yorris",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };

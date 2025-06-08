@@ -1,3 +1,10 @@
+# Alpha Version v0.6.3
+
+- Adds NVG to Tier 3 loadouts
+- Adds flashlights to all tier loadouts
+- Fixed issue that tier 3 was being unlocked before tier 2
+- Fixed issue with carrier status update voice lines
+
 # Alpha Version v0.6.2
 
 - Allows HUD to adapt to how many silos are present in the layer

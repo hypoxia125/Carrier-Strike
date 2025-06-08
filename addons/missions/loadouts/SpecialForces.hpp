@@ -47,6 +47,9 @@ class Tier1_West_SpecialForces
         // optics
         "optic_Aco",
 
+        // attachments
+        "acc_flashlight",
+
         // suppress
         "muzzle_snds_L"
     };
@@ -102,6 +105,9 @@ class Tier2_West_SpecialForces
         // optics
         "optic_Aco",
 
+        // attachments
+        "acc_flashlight",
+
         // suppress
         "muzzle_snds_L",
         "muzzle_snds_H"
@@ -142,6 +148,9 @@ class Tier3_West_SpecialForces
     };
     items[] = {"FirstAidKit"};
     linkedItems[] = {
+        // NVG
+        "NVGoggles",
+        
         // vest
         "V_PlateCarrier1_rgr",
 
@@ -157,6 +166,9 @@ class Tier3_West_SpecialForces
 
         // optics
         "optic_Hamr",
+
+        // attachments
+        "acc_flashlight",
 
         // suppress
         "muzzle_snds_L",
@@ -215,6 +227,9 @@ class Tier1_East_SpecialForces
         // optics
         "optic_Aco",
 
+        // attachments
+        "acc_flashlight",
+
         // suppress
         "muzzle_snds_L"
     };
@@ -270,6 +285,9 @@ class Tier2_East_SpecialForces
         // optics
         "optic_Aco",
 
+        // attachments
+        "acc_flashlight",
+
         // suppress
         "muzzle_snds_L",
         "muzzle_snds_H"
@@ -310,6 +328,9 @@ class Tier3_East_SpecialForces
     };
     items[] = {"FirstAidKit"};
     linkedItems[] = {
+        // NVG
+        "NVGoggles_OPFOR",
+
         // vest
         "V_TacVest_brn",
 
@@ -325,6 +346,9 @@ class Tier3_East_SpecialForces
 
         // optics
         "optic_Hamr",
+
+        // attachments
+        "acc_flashlight",
 
         // suppress
         "muzzle_snds_L",

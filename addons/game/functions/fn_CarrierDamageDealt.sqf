@@ -52,11 +52,13 @@ private _fnc_triggerAlert = {
 
         [QGVAR(AlertAddToSystem), [_alertPathFriendly], _friendlyUnits] call CBA_fnc_targetEvent;
         [QGVAR(AlertAddToSystem), [_alertPathEnemy], _enemyUnits] call CBA_fnc_targetEvent;
+
+        (_hullstatus get _key get "played") set [_side, true];
     };
 };
 
 // Check thresholds
-["initial", 1] call _fnc_triggerAlert;
+["initial", 0.99] call _fnc_triggerAlert;
 [0.75, 0.75] call _fnc_triggerAlert;
 [0.50, 0.50] call _fnc_triggerAlert;
 [0.25, 0.25] call _fnc_triggerAlert;
@@ -79,13 +81,13 @@ if (_percentHP <= 0.50 && (_hullstatus get "reactor" get "played" get _side)) th
 // Loadout Unlocking
 ////////////////////////////////////////////////////////////////////////////////////////////////
 private _unlockHash = missionNamespace getVariable QGVAR(unlocked_loadouts);
-if (_percentHP <= 1/3) then {
+if (_percentHP <= 2/3) then {
     if !(_unlockHash get 2) then {
         [2] call FUNC(UnlockLoadouts);
         _unlockHash set [2, true];
     };
 };
-if (_percentHP <= 2/3) then {
+if (_percentHP <= 1/3) then {
     if !(_unlockHash get 3) then {
         [3] call FUNC(UnlockLoadouts);
         _unlockHash set [3, true];
