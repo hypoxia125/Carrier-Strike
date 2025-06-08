@@ -1,3 +1,8 @@
+# Alpha Version v0.6.2
+
+- Allows HUD to adapt to how many silos are present in the layer
+- Added Extra Small Map Layer (Has only 3 silos)
+
 # Alpha Version v0.6.1
 
 - Increased Player Counts to 48/48/24 (120)
