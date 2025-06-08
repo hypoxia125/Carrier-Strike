@@ -22,7 +22,7 @@ private _currentHp = _carrier getVariable QGVAR(current_hp);
 
 private _damage = switch _type do {
     case "missile": { [QGVAR(Settings_SiloMissileDamage)] call CBA_settings_fnc_get };
-    case "reactor": { [QGVAR(Settings_ReactorDestroyedDamage)] call CBA_settings_fnc };
+    case "reactor": { [QGVAR(Settings_ReactorDestroyedDamage)] call CBA_settings_fnc_get };
 };
 
 private _newHp = _currentHp - _damage;
