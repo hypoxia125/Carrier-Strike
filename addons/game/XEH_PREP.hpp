@@ -19,6 +19,8 @@ PREP(IsSafePos);
 PREP(PlayerActions);
 PREP(PlayerEvents);
 PREP(PlayerInit);
+PREP(RallyPointCreate);
+PREP(RallyPointDelete);
 PREP(ReactorShotSimInit);
 PREP(RespawnPost);
 PREP(SetWeather);

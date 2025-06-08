@@ -4,7 +4,7 @@
 I wanted to get this out since the main gameplay loop is finished to start collecting feedback. This has not had a balance pass yet, so be warned.
 Development is slow on weekdays, fast on weekends. Expect frequent updates.
 
-[h1]Current Version - v0.5.0[/h1]
+[h1]Current Version - v0.6.0[/h1]
 
 Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Discord[/url]
 
@@ -50,11 +50,11 @@ Let me know if you want to be an official server!
 - Custom turret defense AI
 - CBA Settings For Mission Customization
 - Randomized Weather System
+- Rally Point System
+- Modules
 
 [In Progress]
-- Modules (Some Completed)- so that you can create your own missions as well! (I need to write up documentation though)
 - More Map Layouts
-- Rally Point System
 - Commander Abilities
 - Ammo Kits (like battlefield's support class specialty)
 - Out of bounds system
