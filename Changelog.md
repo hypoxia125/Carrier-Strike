@@ -1,3 +1,13 @@
+# Alpha Version v0.6.0
+
+- Adds Rally Point System
+    - Placed by squad leaders
+    - Requires big enough group (3 players by default)
+    - Cooldown between placement
+    - Deletes old rally point on creation of new one
+    - Deletes rally points if enemy units get nearby (50m by default)
+    - Plays a "Beeping" sound that can help enemy units find the rally
+
 # Alpha Version v0.5.0
 
 - Adds weather randomization system

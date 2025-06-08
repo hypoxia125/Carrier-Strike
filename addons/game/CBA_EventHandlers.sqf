@@ -15,3 +15,12 @@
 [QGVAR(AddToChatChannel), {
     call FUNC(AddToChatChannel);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(RallyPointCreate), {
+    call FUNC(RallyPointCreate);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(HintSilent), {
+    params ["_txt"];
+    hintSilent _txt;
+}] call CBA_fnc_addEventHandler;
