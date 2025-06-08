@@ -14,7 +14,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=5103;
+		nextID=5211;
 	};
 	class MarkerIDProvider
 	{
@@ -22,14 +22,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2637;
+		nextID=2661;
 	};
 	class Camera
 	{
-		pos[]={8364.7666,241.27046,3848.0068};
-		dir[]={-0.55726737,-0.51620036,-0.65039617};
-		up[]={-0.33586726,0.85646129,-0.391996};
-		aside[]={-0.75938821,-1.9041181e-08,0.65065384};
+		pos[]={7846.3125,56.343464,3870.5593};
+		dir[]={0.48293978,-0.87090683,0.091824748};
+		up[]={0.85558051,0.49144298,0.16267885};
+		aside[]={0.18680203,1.083361e-06,-0.98246616};
 	};
 };
 binarizationWanted=0;
@@ -356,7 +356,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=526;
+		items=527;
 		class Item0
 		{
 			dataType="Object";
@@ -6137,8 +6137,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6902.7383,85.567657,3443.188};
-				angles[]={0,4.7647915,0};
+				position[]={6902.7378,85.568001,3443.188};
+				angles[]={0,4.7647839,0};
 			};
 			side="Empty";
 			class Attributes
@@ -6146,7 +6146,7 @@ class Mission
 			};
 			id=1195;
 			type="Land_HBarrier_Big_F";
-			atlOffset=1.9876556;
+			atlOffset=1.987999;
 		};
 		class Item316
 		{
@@ -7913,7 +7913,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=32;
+				items=48;
 				class Item0
 				{
 					dataType="Object";
@@ -8600,6 +8600,326 @@ class Mission
 					id=1976;
 					type="B_Soldier_F";
 				};
+				class Item32
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7646.564,34.348053,4634.1074};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5108;
+					type="B_Soldier_F";
+					atlOffset=0.090595245;
+				};
+				class Item33
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7645.9126,34.348843,4635.998};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5109;
+					type="B_Soldier_F";
+					atlOffset=0.090568542;
+				};
+				class Item34
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7645.2617,34.349648,4637.8896};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5110;
+					type="B_Soldier_F";
+					atlOffset=0.089782715;
+				};
+				class Item35
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7644.6104,34.354042,4639.7803};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5111;
+					type="B_Soldier_F";
+					atlOffset=0.088817596;
+				};
+				class Item36
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7648.8262,34.348053,4634.8867};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5113;
+					type="B_Soldier_F";
+					atlOffset=0.18743515;
+				};
+				class Item37
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7648.1748,34.348843,4636.7773};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5114;
+					type="B_Soldier_F";
+					atlOffset=0.18740845;
+				};
+				class Item38
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7647.5239,34.349648,4638.6689};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5115;
+					type="B_Soldier_F";
+					atlOffset=0.18474579;
+				};
+				class Item39
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7646.8726,34.354042,4640.5596};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5116;
+					type="B_Soldier_F";
+					atlOffset=0.18381882;
+				};
+				class Item40
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7651.0615,34.348053,4635.6563};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5192;
+					type="B_Soldier_F";
+					atlOffset=0.31538773;
+				};
+				class Item41
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7650.4102,34.348843,4637.5469};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5193;
+					type="B_Soldier_F";
+					atlOffset=0.29782867;
+				};
+				class Item42
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7649.7593,34.349648,4639.4385};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5194;
+					type="B_Soldier_F";
+					atlOffset=0.29177475;
+				};
+				class Item43
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7649.1079,34.354042,4641.3291};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5195;
+					type="B_Soldier_F";
+					atlOffset=0.30072021;
+				};
+				class Item44
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7653.2192,34.348053,4636.3994};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5197;
+					type="B_Soldier_F";
+					atlOffset=0.48492813;
+				};
+				class Item45
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7652.5679,34.348843,4638.29};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5198;
+					type="B_Soldier_F";
+					atlOffset=0.47208405;
+				};
+				class Item46
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7651.917,34.349648,4640.1816};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5199;
+					type="B_Soldier_F";
+					atlOffset=0.45922089;
+				};
+				class Item47
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7651.2656,34.354042,4642.0723};
+						angles[]={0,4.3807764,0};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=5200;
+					type="B_Soldier_F";
+					atlOffset=0.4499855;
+				};
 			};
 			class Attributes
 			{
@@ -8628,622 +8948,11 @@ class Mission
 		{
 			dataType="Group";
 			side="East";
-			class Entities
-			{
-				items=32;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6853.1831,82.371445,3458.2122};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="1: Rifleman";
-						isPlayable=1;
-					};
-					id=1978;
-					type="O_Soldier_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6855.1782,82.371445,3458.0728};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="2: Rifleman";
-						isPlayable=1;
-					};
-					id=1979;
-					type="O_Soldier_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6857.1733,82.371445,3457.9331};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="3: Rifleman";
-						isPlayable=1;
-					};
-					id=1980;
-					type="O_Soldier_F";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6859.1685,82.371445,3457.7937};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="4: Rifleman";
-						isPlayable=1;
-					};
-					id=1981;
-					type="O_Soldier_F";
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6853.3228,82.371445,3460.2073};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="5: Rifleman";
-						isPlayable=1;
-					};
-					id=1982;
-					type="O_Soldier_F";
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6855.3179,82.371445,3460.0679};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="6: Rifleman";
-						isPlayable=1;
-					};
-					id=1983;
-					type="O_Soldier_F";
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6857.313,82.371445,3459.9282};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="7: Rifleman";
-						isPlayable=1;
-					};
-					id=1984;
-					type="O_Soldier_F";
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6859.3081,82.371445,3459.7888};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="8: Rifleman";
-						isPlayable=1;
-					};
-					id=1985;
-					type="O_Soldier_F";
-				};
-				class Item8
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6853.4619,82.371445,3462.2024};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="9: Rifleman";
-						isPlayable=1;
-					};
-					id=1986;
-					type="O_Soldier_F";
-				};
-				class Item9
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6855.457,82.371445,3462.063};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="10: Rifleman";
-						isPlayable=1;
-					};
-					id=1987;
-					type="O_Soldier_F";
-				};
-				class Item10
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6857.4521,82.371445,3461.9233};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="11: Rifleman";
-						isPlayable=1;
-					};
-					id=1988;
-					type="O_Soldier_F";
-				};
-				class Item11
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6859.4478,82.371445,3461.7839};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="12: Rifleman";
-						isPlayable=1;
-					};
-					id=1989;
-					type="O_Soldier_F";
-				};
-				class Item12
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6853.6016,82.371445,3464.1975};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="13: Rifleman";
-						isPlayable=1;
-					};
-					id=1990;
-					type="O_Soldier_F";
-				};
-				class Item13
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6855.5967,82.371445,3464.0581};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="14: Rifleman";
-						isPlayable=1;
-					};
-					id=1991;
-					type="O_Soldier_F";
-				};
-				class Item14
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6857.5918,82.371445,3463.9185};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="15: Rifleman";
-						isPlayable=1;
-					};
-					id=1992;
-					type="O_Soldier_F";
-				};
-				class Item15
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6859.5869,82.371445,3463.7791};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="16: Rifleman";
-						isPlayable=1;
-					};
-					id=1993;
-					type="O_Soldier_F";
-				};
-				class Item16
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6853.7412,82.371445,3466.1926};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="17: Rifleman";
-						isPlayable=1;
-					};
-					id=1994;
-					type="O_Soldier_F";
-				};
-				class Item17
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6855.7363,82.371445,3466.0532};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="18: Rifleman";
-						isPlayable=1;
-					};
-					id=1995;
-					type="O_Soldier_F";
-				};
-				class Item18
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6857.7314,82.371445,3465.9136};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="19: Rifleman";
-						isPlayable=1;
-					};
-					id=1996;
-					type="O_Soldier_F";
-				};
-				class Item19
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6859.7266,82.371445,3465.7742};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="20: Rifleman";
-						isPlayable=1;
-					};
-					id=1997;
-					type="O_Soldier_F";
-				};
-				class Item20
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6853.8809,82.371445,3468.1877};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="21: Rifleman";
-						isPlayable=1;
-					};
-					id=1998;
-					type="O_Soldier_F";
-				};
-				class Item21
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6855.876,82.371445,3468.0483};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="22: Rifleman";
-						isPlayable=1;
-					};
-					id=1999;
-					type="O_Soldier_F";
-				};
-				class Item22
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6857.8711,82.371445,3467.9087};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="23: Rifleman";
-						isPlayable=1;
-					};
-					id=2000;
-					type="O_Soldier_F";
-				};
-				class Item23
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6859.8662,82.371445,3467.7693};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="24: Rifleman";
-						isPlayable=1;
-					};
-					id=2001;
-					type="O_Soldier_F";
-				};
-				class Item24
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6854.02,82.371445,3470.1829};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="25: Rifleman";
-						isPlayable=1;
-					};
-					id=2002;
-					type="O_Soldier_F";
-				};
-				class Item25
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6856.0151,82.371445,3470.0435};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="26: Rifleman";
-						isPlayable=1;
-					};
-					id=2003;
-					type="O_Soldier_F";
-				};
-				class Item26
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6858.0103,82.371445,3469.9038};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="27: Rifleman";
-						isPlayable=1;
-					};
-					id=2004;
-					type="O_Soldier_F";
-				};
-				class Item27
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6860.0054,82.371445,3469.7644};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="28: Rifleman";
-						isPlayable=1;
-					};
-					id=2005;
-					type="O_Soldier_F";
-				};
-				class Item28
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6854.1597,82.371445,3472.178};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="29: Rifleman";
-						isPlayable=1;
-					};
-					id=2006;
-					type="O_Soldier_F";
-				};
-				class Item29
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6856.1548,82.371445,3472.0386};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="30: Rifleman";
-						isPlayable=1;
-					};
-					id=2007;
-					type="O_Soldier_F";
-				};
-				class Item30
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6858.1499,82.371445,3471.8989};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="31: Rifleman";
-						isPlayable=1;
-					};
-					id=2008;
-					type="O_Soldier_F";
-				};
-				class Item31
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6860.145,82.371445,3471.7595};
-						angles[]={0,3.2114058,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
-						description="32: Rifleman";
-						isPlayable=1;
-					};
-					id=2009;
-					type="O_Soldier_F";
-				};
-			};
 			class Attributes
 			{
 			};
 			id=1977;
+			atlOffset=96.5;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -44444,13 +44153,14 @@ class Mission
 			side="Independent";
 			class Entities
 			{
-				items=16;
+				items=24;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7863.0957,35.70668,3876.3018};
+						position[]={7859.7153,35.721737,3881.8032};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=7;
@@ -44460,14 +44170,15 @@ class Mission
 					};
 					id=3286;
 					type="I_G_Soldier_F";
-					atlOffset=-1.1444092e-05;
+					atlOffset=0.081539154;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7863.2651,35.71101,3875.1741};
+						position[]={7858.377,35.77293,3880.3169};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44477,14 +44188,15 @@ class Mission
 					};
 					id=3288;
 					type="I_G_Soldier_F";
-					atlOffset=-1.5258789e-05;
+					atlOffset=0.15735626;
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7863.4536,35.723061,3873.7612};
+						position[]={7857.0386,35.824139,3878.8306};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44494,31 +44206,33 @@ class Mission
 					};
 					id=3290;
 					type="I_G_Soldier_F";
-					atlOffset=-7.6293945e-06;
+					atlOffset=0.23051071;
 				};
 				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7863.7046,35.737022,3872.4187};
+						position[]={7855.7007,35.875332,3877.3442};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
 						isPlayable=1;
 					};
 					id=3292;
 					type="I_G_Soldier_F";
-					atlOffset=7.6293945e-06;
+					atlOffset=0.30179214;
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7861.3882,35.671829,3875.6179};
+						position[]={7861.2017,35.721737,3880.4648};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44528,14 +44242,15 @@ class Mission
 					};
 					id=3294;
 					type="I_G_Soldier_F";
-					atlOffset=-1.1444092e-05;
+					atlOffset=0.054191589;
 				};
 				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7861.5576,35.678726,3874.4902};
+						position[]={7859.8633,35.77293,3878.9788};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44545,14 +44260,15 @@ class Mission
 					};
 					id=3296;
 					type="I_G_Soldier_F";
-					atlOffset=-1.5258789e-05;
+					atlOffset=0.1300087;
 				};
 				class Item6
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7861.7461,35.689812,3873.0774};
+						position[]={7858.5249,35.824139,3877.4924};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44562,31 +44278,33 @@ class Mission
 					};
 					id=3298;
 					type="I_G_Soldier_F";
-					atlOffset=-7.6293945e-06;
+					atlOffset=0.20338821;
 				};
 				class Item7
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7861.9971,35.701565,3871.7349};
+						position[]={7857.187,35.875332,3876.0061};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
 						isPlayable=1;
 					};
 					id=3300;
 					type="I_G_Soldier_F";
-					atlOffset=7.6293945e-06;
+					atlOffset=0.27468491;
 				};
 				class Item8
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7859.293,35.637741,3875.0149};
+						position[]={7862.688,35.721737,3879.1267};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44596,14 +44314,15 @@ class Mission
 					};
 					id=3302;
 					type="I_G_Soldier_F";
-					atlOffset=-1.1444092e-05;
+					atlOffset=0.025493622;
 				};
 				class Item9
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7859.4624,35.646896,3873.8872};
+						position[]={7861.3496,35.77293,3877.6404};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44613,14 +44332,15 @@ class Mission
 					};
 					id=3304;
 					type="I_G_Soldier_F";
-					atlOffset=-1.5258789e-05;
+					atlOffset=0.10266113;
 				};
 				class Item10
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7859.6509,35.657978,3872.4744};
+						position[]={7860.0112,35.824139,3876.1541};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44630,14 +44350,15 @@ class Mission
 					};
 					id=3306;
 					type="I_G_Soldier_F";
-					atlOffset=-7.6293945e-06;
+					atlOffset=0.17627716;
 				};
 				class Item11
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7859.9019,35.669731,3871.1318};
+						position[]={7858.6733,35.87257,3874.6677};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44647,14 +44368,15 @@ class Mission
 					};
 					id=3308;
 					type="I_G_Soldier_F";
-					atlOffset=7.6293945e-06;
+					atlOffset=0.24328613;
 				};
 				class Item12
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7857.6675,35.612167,3874.7065};
+						position[]={7864.1743,35.721737,3877.7883};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44664,14 +44386,15 @@ class Mission
 					};
 					id=3310;
 					type="I_G_Soldier_F";
-					atlOffset=-1.1444092e-05;
+					atlOffset=-0.012550354;
 				};
 				class Item13
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7857.8369,35.621323,3873.5789};
+						position[]={7862.8359,35.77293,3876.3022};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44681,14 +44404,15 @@ class Mission
 					};
 					id=3312;
 					type="I_G_Soldier_F";
-					atlOffset=-1.5258789e-05;
+					atlOffset=0.072898865;
 				};
 				class Item14
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7858.0254,35.632408,3872.166};
+						position[]={7861.4976,35.821377,3874.8159};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44698,14 +44422,15 @@ class Mission
 					};
 					id=3314;
 					type="I_G_Soldier_F";
-					atlOffset=-7.6293945e-06;
+					atlOffset=0.14546967;
 				};
 				class Item15
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7858.2764,35.644157,3870.8235};
+						position[]={7860.1592,35.86937,3873.3296};
+						angles[]={0,5.4454279,-0};
 					};
 					side="Independent";
 					flags=5;
@@ -44715,14 +44440,159 @@ class Mission
 					};
 					id=3316;
 					type="I_G_Soldier_F";
-					atlOffset=7.6293945e-06;
+					atlOffset=0.20761871;
+				};
+				class Item16
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7865.6606,35.721737,3876.4502};
+						angles[]={0,5.4454279,-0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=5202;
+					type="I_G_Soldier_F";
+					atlOffset=-0.050598145;
+				};
+				class Item17
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7864.3223,35.770172,3874.9639};
+						angles[]={0,5.4454279,-0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=5203;
+					type="I_G_Soldier_F";
+					atlOffset=0.031608582;
+				};
+				class Item18
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7862.9839,35.81818,3873.4775};
+						angles[]={0,5.4454279,-0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=5204;
+					type="I_G_Soldier_F";
+					atlOffset=0.10555649;
+				};
+				class Item19
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7861.6455,35.866173,3871.9912};
+						angles[]={0,5.4454279,-0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=5205;
+					type="I_G_Soldier_F";
+					atlOffset=0.17195892;
+				};
+				class Item20
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7867.147,35.719479,3875.1118};
+						angles[]={0,5.4454279,-0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=5207;
+					type="I_G_Soldier_F";
+					atlOffset=-0.090923309;
+				};
+				class Item21
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7865.8086,35.767471,3873.6257};
+						angles[]={0,5.4454279,-0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=5208;
+					type="I_G_Soldier_F";
+					atlOffset=-0.016628265;
+				};
+				class Item22
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7864.4702,35.815479,3872.1394};
+						angles[]={0,5.4454279,-0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=5209;
+					type="I_G_Soldier_F";
+					atlOffset=0.057312012;
+				};
+				class Item23
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7863.1318,35.863472,3870.6531};
+						angles[]={0,5.4454279,-0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=5210;
+					type="I_G_Soldier_F";
+					atlOffset=0.13124084;
 				};
 			};
 			class Attributes
 			{
+				init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
 			};
 			id=3285;
-			atlOffset=-1.1444092e-05;
+			atlOffset=0.081539154;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -45132,10 +45002,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7186.1328,23.54184,2204.7874};
+				position[]={7186.1328,23.559837,2204.7874};
 			};
 			id=3328;
 			type="carrierstrike_modules_ModuleAddVehicle";
+			atlOffset=0.017997742;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -45250,10 +45121,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7181.0781,23.542185,2194.6421};
+				position[]={7181.0781,23.558319,2194.6421};
 			};
 			id=3329;
 			type="carrierstrike_modules_ModuleAddVehicle";
+			atlOffset=0.016134262;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -45368,10 +45240,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7245.228,23.528522,2199.519};
+				position[]={7245.228,23.50746,2199.519};
 			};
 			id=3331;
 			type="carrierstrike_modules_ModuleAddVehicle";
+			atlOffset=55.319;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -49881,10 +49754,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9084.9209,23.542456,4690.521};
+				position[]={9084.9209,23.54612,4690.521};
 			};
 			id=3388;
 			type="carrierstrike_modules_ModuleAddVehicle";
+			atlOffset=0.0036640167;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -49999,10 +49873,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9021.9697,23.528793,4685.9551};
+				position[]={9021.9697,23.631039,4685.9551};
 			};
 			id=3389;
 			type="carrierstrike_modules_ModuleAddVehicle";
+			atlOffset=0.10224533;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -53263,6 +53138,943 @@ class Mission
 			id=5102;
 			type="O_MBT_02_cannon_F";
 			atlOffset=-0.0019989014;
+		};
+		class Item526
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=48;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6853.1831,82.371445,3458.2122};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="1: Rifleman";
+						isPlayable=1;
+					};
+					id=1978;
+					type="O_Soldier_F";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6855.1782,82.371445,3458.0728};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="2: Rifleman";
+						isPlayable=1;
+					};
+					id=1979;
+					type="O_Soldier_F";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6857.1733,82.371445,3457.9331};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="3: Rifleman";
+						isPlayable=1;
+					};
+					id=1980;
+					type="O_Soldier_F";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6859.1685,82.371445,3457.7937};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="4: Rifleman";
+						isPlayable=1;
+					};
+					id=1981;
+					type="O_Soldier_F";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6853.3228,82.371445,3460.2073};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="5: Rifleman";
+						isPlayable=1;
+					};
+					id=1982;
+					type="O_Soldier_F";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6855.3179,82.371445,3460.0679};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="6: Rifleman";
+						isPlayable=1;
+					};
+					id=1983;
+					type="O_Soldier_F";
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6857.313,82.371445,3459.9282};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="7: Rifleman";
+						isPlayable=1;
+					};
+					id=1984;
+					type="O_Soldier_F";
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6859.3081,82.371445,3459.7888};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="8: Rifleman";
+						isPlayable=1;
+					};
+					id=1985;
+					type="O_Soldier_F";
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6853.4619,82.371445,3462.2024};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="9: Rifleman";
+						isPlayable=1;
+					};
+					id=1986;
+					type="O_Soldier_F";
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6855.457,82.371445,3462.063};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="10: Rifleman";
+						isPlayable=1;
+					};
+					id=1987;
+					type="O_Soldier_F";
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6857.4521,82.371445,3461.9233};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="11: Rifleman";
+						isPlayable=1;
+					};
+					id=1988;
+					type="O_Soldier_F";
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6859.4478,82.371445,3461.7839};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="12: Rifleman";
+						isPlayable=1;
+					};
+					id=1989;
+					type="O_Soldier_F";
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6853.6016,82.371445,3464.1975};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="13: Rifleman";
+						isPlayable=1;
+					};
+					id=1990;
+					type="O_Soldier_F";
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6855.5967,82.371445,3464.0581};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="14: Rifleman";
+						isPlayable=1;
+					};
+					id=1991;
+					type="O_Soldier_F";
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6857.5918,82.371445,3463.9185};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="15: Rifleman";
+						isPlayable=1;
+					};
+					id=1992;
+					type="O_Soldier_F";
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6859.5869,82.371445,3463.7791};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="16: Rifleman";
+						isPlayable=1;
+					};
+					id=1993;
+					type="O_Soldier_F";
+				};
+				class Item16
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6853.7412,82.371445,3466.1926};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="17: Rifleman";
+						isPlayable=1;
+					};
+					id=1994;
+					type="O_Soldier_F";
+				};
+				class Item17
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6855.7363,82.371445,3466.0532};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="18: Rifleman";
+						isPlayable=1;
+					};
+					id=1995;
+					type="O_Soldier_F";
+				};
+				class Item18
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6857.7314,82.371445,3465.9136};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="19: Rifleman";
+						isPlayable=1;
+					};
+					id=1996;
+					type="O_Soldier_F";
+				};
+				class Item19
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6859.7266,82.371445,3465.7742};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="20: Rifleman";
+						isPlayable=1;
+					};
+					id=1997;
+					type="O_Soldier_F";
+				};
+				class Item20
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6853.8809,82.371445,3468.1877};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="21: Rifleman";
+						isPlayable=1;
+					};
+					id=1998;
+					type="O_Soldier_F";
+				};
+				class Item21
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6855.876,82.371445,3468.0483};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="22: Rifleman";
+						isPlayable=1;
+					};
+					id=1999;
+					type="O_Soldier_F";
+				};
+				class Item22
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6857.8711,82.371445,3467.9087};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="23: Rifleman";
+						isPlayable=1;
+					};
+					id=2000;
+					type="O_Soldier_F";
+				};
+				class Item23
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6859.8662,82.371445,3467.7693};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="24: Rifleman";
+						isPlayable=1;
+					};
+					id=2001;
+					type="O_Soldier_F";
+				};
+				class Item24
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6854.02,82.371445,3470.1829};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="25: Rifleman";
+						isPlayable=1;
+					};
+					id=2002;
+					type="O_Soldier_F";
+				};
+				class Item25
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6856.0151,82.371445,3470.0435};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="26: Rifleman";
+						isPlayable=1;
+					};
+					id=2003;
+					type="O_Soldier_F";
+				};
+				class Item26
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6858.0103,82.371445,3469.9038};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="27: Rifleman";
+						isPlayable=1;
+					};
+					id=2004;
+					type="O_Soldier_F";
+				};
+				class Item27
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6860.0054,82.371445,3469.7644};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="28: Rifleman";
+						isPlayable=1;
+					};
+					id=2005;
+					type="O_Soldier_F";
+				};
+				class Item28
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6854.1597,82.371445,3472.178};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="29: Rifleman";
+						isPlayable=1;
+					};
+					id=2006;
+					type="O_Soldier_F";
+				};
+				class Item29
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6856.1548,82.371445,3472.0386};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="30: Rifleman";
+						isPlayable=1;
+					};
+					id=2007;
+					type="O_Soldier_F";
+				};
+				class Item30
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6858.1499,82.371445,3471.8989};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="31: Rifleman";
+						isPlayable=1;
+					};
+					id=2008;
+					type="O_Soldier_F";
+				};
+				class Item31
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6860.145,82.371445,3471.7595};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="32: Rifleman";
+						isPlayable=1;
+					};
+					id=2009;
+					type="O_Soldier_F";
+				};
+				class Item32
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6854.2998,82.371445,3474.1792};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="29: Rifleman";
+						isPlayable=1;
+					};
+					id=5121;
+					type="O_Soldier_F";
+				};
+				class Item33
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6856.2949,82.371445,3474.0398};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="30: Rifleman";
+						isPlayable=1;
+					};
+					id=5122;
+					type="O_Soldier_F";
+				};
+				class Item34
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6858.29,82.371445,3473.9001};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="31: Rifleman";
+						isPlayable=1;
+					};
+					id=5123;
+					type="O_Soldier_F";
+				};
+				class Item35
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6860.2852,82.371445,3473.7607};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="32: Rifleman";
+						isPlayable=1;
+					};
+					id=5124;
+					type="O_Soldier_F";
+				};
+				class Item36
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6854.4546,82.371445,3476.3936};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="29: Rifleman";
+						isPlayable=1;
+					};
+					id=5126;
+					type="O_Soldier_F";
+					atlOffset=0.0032272339;
+				};
+				class Item37
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6856.4497,82.371445,3476.2542};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="30: Rifleman";
+						isPlayable=1;
+					};
+					id=5127;
+					type="O_Soldier_F";
+					atlOffset=0.0028915405;
+				};
+				class Item38
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6858.4448,82.371445,3476.1145};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="31: Rifleman";
+						isPlayable=1;
+					};
+					id=5128;
+					type="O_Soldier_F";
+					atlOffset=0.0025558472;
+				};
+				class Item39
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6860.4399,82.371445,3475.9751};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="32: Rifleman";
+						isPlayable=1;
+					};
+					id=5129;
+					type="O_Soldier_F";
+					atlOffset=0.0022201538;
+				};
+				class Item40
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6854.624,82.371445,3478.8164};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="29: Rifleman";
+						isPlayable=1;
+					};
+					id=5134;
+					type="O_Soldier_F";
+					atlOffset=0.0090408325;
+				};
+				class Item41
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6856.6191,82.371445,3478.677};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="30: Rifleman";
+						isPlayable=1;
+					};
+					id=5135;
+					type="O_Soldier_F";
+					atlOffset=0.0087051392;
+				};
+				class Item42
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6858.6143,82.371445,3478.5374};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="31: Rifleman";
+						isPlayable=1;
+					};
+					id=5136;
+					type="O_Soldier_F";
+					atlOffset=0.0083694458;
+				};
+				class Item43
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6860.6094,82.371445,3478.3979};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="32: Rifleman";
+						isPlayable=1;
+					};
+					id=5137;
+					type="O_Soldier_F";
+					atlOffset=0.0080337524;
+				};
+				class Item44
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6854.772,82.371445,3480.9307};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="29: Rifleman";
+						isPlayable=1;
+					};
+					id=5139;
+					type="O_Soldier_F";
+					atlOffset=0.01411438;
+				};
+				class Item45
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6856.7671,82.371445,3480.7913};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="30: Rifleman";
+						isPlayable=1;
+					};
+					id=5140;
+					type="O_Soldier_F";
+					atlOffset=0.013778687;
+				};
+				class Item46
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6858.7622,82.371445,3480.6516};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="31: Rifleman";
+						isPlayable=1;
+					};
+					id=5141;
+					type="O_Soldier_F";
+					atlOffset=0.013442993;
+				};
+				class Item47
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6860.7573,82.371445,3480.5122};
+						angles[]={0,3.2114058,0};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						init="if !(isMultiplayer) then { " \n "    deleteVehicle this; " \n "};";
+						description="32: Rifleman";
+						isPlayable=1;
+					};
+					id=5142;
+					type="O_Soldier_F";
+					atlOffset=0.013114929;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=5143;
 		};
 	};
 	class Connections

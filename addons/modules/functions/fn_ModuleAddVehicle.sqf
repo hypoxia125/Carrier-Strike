@@ -50,6 +50,10 @@ private _siloNumber = switch _ownerVal do {
 private _posASL = getPosASL _module;
 private _posAGL = ASLToAGL _posASL;
 
+if ([_westType, _eastType, _independentType] findIf {_x isKindOf "Air"} != -1) then {
+    _posAGL = _posAGL vectorAdd [0,0,0.2];
+};
+
 // User input checks
 if (count synchronizedObjects _module > 0) exitWith {
     ERROR_WITH_TITLE("ModuleAddVehicle","Nothing should be synchronized with this module.");
