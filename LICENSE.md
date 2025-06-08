@@ -4,6 +4,7 @@
 - ✅ **Share** the original material
 - ✅ **Modify** for personal/private use (but cannot distribute modifications)
 - ✅ Use in **Arma games** only
+- ✅ Anyone can contribute to the project via GitHub Pull Requests
 
 ## Key Conditions
 1. **Attribution**  
