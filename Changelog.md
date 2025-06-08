@@ -1,3 +1,8 @@
+# Alpha Version v0.6.1
+
+- Increased Player Counts to 48/48/24 (120)
+- Increased height of spawning aircraft by 0.2m
+
 # Alpha Version v0.6.0
 
 - Adds Rally Point System
