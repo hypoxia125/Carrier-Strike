@@ -43,7 +43,10 @@ class Tier1_Independent_Rifleman
         "ItemRadio",
 
         // optics
-        "optic_Aco"
+        "optic_Aco",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -93,9 +96,12 @@ class Tier1_Indepenedent_AntiTank
         "ItemMap",
         "ItemCompass",
         "ItemWatch",
-        "ItemRadio"
+        "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -142,9 +148,12 @@ class Tier1_Independent_Engineer
         "ItemMap",
         "ItemCompass",
         "ItemWatch",
-        "ItemRadio"
+        "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -187,9 +196,12 @@ class Tier1_Independent_Gunner
         "ItemMap",
         "ItemCompass",
         "ItemWatch",
-        "ItemRadio"
+        "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -240,7 +252,10 @@ class Tier1_Independent_Sniper
         "ItemRadio",
 
         // optics
-        "optic_MRCO"
+        "optic_MRCO",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -295,7 +310,10 @@ class Tier1_Independent_SpecialForces
         "ItemRadio",
 
         // optics
-        "optic_Aco"
+        "optic_Aco",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };

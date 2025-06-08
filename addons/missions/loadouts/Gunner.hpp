@@ -35,9 +35,12 @@ class Tier1_West_Gunner
         "ItemMap",
         "ItemCompass",
         "ItemWatch",
-        "ItemRadio"
+        "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -78,9 +81,12 @@ class Tier2_West_Gunner
         "ItemMap",
         "ItemCompass",
         "ItemWatch",
-        "ItemRadio"
+        "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -111,6 +117,9 @@ class Tier3_West_Gunner
     };
     items[] = {"FirstAidKit"};
     linkedItems[] = {
+        // NVG
+        "NVGoggles_OPFOR",
+
         // vest
         "V_PlateCarrier2_rgr",
 
@@ -124,6 +133,9 @@ class Tier3_West_Gunner
         "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight",
 
         // suppress
         "optic_Aco"
@@ -167,9 +179,12 @@ class Tier1_East_Gunner
         "ItemMap",
         "ItemCompass",
         "ItemWatch",
-        "ItemRadio"
+        "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -210,9 +225,12 @@ class Tier2_East_Gunner
         "ItemMap",
         "ItemCompass",
         "ItemWatch",
-        "ItemRadio"
+        "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -243,6 +261,9 @@ class Tier3_East_Gunner
     };
     items[] = {"FirstAidKit"};
     linkedItems[] = {
+        // NVG
+        "NVGoggles_OPFOR",
+
         // vest
         "V_TacVest_khk",
 
@@ -256,7 +277,10 @@ class Tier3_East_Gunner
         "ItemRadio",
 
         // optics
-        "optic_Aco"
+        "optic_Aco",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };

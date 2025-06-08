@@ -37,9 +37,12 @@ class Tier1_West_Engineer
         "ItemMap",
         "ItemCompass",
         "ItemWatch",
-        "ItemRadio"
+        "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -87,7 +90,10 @@ class Tier2_West_Engineer
         "ItemRadio",
 
         // optics
-        "optic_Aco"
+        "optic_Aco",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -122,6 +128,9 @@ class Tier3_West_Engineer
     };
     items[] = {"ToolKit", "MineDetector", "FirstAidKit"};
     linkedItems[] = {
+        // NVG
+        "NVGoggles",
+
         // vest
         "V_PlateCarrier1_rgr",
 
@@ -135,7 +144,10 @@ class Tier3_West_Engineer
         "ItemRadio",
 
         // optics
-        "optic_Aco"
+        "optic_Aco",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -181,9 +193,12 @@ class Tier1_East_Engineer
         "ItemMap",
         "ItemCompass",
         "ItemWatch",
-        "ItemRadio"
+        "ItemRadio",
 
         // optics
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -231,7 +246,10 @@ class Tier2_East_Engineer
         "ItemRadio",
 
         // optics
-        "optic_Aco"
+        "optic_Aco",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
@@ -266,6 +284,9 @@ class Tier3_East_Engineer
     };
     items[] = {"ToolKit", "MineDetector", "FirstAidKit"};
     linkedItems[] = {
+        // NVG
+        "NVGoggles_OPFOR",
+
         // vest
         "V_TacVest_brn",
 
@@ -279,7 +300,10 @@ class Tier3_East_Engineer
         "ItemRadio",
 
         // optics
-        "optic_Aco"
+        "optic_Aco",
+
+        // attachments
+        "acc_flashlight"
 
         // suppress
     };
