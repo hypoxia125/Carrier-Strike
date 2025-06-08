@@ -39,3 +39,19 @@ _player addAction [
         }
     }, -1, false, "", ""
 ];
+
+// Rally Point Creation
+_player addAction [
+    "Place Rally Point",
+    {
+        params ["_target", "_caller", "_actionID", "_arguments"];
+
+        [QGVAR(RallyPointCreate), [_caller]] call CBA_fnc_serverEvent;
+    },
+    nil, 0, false, true, "",
+    toString {
+        isNull objectParent _this &&
+        leader _this isEqualTo _this &&
+        (group _this) getVariable [QGVAR(RallyPoint_CanCreate), false]
+    }, -1, false, "", ""
+];
