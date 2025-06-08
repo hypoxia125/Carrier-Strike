@@ -4,13 +4,17 @@
     #define MISSION_NAME    "Carrier Strike"
 #endif
 
+#ifndef MISSION_DESCRIPTION
+    #define MISSION_DESCRIPTION "Two teams battle over control of Anti-Carrier Missile Silos, aiming for the destruction of the opposing team's carrier. Beware, a rebellion has formed to disrupt the battlefield."
+#endif
+
 author = "Hypoxic";
 onLoadName = MISSION_NAME;
-onLoadMission = "Battlefield 2142 Titan Mode - Reimagined";
+onLoadMission = MISSION_DESCRIPTION;
 briefingName = MISSION_NAME;
 loadScreen = "\z\carrierstrike\addons\common\data\img\loadingscreen.jpg";
 overviewPicture = "\z\carrierstrike\addons\common\data\img\loadingscreen.jpg";
-overviewText = "Two teams battle over control of Anti-Carrier Missile Silos, aiming for the destruction of the opposing team's carrier. Beware, a rebellion has formed to disrupt the battlefield.";
+overviewText = MISSION_DESCRIPTION;
 
 class Header {
     gameType = "CarrierStrike";
