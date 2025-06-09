@@ -1,3 +1,10 @@
+Alpha Release v0.7.0
+
+- Changed Add Vehicle Module
+    - Module now functions by syncing the vehicle to grab the position and direction. Module will handle deleting this object from the mission so do not delete the editor vehicle via init attribute.
+- Added Seeding Mode
+    - Silos will initially be disabled and enable based on the current player count of the match. Once enabled, they will not be disabled, even in the event of a mass leave. This is to funnel players into one spot while the server is seeding. You can customize this player count on a per silo bases via the add silo module.
+
 # Alpha Version v0.6.3
 
 - Adds NVG to Tier 3 loadouts
