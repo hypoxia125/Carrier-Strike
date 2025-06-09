@@ -1,10 +1,12 @@
 #include "script_component.hpp"
 
 if (!isServer) exitWith {};
+if (!canSuspend) exitWith { _this spawn FUNC(InitSilo) };
 
 params [
     ["_silo", objNull, [objNull]],
-    ["_siloNumber", -1, [-1]]
+    ["_siloNumber", -1, [-1]],
+    ["_playerCountUnlock", 0, [-1]]
 ];
 
 if (isNull _silo) exitWith {};
@@ -18,6 +20,8 @@ private _data = createHashMapFromArray [
     ["silo_number", _siloNumber],
     ["crew_group", grpNull],
     ["speaker_positions", []],
+    ["enabled", false],
+    ["player_count_unlock", _playerCountUnlock],
 
     ["composition", createHashMapFromArray [
         ["light_unknown", "PortableHelipadLight_01_yellow_F"],
@@ -67,9 +71,6 @@ for "_i" from 1 to 5 do {
     _silo setVariable [format[QGVAR(%1),_x], _y, true];
 } forEach _data;
 
-// Add to control system
-GVAR(SiloControlSystem) call ["Register", [_silo]];
-
 // Set invuln
 _silo allowDamage false;
 
@@ -111,6 +112,9 @@ _silo setVariable [QGVAR(lights), _lights, true];
 
 // Remove silo frag rounds
 _silo removeMagazinesTurret ["magazine_Missiles_Cruise_01_Cluster_x18", [0]];
+
+// Add to control system
+GVAR(SiloControlSystem) call ["Register", [_silo]];
 
 // Create fired event handler
 _silo addEventHandler ["Fired", {

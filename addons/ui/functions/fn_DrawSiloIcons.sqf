@@ -12,6 +12,8 @@ waitUntil {
     params ["_ctrl"];
 
     {
+        if !(_x getVariable [QEGVAR(game,Enabled), false]) then { continue };
+
         private _countdownTime = _x getVariable QEGVAR(game,countdown_time);
         private _currentCountdown = _x getVariable QEGVAR(game,countdown);
         private _side = _x getVariable QEGVAR(game,side);
@@ -26,7 +28,7 @@ waitUntil {
             _frameIndex = round (((_countdownTime - _currentCountdown) / (_countdownTime / 21)) max 1 min 21);
             _siloIcon = _iconData get _side get _siloNumber get _frameIndex;
         };
-        if (isNil "_siloIcon") exitWith {};
+        if (isNil "_siloIcon") then { continue };
 
         _ctrl drawIcon [
             _siloIcon,

@@ -20,6 +20,7 @@ if (is3DEN) exitWith {};
 waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_INIT };
 
 private _siloNum = _module getVariable "silonumber";
+private _playerCountUnlock = _module getVariable "UnlockCount";
 
 // User input checks
 private _syncedSilos = synchronizedObjects _module select { _x isKindOf "B_Ship_MRLS_01_F" };
@@ -33,4 +34,4 @@ if (count _syncedSilos <= 0) exitWith {
 // Execute
 private _silo = _syncedSilos#0;
 INFO_1("ModuleAddSilo: Adding silo: %1",_siloNum);
-[_silo, _siloNum] call EFUNC(game,InitSilo);
+[_silo, _siloNum, _playerCountUnlock] call EFUNC(game,InitSilo);
