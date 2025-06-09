@@ -4,7 +4,7 @@
 I wanted to get this out since the main gameplay loop is finished to start collecting feedback. This has not had a balance pass yet, so be warned.
 Development is slow on weekdays, fast on weekends. Expect frequent updates.
 
-[h1]Current Version - v0.7.0[/h1]
+[h1]Current Version - v0.7.1[/h1]
 
 Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Discord[/url]
 
@@ -13,7 +13,6 @@ Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Di
 Carrier Strike is the reimagined Battlefield 2142 Titan Gamemode within the Arma 3 Universe!
 
 [MapList]
-Carrier Strike - Malden (Extra Small): CarrierStrike_Malden_ExtraSmall.Malden
 Carrier Strike - Malden (Small): CarrierStrike_Malden_Small.Malden
 
 [h1]How To Play[/h1]
@@ -53,6 +52,7 @@ Let me know if you want to be an official server!
 - Randomized Weather System
 - Rally Point System
 - Modules
+- Seeding Mode
 
 [In Progress]
 - More Map Layouts

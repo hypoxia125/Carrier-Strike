@@ -49,3 +49,21 @@ if (hasInterface) then {
     waitUntil { time > 0 };
     missionNamespace setVariable [QGVAR(game_state), GAME_STATE_PLAYING, true];
 };
+
+// Seeding mode notification
+[] spawn {
+    waitUntil { time > 2 };
+    private _disabled = (missionNamespace getVariable [QGVAR(Silos), []]) select {!(_x getVariable [QGVAR(enabled), false])};
+
+    if !([QGVAR(Settings_SeedingMode)] call CBA_settings_fnc_get) exitWith {};
+
+    while {
+        private _disabled = (missionNamespace getVariable [QGVAR(Silos), []]) select {!(_x getVariable [QGVAR(enabled), false])};
+        _disabled isNotEqualTo []
+    } do {
+        private _disabled = _disabled apply {_x getVariable QGVAR(silo_number)};
+        _disabled = _disabled call BIS_fnc_sortNum;
+        systemChat format["Seeding Mode Enabled: Silos %1 disabled.",_disabled];
+        sleep 60;
+    };
+};
