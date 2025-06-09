@@ -11,3 +11,7 @@
 [QGVAR(UpdateSiloStatus), {
     call FUNC(UpdateSiloStatus);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(EnableSiloControl), {
+    call FUNC(EnableSiloControl);
+}] call CBA_fnc_addEventHandler;
