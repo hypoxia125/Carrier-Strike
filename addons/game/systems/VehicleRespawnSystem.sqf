@@ -75,7 +75,7 @@ GVAR(VehicleRespawnSystem) = createHashMapObject [[
                 private _nearDead = allDead select { _x distance _position <= 10 };
                 { deleteVehicle _x } forEach _nearDead;
 
-                // finally spawn vehicle - next frame
+                // finally spawn vehicle
                 [{
                     params ["_entityMap", "_side"];
                     private _class = _entityMap get _side;

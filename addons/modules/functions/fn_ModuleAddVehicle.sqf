@@ -18,6 +18,7 @@ if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
 waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
+sleep 1;
 
 private _ownerVal = _module getVariable "owner";
 private _typeVal = _module getVariable "type";
@@ -47,13 +48,6 @@ private _siloNumber = switch _ownerVal do {
     case 7: { 5 };
 };
 
-private _posASL = getPosASL _module;
-private _posAGL = ASLToAGL _posASL;
-
-if ([_westType, _eastType, _independentType] findIf {_x isKindOf "Air"} != -1) then {
-    _posAGL = _posAGL vectorAdd [0,0,0.2];
-};
-
 // User input checks
 private _synced = synchronizedObjects _module select { !(_x isKindOf "EmptyDetector") };
 if (count _synced == 0) exitWith {
@@ -63,11 +57,15 @@ if (count _synced == 0) exitWith {
 private _fnc_build = {
     params [["_syncedObject", objNull, [objNull]]];
 
-    if (!isNull _syncedObject) then {
-        _posASL = getPosASL _syncedObject;
-        _posAGL = ASLToAGL _posASL;
-        _dir = getDir _syncedObject;
-        deleteVehicle _syncedObject;
+    if (!isNull _syncedObject) exitWith {};
+    
+    private _posASL = getPosASL _syncedObject;
+    private _posAGL = ASLToAGL _posASL;
+    _dir = getDir _syncedObject;
+    deleteVehicle _syncedObject;
+
+    if ([_westType, _eastType, _independentType] findIf {_x isKindOf "Air"} != -1) then {
+        _posAGL = _posAGL vectorAdd [0,0,0.2];
     };
 
     if (_type == "silo") then {
