@@ -2,6 +2,17 @@
 
 // Game settings
 [
+    QGVAR(Settings_SeedingMode),
+    "CHECKBOX",
+    "Enable Silos w/ Player Count",
+    ["Carrier Strike - Game Settings", "Game Settings"],
+    true,
+    2,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(Settings_AllowIndependentFaction),
     "CHECKBOX",
     "Allow Independent Faction",

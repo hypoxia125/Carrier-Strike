@@ -55,38 +55,51 @@ if ([_westType, _eastType, _independentType] findIf {_x isKindOf "Air"} != -1) t
 };
 
 // User input checks
-if (count synchronizedObjects _module > 0) exitWith {
-    ERROR_WITH_TITLE("ModuleAddVehicle","Nothing should be synchronized with this module.");
+private _synced = synchronizedObjects _module select { !(_x isKindOf "EmptyDetector") };
+if (count _synced == 0) exitWith {
+    ERROR_WITH_TITLE("ModuleAddVehicle","Needs to have a synced vehicle.");
 };
 
-// Execute
-if (_type == "silo") then {
-    [
-        ["silo", _siloNumber],
-        _posAGL,
-        _dir,
-        [_westType, _eastType, _independentType],
-        _respawnTime,
-        _code
-    ] call EFUNC(game,InitVehicle);
+private _fnc_build = {
+    params [["_syncedObject", objNull, [objNull]]];
+
+    if (!isNull _syncedObject) then {
+        _posASL = getPosASL _syncedObject;
+        _posAGL = ASLToAGL _posASL;
+        _dir = getDir _syncedObject;
+        deleteVehicle _syncedObject;
+    };
+
+    if (_type == "silo") then {
+        [
+            ["silo", _siloNumber],
+            _posAGL,
+            _dir,
+            [_westType, _eastType, _independentType],
+            _respawnTime,
+            _code
+        ] call EFUNC(game,InitVehicle);
+    };
+    if (_type == "base") then {
+        [
+            ["base", _side],
+            _posAGL,
+            _dir,
+            [_westType, _eastType, _independentType],
+            _respawnTime,
+            _code
+        ] call EFUNC(game,InitVehicle);
+    };
+    if (_type == "carrier") then {
+        [
+            ["carrier", _side],
+            _posAGL,
+            _dir,
+            [_westType, _eastType, _independentType],
+            _respawnTime,
+            _code
+        ] call EFUNC(game,InitVehicle);
+    };
 };
-if (_type == "base") then {
-    [
-        ["base", _side],
-        _posAGL,
-        _dir,
-        [_westType, _eastType, _independentType],
-        _respawnTime,
-        _code
-    ] call EFUNC(game,InitVehicle);
-};
-if (_type == "carrier") then {
-    [
-        ["carrier", _side],
-        _posAGL,
-        _dir,
-        [_westType, _eastType, _independentType],
-        _respawnTime,
-        _code
-    ] call EFUNC(game,InitVehicle);
-};
+
+if (count _synced > 0) then { { _x call _fnc_build } forEach _synced };

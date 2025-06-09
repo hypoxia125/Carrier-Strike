@@ -3,6 +3,8 @@
 if (cameraView == "Gunner") exitWith {};
 
 {
+    if !(_x getVariable [QGVAR(Enabled), false]) then { continue };
+
     private _distance = player distance _x;
     if (_distance <= 10) then { continue };
 

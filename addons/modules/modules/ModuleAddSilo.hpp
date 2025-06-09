@@ -42,6 +42,14 @@ class GVAR(ModuleAddSilo): GVAR(ModuleBase) {
             };
         };
 
+        class UnlockCount: Edit {
+            property = QGVAR(ModuleAddSilo_UnlockCount);
+            displayName = "Unlock @ Player Count";
+            tooltip = "Unlocks this silo at a certain player count on server. If player count increases past this amount, the silo is unlocked and registered. This is useful during the seeding of the server.";
+            defaultValue = 0;
+            typeName = "NUMBER";
+        };
+
         class ModuleDescription: ModuleDescription {};
     };
 
