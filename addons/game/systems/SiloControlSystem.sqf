@@ -23,6 +23,7 @@ GVAR(SiloControlSystem) = createHashMapObject [[
     ["m_countdownTime", [QGVAR(Settings_SiloLaunchCooldown)] call CBA_settings_fnc_get],
     ["m_captureTime", [QGVAR(Settings_SiloCaptureTime)] call CBA_settings_fnc_get],
     ["m_captureRadius", [QGVAR(Settings_SiloCaptureRadius)] call CBA_settings_fnc_get],
+    ["m_seedingMode", [QGVAR(Settings_SeedingMode)] call CBA_settings_fnc_get],
 
     //------------------------------------------------------------------------------------------------
     ["Update", {
@@ -32,6 +33,13 @@ GVAR(SiloControlSystem) = createHashMapObject [[
             if (!alive _silo) then {
                 _self call ["Unregister", [_silo]];
                 continue;
+            };
+
+            if (_self get "m_seedingMode") then {
+                _self call ["UpdateSiloEnabled", [_silo]];
+                if !(_silo getVariable [QGVAR(Enabled), false]) then { continue };
+            } else {
+                _self call ["UpdateSiloEnabled", [_silo, true]];
             };
 
             _self call ["UpdateSilo", [_silo]];
@@ -93,6 +101,38 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         LOG_1("%1::SystemStart | System started.",(_self get "#type")#0);
 
         _self set ["m_frameSystemHandle", _handle];
+    }],
+
+    //------------------------------------------------------------------------------------------------
+    ["UpdateSiloEnabled", {
+        params ["_silo", ["_forced", false]];
+
+        private _enabled = _silo getVariable [QGVAR(Enabled), false];
+        if (_enabled) exitWith {};
+
+        private _siloNumber = _silo getVariable QGVAR(silo_number);
+
+        if (_forced) exitWith {
+            _silo setVariable [QGVAR(Enabled), true, true];
+            [QEGVAR(ui,EnableSiloControl), [_siloNumber, true]] call CBA_fnc_globalEventJIP;
+        };
+
+        private _activeUnits = allUnits select {
+            private _veh = objectParent _x;
+
+            _x isKindOf "CAManBase" &&
+            getNumber (configFile >> "CfgVehicles" >> typeOf _veh >> "isUAV") != 1
+        };
+
+        private _playerCountUnlock = _silo getVariable [QGVAR(player_count_unlock), 0];
+
+        if (count _activeUnits >= _playerCountUnlock) then {
+            INFO_3("SiloControlSystem::UpdateSiloEnabled | Enough players (%1/%2) have joined. Unlocking silo: %3",count _activeUnits,_playerCountUnlock,_siloNumber);
+            _silo setVariable [QGVAR(Enabled), true, true];
+            [QEGVAR(ui,EnableSiloControl), [_siloNumber, true]] call CBA_fnc_globalEventJIP;
+        } else {
+            LOG_3("SiloControlSystem::UpdateSiloEnabled | Not Enough Players To Unlock (%1/%2) | Silo: %3",count _activeUnits,_playerCountUnlock,_siloNumber);
+        };
     }],
 
     //------------------------------------------------------------------------------------------------
