@@ -1,4 +1,4 @@
-Alpha Release v0.7.0
+# Alpha Release v0.7.0
 
 - Changed Add Vehicle Module
     - Module now functions by syncing the vehicle to grab the position and direction. Module will handle deleting this object from the mission so do not delete the editor vehicle via init attribute.
