@@ -95,13 +95,6 @@ class GVAR(ModuleAddVehicle): GVAR(ModuleBase) {
             defaultValue = "''";
             typeName = "STRING";
         };
-        class Dir: Edit {
-            property = QGVAR(ModuleAddVehicle_Dir);
-            displayName = "Direction";
-            tooltip = "Vehicle direction. Place down a vehicle and copy its direction for ease of use.";
-            defaultValue = 0;
-            typeName = "NUMBER";
-        };
         class RespawnTime: Edit {
             property = QGVAR(ModuleAddVehicle_RespawnTime);
             displayName = "Respawn Time";
