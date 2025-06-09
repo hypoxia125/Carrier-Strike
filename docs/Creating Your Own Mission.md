@@ -27,8 +27,8 @@ To create your mission, you will need to have the following modules placed:
 These are optional systems that you can place. To enjoy the full Carrier Strike experience, you should use all systems.
 
 **Carrier Strike - Add Vehicle**
-- Place as many as you want (do not sync with anything).
-- Provide the classes and direction. You can use a dummy vehicle to determine placement and direction, just remember to delete them after.
+- Place as many as you want (sync with a base vehicle - module will handle deletion).
+- Position and direction will be pulled by synced vehicle
 
 **Carrier Strike - Add Reactor**
 - Place as many of these as you want for each team (BLUFOR, OPFOR).
