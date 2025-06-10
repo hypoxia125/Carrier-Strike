@@ -1,1 +1,1 @@
-#include "\z\carrierstrike\addons\main\script_component.hpp"
+#include "\z\carrierstrike\addons\modules\script_component.hpp"

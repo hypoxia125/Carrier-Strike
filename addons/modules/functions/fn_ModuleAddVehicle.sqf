@@ -18,14 +18,12 @@ if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
 waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
-sleep 1;
 
 private _ownerVal = _module getVariable "owner";
 private _typeVal = _module getVariable "type";
 private _westType = _module getVariable ["westtype", ""];
 private _eastType = _module getVariable ["easttype", ""];
 private _independentType = _module getVariable ["independenttype", ""];
-private _dir = _module getVariable ["dir", 0];
 private _respawnTime = _module getVariable ["respawntime", 30];
 private _code = compile (_module getVariable ["expression", "true"]);
 
@@ -49,15 +47,17 @@ private _siloNumber = switch _ownerVal do {
 };
 
 // User input checks
+LOG("ModuleAddVehicle | Getting synced objects...");
 private _synced = synchronizedObjects _module select { !(_x isKindOf "EmptyDetector") };
 if (count _synced == 0) exitWith {
     ERROR_WITH_TITLE("ModuleAddVehicle","Needs to have a synced vehicle.");
 };
+LOG_2("ModuleAddVehicle | %1 synced vehicles found: %2",count _synced,_synced);
 
-private _fnc_build = {
-    params [["_syncedObject", objNull, [objNull]]];
+{
+    private _syncedObject = _x;
 
-    if (!isNull _syncedObject) exitWith {};
+    if (isNull _syncedObject) then { continue };
     
     private _posASL = getPosASL _syncedObject;
     private _posAGL = ASLToAGL _posASL;
@@ -67,6 +67,12 @@ private _fnc_build = {
     if ([_westType, _eastType, _independentType] findIf {_x isKindOf "Air"} != -1) then {
         _posAGL = _posAGL vectorAdd [0,0,0.2];
     };
+
+    LOG("ModuleAddVehicle | Attempting to add vehicle...");
+    LOG_1("ModuleAddVehicle | Vehicle Type: %1",_type);
+    LOG_1("ModuleAddVehicle | Vehicle Side: %1",_side);
+    LOG_1("ModuleAddVehicle | Vehicle Pos: %1",_posAGL);
+    LOG_1("ModuleAddVehicle | Vehicle Dir: %1",_dir);
 
     if (_type == "silo") then {
         [
@@ -98,6 +104,4 @@ private _fnc_build = {
             _code
         ] call EFUNC(game,InitVehicle);
     };
-};
-
-if (count _synced > 0) then { { _x call _fnc_build } forEach _synced };
+} forEach _synced;
