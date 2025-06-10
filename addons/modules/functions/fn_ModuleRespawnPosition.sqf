@@ -41,7 +41,7 @@ private _formattedName = _nameSide + " " + _type;
 // Code Start
 //------------------------------------------------------------------------------------------------
 LOG(QGVAR(ModuleRespawnPosition) + ":: adding respawn position...");
-private _respawnData = missionNamespace getVariable QEGVAR(game,respawn_positions);
+private _respawnData = missionNamespace getVariable [QEGVAR(game,respawn_positions), []];
 private _area = _module getVariable "ObjectArea";
 _area = [getPosATL _module] + _area;
 

@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+missionNamespace setVariable [QGVAR(game_state), -1, true];
+
 call FUNC(InitGame);
 call FUNC(InitSystems);
 

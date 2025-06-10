@@ -2,7 +2,22 @@
 
 if (!isServer) exitWith {};
 
-private _channels = missionNamespace getVariable QGVAR(chat_channels);
+private _channels = createHashMapFromArray [
+    //! Global chat channel, used for status updates
+    ["notification", createHashMapFromArray [
+        ["channel_ids", createHashMapFromArray [
+            [west, -1],
+            [east, -1],
+            [independent, -1]
+        ]],
+        ["channel_units", createHashMapFromArray [
+            [west, objNull],
+            [east, objNull],
+            [independent, objNull]
+        ]]
+    ]]
+];
+
 {
     // Dummy object
     private _group = createGroup civilian;
