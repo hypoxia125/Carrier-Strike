@@ -1,3 +1,9 @@
+# Alpha Version v0.7.2
+
+- Fixed issues with pre-creating large game data hashmap instead of handling them locally
+  - Should fix issues with west carrier module not registering data
+  - Should fix west carrier vehicles spawning correctly
+
 # Alpha Version v0.7.1
 
 - Added disabled silo icons to top row
