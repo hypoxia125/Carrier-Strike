@@ -29,7 +29,7 @@ private _side = switch _sideVal do {
 };
 
 // User input checks
-private _targetHash = missionNamespace getVariable QEGVAR(game,missile_targets);
+private _targetHash = missionNamespace getVariable [QEGVAR(game,missile_targets), createHashMap];
 if !(isNull (_targetHash getOrDefault [_side, objNull])) exitWith {
     ERROR_WITH_TITLE_1("ModuleAddMissile","Missile target already registered for side: %1",_side);
 };

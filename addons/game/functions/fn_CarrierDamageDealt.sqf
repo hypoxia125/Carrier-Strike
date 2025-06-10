@@ -66,9 +66,9 @@ private _fnc_triggerAlert = {
 
 // Handle reactor
 if (_percentHP <= 0.50 && (_hullstatus get "reactor" get "played" get _side)) then {
-    private _vunerabilites = missionNamespace getVariable QGVAR(reactor_vulnerabilites);
-    _vunerabilites set [_side, true];
-    missionNamespace setVariable [QGVAR(reactor_vulnerabilites), true];
+    private _vulnerabilites = missionNamespace getVariable [QGVAR(reactor_vulnerabilites), createHashMap];
+    _vulnerabilites set [_side, true];
+    missionNamespace setVariable [QGVAR(reactor_vulnerabilites), _vulnerabilites];
 
     private _alertPathFriendly = _hullstatus get "reactor" get "path_friendly";
     private _alertPathEnemy = _hullstatus get "reactor" get "path_enemy";
@@ -80,15 +80,15 @@ if (_percentHP <= 0.50 && (_hullstatus get "reactor" get "played" get _side)) th
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Loadout Unlocking
 ////////////////////////////////////////////////////////////////////////////////////////////////
-private _unlockHash = missionNamespace getVariable QGVAR(unlocked_loadouts);
+private _unlockHash = missionNamespace getVariable [QGVAR(unlocked_loadouts), createHashMap];
 if (_percentHP <= 2/3) then {
-    if !(_unlockHash get 2) then {
+    if !(_unlockHash getOrDefault [2, false, true]) then {
         [2] call FUNC(UnlockLoadouts);
         _unlockHash set [2, true];
     };
 };
 if (_percentHP <= 1/3) then {
-    if !(_unlockHash get 3) then {
+    if !(_unlockHash getOrDefault [3, false, true]) then {
         [3] call FUNC(UnlockLoadouts);
         _unlockHash set [3, true];
     };

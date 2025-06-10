@@ -7,7 +7,6 @@ PREP(Init);
 PREP(InitCarrier);
 PREP(InitChatChannels);
 PREP(InitDiary);
-PREP(InitDoQueue);
 PREP(InitGame);
 PREP(InitReactor);
 PREP(InitSettings);

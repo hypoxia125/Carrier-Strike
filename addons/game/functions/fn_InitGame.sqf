@@ -3,63 +3,6 @@
 if (!isServer) exitWith {};
 
 private _data = createHashMapFromArray [
-    //! All silos registered in the game
-    ["silos", [/* silo object */]],
-
-    //! All missiles registered in the game
-    ["missiles", [/* missile projectile */]],
-
-    //! Current enum state of the game
-    //! States can be found in addons\main\script_mod.hpp
-    ["game_state", -1],
-
-    //! All reactors registered in the game
-    ["reactors", [/* reactor object */]],
-
-    //! Lists which team's reactors are allowed to take damage
-    ["reactor_vulnerabilites", createHashMapFromArray [
-        [west, false],
-        [east, false]
-    ]],
-
-    //! All chat channels and related information
-    ["chat_channels", createHashMapFromArray [
-        //! Global chat channel, used for status updates
-        ["notification", createHashMapFromArray [
-            ["channel_ids", createHashMapFromArray [
-                [west, -1],
-                [east, -1],
-                [independent, -1]
-            ]],
-            ["channel_units", createHashMapFromArray [
-                [west, objNull],
-                [east, objNull],
-                [independent, objNull]
-            ]]
-        ]]
-    ]],
-
-    //! Missile targets for each side
-    ["missile_targets", createHashMapFromArray [
-        [west, objNull],
-        [east, objNull]
-    ]],
-
-    //! Carriers registered to each side
-    ["carriers", createHashMapFromArray [
-        [west, objNull],
-        [east, objNull]
-    ]],
-
-    //! All respawn position info
-    ["respawn_positions", [/* [<respawnID, <respawnType>, <respawnArea>] */]],
-
-    //! Contains which tiers of equipment are currently allowed
-    ["unlocked_loadouts", createHashMapFromArray [
-        [1, false],
-        [2, false],
-        [3, false]
-    ]],
 
     ["alerts", createHashMapFromArray [
         ["silotimeremaining", createHashMapFromArray [
@@ -135,6 +78,8 @@ private _data = createHashMapFromArray [
     ]]
 ];
 
+LOG("InitGame | Saving missionNamespace game data...");
 {
     missionNamespace setVariable [format[QGVAR(%1),_x], _y, true]
 } forEach _data;
+LOG("InitGame | Data save complete...");

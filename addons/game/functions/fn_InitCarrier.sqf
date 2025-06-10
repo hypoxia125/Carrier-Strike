@@ -4,7 +4,7 @@ if (!isServer) exitWith {};
 
 params ["_carrier", "_side"];
 
-private _carriers = missionNamespace getVariable QGVAR(carriers);
+private _carriers = missionNamespace getVariable [QGVAR(carriers), createHashMap];
 _carriers set [_side, _carrier];
 missionNamespace setVariable [QGVAR(carriers), _carriers, true];
 

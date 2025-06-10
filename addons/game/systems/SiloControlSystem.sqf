@@ -127,11 +127,9 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         private _playerCountUnlock = _silo getVariable [QGVAR(player_count_unlock), 0];
 
         if (count _activeUnits >= _playerCountUnlock) then {
-            INFO_3("SiloControlSystem::UpdateSiloEnabled | Enough players (%1/%2) have joined. Unlocking silo: %3",count _activeUnits,_playerCountUnlock,_siloNumber);
             _silo setVariable [QGVAR(Enabled), true, true];
             [QEGVAR(ui,EnableSiloControl), [_siloNumber, true]] call CBA_fnc_globalEventJIP;
         } else {
-            LOG_3("SiloControlSystem::UpdateSiloEnabled | Not Enough Players To Unlock (%1/%2) | Silo: %3",count _activeUnits,_playerCountUnlock,_siloNumber);
         };
     }],
 
