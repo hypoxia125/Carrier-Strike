@@ -18,6 +18,7 @@ if (!isServer) exitWith {};
 if (is3DEN) exitWith {};
 
 waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME_STATE_POSTINIT };
+sleep 1;
 
 private _ownerVal = _module getVariable "owner";
 private _typeVal = _module getVariable "type";
