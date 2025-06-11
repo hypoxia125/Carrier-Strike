@@ -39,7 +39,9 @@ Carrier Strike - Malden (Small): CarrierStrike_Malden_Small.Malden
 [url=https://youtu.be/wcBSGR1rx5w]Video Tutorial[/url]
 
 [h1]Official Server List[/h1]
-Let me know if you want to be an official server!
+[Official Alpha Playtest] Carrier Strike [PvP] - Malden
+71.211.231.197
+2302
 
 [h1]Current Alpha Progress[/h1]
 
