@@ -53,21 +53,3 @@ class CfgDebriefing {
         picture = "Flag_CSAT";
     };
 };
-
-class CfgRoles {
-    class GVAR(Tier1)
-    {
-        displayName = "Tier I";
-        icon = "";
-    };
-    class GVAR(Tier2)
-    {
-        displayName = "Tier II";
-        icon = "";
-    };
-    class GVAR(Tier3)
-    {
-        displayName = "Tier III";
-        icon = "";
-    };
-};

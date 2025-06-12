@@ -46,3 +46,9 @@ switch _tier do {
 { [west, configName _x] call BIS_fnc_addRespawnInventory } forEach _westLoadouts;
 { [east, configName _x] call BIS_fnc_addRespawnInventory } forEach _eastLoadouts;
 { [independent, configName _x] call BIS_fnc_addRespawnInventory } forEach _independentLoadouts;
+
+switch _tier do {
+    case 1: { [QGVAR(HintSilent), "Tier I Loadouts: Unlocked"] call CBA_fnc_globalEvent };
+    case 2: { [QGVAR(HintSilent), "Tier II Loadouts: Unlocked"] call CBA_fnc_globalEvent };
+    case 3: { [QGVAR(HintSilent), "Tier III Loadouts: Unlocked"] call CBA_fnc_globalEvent };
+};
