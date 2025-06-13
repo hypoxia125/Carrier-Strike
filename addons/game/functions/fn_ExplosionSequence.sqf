@@ -28,7 +28,7 @@ if (isServer) then {
 // Explosions
 if (isServer) then {
     // Skip if not a standard carrier
-    if (_carrier isKindOf "Land_Carrier_01_base_F") exitWith {};
+    if !(_carrier isKindOf "Land_Carrier_01_base_F") exitWith {};
 
     [_carrier] spawn {
         while { missionNamespace getVariable QGVAR(game_state) != GAME_STATE_ENDED } do {
