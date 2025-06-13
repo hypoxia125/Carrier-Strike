@@ -121,6 +121,26 @@ _silo addEventHandler ["Fired", {
     private _silo = _this#0;
     private _projectile = _this#6;
 
+    // kill every entity within bounding box AND up to 20 meters above to protect missile
+    private _bbr = boundingBoxReal _silo;
+    private _p1 = _bbr select 0;
+    private _p2 = _bbr select 1;
+    private _a = (_p2#0 - _p1#0) / 2;
+    private _b = (_p2#0 - _p1#0) / 2;
+    private _h = 100;
+    private _area = [ASLToAGL getPosASL _silo, _a, _b, getDir _silo, true, _h];
+    private _unitsToKill = allUnits inAreaArray _area;
+    _unitsToKill = (_unitsToKill - [_silo]) - crew _silo;
+    {
+        private _vehicle = vehicle _x;
+        _vehicle setDamage [1, false];
+        deleteVehicle _vehicle;
+
+        _x setPosASL [0,0,0];
+        _x setDamage [1, false];
+        [QGVAR(HintSilent), "Killed: In Way Of Missile", _x] call CBA_fnc_targetEvent;
+    } forEach _unitsToKill;
+
     _projectile allowDamage false;
 
     // Set projectile team affiliation
