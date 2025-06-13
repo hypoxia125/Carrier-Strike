@@ -137,6 +137,10 @@ GVAR(SiloControlSystem) = createHashMapObject [[
     ["UpdateSilo", {
         params ["_silo"];
 
+        if (missionNamespace getVariable QGVAR(game_state) >= GAME_STATE_ENDING) exitWith {
+            [QEGVAR(ui,UpdateSiloCountdown), [_silo, ""]] call CBA_fnc_globalEvent;
+        };
+
         private _countdown = _silo getVariable QGVAR(countdown);
         private _isFiring = _silo getVariable QGVAR(is_firing);
         private _side = _silo getVariable QGVAR(side);

@@ -23,6 +23,11 @@ GVAR(MissileTrackingSystem) = createHashMapObject [[
     //------------------------------------------------------------------------------------------------
     ["Update", {
         private _missiles = _self get "m_entities";
+
+        if (missionNamespace getVariable QGVAR(game_state) >= GAME_STATE_ENDING) exitWith {
+            { deleteVehicle _x } forEach _missiles;
+        };
+
         {
             private _missile = _x;
 

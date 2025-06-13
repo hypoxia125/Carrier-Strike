@@ -1,3 +1,11 @@
+# Alpha Version v0.7.3
+
+- Added Map: Stratis Small
+- Added Map: Altis Medium
+- Made carrier escape sequence longer (60s)
+- Modified + extended default loadouts
+- Kills units/vehicles within initial missile path out of silo before missile can early detonate
+
 # Alpha Version v0.7.2
 
 - Fixed issues with pre-creating large game data hashmap instead of handling them locally
