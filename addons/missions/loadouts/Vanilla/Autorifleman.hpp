@@ -81,3 +81,17 @@ class Tier1_East_Autorifleman_Pacific
     items[] = {"FirstAidKit"};
     linkedItems[] = {"V_HarnessO_ghex_F", "H_HelmetO_ghex_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "O_NVGoggles_ghex_F", "acc_pointer_IR"};
 };
+
+class Tier1_Independent_Autorifleman
+{
+    displayName = "Autorifleman";
+    icon = "";
+    role = QGVAR(Autorifleman);
+    show = "true";
+    uniformClass = "U_IG_Guerilla2_1";
+    backpack = "";
+    weapons[] = {"LMG_Mk200_BI_F", "Throw", "Put"};
+    magazines[] = {"MiniGrenade", "MiniGrenade", "SmokeShell", "SmokeShellGreen", "Chemlight_blue", "Chemlight_blue", "200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box"};
+    items[] = {"FirstAidKit"};
+    linkedItems[] = {"V_TacVest_blk", "H_Bandanna_khk", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "bipod_03_F_blk"};
+};

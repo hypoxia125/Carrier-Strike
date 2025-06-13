@@ -81,3 +81,17 @@ class Tier1_East_Marksman_Pacific
     items[] = {"FirstAidKit"};
     linkedItems[] = {"V_TacVest_oli", "H_HelmetO_ghex_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "O_NVGoggles_ghex_F", "optic_DMS"};
 };
+
+class Tier1_Independent_Marksman
+{
+    displayName = "Marksman";
+    icon = "";
+    role = QGVAR(Marksman);
+    show = "true";
+    uniformClass = "U_IG_Guerilla3_1";
+    backpack = "";
+    weapons[] = {"arifle_Mk20_MRCO_F", "Binocular", "Throw", "Put"};
+    magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "MiniGrenade", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "HandGrenade", "SmokeShell", "SmokeShellGreen", "Chemlight_blue", "Chemlight_blue", "30Rnd_556x45_Stanag"};
+    items[] = {"FirstAidKit"};
+    linkedItems[] = {"V_BandollierB_khk", "H_Shemag_olive", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "optic_MRCO"};
+};

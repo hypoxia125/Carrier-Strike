@@ -5,9 +5,9 @@ class Tier1_West_Antitank
     role = QGVAR(AntiTank);
     show = "true";
     uniformClass = "U_B_CombatUniform_mcam";
-    backpack = "B_AssaultPack_rgr_LAT2";
-    weapons[] = {"arifle_MX_ACO_pointer_F", "launch_MRAWS_sand_F", "hgun_P07_F", "Throw", "Put"};
-    magazines[] = {"30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShell", "SmokeShellGreen", "Chemlight_green", "Chemlight_green", "MRAWS_HEAT_F", "MRAWS_HEAT_F", "MRAWS_HE_F", "30Rnd_65x39_caseless_mag", "MRAWS_HEAT_F", "16Rnd_9x21_Mag"};
+    backpack = "B_AssaultPack_rgr_LAT";
+    weapons[] = {"arifle_MX_ACO_pointer_F", "hgun_P07_F", "ACE_launch_NLAW_ready_F", "Throw", "Put"};
+    magazines[] = {"30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShell", "SmokeShellGreen", "Chemlight_green", "Chemlight_green", "NLAW_F", "NLAW_F", "30Rnd_65x39_caseless_mag", "16Rnd_9x21_Mag", "NLAW_F"};
     items[] = {"FirstAidKit"};
     linkedItems[] = {"V_PlateCarrier2_rgr", "H_HelmetB_sand", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "NVGoggles", "acc_pointer_IR", "optic_Aco"};
 };
@@ -19,9 +19,9 @@ class Tier1_West_Antitank_Pacific
     role = QGVAR(AntiTank);
     show = "true";
     uniformClass = "U_B_T_Soldier_F";
-    backpack = "B_AssaultPack_rgr_BTLAT2_F";
-    weapons[] = {"arifle_MX_khk_ACO_Pointer_F", "launch_MRAWS_green_F", "hgun_P07_khk_F", "Throw", "Put"};
-    magazines[] = {"30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShell", "SmokeShellGreen", "Chemlight_green", "Chemlight_green", "MRAWS_HEAT_F", "MRAWS_HEAT_F", "MRAWS_HE_F", "30Rnd_65x39_caseless_khaki_mag", "MRAWS_HEAT_F", "16Rnd_9x21_Mag"};
+    backpack = "B_AssaultPack_rgr_BTLAT_F";
+    weapons[] = {"arifle_MX_khk_ACO_Pointer_F", "launch_NLAW_F", "hgun_P07_khk_F", "Throw", "Put"};
+    magazines[] = {"30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag", "30Rnd_65x39_caseless_khaki_mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShell", "SmokeShellGreen", "Chemlight_green", "Chemlight_green", "NLAW_F", "NLAW_F", "30Rnd_65x39_caseless_khaki_mag", "16Rnd_9x21_Mag"};
     items[] = {"FirstAidKit"};
     linkedItems[] = {"V_PlateCarrier2_tna_F", "H_HelmetB_tna_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "NVGoggles_tna_F", "acc_pointer_IR", "optic_Aco"};
 };
@@ -33,9 +33,9 @@ class Tier1_West_Antitank_Woodland
     role = QGVAR(AntiTank);
     show = "true";
     uniformClass = "U_B_CombatUniform_mcam_wdl_f";
-    backpack = "B_AssaultPack_wdl_BWLAT2_F";
-    weapons[] = {"arifle_MX_Black_ACO_Pointer_F", "launch_MRAWS_green_F", "hgun_P07_khk_F", "Throw", "Put"};
-    magazines[] = {"30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShell", "SmokeShellGreen", "Chemlight_green", "Chemlight_green", "MRAWS_HEAT_F", "MRAWS_HEAT_F", "MRAWS_HE_F", "30Rnd_65x39_caseless_black_mag", "MRAWS_HEAT_F", "16Rnd_9x21_Mag"};
+    backpack = "B_AssaultPack_wdl_BWLAT_F";
+    weapons[] = {"arifle_MX_Black_ACO_Pointer_F", "launch_NLAW_F", "hgun_P07_khk_F", "Throw", "Put"};
+    magazines[] = {"30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShell", "SmokeShellGreen", "Chemlight_green", "Chemlight_green", "NLAW_F", "NLAW_F", "30Rnd_65x39_caseless_black_mag", "16Rnd_9x21_Mag"};
     items[] = {"FirstAidKit"};
     linkedItems[] = {"V_PlateCarrier2_wdl", "H_HelmetB_plain_wdl", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "NVGoggles_INDEP", "acc_pointer_IR", "optic_Aco"};
 };
@@ -80,4 +80,18 @@ class Tier1_East_Antitank_Pacific
     magazines[] = {"30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "SmokeShell", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShellRed", "Chemlight_red", "Chemlight_red", "RPG32_F", "RPG32_F", "RPG32_HE_F", "RPG32_HE_F", "30Rnd_580x42_Mag_F", "RPG32_F", "16Rnd_9x21_Mag"};
     items[] = {"FirstAidKit"};
     linkedItems[] = {"V_TacVest_oli", "H_HelmetO_ghex_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "O_NVGoggles_ghex_F", "optic_ACO_grn"};
+};
+
+class Tier1_Independent_Antitank
+{
+    displayName = "Anti Tank";
+    icon = "";
+    role = QGVAR(AntiTank);
+    show = "true";
+    uniformClass = "U_IG_Guerrilla_6_1";
+    backpack = "G_FieldPack_LAT";
+    weapons[] = {"arifle_TRG21_F", "launch_RPG32_F", "Throw", "Put"};
+    magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "Chemlight_blue", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "SmokeShell", "SmokeShellGreen", "Chemlight_blue", "RPG32_F", "RPG32_F", "RPG32_HE_F", "30Rnd_556x45_Stanag", "RPG32_F"};
+    items[] = {"FirstAidKit"};
+    linkedItems[] = {"V_TacVest_blk", "H_Bandanna_khk", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
 };

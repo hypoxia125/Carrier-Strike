@@ -81,3 +81,17 @@ class Tier3_East_ExplosiveSpecialist_Pacific
     items[] = {"FirstAidKit", "ToolKit", "MineDetector"};
     linkedItems[] = {"V_TacVest_oli", "H_HelmetO_ghex_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "O_NVGoggles_ghex_F", "acc_pointer_IR", "optic_ACO_grn"};
 };
+
+class Tier3_Independent_ExplosiveSpecialist
+{
+    displayName = "Explosive Specialist";
+    icon = "";
+    role = QGVAR(ExplosiveSpecialist);
+    show = "true";
+    uniformClass = "U_IG_Guerilla2_1";
+    backpack = "G_Carryall_Exp";
+    weapons[] = {"arifle_Mk20C_ACO_F", "Throw", "Put"};
+    magazines[] = {"30Rnd_556x45_Stanag", "Chemlight_blue", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "HandGrenade", "MiniGrenade", "APERSMine_Range_Mag", "APERSMine_Range_Mag", "APERSMine_Range_Mag", "SmokeShell", "SmokeShellGreen", "Chemlight_blue", "APERSBoundingMine_Range_Mag", "APERSBoundingMine_Range_Mag", "SLAMDirectionalMine_Wire_Mag", "DemoCharge_Remote_Mag", "30Rnd_556x45_Stanag"};
+    items[] = {"FirstAidKit", "MineDetector"};
+    linkedItems[] = {"V_Chestrig_blk", "H_Shemag_olive", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "optic_ACO_grn"};
+};

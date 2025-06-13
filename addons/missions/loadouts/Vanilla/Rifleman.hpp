@@ -71,7 +71,7 @@ class Tier1_East_Rifleman_Urban
 class Tier1_East_Rifleman_Pacific
 {
     displayName = "Rifleman (Pacific)";
-    icon = """";
+    icon = "";
     role = QGVAR(Rifleman);
     show = "true";
     uniformClass = "U_O_T_Soldier_F";
@@ -80,4 +80,18 @@ class Tier1_East_Rifleman_Pacific
     magazines[] = {"30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "SmokeShell", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_F", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "HandGrenade", "HandGrenade", "SmokeShellRed", "Chemlight_red", "Chemlight_red", "30Rnd_580x42_Mag_F", "16Rnd_9x21_Mag"};
     items[] = {"FirstAidKit"};
     linkedItems[] = {"V_HarnessO_ghex_F", "H_HelmetO_ghex_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "O_NVGoggles_ghex_F", "acc_pointer_IR", "optic_ACO_grn"};
+};
+
+class Tier1_Independent_Rifleman
+{
+    displayName = "Rifleman";
+    icon = "";
+    role = QGVAR(Rifleman);
+    show = "true";
+    uniformClass = "U_IG_Guerilla1_1";
+    backpack = "";
+    weapons[] = {"arifle_TRG21_F", "Throw", "Put"};
+    magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "Chemlight_blue", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "HandGrenade", "MiniGrenade", "SmokeShell", "SmokeShellGreen", "Chemlight_blue", "30Rnd_556x45_Stanag"};
+    items[] = {"FirstAidKit"};
+    linkedItems[] = {"V_Chestrig_oli", "H_Shemag_olive", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
 };

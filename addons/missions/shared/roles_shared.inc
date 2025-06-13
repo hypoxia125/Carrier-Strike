@@ -19,6 +19,10 @@ class CfgRoles {
 		displayName = "II: Grenadier";
 		icon = "";
 	};
+	class GVAR(HeavyAntiTank) {
+		displayName = "II: Heavy Anti Tank";
+		icon = "";
+	};
 	class GVAR(HeavyGunner) {
 		displayName = "III: Heavy Gunner";
 		icon = "";

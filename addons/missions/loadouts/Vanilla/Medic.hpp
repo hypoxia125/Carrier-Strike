@@ -81,3 +81,17 @@ class Tier1_East_Medic_Pacific
     items[] = {"FirstAidKit", "Medikit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit"};
     linkedItems[] = {"V_TacVest_oli", "H_HelmetO_ghex_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "O_NVGoggles_ghex_F", "acc_pointer_IR"};
 };
+
+class Tier1_Independent_Medic
+{
+    displayName = "Medic";
+    icon = "";
+    role = QGVAR(Medic);
+    show = "true";
+    uniformClass = "U_IG_Guerilla2_3";
+    backpack = "G_FieldPack_Medic";
+    weapons[] = {"arifle_Mk20_F", "hgun_ACPC2_F", "Throw", "Put"};
+    magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "Chemlight_blue", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "9Rnd_45ACP_Mag", "MiniGrenade", "SmokeShell", "SmokeShellGreen", "SmokeShellRed", "SmokeShellBlue", "Chemlight_blue", "30Rnd_556x45_Stanag", "9Rnd_45ACP_Mag"};
+    items[] = {"FirstAidKit", "Medikit"};
+    linkedItems[] = {"V_TacVest_blk", "H_Cap_oli", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+};
