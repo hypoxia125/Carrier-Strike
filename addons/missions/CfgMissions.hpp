@@ -8,12 +8,12 @@ class CfgMissions {
         class CarrierStrike_Stratis_Small
         {
             briefingName = "Carrier Strike - Stratis";
-            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_Small.Malden";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_Small.Stratis";
         };
         class CarrierStrike_Altis_Medium
         {
             briefingName = "Carrier Strike - Altis";
-            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Altis_Medium.Malden";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Altis_Medium.Altis";
         };
     };
 };
