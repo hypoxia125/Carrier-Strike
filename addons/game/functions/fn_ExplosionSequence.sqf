@@ -1,5 +1,8 @@
 #include "script_component.hpp"
 
+#define TOTAL_ESCAPE_TIME       60
+#define FINAL_VIEW_TIME         12
+
 params ["_carrier"];
 
 // Stop respawns
@@ -54,7 +57,7 @@ if (isServer) then {
     [_side] spawn {
         params ["_side"];
         private _time = time;
-        waitUntil { time >= _time + 20};
+        waitUntil { time >= _time + TOTAL_ESCAPE_TIME };
         missionNamespace setVariable [QGVAR(game_state), GAME_STATE_ENDED, true];
         [_side] call FUNC(EndGame);
     };
@@ -65,7 +68,7 @@ if (hasInterface) then {
     [_carrier] spawn {
         params ["_carrier"];
         private _time = time;
-        waitUntil { time >= _time + 12 };
+        waitUntil { time >= _time + (TOTAL_ESCAPE_TIME - FINAL_VIEW_TIME) };
 
         private _position = _carrier getVariable [QGVAR(endGameCameraPosition), []];
         if (_position isEqualTo []) exitWith {};
