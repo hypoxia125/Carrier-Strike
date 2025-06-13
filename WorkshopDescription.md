@@ -14,6 +14,8 @@ Carrier Strike is the reimagined Battlefield 2142 Titan Gamemode within the Arma
 
 [MapList]
 Carrier Strike - Malden (Small): CarrierStrike_Malden_Small.Malden
+Carrier Strike - Stratis (Small): CarrierStrike_Stratis_Small.Stratis
+Carrier Strike - Altis (Small): CarrierStrike_Altis_Small.Altis
 
 [h1]How To Play[/h1]
 
