@@ -6,7 +6,7 @@ class Tier1_West_Antitank
     show = "true";
     uniformClass = "U_B_CombatUniform_mcam";
     backpack = "B_AssaultPack_rgr_LAT";
-    weapons[] = {"arifle_MX_ACO_pointer_F", "hgun_P07_F", "ACE_launch_NLAW_ready_F", "Throw", "Put"};
+    weapons[] = {"arifle_MX_ACO_pointer_F", "hgun_P07_F", "launch_NLAW_F", "Throw", "Put"};
     magazines[] = {"30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShell", "SmokeShellGreen", "Chemlight_green", "Chemlight_green", "NLAW_F", "NLAW_F", "30Rnd_65x39_caseless_mag", "16Rnd_9x21_Mag", "NLAW_F"};
     items[] = {"FirstAidKit"};
     linkedItems[] = {"V_PlateCarrier2_rgr", "H_HelmetB_sand", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "NVGoggles", "acc_pointer_IR", "optic_Aco"};
