@@ -1,3 +1,16 @@
+# Alpha Version v0.7.4
+
+- Changed Respawn Loadout System
+    - Now can have up to 100 tiers
+        - Needs a description definition defining how many tiers
+            - #define LOADOUT_TIERS 3
+    - Tiers unlocked evenly as carriers take damage
+        - For instance, 3 tiers, unlocks happen at 66% hp and 33% hp
+    - When defining respawn inventories, you now need a side property and a tier property. No longer functions off of classname
+        - side = 0; // 0: Opfor, 1: Blufor, 2: GUER
+        - tier = 1; // Tiers up to 100
+- ModuleAddTurret: Fixed issue with destroy percent property
+
 # Alpha Version v0.7.3
 
 - Added Map: Stratis Small
