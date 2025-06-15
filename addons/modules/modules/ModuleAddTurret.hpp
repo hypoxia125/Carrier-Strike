@@ -88,7 +88,7 @@ class GVAR(ModuleAddTurret): GVAR(ModuleBase) {
             typeName = "NUMBER";
         };
 
-        class ModuleAddTurret_DestroyPercent: Edit {
+        class DestroyPercent: Edit {
             property = QGVAR(ModuleAddTurret_DestroyPercent);
             displayName = "Destroy Percent";
             tooltip = "Destroys this turret when carrier takes x percent damage (0 to 1). Set to 0 to have it last all game.";

@@ -1,0 +1,31 @@
+// USMC LOADOUTS
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\antitank.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\autorifleman.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\engineer.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\grenadier.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\machinegunner.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\marksman.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\medic.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\rifleman.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\scout.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\usmc\sniper.hpp"
+
+// VKPO LOADOUTS
+#include "\z\carrierstrike\addons\missions\loadouts\cup\vkpo\antitank.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\vkpo\autorifleman.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\vkpo\engineer.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\vkpo\grenadier.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\vkpo\machinegunner.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\vkpo\marksman.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\vkpo\medic.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\vkpo\rifleman.hpp"
+
+// NAPA LOADOUTS
+#include "\z\carrierstrike\addons\missions\loadouts\cup\napa\antitank.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\napa\autorifleman.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\napa\engineer.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\napa\grenadier.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\napa\machinegunner.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\napa\medic.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\napa\rifleman.hpp"
+#include "\z\carrierstrike\addons\missions\loadouts\cup\napa\scout.hpp"

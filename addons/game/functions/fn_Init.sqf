@@ -41,7 +41,7 @@ if (hasInterface) then {
 };
 
 // Loadouts
-[1] call FUNC(UnlockLoadouts);
+[1, 1] call FUNC(UnlockLoadouts);
 
 [{
     missionNamespace setVariable [QGVAR(game_state), GAME_STATE_POSTINIT, true];
