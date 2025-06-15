@@ -47,9 +47,13 @@ Carrier Strike - Altis (CUP): CarrierStrike_Altis_Medium_CUP.Altis
 [url=https://youtu.be/wcBSGR1rx5w]Video Tutorial[/url]
 
 [h1]Official Server List[/h1]
-[Official Alpha Playtest] Carrier Strike [PvP] - Malden
+[Official Alpha Playtest] Carrier Strike [PvP] - Vanilla
 71.211.231.197
 2302
+
+[Official Alpha Playtest] Carrier Strike [PvP] - CUP
+71.211.231.197
+2402
 
 [h1]Current Alpha Progress[/h1]
 
