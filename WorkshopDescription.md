@@ -19,9 +19,9 @@ Carrier Strike - Stratis: CarrierStrike_Stratis_Small.Stratis
 Carrier Strike - Altis: CarrierStrike_Altis_Medium.Altis
 
 [b]CUP[/b]
-Carrier Strike - Malden (CUP): CarrierStrike_Malden_Small.Malden
-Carrier Strike - Stratis (CUP): CarrierStrike_Stratis_Small.Stratis
-Carrier Strike - Altis (CUP): CarrierStrike_Altis_Medium.Altis
+Carrier Strike - Malden (CUP): CarrierStrike_Malden_Small_CUP.Malden
+Carrier Strike - Stratis (CUP): CarrierStrike_Stratis_Small_CUP.Stratis
+Carrier Strike - Altis (CUP): CarrierStrike_Altis_Medium_CUP.Altis
 
 [h1]How To Play[/h1]
 
