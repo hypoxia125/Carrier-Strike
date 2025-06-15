@@ -2,7 +2,7 @@ class USMC_Autorifleman_Desert
 {
     side = 1;
     tier = 1;
-    displayName = "Autorifleman";
+    displayName = "Autorifleman (Desert)";
     icon = "";
     role = QGVAR(Autorifleman);
     show = "true";
@@ -18,7 +18,7 @@ class USMC_Autorifleman_Woodland
 {
     side = 1;
     tier = 1;
-    displayName = "Autorifleman";
+    displayName = "Autorifleman (Woodland)";
     icon = "";
     role = QGVAR(Autorifleman);
     show = "true";
