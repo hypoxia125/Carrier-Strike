@@ -12,7 +12,7 @@ Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Di
 
 Carrier Strike is the reimagined Battlefield 2142 Titan Gamemode within the Arma 3 Universe!
 
-[MapList]
+[h1][MapList][/h1]
 [b]Vanilla[/b]
 Carrier Strike - Malden: CarrierStrike_Malden_Small.Malden
 Carrier Strike - Stratis: CarrierStrike_Stratis_Small.Stratis
