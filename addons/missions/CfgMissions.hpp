@@ -27,7 +27,7 @@ class CfgMissions {
             briefingName = "Carrier Strike - Stratis (CUP)";
             directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_Small_CUP.Stratis";
         };
-        class CarrierStrike_Altis_Small_CUP
+        class CarrierStrike_Altis_Medium_CUP
         {
             briefingName = "Carrier Strike - Altis (CUP)";
             directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Altis_Medium_CUP.Altis";
