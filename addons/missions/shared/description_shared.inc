@@ -8,27 +8,30 @@
     #define MISSION_DESCRIPTION "Two teams battle over control of Anti-Carrier Missile Silos, aiming for the destruction of the opposing team's carrier. Beware, a rebellion has formed to disrupt the battlefield."
 #endif
 
-#ifdef USE_DEFAULT_LOADOUTS
-    #include "\z\carrierstrike\addons\missions\shared\roles_shared.inc"
-
-    class CfgRespawnInventory {
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\AntiTank.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Autorifleman.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Engineer.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\ExplosiveSpecialist.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Grenadier.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\HeavyAntiTank.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\HeavyGunner.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Marksman.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Medic.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Operative.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\RepairSpecialist.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Rifleman.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Scout.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Sharpshooter.hpp"
-        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\Sniper.hpp"
-    };
+#ifndef LOADOUT_TIERS
+    #define LOADOUT_TIERS     3
 #endif
+loadout_tiers = LOADOUT_TIERS;
+
+class CfgRoles {
+    #ifdef LOADOUT_PRESET_VANILLA
+        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\CfgRoles.hpp"
+    #endif
+
+    #ifdef LOADOUT_PRESET_CUP
+        #include "\z\carrierstrike\addons\missions\loadouts\cup\CfgRoles.hpp"
+    #endif
+};
+
+class CfgRespawnInventory {
+    #ifdef LOADOUT_PRESET_VANILLA
+        #include "\z\carrierstrike\addons\missions\loadouts\vanilla\CfgRespawnInventory.hpp"
+    #endif
+
+    #ifdef LOADOUT_PRESET_CUP
+        #include "\z\carrierstrike\addons\missions\loadouts\cup\CfgRespawnInventory.hpp"
+    #endif
+};
 
 author = "Hypoxic";
 onLoadName = MISSION_NAME;

@@ -80,19 +80,7 @@ if (_percentHP <= 0.50 && (_hullstatus get "reactor" get "played" get _side)) th
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Loadout Unlocking
 ////////////////////////////////////////////////////////////////////////////////////////////////
-private _unlockHash = missionNamespace getVariable [QGVAR(unlocked_loadouts), createHashMap];
-if (_percentHP <= 2/3) then {
-    if !(_unlockHash getOrDefault [2, false, true]) then {
-        [2] call FUNC(UnlockLoadouts);
-        _unlockHash set [2, true];
-    };
-};
-if (_percentHP <= 1/3) then {
-    if !(_unlockHash getOrDefault [3, false, true]) then {
-        [3] call FUNC(UnlockLoadouts);
-        _unlockHash set [3, true];
-    };
-};
+[_percentHP] call FUNC(UnlockLoadouts);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Game Ending
