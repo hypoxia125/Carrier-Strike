@@ -4,7 +4,7 @@
 I wanted to get this out since the main gameplay loop is finished to start collecting feedback. This has not had a balance pass yet, so be warned.
 Development is slow on weekdays, fast on weekends. Expect frequent updates.
 
-[h1]Current Version - v0.7.4[/h1]
+[h1]Current Version - v0.7.5[/h1]
 
 Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Discord[/url]
 
@@ -13,9 +13,15 @@ Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Di
 Carrier Strike is the reimagined Battlefield 2142 Titan Gamemode within the Arma 3 Universe!
 
 [MapList]
-Carrier Strike - Malden (Small): CarrierStrike_Malden_Small.Malden
-Carrier Strike - Stratis (Small): CarrierStrike_Stratis_Small.Stratis
-Carrier Strike - Altis (Small): CarrierStrike_Altis_Small.Altis
+[b]Vanilla[/b]
+Carrier Strike - Malden: CarrierStrike_Malden_Small.Malden
+Carrier Strike - Stratis: CarrierStrike_Stratis_Small.Stratis
+Carrier Strike - Altis: CarrierStrike_Altis_Medium.Altis
+
+[b]CUP[/b]
+Carrier Strike - Malden (CUP): CarrierStrike_Malden_Small.Malden
+Carrier Strike - Stratis (CUP): CarrierStrike_Stratis_Small.Stratis
+Carrier Strike - Altis (CUP): CarrierStrike_Altis_Medium.Altis
 
 [h1]How To Play[/h1]
 

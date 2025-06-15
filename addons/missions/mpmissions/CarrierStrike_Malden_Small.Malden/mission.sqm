@@ -22,14 +22,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2829;
+		nextID=2853;
 	};
 	class Camera
 	{
-		pos[]={8138.4644,193.39691,3373.0334};
-		dir[]={0.65560657,-0.38462415,-0.6498062};
-		up[]={0.27317658,0.9230727,-0.27076003};
-		aside[]={-0.70395988,7.0300302e-08,-0.71024352};
+		pos[]={6840.7056,103.02913,3464.9973};
+		dir[]={0.57068294,-0.64091718,-0.51336759};
+		up[]={0.47649258,0.76761001,-0.42863703};
+		aside[]={-0.66878694,1.4901161e-08,-0.74345422};
 	};
 };
 binarizationWanted=0;
@@ -48839,7 +48839,7 @@ class Mission
 				class Attribute3
 				{
 					property="carrierstrike_modules_ModuleAddTurret_DestroyPercent";
-					expression="_this setVariable ['ModuleAddTurret_DestroyPercent',_value,true];";
+					expression="_this setVariable ['DestroyPercent',_value,true];";
 					class Value
 					{
 						class data
@@ -48958,7 +48958,7 @@ class Mission
 				class Attribute3
 				{
 					property="carrierstrike_modules_ModuleAddTurret_DestroyPercent";
-					expression="_this setVariable ['ModuleAddTurret_DestroyPercent',_value,true];";
+					expression="_this setVariable ['DestroyPercent',_value,true];";
 					class Value
 					{
 						class data
@@ -49097,7 +49097,7 @@ class Mission
 				class Attribute3
 				{
 					property="carrierstrike_modules_ModuleAddTurret_DestroyPercent";
-					expression="_this setVariable ['ModuleAddTurret_DestroyPercent',_value,true];";
+					expression="_this setVariable ['DestroyPercent',_value,true];";
 					class Value
 					{
 						class data
@@ -49237,7 +49237,7 @@ class Mission
 				class Attribute3
 				{
 					property="carrierstrike_modules_ModuleAddTurret_DestroyPercent";
-					expression="_this setVariable ['ModuleAddTurret_DestroyPercent',_value,true];";
+					expression="_this setVariable ['DestroyPercent',_value,true];";
 					class Value
 					{
 						class data
@@ -50446,12 +50446,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={6863.2334,82.352325,3478.9456};
+				position[]={6863.2329,82.352524,3478.946};
 				angles[]={0,4.9218287,0};
 			};
 			id=5101;
 			type="carrierstrike_modules_ModuleAddVehicle";
-			atlOffset=-0.0082092285;
+			atlOffset=-0.0080032349;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -50528,7 +50528,7 @@ class Mission
 						class data
 						{
 							singleType="SCALAR";
-							value=1;
+							value=0;
 						};
 					};
 				};

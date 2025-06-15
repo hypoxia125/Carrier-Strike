@@ -15,5 +15,23 @@ class CfgMissions {
             briefingName = "Carrier Strike - Altis";
             directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Altis_Medium.Altis";
         };
+
+#if __has_include("\CUP\Vehicles\CUP_Vehicles_Core\stringtable.xml")
+        class CarrierStrike_Malden_Small_CUP
+        {
+            briefingName = "Carrier Strike - Malden (CUP)";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Malden_Small_CUP.Malden";
+        };
+        class CarrierStrike_Stratis_Small_CUP
+        {
+            briefingName = "Carrier Strike - Stratis (CUP)";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_Small_CUP.Stratis";
+        };
+        class CarrierStrike_Altis_Small_CUP
+        {
+            briefingName = "Carrier Strike - Altis (CUP)";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Altis_Medium_CUP.Altis";
+        };
+#endif
     };
 };

@@ -1,3 +1,13 @@
+# Alpha Version v0.7.5
+
+- Added CUP Versions of Maps:
+    - Malden (Small)
+    - Altis (Medium)
+    - Stratis (Small)
+Note: These will only show if CUP vehicles is loaded (which in turn requires CUP Units, etc). In the future, CUP terrains will also be required for CUP map implimentation
+
+- Fixed wrong side attribute for some vehicles on all maps
+
 # Alpha Version v0.7.4
 
 - Changed Respawn Loadout System
