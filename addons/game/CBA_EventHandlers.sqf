@@ -24,3 +24,8 @@
     params ["_txt"];
     hintSilent _txt;
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(SystemChat), {
+    params ["_txt"];
+    systemChat _txt;
+}] call CBA_fnc_addEventHandler;

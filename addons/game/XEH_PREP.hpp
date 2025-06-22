@@ -14,7 +14,7 @@ PREP(InitSilo);
 PREP(InitSystems);
 PREP(InitTurret);
 PREP(InitVehicle);
-PREP(IsSafePos);
+PREP(IsSafePosASL);
 PREP(PlayerActions);
 PREP(PlayerEvents);
 PREP(PlayerInit);
