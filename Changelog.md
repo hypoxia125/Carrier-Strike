@@ -1,3 +1,11 @@
+# Alpha Version v0.8.0
+
+- Added AI Systems
+    - AI will now fill player slots (still keep AI disabled in description.ext)
+    - Each group has their own personality (Neutral, Offensive, Defensive, Chaotic)
+    - AI will sort silo locations by priority algorithm
+    - AI will use vehicles nearby (independent AI can steal your vehicles so beware!)
+
 # Alpha Version v0.7.5
 
 - Added CUP Versions of Maps:

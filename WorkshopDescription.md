@@ -4,7 +4,7 @@
 I wanted to get this out since the main gameplay loop is finished to start collecting feedback. This has not had a balance pass yet, so be warned.
 Development is slow on weekdays, fast on weekends. Expect frequent updates.
 
-[h1]Current Version - v0.7.5[/h1]
+[h1]Current Version - v0.8.0[/h1]
 
 Join the [url=https://discord.gg/dn4eGEf4m8]Modules Enhanced | Carrier Strike Discord[/url]
 
@@ -46,15 +46,6 @@ Carrier Strike - Altis (CUP): CarrierStrike_Altis_Medium_CUP.Altis
 
 [url=https://youtu.be/wcBSGR1rx5w]Video Tutorial[/url]
 
-[h1]Official Server List[/h1]
-[Official Alpha Playtest] Carrier Strike [PvP] - Vanilla
-71.211.231.197
-2302
-
-[Official Alpha Playtest] Carrier Strike [PvP] - CUP
-71.211.231.197
-2402
-
 [h1]Current Alpha Progress[/h1]
 
 [Completed]
@@ -67,6 +58,7 @@ Carrier Strike - Altis (CUP): CarrierStrike_Altis_Medium_CUP.Altis
 - Rally Point System
 - Modules
 - Seeding Mode
+- AI Systems
 
 [In Progress]
 - More Map Layouts
@@ -78,7 +70,6 @@ Carrier Strike - Altis (CUP): CarrierStrike_Altis_Medium_CUP.Altis
 - Custom Ending Menus
 - Custom Respawn Menus/System
 - Custom Unlock System
-- Singeplayer Systems (AI and all that jazz)
 
 [Aborted Until Further Notice]
 - Hive Unlock System
