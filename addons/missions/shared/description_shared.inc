@@ -44,7 +44,7 @@ overviewText = MISSION_DESCRIPTION;
 class Header {
     gameType = "CarrierStrike";
     minPlayers = 1;
-    maxPlayers = 80;
+    maxPlayers = 120;
 };
 
 respawn = "BASE";
@@ -53,11 +53,11 @@ respawnDialog = 0;
 respawnTemplates[] = {"MenuPosition", "MenuInventory"};
 respawnOnStart = 1;
 
-aiKills = 0;
+aiKills = 1;
 briefing = 0;
 debriefing = 1;
 disabledAI = 1;
-enableDebugConsole = 0;
+enableDebugConsole = 1;
 joinUnassigned = 0;
 saving = 0;
 skipLobby = 0;

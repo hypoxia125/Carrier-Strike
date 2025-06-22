@@ -28,7 +28,7 @@ GVAR(AIGroupBase) = [
         _self set ["group", createGroup [_side, false]];        
 
         for "_i" from 0 to _groupSize - 1 do {
-            (_self get "units") pushBack [objNull, _i, true];
+            (_self get "units") pushBack [objNull, _i * 2, true];
         };
     }],
 
@@ -39,6 +39,7 @@ GVAR(AIGroupBase) = [
         _self call ["UpdateSiloPriorities"];
         _self call ["SortSiloPriorities"];
 
+        _self call ["CheckUnitDistance"];
         _self call ["CleanDead"];
         _self call ["TickRespawnTimes", [_updateRate]];
 
@@ -61,6 +62,18 @@ GVAR(AIGroupBase) = [
             _self call ["UpdateObjective"];
             _self call ["AssignWaypoints"];
         };
+    }],
+
+    //------------------------------------------------------------------------------------------------
+    ["CheckUnitDistance", {
+        private _activeUnits = _self get "units";
+        {
+            _x params ["_unit", "_respawnTimer", "_enabled"];
+            private _leader = _activeUnits#0#0;
+            if (alive _leader && {!isNull objectParent _leader}) then {
+                if (_unit distance _leader >= 500) then { _unit setDamage 1 };
+            };
+        } forEach _activeUnits;
     }],
 
     //------------------------------------------------------------------------------------------------
@@ -143,9 +156,36 @@ GVAR(AIGroupBase) = [
 
         _group call CBA_fnc_clearWaypoints;
 
+        if ((_self get "assignedVehicle") isKindOf "Helicopter") then {
+            private _wp = _group addWaypoint [_position, -1];
+            _wp setWaypointCompletionRadius 200;
+            _wp setWaypointType "MOVE";
+            _wp setWaypointStatements [
+                "true",
+                toString {
+                    if (!local this) exitWith {};
+                    {
+                        if (vehicle _x isKindOf "Helicopter") then {
+                            _x action ["Eject", vehicle _x];
+                            private _pos = getPosASL _x;
+                            private _parachute = createVehicle ["Steerable_Parachute_F", [0,0,0]];
+                            _parachute setPosASL _pos;
+                            _parachute setDir (getDir _x);
+                            _x moveInAny _parachute;
+                        };
+                    } forEach thisList;
+                }
+            ];
+        };
+
         private _wp = _group addWaypoint [_position, -1];
         _wp setWaypointType "MOVE";
-        _wp setWaypointCombatMode selectRandom ["RED", "WHITE"];
+        switch (_self get "personality") do {
+            case AI_PERSONALITY_DEFENSIVE: { _wp setWaypointCombatMode "RED" };
+            case AI_PERSONALITY_OFFENSIVE: { _wp setWaypointCombatMode "WHITE" };
+            default { _wp setWaypointCombatMode selectRandom ["RED", "WHITE"] };
+        };
+        _wp setWaypointFormation "COLUMN";
         _wp setWaypointTimeout [1e6, 1e6, 1e6];
     }],
 
@@ -162,10 +202,6 @@ GVAR(AIGroupBase) = [
                 [_unit] joinSilent (createGroup [civilian, true]);
                 _x set [0, objNull];
                 _x set [1, _self get "respawnTime"];
-
-                private _side = _self get "side";
-                private _allUnits = GVAR(AISystem) get "allUnits" get _side;
-                _allUnits = _allUnits - [_unit];
             };
         } forEach _activeUnits;
     }],
@@ -270,12 +306,12 @@ GVAR(AIGroupBase) = [
             _x params ["_unit", "_respawnTimer", "_enabled"];
 
             private _allUnits = GVAR(AISystem) get "allUnits" get _side;
-            
+
             if (_forEachIndex == 0) then { continue };
             if (
                 count _allUnits + count (units _side select { isPlayer _x }) >= playableSlotsNumber _side
             ) then {
-                _allUnits = _allUnits - [_unit];
+                _allUnits = _allUnits - [_unit, objNull];
                 _unit setDamage 1;
             };
         } forEach _activeUnits;
@@ -293,9 +329,9 @@ GVAR(AIGroupBase) = [
 
             if (!_enabled) then { continue };
             if (_respawnTimer > 0 || !isNull _unit) then { continue };
-            if (
-                count _allUnits + count (units _side select { isPlayer _x }) >= playableSlotsNumber _side
-            ) then { continue };
+            // if (
+            //     count _allUnits + count (units _side select { isPlayer _x }) >= playableSlotsNumber _side
+            // ) then { continue };
 
             if (isNull _group) then {
                 _group = createGroup (_self get "side");
@@ -311,9 +347,17 @@ GVAR(AIGroupBase) = [
             };
             _pos set [2, 0];
             _unit = _group createUnit ["CarrierStrike_AISoldier", [0,0,0], [], 0, "NONE"];
+            { _unit disableAI _x} forEach ["RADIOPROTOCOL"];
+            _unit enableStamina false;
+            _unit enableFatigue false;
             _self call ["SetRandomLoadout", [_unit]];
             _unit setDir (random 360);
             _unit setPosATL _pos;
+
+            private _leader = _activeUnits#0#0;
+            if (alive _leader && {!isNull objectParent _leader}) then {
+                _unit moveInAny vehicle _leader;
+            };
 
             [_unit] joinSilent _group;
             if (_forEachIndex == 0) then {
@@ -322,7 +366,11 @@ GVAR(AIGroupBase) = [
 
             _allUnits = _allUnits pushBack _unit;
 
-            _unit setSkill (random [0.3, 0.7, 1.0]);
+            if (_forEachIndex == 0) then {
+                _unit setSkill 1; // set maximum skill for leader
+            } else {
+                _unit setSkill (random [0.3, 0.7, 1.0]);
+            };
             {
                 _x addCuratorEditableObjects [[_unit], true];
             } forEach allCurators;

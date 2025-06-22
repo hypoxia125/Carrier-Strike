@@ -52,12 +52,26 @@ GVAR(AISystem) = createHashMapObject [[
         [east, []],
         [independent, []]
     ]],
-    ["m_groupSize", 6],
+    ["m_groupSize", 4],
+
+    //------------------------------------------------------------------------------------------------
+    ["CleanNullUnits", {
+        private _allUnits = _self get "allUnits";
+        {
+            private _side = _x;
+            private _units = _y;
+            _units = _units select { alive _x };
+            _allUnits set [_x, _units];
+        } forEach _allUnits;
+    }],
 
     //------------------------------------------------------------------------------------------------
     ["Update", {
         private _updateRate = _self get "m_updateRate";
         private _elapsedTime = _self get "m_elapsedTime";
+
+        _self call ["CleanNullUnits"];
+
         {
             private _side = _x;
             private _groups = _y;
