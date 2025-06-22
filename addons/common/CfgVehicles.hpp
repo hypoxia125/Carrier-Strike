@@ -10,5 +10,7 @@ class CfgVehicles {
         weapons[] = { "Throw", "Put" };
         linkedItems[] = {};
         magazines[] = {};
+        uniform = "";
+        backpack = "";
     };
 };

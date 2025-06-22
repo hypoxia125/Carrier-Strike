@@ -10,7 +10,8 @@ class EditorData
 	{
 		"3denEnhanced",
 		"carrierstrike_modules",
-		"carrierstrike_game"
+		"carrierstrike_game",
+		"carrierstrike_ai"
 	};
 	class ItemIDProvider
 	{
@@ -22,18 +23,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2877;
+		nextID=3537;
 	};
 	class Camera
 	{
 		pos[]={6840.7056,103.02913,3464.9973};
-		dir[]={0.57068306,-0.64091712,-0.51336741};
-		up[]={0.47649261,0.76761007,-0.42863682};
-		aside[]={-0.66878664,0,-0.74345434};
+		dir[]={0.63601905,-0.55052298,-0.54074639};
+		up[]={0.41942364,0.83481967,-0.35659593};
+		aside[]={-0.64773971,-7.0780516e-08,-0.76186413};
 	};
 };
 binarizationWanted=0;
-sourceName="CarrierStrike_Malden_Small";
+sourceName="carrierstrike_malden_small";
 addons[]=
 {
 	"A3_Static_F_Destroyer_Ship_MRLS_01",

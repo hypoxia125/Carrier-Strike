@@ -10,7 +10,8 @@ class EditorData
 	{
 		"3denEnhanced",
 		"carrierstrike_modules",
-		"carrierstrike_game"
+		"carrierstrike_game",
+		"carrierstrike_ai"
 	};
 	class ItemIDProvider
 	{
@@ -18,18 +19,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=140;
+		nextID=294;
 	};
 	class Camera
 	{
-		pos[]={1585.2887,32.302399,5015.0884};
-		dir[]={0.019275373,-0.70026731,-0.71364528};
-		up[]={0.018907331,0.71388054,-0.70001739};
-		aside[]={-0.99965417,4.4499757e-08,-0.026999842};
+		pos[]={1615.8302,50.678463,5050.9199};
+		dir[]={-0.48920602,-0.62617439,-0.60711056};
+		up[]={-0.39288819,0.77968299,-0.48757899};
+		aside[]={-0.77866328,0,0.62744212};
 	};
 };
 binarizationWanted=0;
-sourceName="CarrierStrike_Stratis_Small";
+sourceName="carrierstrike_stratis_small";
 addons[]=
 {
 	"A3_Static_F_Destroyer_Ship_MRLS_01",
@@ -273,6 +274,7 @@ class Mission
 {
 	class Intel
 	{
+		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
 		startWind=0.1;

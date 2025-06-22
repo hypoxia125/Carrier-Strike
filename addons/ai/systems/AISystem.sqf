@@ -2,7 +2,19 @@
 
 if (!isServer) exitWith {};
 
+private _i = 10;
+while {_i > 0} do {
+    private _txt = format["AI Spawning In: %1", _i];
+    [QEGVAR(game,SystemChat), [_txt]] call CBA_fnc_globalEvent;
+    _i = _i - 1;
+    sleep 1;
+};
+    
+
 if (!isNil QGVAR(AISystem)) exitWith {};
+
+// Init objects
+call compileScript [QPATHTOF(objects\AIGroupBase.sqf)];
 
 GVAR(AISystem) = createHashMapObject [[
     ["#type", "AISystem"],
@@ -16,7 +28,8 @@ GVAR(AISystem) = createHashMapObject [[
             private _totalGroups = ceil (_totalSlots / _groupSize);
 
             for "_i" from 0 to _totalGroups - 1 do {
-                private _AIGroup = createHashMapObject [GVAR(AIGroupBase), [_side, _groupSize]];
+                private _personality = selectRandom [AI_PERSONALITY_CHAOTIC, AI_PERSONALITY_DEFENSIVE, AI_PERSONALITY_NEUTRAL, AI_PERSONALITY_OFFENSIVE];
+                private _AIGroup = createHashMapObject [GVAR(AIGroupBase), [_side, _personality, _groupSize]];
                 (_self get "m_groups" get _side) pushBack _AIGroup;
             };
         } forEach [west, east, independent];
@@ -27,13 +40,14 @@ GVAR(AISystem) = createHashMapObject [[
 
     ["m_updateRate", 1],
     ["m_frameSystemHandle", -1],
+    ["m_elapsedTime", 0],
 
     ["m_groups", createHashMapFromArray [
         [west, []],
         [east, []],
         [independent, []]
     ]],
-    ["m_activeUnits", createHashMapFromArray [
+    ["allUnits", createHashMapFromArray [
         [west, []],
         [east, []],
         [independent, []]
@@ -42,14 +56,20 @@ GVAR(AISystem) = createHashMapObject [[
 
     //------------------------------------------------------------------------------------------------
     ["Update", {
+        private _updateRate = _self get "m_updateRate";
+        private _elapsedTime = _self get "m_elapsedTime";
         {
             private _side = _x;
             private _groups = _y;
             {
                 private _group = _x;
-                _group call ["Update", [_self get "m_updateRate"]];
-            }
+                _group call ["Update", [_updateRate, _elapsedTime]];
+            } forEach _groups;
         } forEach (_self get "m_groups");
+
+        private _elapsedTime = _self get "m_elapsedTime";
+        _elapsedTime = _elapsedTime + _updateRate;
+        _self set ["m_elapsedTime", _elapsedTime];
     }],
 
     //------------------------------------------------------------------------------------------------

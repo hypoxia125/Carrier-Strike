@@ -6,6 +6,7 @@ if (isServer) then {
     call compileScript [QPATHTOF(systems\VehicleRespawnSystem.sqf)];
     call compileScript [QPATHTOF(systems\TurretControlSystem.sqf)];
     call compileScript [QPATHTOF(systems\RallyPointSystem.sqf)];
+    [] spawn compileScript [QPATHTOEF(ai,systems\AISystem.sqf)];
 };
 
 if (hasInterface) then {

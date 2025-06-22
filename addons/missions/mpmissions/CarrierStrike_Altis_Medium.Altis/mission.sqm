@@ -10,7 +10,8 @@ class EditorData
 	{
 		"3denEnhanced",
 		"carrierstrike_modules",
-		"carrierstrike_game"
+		"carrierstrike_game",
+		"carrierstrike_ai"
 	};
 	class ItemIDProvider
 	{
@@ -18,7 +19,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=49;
+		nextID=60;
 	};
 	class Camera
 	{
@@ -29,7 +30,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="CarrierStrike_Altis_Medium";
+sourceName="carrierstrike_altis_medium";
 addons[]=
 {
 	"A3_Modules_F",
@@ -275,6 +276,7 @@ class Mission
 {
 	class Intel
 	{
+		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
 		startWind=0.1;

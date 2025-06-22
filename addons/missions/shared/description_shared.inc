@@ -62,6 +62,23 @@ joinUnassigned = 0;
 saving = 0;
 skipLobby = 0;
 
+corpseManagerMode = 1;
+corpseLimit = 15;
+corpseRemovalMinTime = 10;
+corpseRemovalMaxTime = 3600;
+disposalCheckPeriod = 10;
+minPlayerDistance = 50;
+
+weaponholderManagerMode = 1;
+weaponholderLimit = 50;
+weaponholderRemovalMinTime = 60;
+weaponholderRemovalMaxTime = 3600;
+
+wreckManagerMode = 1;
+wreckLimit = 15;
+wreckRemovalMinTime = 10;
+wreckRemovalMaxTime = 3600;
+
 class CfgDebriefing {
 	class Win {
         title = "Victory!";

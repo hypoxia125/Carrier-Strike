@@ -24,9 +24,10 @@ if (_override > 0) then {
     _currentTier = _override;
 };
 
-private _westLoadouts = [];
-private _eastLoadouts = [];
-private _independentLoadouts = [];
+private _loadouts = missionNamespace getVariable [QGVAR(loadouts), createHashMap];
+private _westLoadouts = _loadouts getOrDefault [west, [], true];
+private _eastLoadouts = _loadouts getOrDefault [east, [], true];
+private _independentLoadouts = _loadouts getOrDefault [independent, [], true];
 
 private _tierLoadouts = "true" configClasses (missionConfigFile >> "CfgRespawnInventory");
 _tierLoadouts = _tierLoadouts select { getNumber (_x >> "tier") == _currentTier };
@@ -44,15 +45,17 @@ _unlockHash set [_currentTier, true];
 {
     private _side = getNumber (_x >> "side");
     switch _side do {
-        case 0: { _eastLoadouts pushBack configName _x };
-        case 1: { _westLoadouts pushBack configName _x };
-        case 2: { _independentLoadouts pushBack configName _x };
+        case 0: { _eastLoadouts pushBack _x };
+        case 1: { _westLoadouts pushBack _x };
+        case 2: { _independentLoadouts pushBack _x };
     };
 } forEach _tierLoadouts;
 
-{ [west, _x] call BIS_fnc_addRespawnInventory } forEach _westLoadouts;
-{ [east, _x] call BIS_fnc_addRespawnInventory } forEach _eastLoadouts;
-{ [independent, _x] call BIS_fnc_addRespawnInventory } forEach _independentLoadouts;
+missionNamespace setVariable [QGVAR(loadouts), _loadouts];
+
+{ [west, configName _x] call BIS_fnc_addRespawnInventory } forEach _westLoadouts;
+{ [east, configName _x] call BIS_fnc_addRespawnInventory } forEach _eastLoadouts;
+{ [independent, configName _x] call BIS_fnc_addRespawnInventory } forEach _independentLoadouts;
 
 INFO_1("Tier: %1 Unlocked",_currentTier);
 
