@@ -17,7 +17,6 @@ GVAR(AIGroupBase) = [
         _self set ["siloPriorities", []];
         _self set ["objective", objNull];
         _self set ["respawnTime", 0];
-        _self set ["timeSinceStart", 0];
         _self set ["spawnDelay", 0];
         _self set ["assignedVehicle", objNull];
 
@@ -36,7 +35,6 @@ GVAR(AIGroupBase) = [
     ["Update", {
         params ["_updateRate", "_elapsedTime"];
 
-        _self call ["UpdateSiloPriorities"];
         _self call ["SortSiloPriorities"];
 
         _self call ["CheckUnitDistance"];
@@ -59,6 +57,7 @@ GVAR(AIGroupBase) = [
 
         if (_elapsedTime % 30 == 0) then {
             LOG_1("AIGroupBase | Updating group objective for group: %1",_group);
+            _self call ["UpdateSiloPriorities"];
             _self call ["UpdateObjective"];
             _self call ["AssignWaypoints"];
         };
@@ -228,34 +227,34 @@ GVAR(AIGroupBase) = [
         private _pos = [0,0,0]; // fallback
 
         // Leader spawn
-        private _leader = (_self get "units") #0#0;
-        if (alive _leader && _groupSide != independent) then {
-            if (isNull _leader) exitWith {};
-            private _posATL = getPosATL _leader;
-            private _area = [_posATL, 15, 15, 0, false, -1];
-            _area params ["_center", "_a", "_b", "_angle", "_rect", "_h"];
-            _pos = [_center, 0, _a max _b, 5, 0, 0.1, 0, [], [0,0,0]] call BIS_fnc_findSafePos;
-            if (!(_pos isEqualType []) || {!(count _pos in [2,3])}) exitWith {
-                LOG_1("GetSpawnPositionATL::LeaderSpawn | Position Found: %1",_pos);
-            };
-            _pos set [2, 0];
-        };
-        if (_pos isNotEqualTo [0,0,0]) exitWith { _pos };
+        // private _leader = (_self get "units") #0#0;
+        // if (alive _leader && _groupSide != independent) then {
+        //     if (isNull _leader) exitWith {};
+        //     private _posATL = getPosATL _leader;
+        //     private _area = [_posATL, 15, 15, 0, false, -1];
+        //     _area params ["_center", "_a", "_b", "_angle", "_rect", "_h"];
+        //     _pos = [_center, 0, _a max _b, 5, 0, 0.1, 0, [], [0,0,0]] call BIS_fnc_findSafePos;
+        //     if (!(_pos isEqualType []) || {!(count _pos in [2,3])}) exitWith {
+        //         LOG_1("GetSpawnPositionATL::LeaderSpawn | Position Found: %1",_pos);
+        //     };
+        //     _pos set [2, 0];
+        // };
+        // if (_pos isNotEqualTo [0,0,0]) exitWith { _pos };
 
         // Silo spawn
-        private _siloOwner = _objective getVariable [QEGVAR(game,side), sideUnknown];
-        if (_siloOwner == _groupSide && _objective in (missionNamespace getVariable [QEGVAR(game,silos), []])) then {
-            private _maxDistance = [QEGVAR(game,Settings_SiloPlayerSpawnDistance)] call CBA_settings_fnc_get;
-            private _pos = getPosATL _objective;
-            private _area = [_posATL, 10, 10, 0, false, -1];
-            _area params ["_center", "_a", "_b", "_angle", "_rect", "_h"];
-            _pos = [_center, 0, _a max _b, 5, 0, 0.1, 0, [], [0,0,0]] call BIS_fnc_findSafePos;
-            if (!(_pos isEqualType []) || {!(count _pos in [2,3])}) exitWith {
-                LOG_1("GetSpawnPositionATL::SiloSpawn | Position Found: %1",_pos);
-            };
-            _pos set [2, 0];
-        };
-        if (_pos isNotEqualTo [0,0,0]) exitWith { _pos };
+        // private _siloOwner = _objective getVariable [QEGVAR(game,side), sideUnknown];
+        // if (_siloOwner == _groupSide && _objective in (missionNamespace getVariable [QEGVAR(game,silos), []])) then {
+        //     private _maxDistance = [QEGVAR(game,Settings_SiloPlayerSpawnDistance)] call CBA_settings_fnc_get;
+        //     private _pos = getPosATL _objective;
+        //     private _area = [_posATL, 10, 10, 0, false, -1];
+        //     _area params ["_center", "_a", "_b", "_angle", "_rect", "_h"];
+        //     _pos = [_center, 0, _a max _b, 5, 0, 0.1, 0, [], [0,0,0]] call BIS_fnc_findSafePos;
+        //     if (!(_pos isEqualType []) || {!(count _pos in [2,3])}) exitWith {
+        //         LOG_1("GetSpawnPositionATL::SiloSpawn | Position Found: %1",_pos);
+        //     };
+        //     _pos set [2, 0];
+        // };
+        // if (_pos isNotEqualTo [0,0,0]) exitWith { _pos };
 
         // Carrier spawn
         private _carriers = missionNamespace getVariable [QEGVAR(game,carriers), createHashMap];
@@ -410,28 +409,64 @@ GVAR(AIGroupBase) = [
     ["UpdateSiloPriorities", {
         private _personality = _self get "personality";
         _self set ["siloPriorities", []];
+
         private _silos = missionNamespace getVariable [QEGVAR(game,silos), []];
         _silos = _silos select { _x getVariable [QEGVAR(game,enabled), true] };
+
+        private _side = _self get "side";
+        private _carriers = missionNamespace getVariable QEGVAR(game,carriers);
+        private _carrier = _carriers get _side;
+        private _leader = (_self get "units")#0#0;
+        private _leaderAlive = alive _leader;
+        private _maxDistance = (worldSize / 2) * sqrt 2;
+        private _maxFriendlies = playableSlotsNumber _side;
+        
+        private _ownerMulti = 1.0;
+        private _distanceMulti = 1.0;
+        private _friendlyMulti = 1.0;
+        private _countdownMulti = 1.0;
+
+        switch (_personality) do {
+            case AI_PERSONALITY_NEUTRAL: {
+                _ownerMulti = 1.0;
+                _distanceMulti = 1.0;
+                _friendlyMulti = 1.1;
+                _countdownMulti = 1.2;
+            };
+            case AI_PERSONALITY_OFFENSIVE: {
+                _ownerMulti = 1.4;
+                _distanceMulti = 0.9;
+                _friendlyMulti = 0.6;
+                _countdownMulti = 1.3;
+            };
+            case AI_PERSONALITY_DEFENSIVE: {
+                _ownerMulti = 0.8;
+                _distanceMulti = 1.2;
+                _friendlyMulti = 1.4;
+                _countdownMulti = 0.7;
+            };
+            case AI_PERSONALITY_CHAOTIC: {
+                _ownerMulti = 0.5 + random 1.0;
+                _distanceMulti = 0.5 + random 1.0;
+                _friendlyMulti = 0.3 + random 1.4;
+                _countdownMulti = 0.5 + random 1.0;
+            };
+        };
+
         {
             private _silo = _x;
             private _siloNum = _silo getVariable QEGVAR(game,silo_number);
-            private _side = _self get "side";
             private _siloPriorities = _self get "siloPriorities";
 
-            private _carriers = missionNamespace getVariable QEGVAR(game,Carriers);
-            private _carrier = _carriers get _side;
 
             // Distance Scoring
-            private _leader = (_self get "units") #0#0;
             private _distanceScore = 0;
-            if (alive _leader) then {
-                private _maxDistance = (worldSize / 2) * sqrt 2;
+            if (_leaderAlive) then {
                 private _distance = _leader distance2D _silo;
                 private _distanceNormalized = _distance / _maxDistance;
 
                 _distanceScore = ((1 - _distanceNormalized) min 1) max 0;
             } else {
-                private _maxDistance = (worldSize / 2) * sqrt 2;
                 private _distance = _silo distance2D _carrier;
                 private _distanceNormalized = _distance / _maxDistance;
                 _distanceScore = ((1 - _distanceNormalized) min 1) max 0;
@@ -439,75 +474,44 @@ GVAR(AIGroupBase) = [
 
             // Ownership Score
             private _owner = _silo getVariable QEGVAR(game,side);
-            private _ownerScore = call {
-                switch _personality do {
-                    case AI_PERSONALITY_NEUTRAL: { // Prioritize neutral > enemy > friendly
-                        if (_owner == _side) exitWith { 0.5 };
-                        if (_owner == sideUnknown) exitWith { 1.0 };
-                        if (_owner != _side) exitWith { 0.75 };
-                    };
-                    case AI_PERSONALITY_OFFENSIVE: { // Prioritize enemy > neutral > friendly
-                        if (_owner == _side) exitWith { 0.3 };
-                        if (_owner == sideUnknown) exitWith { 0.75 };
-                        if (_owner != _side) exitWith { 1.0 };
-                    };
-                    case AI_PERSONALITY_DEFENSIVE: { // Prioritize friendly > neutral > enemy
-                        if (_owner == _side) exitWith { 0.8 };
-                        if (_owner == sideUnknown) exitWith { 1.0 };
-                        if (_owner != _side) exitWith { 0.4 };
-                    };
-                    case AI_PERSONALITY_CHAOTIC: {
-                        random 1;
-                    };
+            private _ownerScore = 0;
+
+            switch _personality do {
+                case AI_PERSONALITY_NEUTRAL: { // Prioritize neutral > enemy > friendly
+                    if (_owner == _side) exitWith { _ownerScore = 0.5 };
+                    if (_owner == sideUnknown) exitWith { _ownerScore = 1.0 };
+                    if (_owner != _side) exitWith { _ownerScore = 0.75 };
+                };
+                case AI_PERSONALITY_OFFENSIVE: { // Prioritize enemy > neutral > friendly
+                    if (_owner == _side) exitWith { _ownerScore = 0.3 };
+                    if (_owner == sideUnknown) exitWith { _ownerScore = 0.75 };
+                    if (_owner != _side) exitWith { _ownerScore = 1.0 };
+                };
+                case AI_PERSONALITY_DEFENSIVE: { // Prioritize friendly > neutral > enemy
+                    if (_owner == _side) exitWith { _ownerScore = 0.8 };
+                    if (_owner == sideUnknown) exitWith { _ownerScore = 1.0 };
+                    if (_owner != _side) exitWith { _ownerScore = 0.4 };
+                };
+                case AI_PERSONALITY_CHAOTIC: {
+                    _ownerScore = random 1;
                 };
             };
 
             // Friendly Score
-            private _area = [getPosATL _silo, 200, 200, 0, false, -1];
-            private _friendlyNearby = count (allUnits select {alive _x && side group _x == _side && _x inArea _area});
-            private _maxFriendlies = playableSlotsNumber _side;
-            private _friendliesNormalized = _friendlyNearby / _maxFriendlies;
-            private _friendlyScore = ((1 - _friendliesNormalized) min 1) max 0;
-            if (_owner == sideUnknown) then { _friendlyScore = 0 };
+            private _siloPos = getPosATL _silo;
+            private _friendlyNearby = {
+                alive _x && 
+                {side group _x == _side} && 
+                {_x distance2D _siloPos <= 200}
+            } count units _side;
+            private _friendlyScore = 0;
+            if (_owner == sideUnknown) then { _friendlyScore = 0 } else { _friendlyScore = (1 - ((_friendlyNearby / _maxFriendlies) min 1 max 0)) };
 
             // Countdown Score
             private _countdown = _silo getVariable QEGVAR(game,countdown);
             private _maxCountdown = _silo getVariable QEGVAR(game,countdown_time);
             private _countdownNormalized = _countdown / _maxCountdown;
             private _countdownScore = ((1 - _countdownNormalized) min 1) max 0;
-
-            // Multipliers
-            private _ownerMulti = 1.0;
-            private _distanceMulti = 1.0;
-            private _friendlyMulti = 1.0;
-            private _countdownMulti = 1.0;
-
-            switch (_personality) do {
-                case AI_PERSONALITY_NEUTRAL: {
-                    _ownerMulti = 1.0;
-                    _distanceMulti = 1.0;
-                    _friendlyMulti = 1.1;
-                    _countdownMulti = 1.2;
-                };
-                case AI_PERSONALITY_OFFENSIVE: {
-                    _ownerMulti = 1.4;
-                    _distanceMulti = 0.9;
-                    _friendlyMulti = 0.6;
-                    _countdownMulti = 1.3;
-                };
-                case AI_PERSONALITY_DEFENSIVE: {
-                    _ownerMulti = 0.8;
-                    _distanceMulti = 1.2;
-                    _friendlyMulti = 1.4;
-                    _countdownMulti = 0.7;
-                };
-                case AI_PERSONALITY_CHAOTIC: {
-                    _ownerMulti = 0.5 + random 1.0;
-                    _distanceMulti = 0.5 + random 1.0;
-                    _friendlyMulti = 0.3 + random 1.4;
-                    _countdownMulti = 0.5 + random 1.0;
-                };
-            };
 
             // Final score
             private _priorityScore =
