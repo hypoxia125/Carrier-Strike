@@ -3,6 +3,7 @@ PREP(AlertAddToSystem);
 PREP(CarrierDamageDealt);
 PREP(EndGame);
 PREP(ExplosionSequence);
+PREP(FixBIRespawnInventoryBullshit);
 PREP(Init);
 PREP(InitCarrier);
 PREP(InitChatChannels);
