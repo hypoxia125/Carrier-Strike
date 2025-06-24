@@ -24,10 +24,10 @@ class GVAR(ModuleRespawnPosition): GVAR(ModuleBase) {
             property = QGVAR(ModuleRespawnPosition_DisplayName);
             displayName = "Display Name";
             tooltip = "Name of the respawn position";
-            defaultValue = "";
+            defaultValue = """""";
             typeName = "STRING";
         };
-        
+
         class Side: Combo {
             property = QGVAR(ModuleRespawnPosition_Side);
             displayName = "Side";
