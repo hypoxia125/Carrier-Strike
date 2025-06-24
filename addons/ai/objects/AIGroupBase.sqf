@@ -227,34 +227,34 @@ GVAR(AIGroupBase) = [
         private _pos = [0,0,0]; // fallback
 
         // Leader spawn
-        // private _leader = (_self get "units") #0#0;
-        // if (alive _leader && _groupSide != independent) then {
-        //     if (isNull _leader) exitWith {};
-        //     private _posATL = getPosATL _leader;
-        //     private _area = [_posATL, 15, 15, 0, false, -1];
-        //     _area params ["_center", "_a", "_b", "_angle", "_rect", "_h"];
-        //     _pos = [_center, 0, _a max _b, 5, 0, 0.1, 0, [], [0,0,0]] call BIS_fnc_findSafePos;
-        //     if (!(_pos isEqualType []) || {!(count _pos in [2,3])}) exitWith {
-        //         LOG_1("GetSpawnPositionATL::LeaderSpawn | Position Found: %1",_pos);
-        //     };
-        //     _pos set [2, 0];
-        // };
-        // if (_pos isNotEqualTo [0,0,0]) exitWith { _pos };
+        private _leader = (_self get "units") #0#0;
+        if (alive _leader && _groupSide != independent) then {
+            if (isNull _leader) exitWith {};
+            private _posATL = getPosATL _leader;
+            private _area = [_posATL, 15, 15, 0, false, -1];
+            _area params ["_center", "_a", "_b", "_angle", "_rect", "_h"];
+            _pos = [_center, 0, _a max _b, 5, 0, 0.1, 0, [], [0,0,0]] call BIS_fnc_findSafePos;
+            if (!(_pos isEqualType []) || {!(count _pos in [2,3])}) exitWith {
+                LOG_1("GetSpawnPositionATL::LeaderSpawn | Position Error: %1",_pos);
+            };
+            _pos set [2, 0];
+        };
+        if (_pos isNotEqualTo [0,0,0]) exitWith { _pos };
 
         // Silo spawn
-        // private _siloOwner = _objective getVariable [QEGVAR(game,side), sideUnknown];
-        // if (_siloOwner == _groupSide && _objective in (missionNamespace getVariable [QEGVAR(game,silos), []])) then {
-        //     private _maxDistance = [QEGVAR(game,Settings_SiloPlayerSpawnDistance)] call CBA_settings_fnc_get;
-        //     private _pos = getPosATL _objective;
-        //     private _area = [_posATL, 10, 10, 0, false, -1];
-        //     _area params ["_center", "_a", "_b", "_angle", "_rect", "_h"];
-        //     _pos = [_center, 0, _a max _b, 5, 0, 0.1, 0, [], [0,0,0]] call BIS_fnc_findSafePos;
-        //     if (!(_pos isEqualType []) || {!(count _pos in [2,3])}) exitWith {
-        //         LOG_1("GetSpawnPositionATL::SiloSpawn | Position Found: %1",_pos);
-        //     };
-        //     _pos set [2, 0];
-        // };
-        // if (_pos isNotEqualTo [0,0,0]) exitWith { _pos };
+        private _siloOwner = _objective getVariable [QEGVAR(game,side), sideUnknown];
+        if (_siloOwner == _groupSide && _objective in (missionNamespace getVariable [QEGVAR(game,silos), []])) then {
+            private _maxDistance = [QEGVAR(game,Settings_SiloPlayerSpawnDistance)] call CBA_settings_fnc_get;
+            private _pos = getPosATL _objective;
+            private _area = [_posATL, 10, 10, 0, false, -1];
+            _area params ["_center", "_a", "_b", "_angle", "_rect", "_h"];
+            _pos = [_center, 0, _a max _b, 5, 0, 0.1, 0, [], [0,0,0]] call BIS_fnc_findSafePos;
+            if (!(_pos isEqualType []) || {!(count _pos in [2,3])}) exitWith {
+                LOG_1("GetSpawnPositionATL::SiloSpawn | Position Error: %1",_pos);
+            };
+            _pos set [2, 0];
+        };
+        if (_pos isNotEqualTo [0,0,0]) exitWith { _pos };
 
         // Carrier spawn
         private _carriers = missionNamespace getVariable [QEGVAR(game,carriers), createHashMap];
