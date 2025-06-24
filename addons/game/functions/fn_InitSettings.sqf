@@ -7,7 +7,7 @@
     "Enable Silos w/ Player Count",
     ["Carrier Strike - Game Settings", "Game Settings"],
     true,
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -18,7 +18,18 @@
     "Allow Independent Faction",
     ["Carrier Strike - Game Settings", "zz In Development zz"],
     false,
-    2,
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_AIEnabled),
+    "CHECKBOX",
+    "Fill Slots w/ AI",
+    ["Carrier Strike - Game Settings", "Game Settings"],
+    true,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -30,7 +41,7 @@
     "Randomize Weather",
     ["Carrier Strike - Game Settings", "Weather"],
     true,
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -41,7 +52,7 @@
     "Max Humidity",
     ["Carrier Strike - Game Settings", "Weather"],
     [0, 1, 1, 0, true],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -52,7 +63,7 @@
     "Humidity Override",
     ["Carrier Strike - Game Settings", "Weather"],
     false,
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -63,7 +74,7 @@
     "Humidity Override Amount",
     ["Carrier Strike - Game Settings", "Weather"],
     [0, 1, 0, 0, true],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -74,7 +85,7 @@
     "Allow Rain",
     ["Carrier Strike - Game Settings", "Weather"],
     true,
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -85,7 +96,7 @@
     "Allow Fog",
     ["Carrier Strike - Game Settings", "Weather"],
     true,
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -96,7 +107,7 @@
     "Night Chance",
     ["Carrier Strike - Game Settings", "Weather"],
     [0, 1, 0.3, 0, true],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -107,7 +118,7 @@
     "Time Scale",
     ["Carrier Strike - Game Settings", "Weather"],
     [1, 120, 1, 0, false],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -120,7 +131,7 @@
     "Carrier Max HP",
     ["Carrier Strike - Game Settings", "Game Settings"],
     [0, 1000, 100, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -131,7 +142,7 @@
     "Reactor Max HP",
     ["Carrier Strike - Game Settings", "Game Settings"],
     [0, 1000, 100, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -142,7 +153,7 @@
     "Reactor Destroyed Damage",
     ["Carrier Strike - Game Settings", "Game Settings"],
     [0, 100, 12.5, 1],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -154,7 +165,7 @@
     "Silo Missile Launch Cooldown (s)",
     ["Carrier Strike - Game Settings", "Game Settings"],
     [0, 60*60, 120, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -165,7 +176,7 @@
     "Silo Missile Damage",
     ["Carrier Strike - Game Settings", "Game Settings"],
     [0, 100, 2, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -176,7 +187,7 @@
     "Allow Spawn On Silo (Owner Team)",
     ["Carrier Strike - Game Settings", "zz In Development zz"],
     true,
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -187,7 +198,7 @@
     "Silo Player Spawn Distance (Owner Team)",
     ["Carrier Strike - Game Settings", "Game Settings"],
     [0, 1000, 200, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -198,7 +209,7 @@
     "Silo Capture Time",
     ["Carrier Strike - Game Settings", "Game Settings"],
     [0, 15*60, 30, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -208,8 +219,8 @@
     "SLIDER",
     "Silo Capture Radius",
     ["Carrier Strike - Game Settings", "Game Settings"],
-    [0, 1000, 50, 0],
-    2,
+    [0, 1000, 100, 0],
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -265,7 +276,7 @@
     "Enemy Destroy Radius",
     ["Carrier Strike - Game Settings", "Rally Points"],
     [0, 100, 50, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -276,7 +287,7 @@
     "Placement Cooldown",
     ["Carrier Strike - Game Settings", "Rally Points"],
     [0, 60*60, 90, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -287,7 +298,7 @@
     "Group Size Requirement",
     ["Carrier Strike - Game Settings", "Rally Points"],
     [0, 6, 3, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;
@@ -298,7 +309,7 @@
     "Minimum Distance From Silo",
     ["Carrier Strike - Game Settings", "zz In Development zz"],
     [0, 1000, 100, 0],
-    2,
+    1,
     {},
     true
 ] call CBA_fnc_addSetting;

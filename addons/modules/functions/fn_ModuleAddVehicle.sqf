@@ -26,7 +26,7 @@ private _westType = _module getVariable ["westtype", ""];
 private _eastType = _module getVariable ["easttype", ""];
 private _independentType = _module getVariable ["independenttype", ""];
 private _respawnTime = _module getVariable ["respawntime", 30];
-private _code = compile (_module getVariable ["expression", "true"]);
+private _code = compile (_module getVariable ["expression", "params [""_newVehicle"", ""_side""];"]);
 
 private _type = switch _typeVal do {
     case 0: { "base" };

@@ -21,6 +21,7 @@ waitUntil { (missionNamespace getVariable [QEGVAR(game,game_state), -1]) >= GAME
 
 private _sideVal = _module getVariable "side";
 private _typeVal = _module getVariable "type";
+private _displayName = _module getVariable ["displayname", ""];
 
 private _side = switch _sideVal do {
     case 0: { east };
@@ -36,7 +37,6 @@ private _nameSide = switch _sideVal do {
     case 1: { "BLUFOR" };
     case 2: { "RESISTANCE" };
 };
-private _formattedName = _nameSide + " " + _type;
 
 // Code Start
 //------------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ private _respawnData = missionNamespace getVariable [QEGVAR(game,respawn_positio
 private _area = _module getVariable "ObjectArea";
 _area = [getPosATL _module] + _area;
 
-private _respawn = [_side, _area#0, _formattedName] call BIS_fnc_addRespawnPosition;
+private _respawn = [_side, _area#0, _displayName] call BIS_fnc_addRespawnPosition;
 
 _respawnData insert [-1, [[_respawn, _type, _area]]];
 missionNamespace setVariable [QEGVAR(game,respawn_positions), _respawnData];

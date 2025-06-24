@@ -6,6 +6,9 @@ if (isServer) then {
     call compileScript [QPATHTOF(systems\VehicleRespawnSystem.sqf)];
     call compileScript [QPATHTOF(systems\TurretControlSystem.sqf)];
     call compileScript [QPATHTOF(systems\RallyPointSystem.sqf)];
+    if ([QGVAR(Settings_AIEnabled)] call CBA_settings_fnc_get) then {
+        [] spawn compileScript [QPATHTOEF(ai,systems\AISystem.sqf)];
+    };
 };
 
 if (hasInterface) then {
