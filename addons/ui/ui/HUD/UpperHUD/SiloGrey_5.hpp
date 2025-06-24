@@ -6,5 +6,5 @@ class SiloGrey_5: RscPictureKeepAspect {
     w = QUOTE(SILO_W * GRID_W);
     h = QUOTE(SILO_H * GRID_H);
 
-    text = QPATHTOF(data\HUD\silos\SiloGrey_5.paa);
+    text = QPATHTOF(data\HUD\silos\SiloGrey_5_Disabled.paa);
 };

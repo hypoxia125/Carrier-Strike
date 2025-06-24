@@ -5,6 +5,11 @@ if (!hasInterface) exitWith {};
 
 params ["_siloNumber", "_state"];
 
+// private _silo = missionNamespace getVariable [QGVAR(silos), []];
+// _silo = _silo select { _x getVariable QGVAR(silo_number) == _siloNumber };
+// _silo = _silo#0;
+// if (_silo getVariable [QEGVAR(game,Enabled), false]) exitWith {};
+
 private _display = localNamespace getVariable [QGVAR(carrierHUD), displayNull];
 if (isNull _display) exitWith {};
 

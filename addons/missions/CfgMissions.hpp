@@ -1,36 +1,32 @@
 class CfgMissions {
     class MPMissions {
-        class CarrierStrike_Malden_Small
+        class CarrierStrike_Malden_Monte
         {
-            briefingName = "Carrier Strike - Malden";
-            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Malden_Small.Malden";
+            briefingName = "Carrier Strike - Monte";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Malden_Monte.Malden";
         };
-        class CarrierStrike_Stratis_Small
+        class CarrierStrike_Stratis_MarinaBay
         {
-            briefingName = "Carrier Strike - Stratis";
-            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_Small.Stratis";
-        };
-        class CarrierStrike_Altis_Medium
-        {
-            briefingName = "Carrier Strike - Altis";
-            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Altis_Medium.Altis";
+            briefingName = "Carrier Strike - Marina Bay";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_MarinaBay.Stratis";
         };
 
 #if __has_include("\CUP\Vehicles\CUP_Vehicles_Core\stringtable.xml")
-        class CarrierStrike_Malden_Small_CUP
+        class CarrierStrike_Malden_Monte_CUP
         {
-            briefingName = "Carrier Strike - Malden (CUP)";
-            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Malden_Small_CUP.Malden";
+            briefingName = "Carrier Strike - Monte (CUP)";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Malden_Monte_CUP.Malden";
         };
-        class CarrierStrike_Stratis_Small_CUP
+        class CarrierStrike_Stratis_MarinaBay_CUP
         {
-            briefingName = "Carrier Strike - Stratis (CUP)";
-            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_Small_CUP.Stratis";
+            briefingName = "Carrier Strike - Marina Bay (CUP)";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_MarinaBay_CUP.Stratis";
         };
-        class CarrierStrike_Altis_Medium_CUP
+
+        class CarrierStrike_Porto_CUP
         {
-            briefingName = "Carrier Strike - Altis (CUP)";
-            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Altis_Medium_CUP.Altis";
+            briefingName = "Carrier Strike - Porto (CUP)";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Porto_CUP.porto";
         };
 #endif
     };

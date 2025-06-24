@@ -108,7 +108,7 @@ class GVAR(ModuleAddVehicle): GVAR(ModuleBase) {
             property = QGVAR(ModuleAddVehicle_Expression);
             displayName = "Post Init Expression";
             tooltip = "Code to execute after spawning the vehicle. Passed arguments: [<newVehicle>, <side>]";
-            defaultValue = """true""";
+            defaultValue = """params [""""_newVehicle"""", """"_side""""];""";
             typeName = "STRING";
             validate = "EXPRESSION";
         };
@@ -118,7 +118,7 @@ class GVAR(ModuleAddVehicle): GVAR(ModuleBase) {
 
     class ModuleDescription: ModuleDescription {
         description[] = {
-            "Adds a vehicle to the vehicle respawn system. Do not sync anything to this module in its current state. It can be easier to place an editor object for space checking, just be sure to delete it on game init."
+            "Adds a vehicle to the vehicle respawn system. Place vehicle and sync module. Module will handle deletion of editor object."
         };
         position = 0;
         direction = 0;

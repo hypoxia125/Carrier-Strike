@@ -48,6 +48,27 @@ GVAR(SiloControlSystem) = createHashMapObject [[
     }],
 
     //------------------------------------------------------------------------------------------------
+    ["SortSilos", {
+        private _entities = _self get "m_entities";
+
+        private _arr = _entities;
+        for "_i" from 1 to (count _arr - 1) do {
+            private _keyObj = _arr select _i;
+            private _keyValue = _keyObj getVariable QGVAR(silo_number);
+            private _j = _i - 1;
+            
+            while {_j >= 0 && ((_arr#_j) getVariable QGVAR(silo_number) > _keyValue)} do {
+                _arr set [_j + 1, _arr select _j];
+                _j = _j - 1;
+            };
+            
+            _arr set [_j + 1, _keyObj];
+        };
+
+        _self set ["m_entities", _entities];
+    }],
+
+    //------------------------------------------------------------------------------------------------
     ["Register", {
         params ["_entity"];
         if (isNil "_entity") exitWith {};
@@ -62,6 +83,7 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         _self set ["m_entities", _entities];
 
         // Broadcast
+        _self call ["SortSilos"];
         missionNamespace setVariable [QGVAR(silos), _entities, true];
 
         LOG_2("%1::Register | Entity registered: %2",(_self get "#type")#0,_entity);
@@ -129,7 +151,6 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         if (count _activeUnits >= _playerCountUnlock) then {
             _silo setVariable [QGVAR(Enabled), true, true];
             [QEGVAR(ui,EnableSiloControl), [_siloNumber, true]] call CBA_fnc_globalEventJIP;
-        } else {
         };
     }],
 

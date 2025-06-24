@@ -1,7 +1,0 @@
-#define MISSION_NAME            "Carrier Strike - Malden"
-
-#define MISSION_DESCRIPTION     "Two teams battle over control of Anti-Carrier Missile Silos, aiming for the destruction of the opposing team's carrier. Beware, a rebellion has formed to disrupt the battlefield.<br/><br/>Map: Small<br/>Recommended Players: 32<br/>Silos: 5"
-
-#define LOADOUT_PRESET_VANILLA
-
-#include "\z\carrierstrike\addons\missions\shared\description_shared.inc"
