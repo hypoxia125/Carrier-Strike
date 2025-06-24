@@ -22,6 +22,12 @@ class CfgMissions {
             briefingName = "Carrier Strike - Marina Bay (CUP)";
             directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_MarinaBay_CUP.Stratis";
         };
+
+        class CarrierStrike_Porto_CUP
+        {
+            briefingName = "Carrier Strike - Porto (CUP)";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Porto_CUP.porto";
+        };
 #endif
     };
 };
