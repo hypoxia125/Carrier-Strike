@@ -1,3 +1,23 @@
+# Alpha Version v0.9.0
+
+- Added map: CarrierStrike_Porto_CUP
+    - Requires CUP Terrains
+- Optimized AI system, now 60% faster on heavy frame
+- Added ability to name respawn positions
+- Changed default code for AddVehicle module as an example of how to access params
+- Default UI when seeding now shows silos as blocked, then unblocked
+- Moved seeding notifications from client to server
+- Added a fix to a bug in BI's respawn menu (thx charles_b._punchington)
+- Silo array is now automatically sorted when added to the silo control system
+- Updated Malden maps
+    - Now uses the name Monte, which is where the battlefield is located
+- Updated Stratis maps
+    - Now uses the name Marina Bay, which is where the battlefield is located
+- Removed Altis map
+    - Needs to be reevaluated based on size of battlefield
+- If using description_shared.ext, you now have to use the macros LOADSCREEN and OVERVIEWPICTURE to define the loading image
+
+
 # Alpha Version v0.8.0
 
 - Added AI Systems

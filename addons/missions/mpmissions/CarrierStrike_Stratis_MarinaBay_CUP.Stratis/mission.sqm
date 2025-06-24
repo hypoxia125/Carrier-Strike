@@ -1148,7 +1148,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="params [""_newVehicle"", ""_side""];" \n "" \n "[_side, _newVehicle, ""Mobile Respawn""] call BIS_fnc_addRespawnPosition";
+							value="params [""_newVehicle"", ""_side""];";
 						};
 					};
 				};
@@ -3062,7 +3062,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="params [""_newVehicle"", ""_side""];" \n "" \n "[_side, _newVehicle, ""Mobile Respawn""] call BIS_fnc_addRespawnPosition";
+							value="params [""_newVehicle"", ""_side""];";
 						};
 					};
 				};
