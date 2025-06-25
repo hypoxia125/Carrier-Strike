@@ -16,6 +16,8 @@ if (isServer) then {
     call FUNC(InitChatChannels);
     [1, 1] call FUNC(UnlockLoadouts);
 
+    [] spawn compileScript [QPATHTOF(scripts\SeedingNotification.sqf)];
+
     ["Initialize"] call BIS_fnc_dynamicGroups;
 
     [{
@@ -40,7 +42,6 @@ if (hasInterface) then {
 
     call FUNC(InitDiary);
     call FUNC(PlayerInit);
-    [] spawn compileScript [QPATHTOF(scripts\SeedingNotification.sqf)];
 
     ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
     private _newGroup = createGroup [side group player, true];
