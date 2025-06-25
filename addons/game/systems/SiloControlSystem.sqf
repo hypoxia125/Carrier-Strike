@@ -129,15 +129,10 @@ GVAR(SiloControlSystem) = createHashMapObject [[
     ["UpdateSiloEnabled", {
         params ["_silo", ["_forced", false]];
 
+        private _siloNumber = _silo getVariable QGVAR(silo_number);
+        if (_forced) exitWith { _silo setVariable [QGVAR(Enabled), true, true] };
         private _enabled = _silo getVariable [QGVAR(Enabled), false];
         if (_enabled) exitWith {};
-
-        private _siloNumber = _silo getVariable QGVAR(silo_number);
-
-        if (_forced) exitWith {
-            _silo setVariable [QGVAR(Enabled), true, true];
-            [QEGVAR(ui,EnableSiloControl), [_siloNumber, true]] call CBA_fnc_globalEventJIP;
-        };
 
         private _activeUnits = allUnits select {
             private _veh = objectParent _x;
@@ -148,10 +143,7 @@ GVAR(SiloControlSystem) = createHashMapObject [[
 
         private _playerCountUnlock = _silo getVariable [QGVAR(player_count_unlock), 0];
 
-        if (count _activeUnits >= _playerCountUnlock) then {
-            _silo setVariable [QGVAR(Enabled), true, true];
-            [QEGVAR(ui,EnableSiloControl), [_siloNumber, true]] call CBA_fnc_globalEventJIP;
-        };
+        if (count _activeUnits >= _playerCountUnlock) then { _silo setVariable [QGVAR(Enabled), true, true] };
     }],
 
     //------------------------------------------------------------------------------------------------
