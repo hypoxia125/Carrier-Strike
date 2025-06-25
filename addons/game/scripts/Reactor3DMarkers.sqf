@@ -4,7 +4,7 @@ if (cameraView == "Gunner") exitWith {};
 
 {
     private _distance = player distance _x;
-    if (_distance > 100) then { continue };
+    if (_distance > 250) then { continue };
 
     private _reactorHP = _x getVariable QGVAR(current_hp);
     private _icon = "\a3\modules_f_curator\data\iconlightning_ca.paa";
