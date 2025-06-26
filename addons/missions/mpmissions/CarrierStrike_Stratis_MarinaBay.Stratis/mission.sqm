@@ -740,7 +740,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="O_APC_Tracked_02_cannon_F";
+							value="CarrierStrike_O_APC_tracked_03_cannon_F";
 						};
 					};
 				};
@@ -766,7 +766,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_APC_tracked_03_cannon_F";
+							value="CarrierStrike_O_APC_tracked_03_cannon_F";
 						};
 					};
 				};
@@ -871,7 +871,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_MRAP_03_hmg_F";
+							value="I_G_Offroad_01_armed_F";
 						};
 					};
 				};
@@ -977,7 +977,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_MRAP_03_hmg_F";
+							value="I_G_Offroad_01_armed_F";
 						};
 					};
 				};
@@ -1082,7 +1082,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_Truck_02_covered_F";
+							value="I_G_Van_01_transport_F";
 						};
 					};
 				};
@@ -2651,7 +2651,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="O_APC_Tracked_02_cannon_F";
+							value="CarrierStrike_O_APC_tracked_03_cannon_F";
 						};
 					};
 				};
@@ -2677,7 +2677,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_APC_tracked_03_cannon_F";
+							value="CarrierStrike_O_APC_tracked_03_cannon_F";
 						};
 					};
 				};
@@ -2783,7 +2783,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_MRAP_03_hmg_F";
+							value="I_G_Offroad_01_armed_F";
 						};
 					};
 				};
@@ -2889,7 +2889,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_MRAP_03_hmg_F";
+							value="I_G_Offroad_01_armed_F";
 						};
 					};
 				};
@@ -3101,7 +3101,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_Truck_02_covered_F";
+							value="I_G_Van_01_transport_F";
 						};
 					};
 				};
@@ -42235,7 +42235,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="O_APC_Tracked_02_cannon_F";
+							value="CarrierStrike_O_APC_tracked_03_cannon_F";
 						};
 					};
 				};
@@ -42261,7 +42261,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_APC_tracked_03_cannon_F";
+							value="CarrierStrike_O_APC_tracked_03_cannon_F";
 						};
 					};
 				};
@@ -42342,7 +42342,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="O_APC_Tracked_02_cannon_F";
+							value="CarrierStrike_O_APC_tracked_03_cannon_F";
 						};
 					};
 				};
@@ -42368,7 +42368,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_APC_tracked_03_cannon_F";
+							value="CarrierStrike_O_APC_tracked_03_cannon_F";
 						};
 					};
 				};
@@ -42473,7 +42473,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_MRAP_03_hmg_F";
+							value="I_G_Offroad_01_armed_F";
 						};
 					};
 				};
@@ -42580,7 +42580,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="I_MRAP_03_hmg_F";
+							value="I_G_Offroad_01_armed_F";
 						};
 					};
 				};
