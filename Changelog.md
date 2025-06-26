@@ -1,3 +1,7 @@
+# Hotfix v0.9.0.1
+
+- AI: Fixed issue where silo priority was not being sorted
+
 # Alpha Version v0.9.0
 
 - Added map: CarrierStrike_Porto_CUP
