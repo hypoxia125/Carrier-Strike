@@ -1,3 +1,9 @@
+# Alpha Version v0.9.1
+
+- Increased range of 3D markers for reactors
+- Move seeding notification to server
+- Moved Silo UI Enable check to client
+
 # Hotfix v0.9.0.1
 
 - AI: Fixed issue where silo priority was not being sorted
