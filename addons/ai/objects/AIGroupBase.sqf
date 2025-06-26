@@ -35,8 +35,6 @@ GVAR(AIGroupBase) = [
     ["Update", {
         params ["_updateRate", "_elapsedTime"];
 
-        _self call ["SortSiloPriorities"];
-
         _self call ["CheckUnitDistance"];
         _self call ["CleanDead"];
         _self call ["TickRespawnTimes", [_updateRate]];
@@ -55,9 +53,11 @@ GVAR(AIGroupBase) = [
             };
         };
 
-        if (_elapsedTime % 30 == 0) then {
+        if (_elapsedTime % 10 == 0) then {
             LOG_1("AIGroupBase | Updating group objective for group: %1",_group);
             _self call ["UpdateSiloPriorities"];
+            _self call ["SortSiloPriorities"];
+            TRACE_2("SiloPriorities",_silo getVariable QEGVAR(game,silo_number),_self get "siloPriorities");
             _self call ["UpdateObjective"];
             _self call ["AssignWaypoints"];
         };
@@ -505,7 +505,8 @@ GVAR(AIGroupBase) = [
                 {_x distance2D _siloPos <= 200}
             } count units _side;
             private _friendlyScore = 0;
-            if (_owner == sideUnknown) then { _friendlyScore = 0 } else { _friendlyScore = (1 - ((_friendlyNearby / _maxFriendlies) min 1 max 0)) };
+            private _friendliesNormalized = _friendlyNearby / _maxFriendlies;
+            if (_owner != sideUnknown) then { _friendlyScore = (1 - (_friendliesNormalized min 1 max 0)) };
 
             // Countdown Score
             private _countdown = _silo getVariable QEGVAR(game,countdown);
@@ -520,7 +521,6 @@ GVAR(AIGroupBase) = [
                 (_friendlyScore * 0.1 * _friendlyMulti) +
                 (_countdownScore * 0.3 * _countdownMulti);
             
-
             _siloPriorities set [_forEachIndex, [_siloNum, _priorityScore]];
         } forEach _silos;
     }]
