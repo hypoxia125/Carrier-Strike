@@ -16,6 +16,7 @@ Carrier Strike is the reimagined Battlefield 2142 Titan Gamemode within the Arma
 [b]Vanilla[/b]
 CarrierStrike_Malden_Monte.Malden
 CarrierStrike_Stratis_MarinaBay.Stratis
+CarrierStrike_Porto.porto
 
 [b]CUP[/b]
 CarrierStrike_Malden_Monte_CUP.Malden
