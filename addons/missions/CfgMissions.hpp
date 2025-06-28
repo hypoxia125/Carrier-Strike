@@ -10,6 +10,11 @@ class CfgMissions {
             briefingName = "Carrier Strike - Marina Bay";
             directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Stratis_MarinaBay.Stratis";
         };
+        class CarrierStrike_Porto
+        {
+            briefing = "Carrier Strike - Porto";
+            directory = "z\carrierstrike\addons\missions\mpmissions\CarrierStrike_Porto.porto";
+        }
 
 #if __has_include("\CUP\Vehicles\CUP_Vehicles_Core\stringtable.xml")
         class CarrierStrike_Malden_Monte_CUP

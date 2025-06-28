@@ -1,6 +1,6 @@
 #define MISSION_NAME            "Carrier Strike - Malden (CUP)"
 
-#define MISSION_DESCRIPTION     "Two teams battle over control of Anti-Carrier Missile Silos, aiming for the destruction of the opposing team's carrier. Beware, a rebellion has formed to disrupt the battlefield.<br/><br/>Map: Monte<br/>Recommended Players: 32<br/>Silos: 5"
+#define MISSION_DESCRIPTION     "Two teams battle over control of Anti-Carrier Missile Silos, aiming for the destruction of the opposing team's carrier. Beware, a rebellion has formed to disrupt the battlefield.<br/><br/>Map: Monte<br/>Loadouts: CUP<br/>Recommended Players: 32<br/>Silos: 5"
 #define LOADSCREEN              "\z\carrierstrike\addons\common\data\img\Monte.jpg"
 #define OVERVIEWPICTURE         "\z\carrierstrike\addons\common\data\img\Monte.jpg"
 

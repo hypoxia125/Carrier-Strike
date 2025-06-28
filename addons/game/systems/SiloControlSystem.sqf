@@ -129,15 +129,10 @@ GVAR(SiloControlSystem) = createHashMapObject [[
     ["UpdateSiloEnabled", {
         params ["_silo", ["_forced", false]];
 
+        private _siloNumber = _silo getVariable QGVAR(silo_number);
+        if (_forced) exitWith { _silo setVariable [QGVAR(Enabled), true, true] };
         private _enabled = _silo getVariable [QGVAR(Enabled), false];
         if (_enabled) exitWith {};
-
-        private _siloNumber = _silo getVariable QGVAR(silo_number);
-
-        if (_forced) exitWith {
-            _silo setVariable [QGVAR(Enabled), true, true];
-            [QEGVAR(ui,EnableSiloControl), [_siloNumber, true]] call CBA_fnc_globalEventJIP;
-        };
 
         private _activeUnits = allUnits select {
             private _veh = objectParent _x;
@@ -148,10 +143,7 @@ GVAR(SiloControlSystem) = createHashMapObject [[
 
         private _playerCountUnlock = _silo getVariable [QGVAR(player_count_unlock), 0];
 
-        if (count _activeUnits >= _playerCountUnlock) then {
-            _silo setVariable [QGVAR(Enabled), true, true];
-            [QEGVAR(ui,EnableSiloControl), [_siloNumber, true]] call CBA_fnc_globalEventJIP;
-        };
+        if (count _activeUnits >= _playerCountUnlock) then { _silo setVariable [QGVAR(Enabled), true, true] };
     }],
 
     //------------------------------------------------------------------------------------------------
@@ -208,140 +200,155 @@ GVAR(SiloControlSystem) = createHashMapObject [[
     }],
 
     //------------------------------------------------------------------------------------------------
+    ["GetCaptureRateMultiplier", {
+        params ["_side", "_captureUnits"];
+
+        private _oppositeSide = [west, east] select (_side == west);
+        private _friendlyUnits = _captureUnits get _side;
+        private _enemyUnits = _captureUnits get _oppositeSide;
+
+        if (_enemyUnits <= 0) exitWith { 1 + (_friendlyUnits * 0.1) }; // full bonus
+
+        private _unitAdvantage = (_friendlyUnits - _enemyUnits) max 0;
+        1 + (_unitAdvantage * 0.1);
+    }],
+
+    //------------------------------------------------------------------------------------------------
     ["UpdateCapture", {
         params ["_silo"];
 
-        private _siloNumber = _silo getVariable QGVAR(silo_number);
-
-        // Get all units within capture radius
         private _captureRadius = _self get "m_captureRadius";
-        private _nearUnits = allUnits inAreaArray [getPosATL _silo, _captureRadius, _captureRadius, 0, false];
-
-        // Count units for each side
-        private _westUnits = {side group _x == west} count _nearUnits;
-        private _eastUnits = {side group _x == east} count _nearUnits;
-
-        // Get current silo state
-        private _currentSide = _silo getVariable [QGVAR(side), sideUnknown];
-        private _currentProgress = _silo getVariable [QGVAR(captureProgress), 0];
-
-        // Determine capturing team and advantage
-        private _capturingSide = sideUnknown;
-        private _unitAdvantage = 0;
-
-        if (_westUnits > _eastUnits) then {
-            _capturingSide = west;
-            _unitAdvantage = _westUnits - _eastUnits;
-            if (_eastUnits == 0) then { _unitAdvantage = 0 };
-        };
-        if (_eastUnits > _westUnits) then {
-            _capturingSide = east;
-            _unitAdvantage = _eastUnits - _westUnits;
-            if (_westUnits == 0) then { _unitAdvantage = 0 };
-        };
-        private _isContested = (_eastUnits > 0 && _westUnits > 0) && (_eastUnits == _westUnits);
-
-        // Calculate progress per tick
         private _updateRate = _self get "m_updateRate";
         private _captureTime = _self get "m_captureTime";
-        private _progressPerTick = 0;
+        private _progressPerTick = _updateRate / _captureTime * 2;
 
-        private _baseProgress = _updateRate / _captureTime * 2;
-        private _speedMultiplier = 1 + (_unitAdvantage * 0.1);
-        _progressPerTick = _baseProgress * _speedMultiplier;
+        private _captureProg = _silo getVariable QGVAR(capture_progress);
+        private _owner = _silo getVariable [QGVAR(side), sideUnknown];
 
-        // Apply direction
-        switch _capturingSide do {
-            case west: { _progressPerTick = _progressPerTick * -1 };
-            case east: { _progressPerTick = _progressPerTick * 1 };
-            // Maintain current owner if no capturing
-            case sideUnknown: {
-                switch _currentSide do {
-                    case west: { _progressPerTick = _progressPerTick * -1 };
-                    case east: { _progressPerTick = _progressPerTick * 1 };
+        // Get present units
+        private _fnc_getPresentUnits = {
+            params ["_side"];
+            import ["_silo", "_captureRadius"];
+            { alive _x && {_x distance _silo <= _captureRadius} } count units _side;
+        };
+        private _captureUnits = createHashMapFromArray [
+            [west, west call _fnc_getPresentUnits],
+            [east, east call _fnc_getPresentUnits],
+            [independent, independent call _fnc_getPresentUnits]
+        ];
+        
+        switch true do {
+            /*  Owner Exists */
+            case (_owner != sideUnknown): {
+                private _ownerUnitCount = _captureUnits get _owner;
+                private _enemyUnitCount = _captureUnits get ([west, east] select (_owner == west));
+                private _independentUnitCount = _captureUnits get independent;
+                
+                private _hasAdvantage = [_enemyUnitCount] findIf { _x > _ownerUnitCount } == -1;
+
+                switch true do {
+                    // Independent present - decay if no defender
+                    case (_independentUnitCount > 0 && {_ownerUnitCount == 0}): {
+                        {
+                            private _value = 0 max (_y - _progressPerTick);
+                            _captureProg set [_x, _value];
+                        } forEach _captureProg;
+                    };
+
+                    // Defender lost advantage
+                    case ([_enemyUnitCount] findIf { _x > _ownerUnitCount } != -1): {
+                        private _value = 0 max ((_captureProg get _owner) - _progressPerTick);
+                        _captureProg set [_owner, _value];
+                    };
+
+                    // Defender has advantage
+                    default {
+                        private _multi = _self call ["GetCaptureRateMultiplier", [_owner, _captureUnits]];
+                        private _value = 1 min ((_captureProg get _owner) + (_progressPerTick * _multi));
+                        _captureProg set [_owner, _value];
+                    };
+                };
+            };
+
+            /* No Owner */
+            case (_owner == sideUnknown): {
+                private _westUnitCount = _captureUnits get west;
+                private _eastUnitCount = _captureUnits get east;
+                private _independentUnitCount = _captureUnits get independent;
+                private _totalUnits = _westUnitCount + _eastUnitCount;
+
+                // If no units present, decay everything
+                if (_totalUnits == 0) then {
+                    {
+                        private _value = 0 max (_y - _progressPerTick);
+                        _captureProg set [_x, _value];
+                    } forEach _captureProg;
+                } else {
+                    // Normal capture logic
+                    switch true do {
+                        // Independent present - decay if no defender
+                        case (_independentUnitCount > 0 && {[_westUnitCount, _eastUnitCount] findIf {_x > 0} == -1}): {
+                            {
+                                private _value = 0 max (_y - _progressPerTick);
+                                _captureProg set [_x, _value];
+                            } forEach _captureProg;
+                        };
+
+                        // Increment side that has advantage
+                        case (_westUnitCount != _eastUnitCount): {
+                            private _dominantSide = [west, east] select (_westUnitCount < _eastUnitCount);
+                            private _weakerSide = [west, east] select (_westUnitCount > _eastUnitCount);
+
+                            // Only increment dominant if weaker side is at 0
+                            if (_captureProg get _weakerSide <= 0) then {
+                                private _multi = _self call ["GetCaptureRateMultiplier", [_dominantSide, _captureUnits]];
+                                private _value = 1 min ((_captureProg get _dominantSide) + (_progressPerTick * _multi));
+                                _captureProg set [_dominantSide, _value];
+                            };
+
+                            // Always decay weak side
+                            private _value = 0 max ((_captureProg get _weakerSide) - _progressPerTick);
+                            _captureProg set [_weakerSide, _value];
+                        };
+                        // Do nothing if counts are equal
+                    };
                 };
             };
         };
 
-        // Update progress
-        if (!_isContested) then {
-            _currentProgress = (_currentProgress + _progressPerTick) max -1 min 1;
-        };
-        if (_capturingSide == sideUnknown && _currentSide == sideUnknown && !_isContested) then {
-            if (_currentProgress != 0) then {
-                _currentProgress = 0;
-                [QEGVAR(ui,UpdateSiloStatus), [_silo, west, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
-                [QEGVAR(ui,UpdateSiloStatus), [_silo, east, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
+        private _newOwner = sideUnknown;
+        private _highestProgress = 0;
+        private _hasCaptureValue = false;
+
+        {
+            private _progress = _captureProg get _x;
+            if (_progress >= 1 && {_progress > _highestProgress}) then {
+                _newOwner = _x;
+                _highestProgress = _progress;
             };
+
+            if (_progress > 0) then { _hasCaptureValue = true };
+        } forEach [west, east];
+
+        if (_newOwner != sideUnknown) then {
+            if (_newOwner != _owner) then {
+                [_silo, _newOwner] call FUNC(SiloUpdateOwnership);
+            };
+        } else {
+            {
+                if (_y > 0) then { _hasCaptureValue = false; break };
+            } forEach [west, east];
         };
 
-        // Handle state transitions
-        private _fnc_getSidePlayers = {
-            params ["_side"];
-            allPlayers select { side group _x == _side };
-        };
-        private _alerts = missionNamespace getVariable QGVAR(alerts);
-        private _respawn = _silo getVariable [QGVAR(respawn), []];
-        // Switch side to west
-        if (_currentProgress <= -1 && _currentSide != west) then {
-            _currentSide = west;
-            _currentProgress = -1;
-            [QGVAR(AlertAddToSystem), [(_alerts get "silocapture") get _siloNumber], west call _fnc_getSidePlayers] call CBA_fnc_targetEvent;
-            // Change respawn position
-            if (count _respawn == 2) then {
-                _respawn call BIS_fnc_removeRespawnPosition;
-            };
-            _respawn = [west, getPosATL _silo, format["Silo %1", _siloNumber]] call BIS_fnc_addRespawnPosition;
-            _silo setVariable [QGVAR(respawn), _respawn];
-        };
-        // Switch side to east
-        if (_currentProgress >= 1 && _currentSide != east) then {
-            _currentSide = east;
-            _currentProgress = 1;
-            [QGVAR(AlertAddToSystem), [(_alerts get "silocapture") get _siloNumber], allPlayers select { side group _x == east }] call CBA_fnc_targetEvent;
-            // Change respawn position
-            if (count _respawn == 2) then {
-                _respawn call BIS_fnc_removeRespawnPosition;
-            };
-            _respawn = [east, getPosATL _silo, format["Silo %1", _siloNumber]] call BIS_fnc_addRespawnPosition;
-            _silo setVariable [QGVAR(respawn), _respawn];
-        };
-        // Switch side to neutral
-        if (_currentSide == west && _currentProgress >= 0) then {
-            _currentSide = sideUnknown;
-            [QGVAR(AlertAddToSystem), [(_alerts get "silolost") get _siloNumber], allPlayers select { side group _x == west }] call CBA_fnc_targetEvent;
-            // Change respawn position
-            if (count _respawn == 2) then {
-                _respawn call BIS_fnc_removeRespawnPosition;
-            };
-            _silo setVariable [QGVAR(respawn), nil];
-        };
-        if (_currentSide == east && _currentProgress <= 0) then {
-            _currentSide = sideUnknown;
-            [QGVAR(AlertAddToSystem), [(_alerts get "silolost") get _siloNumber], allPlayers select { side group _x == east }] call CBA_fnc_targetEvent;
-            // Change respawn position
-            if (count _respawn == 2) then {
-                _respawn call BIS_fnc_removeRespawnPosition;
-            };
-            _silo setVariable [QGVAR(respawn), nil];
+        if (!_hasCaptureValue) then {
+            if (_owner != sideUnknown) then {
+                [_silo, sideUnknown] call FUNC(SiloUpdateOwnership);
+            };            
         };
 
-        // Update HUD
-        if (!_isContested) then {
-            if (_currentProgress < 0) then {
-                [QEGVAR(ui,UpdateSiloStatus), [_silo, west, abs _currentProgress, _updateRate / 2]] call CBA_fnc_globalEvent;
-                [QEGVAR(ui,UpdateSiloStatus), [_silo, east, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
-            };
-            if (_currentProgress > 0) then {
-                [QEGVAR(ui,UpdateSiloStatus), [_silo, east, abs _currentProgress, _updateRate / 2]] call CBA_fnc_globalEvent;
-                [QEGVAR(ui,UpdateSiloStatus), [_silo, west, 0, _updateRate / 2]] call CBA_fnc_globalEvent;
-            };
-        };
-
-        _silo setVariable [QGVAR(captureProgress), _currentProgress];
-
-        // Update variables
-        [_silo, _currentSide] call FUNC(SiloUpdateOwnership);
-        _silo setVariable [QGVAR(captureProgress), _currentProgress, true];
+        // Update client UI
+        {
+            [QEGVAR(ui,UpdateSiloStatus), [_silo, _x, abs _y, _updateRate / 2]] call CBA_fnc_globalEvent;
+        } forEach _captureProg;
     }]
 ]];

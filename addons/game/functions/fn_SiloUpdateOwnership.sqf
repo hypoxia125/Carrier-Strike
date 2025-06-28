@@ -31,4 +31,29 @@ private _lights = [];
 } forEach ["light_r", "light_l"];
 _silo setVariable [QGVAR(lights), _lights, true];
 
-// TODO: update ui
+// Update respawn
+private _siloNumber = _silo getVariable QGVAR(silo_number);
+private _respawn = _silo getVariable [QGVAR(respawn), []];
+switch true do {
+    case (_newSide == sideUnknown): {
+        if (count _respawn == 2) then {
+            _respawn call BIS_fnc_removeRespawnPosition;
+        };        
+        _respawn = nil;
+    };
+    case (_newSide != sideUnknown): {
+        _respawn = [_newSide, getPosATL _silo, format["Silo: %1", _siloNumber]] call BIS_fnc_addRespawnPosition;
+    };
+};
+_silo setVariable [QGVAR(respawn), _respawn];
+
+// Alerts
+private _alerts = missionNamespace getVariable QGVAR(alerts);
+private _newOwnerPlayers = units _newSide select { isPlayer _x };
+private _oldOwnerPlayers = units _oldSide select { isPlayer _x };
+
+private _alert = _alerts get "silocapture" get _siloNumber;
+[QGVAR(AlertAddToSystem), [_alert], _newOwnerPlayers] call CBA_fnc_targetEvent;
+
+private _alert = _alerts get "silolost" get _siloNumber;
+[QGVAR(AlertAddToSystem), [_alert], _oldOwnerPlayers] call CBA_fnc_targetEvent;

@@ -42,7 +42,12 @@ private _data = createHashMapFromArray [
     ["is_firing", false],
 
     // Icons
-    ["icons", createHashMap]
+    ["icons", createHashMap],
+
+    ["capture_progress", createHashMapFromArray [
+        [west, 0],
+        [east, 0]
+    ]]
 ];
 // build image hashes
 {
