@@ -244,15 +244,29 @@ GVAR(SiloControlSystem) = createHashMapObject [[
                 private _enemyUnitCount = _captureUnits get ([west, east] select (_owner == west));
                 private _independentUnitCount = _captureUnits get independent;
                 
-                private _hasAdvantage = [_enemyUnitCount, _independentUnitCount] findIf { _x > _ownerUnitCount } == -1;
+                private _hasAdvantage = [_enemyUnitCount] findIf { _x > _ownerUnitCount } == -1;
 
-                if (!_hasAdvantage) then {
-                    private _value = 0 max ((_captureProg get _owner) - _progressPerTick);
-                    _captureProg set [_owner, _value];
-                } else {
-                    private _multi = _self call ["GetCaptureRateMultiplier", [_owner, _captureUnits]];
-                    private _value = 1 min ((_captureProg get _owner) + (_progressPerTick * _multi));
-                    _captureProg set [_owner, _value];
+                switch true do {
+                    // Independent present - decay if no defender
+                    case (_independentUnitCount > 0 && {_ownerUnitCount == 0}): {
+                        {
+                            private _value = 0 max (_y - _progressPerTick);
+                            _captureProg set [_x, _value];
+                        } forEach _captureProg;
+                    };
+
+                    // Defender lost advantage
+                    case ([_enemyUnitCount] findIf { _x > _ownerUnitCount } != -1): {
+                        private _value = 0 max ((_captureProg get _owner) - _progressPerTick);
+                        _captureProg set [_owner, _value];
+                    };
+
+                    // Defender has advantage
+                    default {
+                        private _multi = _self call ["GetCaptureRateMultiplier", [_owner, _captureUnits]];
+                        private _value = 1 min ((_captureProg get _owner) + (_progressPerTick * _multi));
+                        _captureProg set [_owner, _value];
+                    };
                 };
             };
 
