@@ -21,6 +21,7 @@ GVAR(AISystem) = createHashMapObject [[
     ["#create", {
         _self call ["SystemStart", []];
 
+        private _independentEnabled = [QGVAR(Settings_AllowIndependentFaction)] call CBA_settings_fnc_get;
         {
             private _side = _x;
             private _groupSize = _self get "m_groupSize";
@@ -32,7 +33,11 @@ GVAR(AISystem) = createHashMapObject [[
                 private _AIGroup = createHashMapObject [GVAR(AIGroupBase), [_side, _personality, _groupSize]];
                 (_self get "m_groups" get _side) pushBack _AIGroup;
             };
-        } forEach [west, east, independent];
+        } forEach [
+            west,
+            east,
+            [nil, independent] select _independentEnabled
+        ];
 
         private _logString = "AISystem::Constructor | Groups created for each side: [west, %1], [east, %2], [independent, %3]";
         INFO_3(_logString,count (_self get "m_groups" get west),count (_self get "m_groups" get east),count (_self get "m_groups" get independent));
