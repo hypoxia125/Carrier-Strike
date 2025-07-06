@@ -1,17 +1,22 @@
 #include "script_component.hpp"
 
 if (!isServer) exitWith {};
-
-private _i = 10;
-while {_i > 0} do {
-    private _txt = format["AI Spawning In: %1", _i];
-    [QEGVAR(game,SystemChat), [_txt]] call CBA_fnc_globalEvent;
-    _i = _i - 1;
-    sleep 1;
-};
-    
-
 if (!isNil QGVAR(AISystem)) exitWith {};
+if ( !([QEGVAR(game,Settings_AllowAI)] call CBA_settings_fnc_get) ) exitWith {};
+
+private _westEnabled = [QEGVAR(game,Settings_AllowWestFactionAI)] call CBA_settings_fnc_get;
+private _eastEnabled = [QEGVAR(game,Settings_AllowEastFactionAI)] call CBA_settings_fnc_get;
+private _independentEnabled = [QEGVAR(game,Settings_AllowIndependentFactionAI)] call CBA_settings_fnc_get;
+
+private _txt = format["AI Settings\nBLUFOR Enabled: %1\nOPFOR Enabled: %2\nIND Enabled: %3", _westEnabled, _eastEnabled, _independentEnabled];
+[QEGVAR(game,HintSilent), [_txt], "AISettingsWarning"] call CBA_fnc_globalEventJIP;
+
+private _waitTime = 15;
+private _txt = format["AI | Spawning In %1s",_waitTime];
+[QEGVAR(game,SystemChat), [_txt]] call CBA_fnc_globalEvent;
+sleep _waitTime;
+private _txt = "AI | Spawning...";
+[QEGVAR(game,SystemChat), [_txt]] call CBA_fnc_globalEvent;
 
 // Init objects
 call compileScript [QPATHTOF(objects\AIGroupBase.sqf)];
@@ -22,6 +27,7 @@ GVAR(AISystem) = createHashMapObject [[
         _self call ["SystemStart", []];
 
         {
+            if (_x == sideUnknown) then { continue };
             private _side = _x;
             private _groupSize = _self get "m_groupSize";
             private _totalSlots = playableSlotsNumber _side;
@@ -32,7 +38,11 @@ GVAR(AISystem) = createHashMapObject [[
                 private _AIGroup = createHashMapObject [GVAR(AIGroupBase), [_side, _personality, _groupSize]];
                 (_self get "m_groups" get _side) pushBack _AIGroup;
             };
-        } forEach [west, east, independent];
+        } forEach [
+            [sideUnknown, west] select (_westEnabled),
+            [sideUnknown, east] select (_eastEnabled),
+            [sideUnknown, independent] select (_independentEnabled)
+        ];
 
         private _logString = "AISystem::Constructor | Groups created for each side: [west, %1], [east, %2], [independent, %3]";
         INFO_3(_logString,count (_self get "m_groups" get west),count (_self get "m_groups" get east),count (_self get "m_groups" get independent));
