@@ -15,4 +15,11 @@ player addMPEventHandler ["MPKilled", {
 
     INFO("MPKilled | Triggered...");
     call FUNC(FixBIRespawnInventoryBullshit);
+
+    // Remove all traits
+    {
+        _x params ["_trait", "_value"];
+
+        _unit setUnitTrait [_trait, false];
+    } forEach (getAllUnitTraits _unit);
 }];

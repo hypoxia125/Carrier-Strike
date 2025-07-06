@@ -1,3 +1,4 @@
+PREP(AddTraits);
 PREP(AddToChatChannel);
 PREP(AlertAddToSystem);
 PREP(CarrierDamageDealt);

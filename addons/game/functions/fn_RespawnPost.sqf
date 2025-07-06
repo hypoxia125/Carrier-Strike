@@ -60,3 +60,6 @@ _player call FUNC(PlayerEvents);
 private _channels = missionNamespace getVariable QGVAR(chat_channels);
 private _channel = _channels get "notification" get "channel_ids" get (side group player);
 [QGVAR(AddToChatChannel), [[_player], _channel]] call CBA_fnc_serverEvent;
+
+// Traits
+[_player] call FUNC(AddTraits);
