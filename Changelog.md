@@ -1,3 +1,11 @@
+# Alpha Version v0.9.2
+
+- Added traits based on inventories upon spawning.
+    - Medikit = medic
+    - ToolKit = engineer
+    - MineDetector = explosiveSpecialist
+- Added ability to toggle AI globally or for each team
+
 # Alpha Version v0.9.1
 
 - Increased range of 3D markers for reactors
