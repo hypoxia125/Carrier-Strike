@@ -13,6 +13,50 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(Settings_AllowAI),
+    "CHECKBOX",
+    "AI - Enabled",
+    ["Carrier Strike - Game Settings", "AI Settings"],
+    true,
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_AllowWestFactionAI),
+    "CHECKBOX",
+    "Allow BLUFOR Faction - AI",
+    ["Carrier Strike - Game Settings", "AI Settings"],
+    true,
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_AllowEastFactionAI),
+    "CHECKBOX",
+    "Allow OPFOR Faction - AI",
+    ["Carrier Strike - Game Settings", "AI Settings"],
+    true,
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_AllowIndependentFactionAI),
+    "CHECKBOX",
+    "Allow INDEPENDENT Faction - AI",
+    ["Carrier Strike - Game Settings", "AI Settings"],
+    false,
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(Settings_AllowIndependentFaction),
     "CHECKBOX",
     "Allow Independent Faction",
