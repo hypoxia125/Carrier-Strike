@@ -1,6 +1,13 @@
+PREP(CommanderMenu_OnClickArtillery);
+PREP(CommanderMenu_OnLoadArtillery);
+PREP(CommanderMenu_OnClickScan);
+PREP(CommanderMenu_OnLoadScan);
+PREP(CommanderMenu_OnClickUAV);
+PREP(CommanderMenu_OnLoadUAV);
 PREP(DrawSiloIcons);
 PREP(EnableSiloControl);
 PREP(InitHUD);
 PREP(UpdateCarrierStatus);
+PREP(UpdateCommanderMenu);
 PREP(UpdateSiloCountdown);
 PREP(UpdateSiloStatus);

@@ -15,3 +15,7 @@
 [QGVAR(EnableSiloControl), {
     call FUNC(EnableSiloControl);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(UpdateCommanderMenu), {
+    call FUNC(UpdateCommanderMenu);
+}] call CBA_fnc_addEventHandler;
