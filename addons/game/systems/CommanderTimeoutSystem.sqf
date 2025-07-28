@@ -8,8 +8,12 @@ GVAR(CommanderTimeoutSystem) = createHashMapObject [[
     ["#create", {
         _commanderData = createHashMapFromArray [
             ["commanders", createHashMapFromArray [
-                [west, -1],
-                [east, -1]
+                [west, "-1"],
+                [east, "-1"]
+            ]],
+            ["commanderNames", createHashMapFromArray [
+                [west, ""],
+                [east, ""]
             ]],
             ["scanCooldowns", createHashMapFromArray [
                 [west, _self get "m_scanCooldownTime"],

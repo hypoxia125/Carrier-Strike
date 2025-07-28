@@ -23,8 +23,10 @@ if (isNil "_commanderData") exitWith {
 // update commander
 private _commanders = _commanderData get "commanders";
 private _commander = _commanders get (side group player);
+private _commanderNames = _commanderData get "commanderNames";
+private _commanderName = _commanderNames get (side group player);
 
-_ctrlCommander ctrlSetText ([name _commander, "NO COMMANDER"] select (_commander == -1));
+_ctrlCommander ctrlSetText ([_commanderName, "NO COMMANDER"] select (_commanderName == ""));
 
 // update scan
 private _scanCooldowns = _commanderData get "scanCooldowns";
@@ -48,7 +50,8 @@ private _text = format["Artillery: %1", [_artilleryCooldown, "Ready"] select (_a
 _ctrlArtillery ctrlSetText _text;
 
 // Enable or Disable Controls
-if (owner _commmander == owner player) then {
+
+if (_commmander == getPlayerID player) then {
     if (_scanCooldown == 0) then {
         _ctrlScan ctrlEnable true;
     } else {
