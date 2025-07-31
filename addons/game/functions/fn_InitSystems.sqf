@@ -1,6 +1,9 @@
 #include "script_component.hpp"
 
 if (isServer) then {
+    isNil {
+        call compileScript [QPATHTOF(systems\SystemBase.sqf)];
+    };
     call compileScript [QPATHTOF(systems\SiloControlSystem.sqf)];
     call compileScript [QPATHTOF(systems\MissileTrackingSystem.sqf)];
     call compileScript [QPATHTOF(systems\VehicleRespawnSystem.sqf)];
