@@ -2,26 +2,30 @@
 
 params ["_position", "_callerSide"];
 
+if (!canSuspend) exitWith { _this spawn FUNC(CommanderArtillery) };
+
+#define ARTILLERY_LENGTH    10
+
 // Check position if its in a respawn area
 private _valid = true;
-private _respawnData = missionNamespace getVariable [QEGVAR(game,respawn_positions), []];
+private _respawnData = missionNamespace getVariable [QGVAR(respawn_positions), []];
 {
     _x params ["_respawn", "_type", "_area"];
-    // extend area
-    _area set [1, _area#1 * 3];
-    _area set [1, _area#2 * 3];
 
-    if (_position inArea _area) exitWith { _valid = false };
+    // extend area
+    _area set [1, 300];
+    _area set [2, 300];
+
+    if (_position inArea _area) exitWith {
+        _valid = false;
+    };
 } forEach _respawnData;
 if (!_valid) exitWith {
     hint "Invalid Area For Artillery";
 };
 
-#define ARTILLERY_LENGTH    10
-
-if (!canSuspend) exitWith { _this spawn FUNC(CommanderArtillery) };
-
 hintSilent "Artillery Firing";
+[QGVAR(CommanderResetArtillery), [side group player]] call CBA_fnc_serverEvent;
 
 sleep 10;
 

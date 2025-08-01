@@ -1,21 +1,14 @@
 #include "script_component.hpp"
 
+if (!isServer) exitWith {};
+if (!canSuspend) exitWith { _this spawn FUNC(CommanderMutiny) };
+
 params ["_unit"];
 
-if (!isServer) exitWith {};
-if (!canSuspend) exitWith { _this spawn FUNC(CommanderApply) };
-
-LOG_1("CommanderApply | %1 is applying for commander",name _unit);
-
-private _playerID = getPlayerID _unit;
-if (_playerID == "-1") exitWith {};
-
-private _userInfo = getUserInfo _playerID;
-private _owner = _userInfo select 1;
-private _name = _userInfo select 3;
 private _side = side group _unit;
+private _name = name _unit;
 
-TRACE_3("CommanderApply | Post User Info",_owner,_name,_side);
+LOG_1("CommanderMutiny | Mutiny against %1",_name);
 
 private _commanderVotes = missionNamespace getVariable QGVAR(CommanderVotes);
 if (isNil "_commanderVotes") then {
@@ -36,7 +29,7 @@ if (isNil "_commanderVotes") then {
 _commanderVotes get _side set ["yes", 0];
 _commanderVotes get _side set ["no", 0];
 
-[QGVAR(CommanderVoteNotification), [_name], units _side] call CBA_fnc_targetEvent;
+[QGVAR(CommanderVoteNotification), [_name, nil, true], units _side] call CBA_fnc_targetEvent;
 
 missionNamespace setVariable [QGVAR(CommanderVoteInProg), true, true];
 missionNamespace setVariable [QGVAR(CommanderVoteSubmitted), false, true];
@@ -47,12 +40,12 @@ private _votesYes = _commanderVotes get _side get "yes";
 private _votesNo = _commanderVotes get _side get "no";
 
 if (_votesYes > _votesNo) then {
-    LOG("CommanderApply | Commander vote succeeded");
-    [_playerID] call FUNC(CommanderAssign);
-    [QGVAR(CommanderVoteNotification), [_name, true], units _side] call CBA_fnc_targetEvent;
+    LOG("CommanderApply | Commander mutiny succeeded");
+    [_side] call FUNC(CommanderUnassign);
+    [QGVAR(CommanderVoteNotification), [_name, true, true], units _side] call CBA_fnc_targetEvent;
 } else {
-    LOG("CommanderApply | Commander vote failed");
-    [QGVAR(CommanderVoteNotification), [_name, false], units _side] call CBA_fnc_targetEvent;
+    LOG("CommanderApply | Commander mutiny failed");
+    [QGVAR(CommanderVoteNotification), [_name, false, true], units _side] call CBA_fnc_targetEvent;
 };
 
 missionNamespace setVariable [QGVAR(CommanderVoteInProg), false, true];

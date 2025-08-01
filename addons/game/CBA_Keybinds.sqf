@@ -1,5 +1,6 @@
 #include "script_component.hpp"
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
+#include "\z\carrierstrike\addons\ui\defines.hpp"
 
 /*
 Parameters
@@ -16,7 +17,8 @@ _overwrite	Overwrite any previously stored default keybind <BOOLEAN>
 */
 
 ["CarrierStrike", "CommanderMenuOpen", "Open CommanderMenu", {
-    createDialog QGVAR(CommanderMenu);
+    if (!isNull findDisplay IDD_COMMANDERMENU) exitWith {};
+    createDialog QEGVAR(ui,CommanderMenu);
 }, {}, [DIK_Y], false, 0, true] call CBA_fnc_addKeybind;
 
 ["CarrierStrike", "CommanderVoteYes", "Vote Yes", {
@@ -25,7 +27,7 @@ _overwrite	Overwrite any previously stored default keybind <BOOLEAN>
     TRACE_2("Keybinds::CommanderVoteYes",_voteInProg,_alreadyVoted);
     if (_voteInProg && !_alreadyVoted) then {
         hintSilent "You voted 'Yes'";
-        [QGVAR(CommanderVote), [true]] call CBA_fnc_serverEvent;
+        [QGVAR(CommanderVote), [true, side group player]] call CBA_fnc_serverEvent;
         missionNamespace setVariable [QGVAR(CommanderVoteSubmitted), true];
     } else {
         LOG("Keybinds::CommanderVoteYes | Not the right time to vote...");
@@ -38,7 +40,7 @@ _overwrite	Overwrite any previously stored default keybind <BOOLEAN>
     TRACE_2("Keybinds::CommanderVoteNo",_voteInProg,_alreadyVoted);
     if (_voteInProg && !_alreadyVoted) then {
         hintSilent "You voted 'No'";
-        [QGVAR(CommanderVote), [false]] call CBA_fnc_serverEvent;
+        [QGVAR(CommanderVote), [false, side group player]] call CBA_fnc_serverEvent;
         missionNamespace setVariable [QGVAR(CommanderVoteSubmitted), true];
     } else {
         LOG("Keybinds::CommanderVoteNo | Not the right time to vote...");

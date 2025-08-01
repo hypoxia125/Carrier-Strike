@@ -19,3 +19,7 @@
 [QGVAR(UpdateCommanderMenu), {
     call FUNC(UpdateCommanderMenu);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(UpdateCommanderNameTopBar), {
+    call FUNC(UpdateCommanderNameTopBar);
+}] call CBA_fnc_addEventHandler;

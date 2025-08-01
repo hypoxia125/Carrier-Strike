@@ -36,11 +36,11 @@ private _text = format["Scan: %1", [_scanCooldown, "Ready"] select (_scanCooldow
 _ctrlScan ctrlSetText _text;
 
 // update uav
-private _UAVCooldowns = _commanderData get "uavCooldowns";
-private _UAVCooldown = _UAVCooldowns get (side group player);
+// private _UAVCooldowns = _commanderData get "uavCooldowns";
+// private _UAVCooldown = _UAVCooldowns get (side group player);
 
-private _text = format["UAV: %1", [_UAVCooldown, "Ready"] select (_UAVCooldown == 0)];
-_ctrlUAV ctrlSetText _text;
+// private _text = format["UAV: %1", [_UAVCooldown, "Ready"] select (_UAVCooldown == 0)];
+// _ctrlUAV ctrlSetText _text;
 
 // update artillery
 private _artilleryCooldowns = _commanderData get "artilleryCooldowns";
@@ -50,19 +50,18 @@ private _text = format["Artillery: %1", [_artilleryCooldown, "Ready"] select (_a
 _ctrlArtillery ctrlSetText _text;
 
 // Enable or Disable Controls
-
-if (_commmander == getPlayerID player) then {
+if (_commander == getPlayerID player) then {
     if (_scanCooldown == 0) then {
         _ctrlScan ctrlEnable true;
     } else {
         _ctrlScan ctrlEnable false;
     };
 
-    if (_UAVCooldown == 0) then {
-        _ctrlUAV ctrlEnable true;
-    } else {
-        _ctrlUAV ctrlEnable false;
-    };
+    // if (_UAVCooldown == 0) then {
+    //     _ctrlUAV ctrlEnable true;
+    // } else {
+    //     _ctrlUAV ctrlEnable false;
+    // };
 
     if (_artilleryCooldown == 0) then {
         _ctrlArtillery ctrlEnable true;

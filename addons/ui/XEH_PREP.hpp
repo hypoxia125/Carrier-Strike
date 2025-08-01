@@ -10,5 +10,6 @@ PREP(EnableSiloControl);
 PREP(InitHUD);
 PREP(UpdateCarrierStatus);
 PREP(UpdateCommanderMenu);
+PREP(UpdateCommanderNameTopBar);
 PREP(UpdateSiloCountdown);
 PREP(UpdateSiloStatus);

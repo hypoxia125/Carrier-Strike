@@ -60,6 +60,9 @@
 #define IDC_SILO_CD_4                   IDC_SILO_CD_1 + 3
 #define IDC_SILO_CD_5                   IDC_SILO_CD_1 + 4
 
+#define IDC_COMMANDER_WEST              8080
+#define IDC_COMMANDER_EAST              8081
+
 //--------------------------------------------------------------------------------------------------
 
 #define UPPERHUD_W                          75
@@ -84,6 +87,9 @@
 #define RESPAWNMENU_MAINPANEL_H             100
 #define RESPAWNMENU_MAINPANEL_X              -(RESPAWNMENU_MAINPANEL_W / 2)
 #define RESPAWNMENU_MAINPANEL_Y              -(RESPAWNMENU_MAINPANEL_H / 2)
+
+#define COMMANDERNAME_WEST_Y                (CARRIER_Y + 4)
+#define COMMANDERNAME_EAST_Y                (CARRIER_Y + 4)
 
 //--------------------------------------------------------------------------------------------------
 
