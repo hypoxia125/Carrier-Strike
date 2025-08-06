@@ -7,7 +7,7 @@ class UAV : RscButton
     w = QUOTE(COMMANDERMENU_UAV_W * GRID_W);
     h = QUOTE(COMMANDERMENU_UAV_H * GRID_H);
 
-    text = "UAV: WIP";
+    text = CSTRING(UAV);
     colorBackgroundActive[] = USER_GUI_COLORS_ALPHA(0.5);
     colorBackground[] = {0,0,0,0.0};
 

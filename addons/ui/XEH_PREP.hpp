@@ -3,6 +3,7 @@ PREP(CommanderMenu_OnClickArtillery);
 PREP(CommanderMenu_OnClickScan);
 PREP(CommanderMenu_OnClickUAV);
 PREP(CommanderMenu_OnLoadArtillery);
+PREP(CommanderMenu_OnLoadCommander);
 PREP(CommanderMenu_OnLoadScan);
 PREP(CommanderMenu_OnLoadUAV);
 PREP(DrawSiloIcons);

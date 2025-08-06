@@ -7,7 +7,7 @@ class CurrentCommander : RscText
     w = QUOTE(COMMANDERMENU_CURRENTCOMMANDER_W * GRID_W);
     h = QUOTE(COMMANDERMENU_CURRENTCOMMANDER_H * GRID_H);
 
-    text = "NO COMMANDER";
+    text = CSTRING(NoCommander);
     type = CT_STRUCTURED_TEXT;
     colorBackground[] = {1,0,0,0};
     size = QUOTE(2 * GRID_H);
@@ -17,6 +17,8 @@ class CurrentCommander : RscText
         align = "center";
         size = QUOTE(2 * GRID_H);
     };
+
+    onLoad = QUOTE(call FUNC(CommanderMenu_OnLoadCommander));
 };
 
 class CurrrentCommander_Frame : RscFrame

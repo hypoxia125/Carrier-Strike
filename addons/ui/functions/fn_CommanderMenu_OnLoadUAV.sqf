@@ -11,8 +11,11 @@ if (isNil "_commanderData") exitWith {
 private _uavCooldowns = _commanderData get "uavCooldowns";
 private _uavCooldown = _uavCooldowns get (side group player);
 
-if (_uavCooldown == 0) then {
-    _control ctrlEnable true;
-} else {
-    _control ctrlEnable false;
-};
+// _control ctrlSetText format[LLSTRING(UAVCooldown),[_uavCooldown, LLSTRING(Ready)] select (_uavCooldown == 0)];
+
+// if (_uavCooldown == 0 && [player] call EFUNC(game,UnitIsCommander)) then {
+//     _control ctrlEnable true;
+// } else {
+//     _control ctrlEnable false;
+// };
+_control ctrlEnable false;

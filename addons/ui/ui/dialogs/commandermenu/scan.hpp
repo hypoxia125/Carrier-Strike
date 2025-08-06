@@ -7,7 +7,7 @@ class Scan : RscButton
     w = QUOTE(COMMANDERMENU_SCAN_W * GRID_W);
     h = QUOTE(COMMANDERMENU_SCAN_H * GRID_H);
 
-    text = "SCAN";
+    text = CSTRING(Scan);
     colorBackgroundActive[] = USER_GUI_COLORS_ALPHA(0.5);
     colorBackground[] = {0,0,0,0.0};
 

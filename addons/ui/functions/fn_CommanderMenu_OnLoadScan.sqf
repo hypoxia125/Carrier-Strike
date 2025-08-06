@@ -11,7 +11,9 @@ if (isNil "_commanderData") exitWith {
 private _scanCooldowns = _commanderData get "scanCooldowns";
 private _scanCooldown = _scanCooldowns get (side group player);
 
-if (_scanCooldown == 0) then {
+_control ctrlSetText format[LLSTRING(ScanCooldown),[_scanCooldown, LLSTRING(Ready)] select (_scanCooldown == 0)];
+
+if (_scanCooldown == 0 && [player] call EFUNC(game,UnitIsCommander)) then {
     _control ctrlEnable true;
 } else {
     _control ctrlEnable false;

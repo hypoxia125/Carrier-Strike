@@ -9,4 +9,4 @@ if (isNil "_commanderData") exitWith {
 };
 
 private _commanderName = _commanderData get "commanderNames" get (side group player);
-_control ctrlSetText _commanderName;
+_control ctrlSetText ([_commanderName, LLSTRING(NoCommander)] select (_commanderName == ""));

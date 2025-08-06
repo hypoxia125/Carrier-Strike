@@ -5,7 +5,7 @@ if (!hasInterface) exitWith {};
 
 params [["_name", ""], "_side"];
 
-if (_name == "") then { _name = "NO COMMANDER" };
+if (_name == "") then { _name = toUpperANSI LLSTRING(NoCommander) };
 
 private _display = localNamespace getVariable [QGVAR(carrierHUD), displayNull];
 private _control = controlNull;

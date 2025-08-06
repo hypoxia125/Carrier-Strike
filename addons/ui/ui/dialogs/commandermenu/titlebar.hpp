@@ -6,6 +6,6 @@ class Titlebar : RscText
     h = QUOTE(COMMANDERMENU_TITLEBAR_H * GRID_H);
 
     colorBackground[] = USER_GUI_COLORS;
-    text = "Commander Menu";
+    text = CSTRING(CommanderMenuTitle);
     style = ST_CENTER;
 };

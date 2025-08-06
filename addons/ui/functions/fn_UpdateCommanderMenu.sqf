@@ -26,31 +26,31 @@ private _commander = _commanders get (side group player);
 private _commanderNames = _commanderData get "commanderNames";
 private _commanderName = _commanderNames get (side group player);
 
-_ctrlCommander ctrlSetText ([_commanderName, "NO COMMANDER"] select (_commanderName == ""));
+_ctrlCommander ctrlSetText ([_commanderName, LLSTRING(NoCommander)] select (_commanderName == ""));
 
 // update scan
 private _scanCooldowns = _commanderData get "scanCooldowns";
 private _scanCooldown = _scanCooldowns get (side group player);
 
-private _text = format["Scan: %1", [_scanCooldown, "Ready"] select (_scanCooldown == 0)];
+private _text = format[LLSTRING(ScanCooldown), [_scanCooldown, LLSTRING(Ready)] select (_scanCooldown == 0)];
 _ctrlScan ctrlSetText _text;
 
 // update uav
 // private _UAVCooldowns = _commanderData get "uavCooldowns";
 // private _UAVCooldown = _UAVCooldowns get (side group player);
 
-// private _text = format["UAV: %1", [_UAVCooldown, "Ready"] select (_UAVCooldown == 0)];
+// private _text = format[LLSTRING(UAVCooldown), [_UAVCooldown, LLSTRING(Ready)] select (_UAVCooldown == 0)];
 // _ctrlUAV ctrlSetText _text;
 
 // update artillery
 private _artilleryCooldowns = _commanderData get "artilleryCooldowns";
 private _artilleryCooldown = _artilleryCooldowns get (side group player);
 
-private _text = format["Artillery: %1", [_artilleryCooldown, "Ready"] select (_artilleryCooldown == 0)];
+private _text = format[LLSTRING(ArtilleryCooldown), [_artilleryCooldown, LLSTRING(Ready)] select (_artilleryCooldown == 0)];
 _ctrlArtillery ctrlSetText _text;
 
 // Enable or Disable Controls
-if (_commander == getPlayerID player) then {
+if ([player] call EFUNC(game,UnitIsCommander)) then {
     if (_scanCooldown == 0) then {
         _ctrlScan ctrlEnable true;
     } else {

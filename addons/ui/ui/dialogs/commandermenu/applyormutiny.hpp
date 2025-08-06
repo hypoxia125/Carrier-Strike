@@ -7,7 +7,7 @@ class ApplyOrMutiny : RscButton
     w = QUOTE(COMMANDERMENU_APPLY_W * GRID_W);
     h = QUOTE(COMMANDERMENU_APPLY_H * GRID_H);
 
-    text = "APPLY | RESIGN | MUTINY";
+    text = CSTRING(ApplyResignMutiny);
     colorBackgroundActive[] = USER_GUI_COLORS_ALPHA(0.5);
     colorBackground[] = {0,0,0,0.0};
 

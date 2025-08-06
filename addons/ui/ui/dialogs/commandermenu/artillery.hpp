@@ -7,7 +7,7 @@ class Artillery : RscButton
     w = QUOTE(COMMANDERMENU_ARTILLERY_W * GRID_W);
     h = QUOTE(COMMANDERMENU_ARTILLERY_H * GRID_H);
 
-    text = "ARTILLERY";
+    text = CSTRING(Artillery);
     colorBackgroundActive[] = USER_GUI_COLORS_ALPHA(0.5);
     colorBackground[] = {0,0,0,0.0};
 

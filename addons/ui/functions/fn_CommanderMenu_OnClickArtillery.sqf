@@ -6,12 +6,12 @@ params ["_control"];
 private _commanderData = missionNamespace getVariable QEGVAR(game,CommanderData);
 private _cooldown = _commanderData get "artilleryCooldowns" get (side group player);
 if (_cooldown != 0) exitWith {
-    hintSilent "Artillery Is On Cooldown";
+    hintSilent LLSTRING(ArtilleryOnCooldown);
 };
 
 openMap false;
 
-hintSilent "Select Location For Artillery\nHold Right Click: Move Map\nLeft Click: Activate";
+hintSilent LLSTRING(SelectArtilleryLocation);
 
 addMissionEventHandler ["Map", {
     params ["_mapIsOpened", "_mapIsForced"];
