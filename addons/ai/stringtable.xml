@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="CarrierStrike">
+    <Package name="ai">
+        <Container name="ai">
+            <Key ID="str_carrierstrike_ai_aisettingswarning">
+                <Original>nan</Original>
+            </Key>
+        </Container>
+    </Package>
+</Project>

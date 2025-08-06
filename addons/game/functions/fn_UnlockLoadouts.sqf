@@ -60,4 +60,4 @@ missionNamespace setVariable [QGVAR(loadouts), _loadouts];
 INFO_1("Tier: %1 Unlocked",_currentTier);
 
 // Send notification
-[QGVAR(HintSilent), format ["Tier %1 Loadouts: Unlocked", _currentTier]] call CBA_fnc_globalEvent;
+[QGVAR(NotificationTierUnlocked), [_currentTier]] call CBA_fnc_globalEvent;

@@ -143,7 +143,7 @@ _silo addEventHandler ["Fired", {
 
         _x setPosASL [0,0,0];
         _x setDamage [1, false];
-        [QGVAR(HintSilent), "Killed: In Way Of Missile", _x] call CBA_fnc_targetEvent;
+        [QGVAR(NotificationKilledByMissile), nil, _x] call CBA_fnc_targetEvent;
     } forEach _unitsToKill;
 
     _projectile allowDamage false;

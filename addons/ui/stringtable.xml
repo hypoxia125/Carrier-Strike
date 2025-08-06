@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="CarrierStrike">
+    <Package name="ui">
+        <Container name="ui">
+            <Key ID="str_carrierstrike_ui_applyresignmutiny">
+                <Original>Apply | Resign | Mutiny</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_artillery">
+                <Original>Artillery</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_artillerycooldown">
+                <Original>Artillery: %1</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_commandermenutitle">
+                <Original>Commander Menu</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_commandervoteinprogress">
+                <Original>Commander Vote In Progress\nWait For Next Vote</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_nocommander">
+                <Original>No Commander</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_ready">
+                <Original>Ready</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_scan">
+                <Original>Scan</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_scancooldown">
+                <Original>Scan: %1</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_selectartillerylocation">
+                <Original>Select Artillery Location\nHold RMB: Move Map\nLMB: Select</Original>
+            </Key>
+            <Key ID="str_carrierstrike_ui_uav">
+                <Original>UAV</Original>
+            </Key>
+        </Container>
+    </Package>
+</Project>

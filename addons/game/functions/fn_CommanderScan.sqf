@@ -84,6 +84,8 @@ private _units = [];
                 _marker setMarkerColorLocal "ColorRED";
                 _marker setMarkerAlphaLocal 1;
                 _markers pushBack _marker;
+
+                playSound "beep_target";
             };
         } forEach _unitsToAdd;
 

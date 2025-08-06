@@ -103,4 +103,4 @@ _group setVariable [QGVAR(RallyRespawnPosition), _respawn];
 _group setVariable [QGVAR(RallyPointObject), _rally];
 _group setVariable [QGVAR(RallyPoint_Cooldown), [QGVAR(Settings_RallyPlacementCooldown)] call CBA_settings_fnc_get, true];
 
-[QGVAR(HintSilent), ["Rally Point Created"], units _group] call CBA_fnc_targetEvent;
+[QGVAR(NotificationRallyPointCreated), nil, units _group] call CBA_fnc_targetEvent;

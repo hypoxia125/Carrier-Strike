@@ -124,3 +124,33 @@
 
     missionNamespace setVariable [QGVAR(CommanderData), _commanderData, true];
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(NotificationCommanderResigned), {
+    params ["_unit"];
+
+    hintSilent format[LLSTRING(CommanderResigned), name _unit];
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(NotificationKilledByMissile), {
+    hintSilent LLSTRING(KilledByMissile);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(NotificationRallyPointCreated), {
+    hintSilent LLSTRING(RallyPointCreated);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(NotificationRallyPointDestroyed), {
+    hintSilent LLSTRING(RallyPointDestroyed);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(NotificationTierUnlocked), {
+    params ["_tier"];
+
+    hintSilent format[LLSTRING(TierUnlocked), _tier];
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(NotificationSeedingModeEnabled), {
+    params ["_disabledSilos"];
+
+    systemChat format[LLSTRING(SeedingModeEnabled),_disabledSilos];
+}] call CBA_fnc_addEventHandler;

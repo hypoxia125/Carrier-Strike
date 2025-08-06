@@ -21,10 +21,10 @@ private _respawnData = missionNamespace getVariable [QGVAR(respawn_positions), [
     };
 } forEach _respawnData;
 if (!_valid) exitWith {
-    hint "Invalid Area For Artillery";
+    hint LLSTRING(InvalidArtilleryLocation);
 };
 
-hintSilent "Artillery Firing";
+hintSilent LLSTRING(ArtilleryFiring);
 [QGVAR(CommanderResetArtillery), [side group player]] call CBA_fnc_serverEvent;
 
 sleep 10;
