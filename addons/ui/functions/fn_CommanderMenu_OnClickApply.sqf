@@ -12,12 +12,19 @@ if (missionNamespace getVariable [QGVAR(CommanderVoteInProg), false]) exitWith {
     hintSilent "Commander vote in progress.\nWait for next round of voting.";
 };
 
-if (_commander == "-1") then {
-    LOG("CommanderMenu_OnClickApply | No commander - applying...");
-    [QEGVAR(game,CommanderApply), [player]] call CBA_fnc_serverEvent;
-} else {
-    LOG("CommanderMenu_OnClickApply | Already a commander - mutiny...");
-    [QEGVAR(game,CommanderMutiny), [player]] call CBA_fnc_serverEvent;
+switch true do {
+    case (_commander == "-1"): {
+        LOG("CommanderMenu_OnClickApply | No commander - applying...");
+        [QEGVAR(game,CommanderApply), [player]] call CBA_fnc_serverEvent;
+    };
+    case (_commander == getPlayerID player): {
+        LOG("CommanderMenu_OnClickApply | You are commander - resigning...");
+        [QEGVAR(game,CommanderResign), [player]] call CBA_fnc_serverEvent;
+    };
+    default {
+        LOG("CommanderMenu_OnClickApply | Already a commander - mutiny...");
+        [QEGVAR(game,CommanderMutiny), [player]] call CBA_fnc_serverEvent;
+    };
 };
 
 closeDialog 1;

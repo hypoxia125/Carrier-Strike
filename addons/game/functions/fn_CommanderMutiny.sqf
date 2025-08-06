@@ -6,7 +6,9 @@ if (!canSuspend) exitWith { _this spawn FUNC(CommanderMutiny) };
 params ["_unit"];
 
 private _side = side group _unit;
-private _name = name _unit;
+
+private _commanderData = missionNamespace getVariable QGVAR(CommanderData);
+private _name = _commanderData get "commanderNames" get _side;
 
 LOG_1("CommanderMutiny | Mutiny against %1",_name);
 

@@ -94,6 +94,11 @@
     _this call FUNC(CommanderMutiny);
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(CommanderResign), {
+    LOG("Server Event::CommanderResign | Called");
+    _this call FUNC(CommanderResign);
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(CommanderResetScan), {
     params ["_side"];
 

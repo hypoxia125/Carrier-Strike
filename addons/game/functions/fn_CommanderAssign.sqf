@@ -16,6 +16,6 @@ _commanders set [side group _unit, _playerID];
 private _commanderNames = _commanderData get "commanderNames";
 _commanderNames set [side group _unit, _name];
 
-[QEGVAR(ui,UpdateCommanderNameTopBar), [_name, side group _unit]] call CBA_fnc_globalEvent;
+[QEGVAR(ui,UpdateCommanderNameTopBar), [_name, side group _unit], QEGVAR(ui,CommanderNameTopBar)] call CBA_fnc_globalEventJIP;
 
 missionNamespace setVariable [QGVAR(CommanderData), _commanderData, true];

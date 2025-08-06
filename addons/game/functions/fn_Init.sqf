@@ -47,3 +47,6 @@ if (hasInterface) then {
     private _newGroup = createGroup [side group player, true];
     [player] joinSilent _newGroup;
 };
+
+// Event Handlers
+call compileScript ["\z\carrierstrike\addons\game\MissionEventHandlers.sqf"];

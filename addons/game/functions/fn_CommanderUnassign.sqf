@@ -13,6 +13,6 @@ _commanders set [_side, "-1"];
 private _commanderNames = _commanderData get "commanderNames";
 _commanderNames set [_side, ""];
 
-[QEGVAR(ui,UpdateCommanderNameTopBar), ["", _side]] call CBA_fnc_globalEvent;
+[QEGVAR(ui,UpdateCommanderNameTopBar), ["", _side], QEGVAR(ui,CommanderNameTopBar)] call CBA_fnc_globalEventJIP;
 
 missionNamespace setVariable [QGVAR(CommanderData), _commanderData, true];

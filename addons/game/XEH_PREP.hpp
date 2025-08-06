@@ -7,6 +7,7 @@ PREP(CommanderApply);
 PREP(CommanderArtillery);
 PREP(CommanderAssign);
 PREP(CommanderMutiny);
+PREP(CommanderResign);
 PREP(CommanderScan);
 PREP(CommanderUnassign);
 PREP(ExplosionSequence);
