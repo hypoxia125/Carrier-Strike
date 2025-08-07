@@ -1,3 +1,20 @@
+# Alpha Version v0.10.0
+
+## Added
+### Commander Abilities
+- Added first iteration of commander abilites
+    - Commander Menu (accessed using Y by default)
+    - Scan
+        - Local only static scan of the map revealing locations of enemy units
+    - Artillery
+        - Artillery strike at location on map
+    - Commander Voting
+        - Apply, Resign, or Mutiny for the Commander role
+
+## Changed
+- Restructured systems - now inherits from base system
+- String Localizaion
+
 # Alpha Version v0.9.2
 
 - Added traits based on inventories upon spawning.
