@@ -18,6 +18,8 @@ _overwrite	Overwrite any previously stored default keybind <BOOLEAN>
 
 ["CarrierStrike", "CommanderMenuOpen", "Open CommanderMenu", {
     if (!isNull findDisplay IDD_COMMANDERMENU) exitWith {};
+    if (side group player == independent) exitWith {};
+    if (!alive player) exitWith {};
     createDialog QEGVAR(ui,CommanderMenu);
 }, {}, [DIK_Y], false, 0, true] call CBA_fnc_addKeybind;
 
