@@ -11,7 +11,6 @@ while {
 } do {
     private _disabled = _disabled apply {_x getVariable QGVAR(silo_number)};
     _disabled = _disabled call BIS_fnc_sortNum;
-    private _text = format["Seeding Mode Enabled: Silos %1 disabled.",_disabled];
-    [QGVAR(SystemChat), _text] call CBA_fnc_globalEvent;
+    [QGVAR(NotificationSeedingModeEnabled), [_disabled]] call CBA_fnc_globalEvent;
     sleep 60;
 };

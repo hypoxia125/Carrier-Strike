@@ -1,0 +1,8 @@
+//#include "\z\carrierstrike\addons\ui\ui\dialogs\commandermenu\borders.hpp"
+#include "\z\carrierstrike\addons\ui\ui\dialogs\commandermenu\background.hpp"
+#include "\z\carrierstrike\addons\ui\ui\dialogs\commandermenu\titlebar.hpp"
+#include "\z\carrierstrike\addons\ui\ui\dialogs\commandermenu\currentcommander.hpp"
+#include "\z\carrierstrike\addons\ui\ui\dialogs\commandermenu\applyormutiny.hpp"
+#include "\z\carrierstrike\addons\ui\ui\dialogs\commandermenu\scan.hpp"
+#include "\z\carrierstrike\addons\ui\ui\dialogs\commandermenu\uav.hpp"
+#include "\z\carrierstrike\addons\ui\ui\dialogs\commandermenu\artillery.hpp"

@@ -9,4 +9,9 @@
 #include "ControlClasses.hpp"
 #include "ControlStyles.hpp"
 #include "ControlTypes.hpp"
+#include "A3_IDDs.hpp"
+
 #include "RscTitles.hpp"
+
+// Dialogs
+#include "\z\carrierstrike\addons\ui\ui\dialogs\dialogs.hpp"

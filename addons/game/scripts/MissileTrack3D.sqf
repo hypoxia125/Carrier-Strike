@@ -42,7 +42,7 @@
             1,
             0.25,
             0,
-            "Incoming Missile!", // TODO: localize
+            LLSTRING(IncomingMissile),
             0,
             0.027
         ];

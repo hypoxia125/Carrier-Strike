@@ -17,7 +17,7 @@ if (!isNull _rallyPoint && !isNull _group) then {
     deleteVehicle _rallyPoint;
     _group setVariable [QGVAR(RallyPointObject), objNull];
 
-    [QGVAR(HintSilent), ["Rally Point Destroyed"], units _group] call CBA_fnc_targetEvent;
+    [QGVAR(NotificationRallyPointDestroyed), nil, units _group] call CBA_fnc_targetEvent;
 };
 
 if (!isNull _rallyPoint && isNull _group) then {

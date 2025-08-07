@@ -1,3 +1,18 @@
+#define USER_GUI_COLORS {\
+    QUOTE(profileNamespace getVariable [ARR_2('GUI_BCG_RGB_R',0.77)]),\
+    QUOTE(profileNamespace getVariable [ARR_2('GUI_BCG_RGB_G',0.51)]),\
+    QUOTE(profileNamespace getVariable [ARR_2('GUI_BCG_RGB_B',0.08)])\
+}
+
+#define USER_GUI_COLORS_ALPHA(ALPHA) {\
+    QUOTE(profileNamespace getVariable [ARR_2('GUI_BCG_RGB_R',0.77)]),\
+    QUOTE(profileNamespace getVariable [ARR_2('GUI_BCG_RGB_G',0.51)]),\
+    QUOTE(profileNamespace getVariable [ARR_2('GUI_BCG_RGB_B',0.08)]),\
+    ALPHA\
+}
+
+//--------------------------------------------------------------------------------------------------
+
 #define IDD_CARRIERHUD                  8000
 
 #define IDC_UPPERHUD                    8001
@@ -45,7 +60,10 @@
 #define IDC_SILO_CD_4                   IDC_SILO_CD_1 + 3
 #define IDC_SILO_CD_5                   IDC_SILO_CD_1 + 4
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
+#define IDC_COMMANDER_WEST              8080
+#define IDC_COMMANDER_EAST              8081
+
+//--------------------------------------------------------------------------------------------------
 
 #define UPPERHUD_W                          75
 #define UPPERHUD_X                          -(UPPERHUD_W / 2)
@@ -69,3 +87,53 @@
 #define RESPAWNMENU_MAINPANEL_H             100
 #define RESPAWNMENU_MAINPANEL_X              -(RESPAWNMENU_MAINPANEL_W / 2)
 #define RESPAWNMENU_MAINPANEL_Y              -(RESPAWNMENU_MAINPANEL_H / 2)
+
+#define COMMANDERNAME_WEST_Y                (CARRIER_Y + 4)
+#define COMMANDERNAME_EAST_Y                (CARRIER_Y + 4)
+
+//--------------------------------------------------------------------------------------------------
+
+#define IDD_COMMANDERMENU                    9000
+
+#define IDC_COMMANDERMENU_CURRENTCOMMANDER  (IDD_COMMANDERMENU + 1)
+#define IDC_COMMANDERMENU_SCAN              (IDD_COMMANDERMENU + 2)
+#define IDC_COMMANDERMENU_UAV               (IDD_COMMANDERMENU + 3)
+#define IDC_COMMANDERMENU_ARTILLERY         (IDD_COMMANDERMENU + 4)
+#define IDC_COMMANDERMENU_APPLYIORMUTINY    (IDD_COMMANDERMENU + 5)
+#define IDC_COMMANDERMENU_BACKGROUND        (IDD_COMMANDERMENU + 6)
+#define IDC_COMMANDERMENU_BORDERS           (IDD_COMMANDERMENU + 7)
+
+#define COMMANDERMENU_W                     75/2
+#define COMMANDERMENU_X                     -(COMMANDERMENU_W / 2)
+#define COMMANDERMENU_Y                     -(COMMANDERMENU_H / 2)
+#define COMMANDERMENU_H                     40
+
+#define COMMANDERMENU_TITLEBAR_W            COMMANDERMENU_W
+#define COMMANDERMENU_TITLEBAR_X            (COMMANDERMENU_X)
+#define COMMANDERMENU_TITLEBAR_Y            (COMMANDERMENU_Y - 2)
+#define COMMANDERMENU_TITLEBAR_H            2
+
+#define COMMANDERMENU_CURRENTCOMMANDER_W    (COMMANDERMENU_W - 4)
+#define COMMANDERMENU_CURRENTCOMMANDER_X    (COMMANDERMENU_X + 2)
+#define COMMANDERMENU_CURRENTCOMMANDER_Y    (COMMANDERMENU_Y + 2)
+#define COMMANDERMENU_CURRENTCOMMANDER_H    4
+
+#define COMMANDERMENU_APPLY_W               (COMMANDERMENU_W - 4)
+#define COMMANDERMENU_APPLY_X               (COMMANDERMENU_X + 2)
+#define COMMANDERMENU_APPLY_Y               (COMMANDERMENU_Y + 8)
+#define COMMANDERMENU_APPLY_H               4
+
+#define COMMANDERMENU_SCAN_W                (COMMANDERMENU_W - 4)
+#define COMMANDERMENU_SCAN_X                (COMMANDERMENU_X + 2)
+#define COMMANDERMENU_SCAN_Y                (COMMANDERMENU_Y + 14)
+#define COMMANDERMENU_SCAN_H                4
+
+#define COMMANDERMENU_UAV_W                 (COMMANDERMENU_W - 4)
+#define COMMANDERMENU_UAV_X                 (COMMANDERMENU_X + 2)
+#define COMMANDERMENU_UAV_Y                 (COMMANDERMENU_Y + 20)
+#define COMMANDERMENU_UAV_H                 4
+
+#define COMMANDERMENU_ARTILLERY_W           (COMMANDERMENU_W - 4)
+#define COMMANDERMENU_ARTILLERY_X           (COMMANDERMENU_X + 2)
+#define COMMANDERMENU_ARTILLERY_Y           (COMMANDERMENU_Y + 26)
+#define COMMANDERMENU_ARTILLERY_H           4

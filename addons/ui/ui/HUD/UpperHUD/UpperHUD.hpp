@@ -32,5 +32,6 @@ class UpperHUD: RscControlsGroupNoScrollbars {
         #include "\z\carrierstrike\addons\ui\ui\HUD\UpperHUD\SiloCD_3.hpp"
         #include "\z\carrierstrike\addons\ui\ui\HUD\UpperHUD\SiloCD_4.hpp"
         #include "\z\carrierstrike\addons\ui\ui\HUD\UpperHUD\SiloCD_5.hpp"
+        #include "\z\carrierstrike\addons\ui\ui\hud\UpperHUD\Commanders.hpp"
     };
 };

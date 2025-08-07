@@ -8,13 +8,7 @@ private _westEnabled = [QEGVAR(game,Settings_AllowWestFactionAI)] call CBA_setti
 private _eastEnabled = [QEGVAR(game,Settings_AllowEastFactionAI)] call CBA_settings_fnc_get;
 private _independentEnabled = [QEGVAR(game,Settings_AllowIndependentFactionAI)] call CBA_settings_fnc_get;
 
-private _txt = format["AI Settings\nBLUFOR Enabled: %1\nOPFOR Enabled: %2\nIND Enabled: %3", _westEnabled, _eastEnabled, _independentEnabled];
-[QEGVAR(game,HintSilent), [_txt], "AISettingsWarning"] call CBA_fnc_globalEventJIP;
-
-private _waitTime = 15;
-private _txt = format["AI | Spawning In %1s",_waitTime];
-[QEGVAR(game,SystemChat), [_txt]] call CBA_fnc_globalEvent;
-sleep _waitTime;
+sleep 15;
 private _txt = "AI | Spawning...";
 [QEGVAR(game,SystemChat), [_txt]] call CBA_fnc_globalEvent;
 

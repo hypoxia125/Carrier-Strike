@@ -6,7 +6,7 @@ if (!local _player) exitWith {};
 
 // Parachute action
 _player addAction [
-    "Open Parachute",
+    LLSTRING(ActionOpenParachute),
     {
         params ["_target", "_caller", "_actionID", "_arguments"];
 
@@ -26,7 +26,7 @@ _player addAction [
 
 // Eject action
 _player addAction [
-    "Eject",
+    LLSTRING(ActionEject),
     {
         params ["_target", "_caller", "_actionID", "_arguments"];
 
@@ -42,7 +42,7 @@ _player addAction [
 
 // Rally Point Creation
 _player addAction [
-    "Place Rally Point",
+    LLSTRING(ActionPlaceRallyPoint),
     {
         params ["_target", "_caller", "_actionID", "_arguments"];
 

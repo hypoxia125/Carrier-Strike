@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 if (!isMultiplayer) exitWith {
-    ERROR_WITH_TITLE("Carrier Strike - Multiplayer Only","Carrier Strike was not written with single player in mind. Many of the AI functions needed rely on commands that only work within the multiplayer environment. Please host a local server if you wish to play alone :)");
+    ERROR_WITH_TITLE(LLSTRING(MultiplayerOnly),LLSTRING(SinglePlayerError));
 };
 
 missionNamespace setVariable [QGVAR(game_state), -1, true];
@@ -47,3 +47,6 @@ if (hasInterface) then {
     private _newGroup = createGroup [side group player, true];
     [player] joinSilent _newGroup;
 };
+
+// Event Handlers
+call compileScript ["\z\carrierstrike\addons\game\MissionEventHandlers.sqf"];
