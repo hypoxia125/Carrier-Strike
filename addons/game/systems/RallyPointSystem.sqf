@@ -5,13 +5,10 @@ if (!isNil QGVAR(RallyPointSystem)) exitWith {};
 
 GVAR(RallyPointSystem) = createHashMapObject [[
     ["#type", "RallyPointSystem"],
-    ["#create", {
-        _self call ["SystemStart", []];
-    }],
+    ["#base", +GVAR(SystemBase)],
 
     ["m_updateRate", 1],
-    ["m_frameSystemHandle", -1],
-    ["m_rallies", []],
+    ["m_entities", []],
 
     ["Update", {
         _self call ["CleanRallies"];
@@ -37,12 +34,12 @@ GVAR(RallyPointSystem) = createHashMapObject [[
         private _rallyPoint = _group getVariable [QGVAR(RallyPointObject), objNull];
         if (isNull _rallyPoint) exitWith {};
 
-        private _allRallies = _self get "m_rallies";
+        private _allRallies = _self get "m_entities";
         _allRallies pushBackUnique _rallyPoint;
     }],
 
     ["CleanRallies", {
-        private _allRallies = _self get "m_rallies";
+        private _allRallies = _self get "m_entities";
         {
             private _rally = _x;
             private _group = _rally getVariable [QGVAR(ownerGroup), grpNull];
@@ -105,20 +102,5 @@ GVAR(RallyPointSystem) = createHashMapObject [[
 
         _cooldown = _cooldown - 1;
         _group setVariable [QGVAR(RallyPoint_Cooldown), _cooldown, true];        
-    }],
-
-    ["SystemStart", {
-        private _handle = [{
-            params ["_args", "_handle"];
-            _args params ["_self"];
-
-            if (!isMultiplayer && isGamePaused) exitWith {};
-
-            _self call ["Update", []];
-        }, _self get "m_updateRate", [_self]] call CBA_fnc_addPerFrameHandler;
-
-        LOG_1("%1::SystemStart | System started.",(_self get "#type")#0);
-
-        _self set ["m_frameSystemHandle", _handle];
     }]
 ]];

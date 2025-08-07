@@ -48,6 +48,6 @@ _area = [getPosATL _module] + _area;
 private _respawn = [_side, _area#0, _displayName] call BIS_fnc_addRespawnPosition;
 
 _respawnData insert [-1, [[_respawn, _type, _area]]];
-missionNamespace setVariable [QEGVAR(game,respawn_positions), _respawnData];
+missionNamespace setVariable [QEGVAR(game,respawn_positions), _respawnData, true];
 
 INFO_1("ModuleRespawnPosition: Adding respawn position for side: %1",_side);

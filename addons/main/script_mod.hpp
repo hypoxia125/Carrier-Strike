@@ -19,6 +19,14 @@
 #define RSTRING(var1)           TRIPLES(STR,ADDON,var1)
 #define ERSTRING(var1,var2)     TRIPLES(STR,DOUBLES(PREFIX,var1),var2)
 
+// Some Maths
+#define MINTOHR(var)    var/60
+#define HRTOMIN(var)    var*60
+#define MINTOSEC(var)   var*60
+#define SECTOMIN(var)   var/60
+#define SECTOMS(var)    var*1000
+#define MSTOSEC(var)    var/1000
+
 // Enums
 #define GAME_STATE_PREINIT      0
 #define GAME_STATE_INIT         1

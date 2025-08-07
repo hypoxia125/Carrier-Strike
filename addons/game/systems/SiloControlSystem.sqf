@@ -12,12 +12,9 @@ if (!isNil QGVAR(SiloControlSystem)) exitWith {};
 
 GVAR(SiloControlSystem) = createHashMapObject [[
     ["#type", "SiloControlSystem"],
-    ["#create", {
-        _self call ["SystemStart", []];
-    }],
+    ["#base", +GVAR(SystemBase)],
 
     ["m_updateRate", 1],
-    ["m_frameSystemHandle", -1],
     ["m_entities", []],
 
     ["m_countdownTime", [QGVAR(Settings_SiloLaunchCooldown)] call CBA_settings_fnc_get],
@@ -66,63 +63,6 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         };
 
         _self set ["m_entities", _entities];
-    }],
-
-    //------------------------------------------------------------------------------------------------
-    ["Register", {
-        params ["_entity"];
-        if (isNil "_entity") exitWith {};
-
-        private _entities = _self get "m_entities";
-        private _idx = _entities find _entity;
-        if (_idx != -1) exitWith {
-            LOG_1("%1::Register | Entity already registered.",(_self get "#type")#0);
-        };
-
-        _entities insert [-1, [_entity], true];
-        _self set ["m_entities", _entities];
-
-        // Broadcast
-        _self call ["SortSilos"];
-        missionNamespace setVariable [QGVAR(silos), _entities, true];
-
-        LOG_2("%1::Register | Entity registered: %2",(_self get "#type")#0,_entity);
-    }],
-
-    //------------------------------------------------------------------------------------------------
-    ["Unregister", {
-        params ["_entity"];
-        if (isNil "_entity") exitWith {};
-
-        private _entities = _self get "m_entities";
-        private _idx = _entities find _entity;
-        if (_idx == -1) exitWith {
-            LOG_1("%1::Unregister | Entity not managed by system.",(_self get "#type")#0);
-        };
-
-        _entities deleteAt _idx;
-        _self set ["m_entities", _entities];
-
-        // Broadcast
-        missionNamespace setVariable [QGVAR(silos), _self get "m_entities", true];
-
-        LOG_2("%1::Unregister | Entity unregistered: %2",(_self get "#type")#0,_entity);
-    }],
-
-    //------------------------------------------------------------------------------------------------
-    ["SystemStart", {
-        private _handle = [{
-            params ["_args", "_handle"];
-            _args params ["_self"];
-
-            if (!isMultiplayer && isGamePaused) exitWith {};
-
-            _self call ["Update", []];
-        }, _self get "m_updateRate", [_self]] call CBA_fnc_addPerFrameHandler;
-
-        LOG_1("%1::SystemStart | System started.",(_self get "#type")#0);
-
-        _self set ["m_frameSystemHandle", _handle];
     }],
 
     //------------------------------------------------------------------------------------------------
@@ -350,5 +290,46 @@ GVAR(SiloControlSystem) = createHashMapObject [[
         {
             [QEGVAR(ui,UpdateSiloStatus), [_silo, _x, abs _y, _updateRate / 2]] call CBA_fnc_globalEvent;
         } forEach _captureProg;
+    }],
+
+    //------------------------------------------------------------------------------------------------
+    ["Register", {
+        params ["_entity"];
+        if (isNil "_entity") exitWith {};
+
+        private _entities = _self get "m_entities";
+        private _idx = _entities find _entity;
+        if (_idx != -1) exitWith {
+            LOG_1("%1::Register | Entity already registered.",(_self get "#type")#0);
+        };
+
+        _entities insert [-1, [_entity], true];
+        _self set ["m_entities", _entities];
+
+        // Broadcast
+        _self call ["SortSilos"];
+        missionNamespace setVariable [QGVAR(silos), _entities, true];
+
+        LOG_2("%1::Register | Entity registered: %2",(_self get "#type")#0,_entity);
+    }],
+
+    //------------------------------------------------------------------------------------------------
+    ["Unregister", {
+        params ["_entity"];
+        if (isNil "_entity") exitWith {};
+
+        private _entities = _self get "m_entities";
+        private _idx = _entities find _entity;
+        if (_idx == -1) exitWith {
+            LOG_1("%1::Unregister | Entity not managed by system.",(_self get "#type")#0);
+        };
+
+        _entities deleteAt _idx;
+        _self set ["m_entities", _entities];
+
+        // Broadcast
+        missionNamespace setVariable [QGVAR(silos), _self get "m_entities", true];
+
+        LOG_2("%1::Unregister | Entity unregistered: %2",(_self get "#type")#0,_entity);
     }]
 ]];

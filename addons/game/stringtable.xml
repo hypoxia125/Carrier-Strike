@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="CarrierStrike">
+    <Package name="game">
+        <Container name="game">
+            <Key ID="str_carrierstrike_game_actioneject">
+                <Original>Eject</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_actionopenparachute">
+                <Original>Open Parachute</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_actionplacerallypoint">
+                <Original>Place Rally Point</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_aisettingscategory">
+                <Original>AI Settings</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_artilleryfiring">
+                <Original>Artillery firing…</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_clientsettingscategory">
+                <Original>Client Settings</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_commanderresigned">
+                <Original>Commander %1 resigned.</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_commandersettingscategory">
+                <Original>Commander Settings</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_gamesettings">
+                <Original>Carrier Strike – Game Settings</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_gamesettingscategory">
+                <Original>Game Settings</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_incomingmissile">
+                <Original>Incoming Missile!</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_invalidartillerylocation">
+                <Original>Invalid artillery location</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_killedbymissile">
+                <Original>You were killed by being in path of Anti-Carrier Missile.</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_multiplayeronly">
+                <Original>Carrier Strike - Multiplayer Only </Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_rallypointcreated">
+                <Original>Rally Point Created</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_rallypointdestroyed">
+                <Original>Rally Point Destroyed</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_rallypointsettingscategory">
+                <Original>Rally Points</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_seedingmodeenabled">
+                <Original>Seeding Mode Enabled. Disabled Silos: %1</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_singleplayererror">
+                <Original>Carrier Strike was not written with single player in mind. Many of the AI functions needed rely on commands that only work within the multiplayer environment. Please host a local server if you wish to play alone :) </Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_tierunlocked">
+                <Original>Tier: %1 Unlocked</Original>
+            </Key>
+            <Key ID="str_carrierstrike_game_weathersettingscategory">
+                <Original>Weather</Original>
+            </Key>
+        </Container>
+    </Package>
+</Project>
