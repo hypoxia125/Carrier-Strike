@@ -12,6 +12,8 @@ private _respawnData = missionNamespace getVariable [QGVAR(respawn_positions), [
 {
     _x params ["_respawn", "_type", "_area"];
 
+    if (_respawn#0 == independent || _type == "SILO") then { continue };
+
     // extend area
     _area set [1, 300];
     _area set [2, 300];

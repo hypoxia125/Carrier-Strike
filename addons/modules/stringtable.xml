@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="CarrierStrike">
     <Package name="modules">
-        <Container name="modules"></Container>
+        <Container name="modules">
+            <Key ID="str_carrierstrike_modules_missiletargetalreadyregistered">
+                <Original>Missile target already registered for side: %1</Original>
+            </Key>
+            <Key ID="str_carrierstrike_modules_moduleaddcarrier">
+                <Original>Add Carrier</Original>
+            </Key>
+            <Key ID="str_carrierstrike_modules_moduleaddmissiletarget">
+                <Original>Add Missile Target</Original>
+            </Key>
+            <Key ID="str_carrierstrike_modules_moduleaddreactor">
+                <Original>Add Reactor</Original>
+            </Key>
+            <Key ID="str_carrierstrike_modules_nothingsynced">
+                <Original>Nothing is synced to this module!</Original>
+            </Key>
+            <Key ID="str_carrierstrike_modules_toomanyobjectssynced">
+                <Original>Too many objects are synced to this module!</Original>
+            </Key>
+        </Container>
     </Package>
 </Project>

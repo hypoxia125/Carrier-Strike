@@ -15,7 +15,6 @@ def find_project_root():
     raise FileNotFoundError(f"Could not find project root ('{target_dir}' directory not found)")
 
 def get_user_choice():
-    """Prompt user to select dev, build, or release mode"""
     print("\nSelect HEMTT mode:")
     print("1. dev")
     print("2. build")

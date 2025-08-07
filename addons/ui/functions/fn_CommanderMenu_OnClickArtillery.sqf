@@ -27,7 +27,7 @@ addMissionEventHandler ["Map", {
         {
             _x params ["_respawn", "_type", "_area"];
 
-            if (_respawn#0 == independent) then { continue };
+            if (_respawn#0 == independent || _type == "SILO") then { continue };
 
             // extend area
             _area set [1, 300];

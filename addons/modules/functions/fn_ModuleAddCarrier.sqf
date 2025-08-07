@@ -31,10 +31,10 @@ private _side = switch _sideVal do {
 // User input checks
 private _syncedCarrier = synchronizedObjects _module;;
 if (count _syncedCarrier > 1) exitWith {
-    ERROR_WITH_TITLE("ModuleAddCarrier","Too many carriers/objects/triggers are synced too this module!");
+    ERROR_WITH_TITLE(LLSTRING(ModuleAddCarrier),LLSTRING(TooManyObjectsSynced));
 };
 if (count _syncedCarrier <= 0) exitWith {
-    ERROR_WITH_TITLE("ModuleAddCarrier","Nothing is synced to this module!");
+    ERROR_WITH_TITLE(LLSTRING(ModuleAddCarrier),LLSTRING(NothingSynced));
 };
 
 // Execute

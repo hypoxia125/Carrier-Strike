@@ -23,6 +23,9 @@
             <Key ID="str_carrierstrike_game_commanderresigned">
                 <Original>Commander %1 resigned.</Original>
             </Key>
+            <Key ID="str_carrierstrike_game_commandersettingscategory">
+                <Original>Commander Settings</Original>
+            </Key>
             <Key ID="str_carrierstrike_game_gamesettings">
                 <Original>Carrier Strike – Game Settings</Original>
             </Key>

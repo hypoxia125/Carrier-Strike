@@ -11,6 +11,9 @@
             <Key ID="str_carrierstrike_ui_artillerycooldown">
                 <Original>Artillery: %1</Original>
             </Key>
+            <Key ID="str_carrierstrike_ui_artilleryoncooldown">
+                <Original>Artillery On Cooldown</Original>
+            </Key>
             <Key ID="str_carrierstrike_ui_commandermenutitle">
                 <Original>Commander Menu</Original>
             </Key>
