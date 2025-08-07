@@ -357,3 +357,37 @@
     {},
     true
 ] call CBA_fnc_addSetting;
+
+// Commander Settings
+[
+    QGVAR(Settings_CommanderScanCooldown),
+    "SLIDER",
+    "Scan Cooldown",
+    [LLSTRING(GameSettings), LLSTRING(CommanderSettingsCategory)],
+    [10, MINTOSEC(15), 45, 0],
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_CommanderUAVCooldown),
+    "SLIDER",
+    "UAV Cooldown",
+    [LLSTRING(GameSettings), "zz In Development zz"],
+    [10, MINTOSEC(15), 60, 0],
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(Settings_CommanderArtilleryCooldown),
+    "SLIDER",
+    "Artillery Cooldown",
+    [LLSTRING(GameSettings), LLSTRING(CommanderSettingsCategory)],
+    [10, MINTOSEC(15), 90, 0],
+    1,
+    {},
+    true
+] call CBA_fnc_addSetting;

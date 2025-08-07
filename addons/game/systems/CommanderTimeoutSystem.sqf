@@ -36,9 +36,9 @@ GVAR(CommanderTimeoutSystem) = createHashMapObject [[
     ["m_updateRate", 1],
     ["m_frameSystemHandle", -1],
 
-    ["m_scanCooldownTime", 45],
-    ["m_uavCooldownTime", 60],
-    ["m_artilleryCooldownTime", 90],
+    ["m_scanCooldownTime", [QGVAR(Settings_CommanderScanCooldown)] call CBA_settings_fnc_get],
+    ["m_uavCooldownTime", [QGVAR(Settings_CommanderUAVCooldown)] call CBA_settings_fnc_get],
+    ["m_artilleryCooldownTime", [QGVAR(Settings_CommanderArtilleryCooldown)] call CBA_settings_fnc_get],
 
     //------------------------------------------------------------------------------------------------
     ["Update", {
