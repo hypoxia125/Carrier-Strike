@@ -100,3 +100,5 @@ class CfgDebriefing {
         picture = "Flag_CSAT";
     };
 };
+
+#include "Params.hpp"
