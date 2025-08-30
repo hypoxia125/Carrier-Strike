@@ -16,3 +16,29 @@ git_hash = 0
 [lint.sqf]
 enabled = true
 exclude = []
+
+[hemtt.launch.carrierstrike]
+workshop = [
+    "623475643",
+    "2073243184",
+    "1387934106",
+    "3499977893",
+    "1652506957",
+    "450814997",
+    "497661914",
+    "541888371",
+    "497660133",
+    "1645973522",
+    "2613892572",
+    "1751569185",
+    "3438718557",
+    "1779063631"
+]
+
+parameters = [
+    "-skipIntro",           # These parameters are passed to the Arma 3 executable
+    "-noSplash",            # They do not need to be added to your list
+    "-showScriptErrors",    # You can add additional parameters here
+    "-debug",
+    "-filePatching",
+]
