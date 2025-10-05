@@ -21,7 +21,7 @@ _overwrite	Overwrite any previously stored default keybind <BOOLEAN>
     if (side group player == independent) exitWith {};
     if (!alive player) exitWith {};
     createDialog QEGVAR(ui,CommanderMenu);
-}, {}, [DIK_Y], false, 0, true] call CBA_fnc_addKeybind;
+}, {}, [DIK_Y], false, 0, false] call CBA_fnc_addKeybind;
 
 ["CarrierStrike", "CommanderVoteYes", "Vote Yes", {
     private _voteInProg = missionNamespace getVariable [QGVAR(CommanderVoteInProg), false];
@@ -34,7 +34,7 @@ _overwrite	Overwrite any previously stored default keybind <BOOLEAN>
     } else {
         LOG("Keybinds::CommanderVoteYes | Not the right time to vote...");
     };
-}, {}, [DIK_PRIOR], false, 0, true] call CBA_fnc_addKeybind;
+}, {}, [DIK_PRIOR], false, 0, false] call CBA_fnc_addKeybind;
 
 ["CarrierStrike", "CommanderVoteNo", "Vote No", {
     private _voteInProg = missionNamespace getVariable [QGVAR(CommanderVoteInProg), false];
@@ -47,4 +47,4 @@ _overwrite	Overwrite any previously stored default keybind <BOOLEAN>
     } else {
         LOG("Keybinds::CommanderVoteNo | Not the right time to vote...");
     };
-}, {}, [DIK_NEXT], false, 0, true] call CBA_fnc_addKeybind;
+}, {}, [DIK_NEXT], false, 0, false] call CBA_fnc_addKeybind;

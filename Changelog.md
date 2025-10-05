@@ -1,3 +1,7 @@
+# Hotfix Version v0.10.1
+
+- Fixed custom keybinds overriding everything else on mission start
+
 # Alpha Version v0.10.0
 
 ## Added
